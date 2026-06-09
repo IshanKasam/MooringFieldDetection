@@ -1,0 +1,24 @@
+# Satellite tile acquisition settings (Maps Static API)
+maptype: satellite
+size: 640
+scale: 2
+min_zoom: 17
+max_zoom: 20
+default_zoom: 19
+
+# Offset tiles (meters) from center to capture cluster extent
+offsets_m:
+  - 0
+  - 200
+
+offset_directions:
+  - center
+  - north
+  - south
+  - east
+  - west
+
+# Rate limiting
+requests_per_second: 10
+max_retries: 3
+retry_backoff_seconds: 2

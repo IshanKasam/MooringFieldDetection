@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+runs/
+data/imagery/
+data/prelabels/
+data/labels/
+*.pt
+!config/

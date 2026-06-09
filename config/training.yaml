@@ -1,0 +1,9 @@
+# YOLO-OBB fine-tuning
+model: yolov8m-obb.pt
+epochs: 100
+imgsz: 640
+batch: 8
+patience: 20
+degrees: 180
+mosaic: 1.0
+conf_prelabel: 0.25

@@ -1,0 +1,2203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1lDvRvFtTV_zYZgBL2YqlGXsVH7ArNPnG">
+	<name>Untitled map</name>
+	<gx:CascadingStyle kml:id="__managed_style_0D6B08A49C3FE22E6437_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0D6B08A49C3FE22E6437_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0D6B08A49C3FE22E6437">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0D6B08A49C3FE22E6437_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0D6B08A49C3FE22E6437_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0136F531B23FE22E643B_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0136F531B23FE22E643B_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0136F531B23FE22E643B">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0136F531B23FE22E643B_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0136F531B23FE22E643B_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="05D5D532683F5CFCCCF4">
+		<name>MF 1</name>
+		<LookAt>
+			<longitude>-71.07544494173554</longitude>
+			<latitude>41.5168360716938</latitude>
+			<altitude>0.4049324644781005</altitude>
+			<heading>29.43062055319711</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30.0000112503198</gx:fovy>
+			<range>2109.712983182981</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0136F531B23FE22E643B</styleUrl>
+		<Point>
+			<coordinates>-71.07824432997575,41.51519216378995,0.4048138150876279</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0F1B7DB5C93F5CFDF230">
+		<name>AC1</name>
+		<LookAt>
+			<longitude>-71.04419963548565</longitude>
+			<latitude>41.51509983443069</latitude>
+			<altitude>-0.1886869216612752</altitude>
+			<heading>29.46074115275156</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30.0000112503198</gx:fovy>
+			<range>1266.791347612452</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-71.04567716965782,41.51536997188472,-0.1886495516018583</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="08C6BF052B3F5D030B4E">
+		<name>MF2</name>
+		<LookAt>
+			<longitude>-70.94072792910708</longitude>
+			<latitude>41.53653292516987</latitude>
+			<altitude>-0.8303045598050773</altitude>
+			<heading>2.386184726181043</heading>
+			<tilt>0.2237777114914788</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1900.122773113253</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.94496797995049,41.53582619518124,-0.7213497922950862</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="097922449A3F5D0359F1">
+		<name>MF 3</name>
+		<LookAt>
+			<longitude>-70.95798092256287</longitude>
+			<latitude>41.52376856082216</latitude>
+			<altitude>0.1013617221590879</altitude>
+			<heading>2.386183256933426</heading>
+			<tilt>0.2237382473745068</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>776.4545849137357</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.95901506307922,41.52267653509343,-0.1885315656814845</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="088FF398013F5D043630">
+		<name>MF 4</name>
+		<LookAt>
+			<longitude>-70.94182005243162</longitude>
+			<latitude>41.58134868360897</latitude>
+			<altitude>0.4051659097568083</altitude>
+			<heading>2.386184588749901</heading>
+			<tilt>0.2237741462773497</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1800.200990119774</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.9456611688357,41.58096251083258,0.4046963257088421</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0B1A9239F53F5D04CD28">
+		<name>MF 5</name>
+		<LookAt>
+			<longitude>-70.92809795719612</longitude>
+			<latitude>41.60871106616368</latitude>
+			<altitude>-0.8257969807342769</altitude>
+			<heading>2.386182801489556</heading>
+			<tilt>0.2237254496404346</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>413.8976426277804</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.92869540204444,41.60871051385653,-0.2076080116260237</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="032D13F86E3F5D053584">
+		<name>MF 6</name>
+		<LookAt>
+			<longitude>-70.90242265501367</longitude>
+			<latitude>41.62620237191753</latitude>
+			<altitude>0.8202495374798957</altitude>
+			<heading>2.38618683162631</heading>
+			<tilt>0.2238350360203957</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3535.378986733267</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.91202641247433,41.62640286928792,-0.7535924522260351</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="09D1D755713F5D05875B">
+		<name>MF 7</name>
+		<LookAt>
+			<longitude>-70.91173448163904</longitude>
+			<latitude>41.6410882602332</latitude>
+			<altitude>1.717225423804261</altitude>
+			<heading>2.386186971865246</heading>
+			<tilt>0.2238349975051065</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3534.481920927647</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.9108915392174,41.63891088495515,-0.7511743236935142</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0878823B6B3F5D0630E1">
+		<name>MF 8</name>
+		<LookAt>
+			<longitude>-70.83989226018946</longitude>
+			<latitude>41.60161600125981</latitude>
+			<altitude>0.4535263428734959</altitude>
+			<heading>2.386185759694778</heading>
+			<tilt>0.2238069850409092</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2737.405762311537</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.84159011480033,41.59914138646348,-0.5566424723661534</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="053B1D10213F5D188524">
+		<name>MF 9</name>
+		<LookAt>
+			<longitude>-70.61834989723297</longitude>
+			<latitude>41.67562574952544</latitude>
+			<altitude>-0.7547506680166005</altitude>
+			<heading>2.386188628376377</heading>
+			<tilt>0.2238813917951</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4858.690486461273</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.62083902296322,41.67565818301696,-0.7526311979319822</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0F819DFC913F5D18CC54">
+		<name>MF 10</name>
+		<LookAt>
+			<longitude>-70.6316440077176</longitude>
+			<latitude>41.66590870785111</latitude>
+			<altitude>-0.7498507673347621</altitude>
+			<heading>2.386188664539439</heading>
+			<tilt>0.2238813888062007</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4858.684923837428</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.62944098240096,41.66579509384277,-0.7507009639489726</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A7F38FC1D3F5D22B47F">
+		<name>MF 11</name>
+		<LookAt>
+			<longitude>-70.65328988830881</longitude>
+			<latitude>41.5402846728761</latitude>
+			<altitude>5.581104626288065</altitude>
+			<heading>2.386187237578127</heading>
+			<tilt>0.2238453984196447</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3834.186081045774</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.65466966348117,41.54226155859875,-0.757150261118481</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D8BD90C003F5D22FDBC">
+		<name>MF 12</name>
+		<LookAt>
+			<longitude>-70.67396710588361</longitude>
+			<latitude>41.52552481762731</latitude>
+			<altitude>0.2173336217544453</altitude>
+			<heading>2.386187158458688</heading>
+			<tilt>0.2238455837725171</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3839.549933800008</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.66987007922677,41.52626284592203,-0.754514450734356</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A35FCDE743F5D233FF1">
+		<name>MF 13</name>
+		<LookAt>
+			<longitude>-70.67128626256829</longitude>
+			<latitude>41.52546464638795</latitude>
+			<altitude>0.9344641169806311</altitude>
+			<heading>2.386187219224643</heading>
+			<tilt>0.2238455577261811</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3838.83309700701</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.67881275720464,41.52514187097686,-0.7577761793756055</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0CE8B9B7F33F5D23B564">
+		<name>MF 14</name>
+		<LookAt>
+			<longitude>-70.6037664722962</longitude>
+			<latitude>41.54640699937043</latitude>
+			<altitude>-0.1884479458146537</altitude>
+			<heading>2.386183808985899</heading>
+			<tilt>0.2237523600183443</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1185.101898668945</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.60391552427261,41.5456615948824,-0.1887628741337866</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0434838E913F5D243427">
+		<name>MF 15</name>
+		<LookAt>
+			<longitude>-70.56735284265322</longitude>
+			<latitude>41.55203718233605</latitude>
+			<altitude>2.637457747843639</altitude>
+			<heading>2.386185277850136</heading>
+			<tilt>0.2237911837359065</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2291.09457146551</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.57107234727384,41.55116894972098,0.4050937372248176</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="04AF2D44653F5D24A519">
+		<name>MF 16</name>
+		<LookAt>
+			<longitude>-70.52085003513412</longitude>
+			<latitude>41.57646945488281</latitude>
+			<altitude>-0.752841674271969</altitude>
+			<heading>2.38618625391139</heading>
+			<tilt>0.2238218407950507</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3164.542959600803</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.52414741865485,41.57873233525623,-0.3908221749804641</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="057F5419883F5D250728">
+		<name>MF 17</name>
+		<LookAt>
+			<longitude>-70.5048105037996</longitude>
+			<latitude>41.56496156678944</latitude>
+			<altitude>1.382987698672591</altitude>
+			<heading>2.386187969835592</heading>
+			<tilt>0.2238624246057682</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4320.511079426506</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.5159485534591,41.56617614581245,-0.7505043235776465</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07B573EDF73F5D257D2F">
+		<name>MF 18</name>
+		<LookAt>
+			<longitude>-70.46338938652745</longitude>
+			<latitude>41.60743086406881</latitude>
+			<altitude>11.60523580908263</altitude>
+			<heading>2.38618781400259</heading>
+			<tilt>0.2238620561728817</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4310.288460163283</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.46313336911044,41.60177982005194,-0.7573292070676396</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0CF0531C373F5D25CDD9">
+		<name>MF 19</name>
+		<LookAt>
+			<longitude>-70.42009873021767</longitude>
+			<latitude>41.62123621388866</latitude>
+			<altitude>0.9188298416171814</altitude>
+			<heading>2.386187951265096</heading>
+			<tilt>0.2238624221620221</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4320.975002255291</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.42988939957412,41.61787116813268,-0.756784053916878</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="074128A9E83F5D263F43">
+		<name>MF 20</name>
+		<LookAt>
+			<longitude>-70.4117773239465</longitude>
+			<latitude>41.62406605806102</latitude>
+			<altitude>3.653524907043602</altitude>
+			<heading>2.386187853558142</heading>
+			<tilt>0.2238623151321011</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4318.240787214018</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.42139370988006,41.62520643114271,-0.7559309792005009</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="064482A9603F5D2673DC">
+		<name>MF 21</name>
+		<LookAt>
+			<longitude>-70.40298641356374</longitude>
+			<latitude>41.62915888519027</latitude>
+			<altitude>-0.7578949532551371</altitude>
+			<heading>2.38618781565846</heading>
+			<tilt>0.2238624671409485</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4322.652318765759</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.39770906232083,41.62836702990418,-0.6380839985192432</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="000451ABB23F5D361810">
+		<name>MF 22</name>
+		<LookAt>
+			<longitude>-70.39072872775301</longitude>
+			<latitude>41.61678075590889</latitude>
+			<altitude>2.960651830690131</altitude>
+			<heading>2.386187818279155</heading>
+			<tilt>0.2238593891447767</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4235.091056800447</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.39379363052106,41.6196129428092,-0.7563402490066762</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="05D997FB053F5D3682C6">
+		<name>MF 23</name>
+		<LookAt>
+			<longitude>-70.3622684266314</longitude>
+			<latitude>41.62946619660163</latitude>
+			<altitude>-0.7548175646173894</altitude>
+			<heading>2.38618785022244</heading>
+			<tilt>0.2238595083135818</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4238.806518688216</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.37055229252985,41.6259422986129,-0.7559609435755521</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A6D566AD33F5D36E78E">
+		<name>MF 24</name>
+		<LookAt>
+			<longitude>-70.29419419172584</longitude>
+			<latitude>41.62903843784402</latitude>
+			<altitude>-0.8316469380607705</altitude>
+			<heading>2.386184767942024</heading>
+			<tilt>0.2237777529303626</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1910.931878350675</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.29711886006277,41.62868694428357,-0.8322198006370363</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="026B3A525D3F5D372E10">
+		<name>MF 25</name>
+		<LookAt>
+			<longitude>-70.27239127900556</longitude>
+			<latitude>41.64146285920874</latitude>
+			<altitude>-0.7578841920247703</altitude>
+			<heading>2.386186830836058</heading>
+			<tilt>0.2238303075620991</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3407.811704906635</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.27361458702599,41.6397228122218,-0.7541867347010256</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="043C273E443F5D377837">
+		<name>MF 25</name>
+		<LookAt>
+			<longitude>-70.25206018808542</longitude>
+			<latitude>41.63830310207511</latitude>
+			<altitude>-0.7474617890471391</altitude>
+			<heading>2.386186688703579</heading>
+			<tilt>0.2238303009592925</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3407.801321342122</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.2441023603463,41.638591690479,-0.384628498410633</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0C5A65867B3F5D38634F">
+		<name>MF 26</name>
+		<LookAt>
+			<longitude>-70.18459835743268</longitude>
+			<latitude>41.66013532378095</latitude>
+			<altitude>4.114734049757612</altitude>
+			<heading>2.386184618018547</heading>
+			<tilt>0.2237721120428366</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1751.59385584644</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.18749446461889,41.65998166467641,0.4054241920174473</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="099285D5DA3F5D38F800">
+		<name>MF 27</name>
+		<LookAt>
+			<longitude>-70.08780252406049</longitude>
+			<latitude>41.66618193133689</latitude>
+			<altitude>1.574107009936891</altitude>
+			<heading>2.386184506641833</heading>
+			<tilt>0.2237721741432659</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1754.134306157066</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.08881199389916,41.66577436526763,0.4052574318495927</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00F0986F703F5D3945DC">
+		<name>MF 28</name>
+		<LookAt>
+			<longitude>-70.06288273936894</longitude>
+			<latitude>41.66746955559899</latitude>
+			<altitude>1.641276339375821</altitude>
+			<heading>2.386184547411654</heading>
+			<tilt>0.2237721651102996</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1754.067369250115</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.06564704843193,41.66655303746622,0.4046713274569935</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="047B064D563F5D3A0854">
+		<name>MF 29</name>
+		<LookAt>
+			<longitude>-69.98643240512426</longitude>
+			<latitude>41.67205446773216</latitude>
+			<altitude>0.4044292047250098</altitude>
+			<heading>2.386184474029479</heading>
+			<tilt>0.2237721800523176</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1755.304125951952</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.98934076702595,41.67142413679567,0.4054367074118281</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0639F4832C3F5D3A4FE0">
+		<name>MF 30</name>
+		<LookAt>
+			<longitude>-69.96584999610292</longitude>
+			<latitude>41.66710683008551</latitude>
+			<altitude>0.3858127925370991</altitude>
+			<heading>2.386184572383296</heading>
+			<tilt>0.2237721710437826</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1755.32266803144</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.96775756600154,41.66541607077185,0.4053000325714629</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="070E1AE8B83F5D3AE014">
+		<name>M1 31</name>
+		<LookAt>
+			<longitude>-69.94811315450958</longitude>
+			<latitude>41.69650954047653</latitude>
+			<altitude>-0.7573398961509381</altitude>
+			<heading>2.38618934320137</heading>
+			<tilt>0.2239015005693306</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5439.07092472713</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.94823754385955,41.68783586755911,-0.4441333116322743</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E153DDC9F3F5D3C2DDE">
+		<name>MF 32</name>
+		<LookAt>
+			<longitude>-69.96161800776946</longitude>
+			<latitude>41.70414568640869</latitude>
+			<altitude>19.34858851144995</altitude>
+			<heading>2.386189211071522</heading>
+			<tilt>0.2238958631641525</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5278.777614287683</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.97514082680937,41.70533538582818,-0.2771466826181579</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="03E4C9FB423F5D3C87E8">
+		<name>MF 33</name>
+		<LookAt>
+			<longitude>-69.97749826909255</longitude>
+			<latitude>41.715630145682</latitude>
+			<altitude>-0.7496401757009308</altitude>
+			<heading>2.386189154806971</heading>
+			<tilt>0.223896563226762</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5298.876486769296</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.98122956940034,41.71553342802811,0.3082014806793798</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0EE0BB603D3F5D3CBA4B">
+		<name>MF 34</name>
+		<LookAt>
+			<longitude>-69.9850767520583</longitude>
+			<latitude>41.72808019358867</latitude>
+			<altitude>-0.7574939449956086</altitude>
+			<heading>2.386189038721391</heading>
+			<tilt>0.223895350738839</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5264.399715011241</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.99597707622678,41.72076617090435,-0.7521904076375174</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="084AD5D6273F5D3CF8BB">
+		<name>MF 35</name>
+		<LookAt>
+			<longitude>-69.97094531441596</longitude>
+			<latitude>41.75962275269906</latitude>
+			<altitude>4.895941308729636</altitude>
+			<heading>2.386189132303773</heading>
+			<tilt>0.2238951466614187</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5258.746976658585</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.98304921814811,41.76066515100415,-0.7533252371680843</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0425285C0F3F5D3D2A04">
+		<name>MF 36</name>
+		<LookAt>
+			<longitude>-69.96268845636853</longitude>
+			<latitude>41.78123635698793</latitude>
+			<altitude>3.044371097790655</altitude>
+			<heading>2.386188919555874</heading>
+			<tilt>0.2238952075849789</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5260.598217874649</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.9637629771761,41.78073340675239,-0.7522572709940689</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="037417B2B13F5D3E5124">
+		<name>MF 37</name>
+		<LookAt>
+			<longitude>-70.17823542668549</longitude>
+			<latitude>42.05535627216185</latitude>
+			<altitude>-0.7523641865834008</altitude>
+			<heading>2.38618694347258</heading>
+			<tilt>0.2238335465384441</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3506.175211539958</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.17950634992098,42.04932577308983,-0.753325530707627</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="09D2CFEC353F5D3E8CA3">
+		<name>MF 38</name>
+		<LookAt>
+			<longitude>-70.0700085876808</longitude>
+			<latitude>41.9935396286949</latitude>
+			<altitude>0.9862255289463429</altitude>
+			<heading>2.386186779361673</heading>
+			<tilt>0.2238334800619176</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3504.43707700877</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.07310790601375,41.99070366061031,0.822111129893317</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="014EBFF3B23F5D3F1517">
+		<name>MF 39</name>
+		<LookAt>
+			<longitude>-70.0223140308205</longitude>
+			<latitude>41.92458132402172</latitude>
+			<altitude>16.13868277127343</altitude>
+			<heading>2.386186593584823</heading>
+			<tilt>0.2238274305909318</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3332.650273178006</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.0285742718366,41.92652437698332,-0.7576196287252424</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0814EB79A53F5D764DDC">
+		<name>MF 50 *</name>
+		<LookAt>
+			<longitude>-70.86184503396129</longitude>
+			<latitude>42.51437525491937</latitude>
+			<altitude>9.659272557069603</altitude>
+			<heading>2.386193857452642</heading>
+			<tilt>0.2240190048694394</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>8798.169990928145</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.84615123300954,42.50114538553187,1.593205487615588</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="095F32448B3F5D769EE7">
+		<name>MF 51 *</name>
+		<LookAt>
+			<longitude>-70.86193709236873</longitude>
+			<latitude>42.51437861126129</latitude>
+			<altitude>9.308629410512776</altitude>
+			<heading>2.386194194591953</heading>
+			<tilt>0.2240170017726577</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>8741.180538780754</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.87576695948991,42.5148298700167,1.606151116184555</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="06E08118153F5D76E0F3">
+		<name>MF 52 *</name>
+		<LookAt>
+			<longitude>-70.8628616260459</longitude>
+			<latitude>42.54303403241045</latitude>
+			<altitude>1.60585879748345</altitude>
+			<heading>2.386194060721083</heading>
+			<tilt>0.2240172709213381</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>8748.883660283173</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.8746407917031,42.53828994198854,1.620597552312653</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0AB46FE80E3F5D77CC11">
+		<name>MF 53</name>
+		<LookAt>
+			<longitude>-70.7957720225852</longitude>
+			<latitude>42.5510820792438</latitude>
+			<altitude>1.030777348034055</altitude>
+			<heading>2.386183098888118</heading>
+			<tilt>0.2237317411099222</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>618.3615239815118</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.79772660098294,42.55113253437246,0.1014277692635135</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0252F50C573F5D782437">
+		<name>MF 54 *</name>
+		<LookAt>
+			<longitude>-70.7724998152398</longitude>
+			<latitude>42.57065234873106</latitude>
+			<altitude>0.4040570064874394</altitude>
+			<heading>2.386185909029354</heading>
+			<tilt>0.2238040264099142</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2677.189246650087</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.77565794231154,42.56758433949955,0.4042156437441902</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0680C327AC3F5D7902BE">
+		<name>MF 55</name>
+		<LookAt>
+			<longitude>-70.65566634096361</longitude>
+			<latitude>42.6113421803711</latitude>
+			<altitude>0.4052198969836374</altitude>
+			<heading>2.38618547285115</heading>
+			<tilt>0.2237939336229288</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2391.356787038385</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.65380803295226,42.60838441568445,0.4050617350487484</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00B913B2A33F5D794180">
+		<name>MF 56</name>
+		<LookAt>
+			<longitude>-70.66124446083383</longitude>
+			<latitude>42.58767146217576</latitude>
+			<altitude>5.662429940489872</altitude>
+			<heading>2.386187748798008</heading>
+			<tilt>0.223852711959668</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4065.50148938899</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.66842769850584,42.58320376546578,-0.7501623966938298</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="09321198043F5D79C00F">
+		<name>MF 57</name>
+		<LookAt>
+			<longitude>-70.61553157221914</longitude>
+			<latitude>42.65898084735749</latitude>
+			<altitude>-0.1887317292346469</altitude>
+			<heading>2.386184080888261</heading>
+			<tilt>0.2237567380682231</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1333.051097820571</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.61330256532236,42.6601686263956,-0.1884207909313218</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="02648263823F5D79F37E">
+		<name>MF 58</name>
+		<LookAt>
+			<longitude>-70.62032425594681</longitude>
+			<latitude>42.66603342307749</latitude>
+			<altitude>-0.1886848881042025</altitude>
+			<heading>2.386184078220747</heading>
+			<tilt>0.2237567346101795</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1333.051097820571</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.62257377970819,42.66645228825151,-0.1886015547036723</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="08B149AD313F5D7A307E">
+		<name>MF 59</name>
+		<LookAt>
+			<longitude>-70.62203354619504</longitude>
+			<latitude>42.67729025106225</latitude>
+			<altitude>0.1151141176364345</altitude>
+			<heading>2.386183418773365</heading>
+			<tilt>0.2237403745595341</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>867.2733194034665</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.62287906729973,42.6770295341837,-0.1599734112608686</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0453BD604C3F5D7A92BB">
+		<name>MF 60</name>
+		<LookAt>
+			<longitude>-70.65916441524922</longitude>
+			<latitude>42.67967490761052</latitude>
+			<altitude>0.7157578123725017</altitude>
+			<heading>2.386182713291473</heading>
+			<tilt>0.2237217578072523</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>337.4482780579274</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.65991807219437,42.67961133982918,-0.04718157548401658</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="06065AE63C3F5D7B902E">
+		<name>MF 61</name>
+		<LookAt>
+			<longitude>-70.67901586283571</longitude>
+			<latitude>42.65191588752513</latitude>
+			<altitude>0.03118923563514509</altitude>
+			<heading>2.386183469498901</heading>
+			<tilt>0.2237413817181289</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>897.4553747105531</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.67660970164128,42.65115762148292,-0.188502945929736</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A9DCDE2663F5D7C9D70">
+		<name>MF 62 *</name>
+		<LookAt>
+			<longitude>-70.78838255610253</longitude>
+			<latitude>42.7076029620689</latitude>
+			<altitude>-0.8318968682372652</altitude>
+			<heading>2.386186100181598</heading>
+			<tilt>0.2238106981461117</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2873.21907772799</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.79249576380288,42.70658466129742,-0.1652730137744396</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E432A001C3F5D7EBBF4">
+		<name>MF 63</name>
+		<LookAt>
+			<longitude>-70.86127523678847</longitude>
+			<latitude>42.8134202647994</latitude>
+			<altitude>-0.1888046105054852</altitude>
+			<heading>2.386184059485822</heading>
+			<tilt>0.2237141610794403</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1465.439598445228</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.86177493719933,42.81200211505042,0.4052410459771938</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07574FA87F3F5D7F2916">
+		<name>MF 64</name>
+		<LookAt>
+			<longitude>-70.81567917618996</longitude>
+			<latitude>42.88991211020908</latitude>
+			<altitude>3.333362343567863</altitude>
+			<heading>2.386184849545148</heading>
+			<tilt>0.223734972970683</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2058.760461275233</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.82012017960314,42.88912469869191,0.4046265142250283</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="05FED18F403F5D7F5394">
+		<name>MF 65</name>
+		<LookAt>
+			<longitude>-70.8172796158161</longitude>
+			<latitude>42.90244420769831</latitude>
+			<altitude>3.934431397613665</altitude>
+			<heading>2.386184847529325</heading>
+			<tilt>0.2237349501092096</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2058.159512479033</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.82071569491499,42.90223720955893,0.4054459153582535</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0342911B223F5D7FA9E7">
+		<name>MF 66</name>
+		<LookAt>
+			<longitude>-70.74635086044428</longitude>
+			<latitude>43.00096950508455</latitude>
+			<altitude>-0.1885904143475348</altitude>
+			<heading>2.386183856224378</heading>
+			<tilt>0.2237077579712505</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1283.835876050435</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.74892715823437,43.000655536443,-0.1884582027228665</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="03B50713513F5D802BDC">
+		<name>MF 67</name>
+		<LookAt>
+			<longitude>-70.72086698125287</longitude>
+			<latitude>43.05557677106005</latitude>
+			<altitude>-0.1886671731696332</altitude>
+			<heading>2.386183885719194</heading>
+			<tilt>0.2237096613576718</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1338.385375958023</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.72080511156794,43.05527319580397,-0.1884915261805398</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0594133CFC3F5D807C50">
+		<name>MF 68</name>
+		<LookAt>
+			<longitude>-70.72079021589697</longitude>
+			<latitude>43.07631126870651</latitude>
+			<altitude>-0.7550044630125197</altitude>
+			<heading>2.386189269928752</heading>
+			<tilt>0.2238476394338414</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5269.015209437348</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.72092825027764,43.07311080314629,-0.7549157348503222</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0AA69A46643F5D80BF60">
+		<name>MF 69</name>
+		<LookAt>
+			<longitude>-70.72079021589697</longitude>
+			<latitude>43.07631126870651</latitude>
+			<altitude>-0.7550044630125197</altitude>
+			<heading>2.386189269932087</heading>
+			<tilt>0.223847639430585</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5269.015209437348</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.72680315647042,43.08344616356406,-0.7540122477236189</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E5607F51D3F5D80A00F">
+		<name>MF 70</name>
+		<LookAt>
+			<longitude>-70.72079021589697</longitude>
+			<latitude>43.07631126870651</latitude>
+			<altitude>-0.7550044630125197</altitude>
+			<heading>2.386189269932087</heading>
+			<tilt>0.223847639430585</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5269.015209437348</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.70504888885182,43.08034012464348,-0.7580784862017276</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="03D0C5C3773F5D813547">
+		<name>MF 71</name>
+		<LookAt>
+			<longitude>-70.64526398957119</longitude>
+			<latitude>43.13304266923414</latitude>
+			<altitude>-0.8315152215630417</altitude>
+			<heading>2.386184472726911</heading>
+			<tilt>0.2237231595004598</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1723.57102569571</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.64551245129007,43.13303425704517,-0.8315646536220278</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0DF60843353F5D82220E">
+		<name>MF 72</name>
+		<LookAt>
+			<longitude>-70.58930669386915</longitude>
+			<latitude>43.23681627956783</latitude>
+			<altitude>2.25368726905286</altitude>
+			<heading>2.386183270299592</heading>
+			<tilt>0.2236937899022249</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>888.488517780643</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.59233964424361,43.23693322315702,-1.138025789280243</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="060071A9B43F5D832E59">
+		<name>MF 73</name>
+		<LookAt>
+			<longitude>-70.47140833093705</longitude>
+			<latitude>43.3487104288233</latitude>
+			<altitude>2.996985476250946</altitude>
+			<heading>2.386184391627471</heading>
+			<tilt>0.2237219065312163</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1691.159099909419</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.474164490387,43.35063219877302,-0.8324886432479695</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0820ED0DA03F5D837809">
+		<name>MF 74</name>
+		<LookAt>
+			<longitude>-70.43218700929958</longitude>
+			<latitude>43.36520215654767</latitude>
+			<altitude>-0.7528173677831873</altitude>
+			<heading>2.38618439408563</heading>
+			<tilt>0.2237220245563152</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1694.909050065035</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.43190049135143,43.36417303452404,-0.832022257720032</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="037658F0DF3F5D85A95C">
+		<name>MF 75 *</name>
+		<LookAt>
+			<longitude>-70.18885228794669</longitude>
+			<latitude>43.729806386414</latitude>
+			<altitude>1.597648736965118</altitude>
+			<heading>2.386190264024745</heading>
+			<tilt>0.2238681867775535</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5862.499335277244</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.20514266960517,43.72792446975847,1.60655079821121</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="080C566C133F5D869E89">
+		<name>MF 76</name>
+		<LookAt>
+			<longitude>-70.03568552603281</longitude>
+			<latitude>43.73742980425569</latitude>
+			<altitude>-0.7544625812361794</altitude>
+			<heading>2.386187291006734</heading>
+			<tilt>0.2237919898655313</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3693.339703573147</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-70.03803628024198,43.7399306589206,-0.7544362885810463</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0DF807468E3F5D86FC7C">
+		<name>MF 77</name>
+		<LookAt>
+			<longitude>-69.99901326704199</longitude>
+			<latitude>43.73106774824433</latitude>
+			<altitude>4.242555385268427</altitude>
+			<heading>2.386187155503932</heading>
+			<tilt>0.2237918091130163</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3688.34298399277</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.99868965844439,43.72956429843026,-0.7544992595325295</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="026A85BD623F5D87D021">
+		<name>MF 78</name>
+		<LookAt>
+			<longitude>-69.8863718798201</longitude>
+			<latitude>43.7943797442625</latitude>
+			<altitude>-0.7583280811065518</altitude>
+			<heading>2.386186614769187</heading>
+			<tilt>0.22377677492473</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3260.931363927084</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.89064976728093,43.791780275583,-0.7502511227340547</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="025A050B2A3F5D895CDF">
+		<name>MF 79</name>
+		<LookAt>
+			<longitude>-69.64355918628274</longitude>
+			<latitude>43.84216356390768</latitude>
+			<altitude>10.5927855861269</altitude>
+			<heading>2.386186560724505</heading>
+			<tilt>0.2237739089676914</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3180.925628511468</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.64652651698457,43.84281455130602,1.716305047897653</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="026526E2653F5D89BC43">
+		<name>MF 80</name>
+		<LookAt>
+			<longitude>-69.60421261120176</longitude>
+			<latitude>43.82047695538494</latitude>
+			<altitude>1.712408137174242</altitude>
+			<heading>2.38618357240591</heading>
+			<tilt>0.2237007434735985</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1097.080607711541</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.60593131138202,43.82064043161618,1.665788072420418</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="051DD15DC63F5D89F289">
+		<name>MF 81</name>
+		<LookAt>
+			<longitude>-69.61202147809473</longitude>
+			<latitude>43.84019635874276</latitude>
+			<altitude>1.047818723232075</altitude>
+			<heading>2.386183599787357</heading>
+			<tilt>0.223700762102504</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1097.745248550782</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.61321960211359,43.83930044928797,1.047674567730978</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0864AEDDE03F5D8A35CB">
+		<name>MF 82</name>
+		<LookAt>
+			<longitude>-69.59349844197584</longitude>
+			<latitude>43.85949006815375</latitude>
+			<altitude>1.641002208809175</altitude>
+			<heading>2.386184337731532</heading>
+			<tilt>0.2237187751208607</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1611.159297959239</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.5929672232707,43.85913082588274,1.641499270987632</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D10EFC1273F5D8A8516">
+		<name>Mf 83</name>
+		<LookAt>
+			<longitude>-69.5860092974506</longitude>
+			<latitude>43.83260385272962</latitude>
+			<altitude>1.641804837870988</altitude>
+			<heading>2.386184322150664</heading>
+			<tilt>0.2237187675731287</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1611.15855627606</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.58573595433404,43.83184448175935,1.640832732516395</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01901A66C93F5D8B19C8">
+		<name>MF 84</name>
+		<LookAt>
+			<longitude>-69.51417320137146</longitude>
+			<latitude>43.88560092615143</latitude>
+			<altitude>1.718965715776111</altitude>
+			<heading>2.386188558829871</heading>
+			<tilt>0.2238265219889065</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4681.203476554365</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.51434587323698,43.88330803798625,1.716753270754803</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07ECA01BF63F5D8B6DC4">
+		<name>MF 85</name>
+		<LookAt>
+			<longitude>-69.4817395910098</longitude>
+			<latitude>43.88058298873486</latitude>
+			<altitude>1.717946960975931</altitude>
+			<heading>2.386188462626149</heading>
+			<tilt>0.2238265190969749</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4681.204589079134</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.48964501139433,43.87418870802441,1.721721931836695</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01065339233F5D8BD43C">
+		<name>MF 86</name>
+		<LookAt>
+			<longitude>-69.45579307797517</longitude>
+			<latitude>43.943825507645</latitude>
+			<altitude>1.666067343819344</altitude>
+			<heading>2.386183571907402</heading>
+			<tilt>0.2237005659954783</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1093.536196507048</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.45505375649155,43.94427957344753,1.665768418710218</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="05C88F450A3F5D8C466E">
+		<name>MF 87</name>
+		<LookAt>
+			<longitude>-69.40650897487325</longitude>
+			<latitude>43.98501657500032</latitude>
+			<altitude>0.1759287474442583</altitude>
+			<heading>2.386186063388055</heading>
+			<tilt>0.2237641735610892</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2905.757460496388</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.41455525527616,43.98379590199553,1.721696118747369</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0573C9D52E3F5D8C7764">
+		<name>MF 88</name>
+		<LookAt>
+			<longitude>-69.40376132553213</longitude>
+			<latitude>43.99528359256289</latitude>
+			<altitude>-0.1559645212141836</altitude>
+			<heading>2.386186177753711</heading>
+			<tilt>0.2237641839071857</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2906.089178298425</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.4046733923896,43.99417192771084,1.4214405271444</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="097C9BDDA83F5D8D195C">
+		<name>MF 89 *</name>
+		<LookAt>
+			<longitude>-69.33529195223142</longitude>
+			<latitude>43.97073588323342</latitude>
+			<altitude>-0.8311660240937813</altitude>
+			<heading>2.386186366248952</heading>
+			<tilt>0.2237675603689872</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3003.091510876548</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.33544572578754,43.97208470982687,0.7934974314253096</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0F5059215A3F5D8DC7A6">
+		<name>MF 90</name>
+		<LookAt>
+			<longitude>-69.29743871623073</longitude>
+			<latitude>43.95645462987466</latitude>
+			<altitude>0.2405705047846474</altitude>
+			<heading>2.386182903379892</heading>
+			<tilt>0.2236839567931309</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>622.3075102725124</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.298438807358,43.9567095658829,0.1013742234069848</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0FB9F3134F3F5D8E2A04">
+		<name>MF 91</name>
+		<LookAt>
+			<longitude>-69.27179282760353</longitude>
+			<latitude>43.98022554634687</latitude>
+			<altitude>8.15532799389697</altitude>
+			<heading>2.38618476485414</heading>
+			<tilt>0.2237271616667815</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1853.417870774574</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.26797043833325,43.97920889387534,0.2827750161752851</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0B8A8999F43F5D8EC219">
+		<name>MF 92</name>
+		<LookAt>
+			<longitude>-69.27373560066661</longitude>
+			<latitude>43.92615624214634</latitude>
+			<altitude>1.287147736826211</altitude>
+			<heading>2.38618982416964</heading>
+			<tilt>0.223856080412508</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5526.415986045614</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.26148304877879,43.92730761785356,-0.7562176789181674</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0331FCB01A3F5D8F0067">
+		<name>MF 93</name>
+		<LookAt>
+			<longitude>-69.19599261156885</longitude>
+			<latitude>43.96468774775263</latitude>
+			<altitude>-0.7565598300237553</altitude>
+			<heading>2.386189822008709</heading>
+			<tilt>0.2238561468627856</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5528.460435729939</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.20288579858988,43.9644333406991,-0.7549220477188001</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0FB77E63EF3F5D8F5B8C">
+		<name>MF 94</name>
+		<LookAt>
+			<longitude>-69.15053148441889</longitude>
+			<latitude>44.00688236429474</latitude>
+			<altitude>6.662294660504775</altitude>
+			<heading>2.386189890387987</heading>
+			<tilt>0.2238558733035347</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5521.041008043686</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.16567203881553,44.00021988907251,-0.7497977604592732</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0AB21FF9853F5D8F8B03">
+		<name>MF 95</name>
+		<LookAt>
+			<longitude>-69.13235900032578</longitude>
+			<latitude>43.99835826410867</latitude>
+			<altitude>1.40666675693804</altitude>
+			<heading>2.386189805541238</heading>
+			<tilt>0.2238560592078089</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>5526.296575053711</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.1224056225079,43.99568682526992,-0.75459247213015</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07DB14ED8C3F5D8FC7E0">
+		<name>MF 96</name>
+		<LookAt>
+			<longitude>-69.11470912848991</longitude>
+			<latitude>44.00372899132442</latitude>
+			<altitude>-0.8309333130175922</altitude>
+			<heading>2.38618511623062</heading>
+			<tilt>0.2237387919572892</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2186.258951986965</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.11735255193122,44.0021285251751,0.4045107195950237</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0638E065913F5D9053D8">
+		<name>MF 97</name>
+		<LookAt>
+			<longitude>-69.04441844702366</longitude>
+			<latitude>44.08833143904528</latitude>
+			<altitude>1.620677570484661</altitude>
+			<heading>2.38619319216314</heading>
+			<tilt>0.2239456234309731</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>8078.640887987569</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.05080684195313,44.08475604491074,1.604487822110383</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0614B73DF63F5D90B400">
+		<name>MF 98</name>
+		<LookAt>
+			<longitude>-69.09441678294583</longitude>
+			<latitude>44.10664647745543</latitude>
+			<altitude>-0.7567052028297983</altitude>
+			<heading>2.386186361356447</heading>
+			<tilt>0.2237646274011528</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2923.433624872123</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.10028841159787,44.1015807317294,-0.7578721392204157</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0C0CB711BF3F5D90CF9C">
+		<name>MF 99</name>
+		<LookAt>
+			<longitude>-69.09441678294583</longitude>
+			<latitude>44.10664647745543</latitude>
+			<altitude>-0.7567052028297983</altitude>
+			<heading>2.386186361356447</heading>
+			<tilt>0.2237646274011528</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2923.433624872123</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.09941382033753,44.1094060150208,-0.7523529450799027</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="031C82288E3F5D9170DE">
+		<name>MF 100</name>
+		<LookAt>
+			<longitude>-69.05215245642358</longitude>
+			<latitude>44.20731965155323</latitude>
+			<altitude>-0.8315985747686494</altitude>
+			<heading>2.386185311274395</heading>
+			<tilt>0.2237408695954863</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2247.548497788375</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.05552326876392,44.20692776633304,0.4047722088635819</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00E92D2A843F5D921EF4">
+		<name>MF 101</name>
+		<LookAt>
+			<longitude>-69.00416360970489</longitude>
+			<latitude>44.43194691296518</latitude>
+			<altitude>0.405787883974198</altitude>
+			<heading>2.386188801157343</heading>
+			<tilt>0.2238233207931522</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4597.28684573318</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-69.00566461928425,44.43007484938151,-0.7538193236336355</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0AEEC27CE93F5D92DC24">
+		<name>MF 102</name>
+		<LookAt>
+			<longitude>-68.78568493555306</longitude>
+			<latitude>44.39414782087105</latitude>
+			<altitude>1.640882502676348</altitude>
+			<heading>2.386185472362325</heading>
+			<tilt>0.2237481718056491</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2457.535322938347</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.79155653748163,44.39028026097511,1.642109257474493</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0873BE91483F5D92FB74">
+		<name>MF 103</name>
+		<LookAt>
+			<longitude>-68.78434999884523</longitude>
+			<latitude>44.38522770187799</latitude>
+			<altitude>-0.8313574840226723</altitude>
+			<heading>2.386185524851077</heading>
+			<tilt>0.2237482579880054</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2460.007723817253</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.78757757469288,44.38117662602453,2.406431732923666</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D95CBFECE3F5D934CA4">
+		<name>MF 104</name>
+		<LookAt>
+			<longitude>-68.76693026191205</longitude>
+			<latitude>44.33525156161114</latitude>
+			<altitude>0.4056022608845988</altitude>
+			<heading>2.386185604181766</heading>
+			<tilt>0.2237481973616174</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2458.770596273826</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.76867744708987,44.335144173798,0.4060897713570699</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="09AE6F8A253F5D93C588">
+		<name>MF 105</name>
+		<LookAt>
+			<longitude>-68.7419535166969</longitude>
+			<latitude>44.33897967553223</latitude>
+			<altitude>1.619706722752494</altitude>
+			<heading>2.386192710671672</heading>
+			<tilt>0.2239190623336636</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>7326.480691881152</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.7376415347736,44.33914521687478,1.609319392445281</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="042F21AD4D3F5D949238">
+		<name>MF 106</name>
+		<LookAt>
+			<longitude>-68.62248161291951</longitude>
+			<latitude>44.29342223200734</latitude>
+			<altitude>1.603109305246704</altitude>
+			<heading>2.386191701966489</heading>
+			<tilt>0.2239053251458181</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>6936.006006679963</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.62723609766692,44.29607042264234,1.615134258003603</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A234968193F5D94CC6C">
+		<name>MF 107</name>
+		<LookAt>
+			<longitude>-68.58917877752447</longitude>
+			<latitude>44.25468442371769</latitude>
+			<altitude>1.613931294762223</altitude>
+			<heading>2.386191884058475</heading>
+			<tilt>0.2239053208029363</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>6935.994881432272</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.58494802163573,44.26259453424186,1.61510647289441</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00EAA21ADC3F5D9589F1">
+		<name>MF 108</name>
+		<LookAt>
+			<longitude>-68.5429463173657</longitude>
+			<latitude>44.3570576197238</latitude>
+			<altitude>0.7237936009399837</altitude>
+			<heading>2.386185069953295</heading>
+			<tilt>0.2237350309649233</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2086.14192089648</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.54454052551638,44.35348233328995,1.640616357799911</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="085874DD273F5D961574">
+		<name>MF 109</name>
+		<LookAt>
+			<longitude>-68.56880733014275</longitude>
+			<latitude>44.40930970902618</latitude>
+			<altitude>1.642246153000009</altitude>
+			<heading>2.386185052231975</heading>
+			<tilt>0.2237349691490346</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2085.223346278653</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.56632563789702,44.40889452335379,1.546156331709554</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D83CC880E3F5D96676C">
+		<name>MF 110</name>
+		<LookAt>
+			<longitude>-68.52054522088834</longitude>
+			<latitude>44.4169362690262</latitude>
+			<altitude>7.057569589150035</altitude>
+			<heading>2.386185034741269</heading>
+			<tilt>0.2237347675252207</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2079.808317385032</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.51939932560401,44.4124798397116,0.4056176211369089</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0898AC2BC73F5D96F6D7">
+		<name>MF 111</name>
+		<LookAt>
+			<longitude>-68.46791325869327</longitude>
+			<latitude>44.44251404017712</latitude>
+			<altitude>5.523634934032962</altitude>
+			<heading>2.386185054531534</heading>
+			<tilt>0.2237347962267045</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2081.342118200264</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.46879230837247,44.44012532316159,0.4051434324084058</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0848A27F773F5D988051">
+		<name>MF 112</name>
+		<LookAt>
+			<longitude>-68.41861637959698</longitude>
+			<latitude>44.3415554290542</latitude>
+			<altitude>-0.1887128726788201</altitude>
+			<heading>2.386183511026131</heading>
+			<tilt>0.2236984488087411</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1047.478041900904</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.41812536573629,44.34237242256181,-0.1886277115525592</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="07B2462E2D3F5D995084">
+		<name>MF 113</name>
+		<LookAt>
+			<longitude>-68.3488545557052</longitude>
+			<latitude>44.2401622802894</latitude>
+			<altitude>0.5467459854430379</altitude>
+			<heading>2.386188147641637</heading>
+			<tilt>0.2238155290082723</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4383.643893349799</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.35022879048537,44.23991905513373,1.716212409647282</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A70D7C8903F5D99AA3C">
+		<name>MF 114</name>
+		<LookAt>
+			<longitude>-68.30763285203204</longitude>
+			<latitude>44.27711058623643</latitude>
+			<altitude>-0.7544251786398493</altitude>
+			<heading>2.386188520369502</heading>
+			<tilt>0.2238155648432762</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4384.945176488254</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.31437803077471,44.27229021058688,-0.7577883036197042</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="092F60BA063F5D99FDC4">
+		<name>MF 115</name>
+		<LookAt>
+			<longitude>-68.31222356639577</longitude>
+			<latitude>44.3379177708056</latitude>
+			<altitude>-0.7561161213096446</altitude>
+			<heading>2.386188383381926</heading>
+			<tilt>0.2238155483473854</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4384.947030696203</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.31671722785664,44.33681948918296,-0.7560809715408889</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="051E91B7E93F5D9A31D8">
+		<name>MF 116</name>
+		<LookAt>
+			<longitude>-68.3272282810251</longitude>
+			<latitude>44.36944873881725</latitude>
+			<altitude>8.428096928923065</altitude>
+			<heading>2.386188155721479</heading>
+			<tilt>0.2238152217333809</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4375.762767884299</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.32668896530487,44.36311303470436,-0.7529760000886687</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0373CA70EC3F5D9A52A8">
+		<name>MF 117</name>
+		<LookAt>
+			<longitude>-68.31965787542197</longitude>
+			<latitude>44.35686544884663</latitude>
+			<altitude>-0.7513913201479694</altitude>
+			<heading>2.386188501514046</heading>
+			<tilt>0.2238155430012834</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4384.942209755537</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.30725262775702,44.35780888950337,-0.7498308073531845</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0C6AAA7BCB3F5D9AADDF">
+		<name>MF 118</name>
+		<LookAt>
+			<longitude>-68.28178748730434</longitude>
+			<latitude>44.29444257916315</latitude>
+			<altitude>-0.7575054107208778</altitude>
+			<heading>2.386188220033425</heading>
+			<tilt>0.2238155280116793</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4384.948514062563</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.28206374100658,44.29619796996037,-0.7539795976385832</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A0C004E3D3F5D9AE501">
+		<name>MF 119</name>
+		<LookAt>
+			<longitude>-68.24551768325259</longitude>
+			<latitude>44.29525130183711</latitude>
+			<altitude>23.44315540720135</altitude>
+			<heading>2.386188281471122</heading>
+			<tilt>0.2238146763660235</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4360.747391915065</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.2390559884273,44.29317731315073,-0.7571900431534173</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="04196FE4503F5D9B8453">
+		<name>MF 120</name>
+		<LookAt>
+			<longitude>-68.2097206599673</longitude>
+			<latitude>44.40936345756508</latitude>
+			<altitude>1.601813765999482</altitude>
+			<heading>2.386195226029257</heading>
+			<tilt>0.223983271164591</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>9163.979260311462</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.20465193589853,44.39447812821354,1.61828623610013</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="04216846793F5D9BB5CB">
+		<name>MF 121</name>
+		<LookAt>
+			<longitude>-68.2097206599673</longitude>
+			<latitude>44.40936345756508</latitude>
+			<altitude>1.601813765999482</altitude>
+			<heading>2.386195226029257</heading>
+			<tilt>0.223983271164591</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>9163.979260311462</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.23716289732172,44.41026197900197,1.606014438514893</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0C8F543A8F3F5D9CD71C">
+		<name>MF 122</name>
+		<LookAt>
+			<longitude>-68.21680684945649</longitude>
+			<latitude>44.47461358392441</latitude>
+			<altitude>-0.7577874576599619</altitude>
+			<heading>2.386188082509719</heading>
+			<tilt>0.2238110994882529</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4261.097064965288</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.22762478921673,44.47376372234332,-0.755164430038765</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="058313FEF73F5D9D1376">
+		<name>MF 123</name>
+		<LookAt>
+			<longitude>-68.17875881604975</longitude>
+			<latitude>44.46778978321842</latitude>
+			<altitude>-0.7536566907024833</altitude>
+			<heading>2.38618826897178</heading>
+			<tilt>0.2238110918394134</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>4261.092985707801</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.18144455612484,44.46980437334894,-0.7550945188222391</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E3155CBBF3F5D9D5950">
+		<name>AC 2</name>
+		<LookAt>
+			<longitude>-68.17577175565913</longitude>
+			<latitude>44.46028893101092</latitude>
+			<altitude>-0.1881973097286083</altitude>
+			<heading>2.38618400934503</heading>
+			<tilt>0.2237091899313659</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>1358.57677341628</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-68.17608531614565,44.45894368906798,-0.1883419341856485</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="00614EA6AB3F5DA08FF6">
+		<name>AC3</name>
+		<LookAt>
+			<longitude>-67.2965568067156</longitude>
+			<latitude>44.63185411559884</latitude>
+			<altitude>-0.7483990919291583</altitude>
+			<heading>2.386275489128783</heading>
+			<tilt>0.2237666371401436</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2993.815464771179</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-67.29711310011616,44.63478416149263,-0.7552613483078652</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01C659B1EF3F5DA0C7C0">
+		<name>AC 4</name>
+		<LookAt>
+			<longitude>-67.3182473156003</longitude>
+			<latitude>44.62193408808596</latitude>
+			<altitude>-0.7530713176831061</altitude>
+			<heading>2.386276486258411</heading>
+			<tilt>0.2237949072378665</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3799.219798389241</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-67.31751338769918,44.61814774027346,-0.756628274249892</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="03F80E12AC3F5DA224E6">
+		<name>AC 5</name>
+		<LookAt>
+			<longitude>-67.06318969408019</longitude>
+			<latitude>44.89711399882007</latitude>
+			<altitude>1.666056378879608</altitude>
+			<heading>2.38627228372031</heading>
+			<tilt>0.2236905833772369</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>829.4958720757859</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-67.06317630987847,44.89623473672262,1.047734067842616</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0DA819581F3F5DA3B36C">
+		<name>Untitled placemark</name>
+		<LookAt>
+			<longitude>-71.28188436752572</longitude>
+			<latitude>41.67844702500354</latitude>
+			<altitude>-0.7573345254382935</altitude>
+			<heading>2.38627518163752</heading>
+			<tilt>0.2237715481770557</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>3137.194504881045</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-71.28337013252343,41.67552020295054,-0.7546648144199486</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="017387D3F83F6230DCD4">
+		<name>MF 124</name>
+		<LookAt>
+			<longitude>-67.61169082419801</longitude>
+			<latitude>44.52298733939799</latitude>
+			<altitude>0.5683043131721455</altitude>
+			<heading>2.386275313248877</heading>
+			<tilt>0.2237650096974461</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2955.616370555945</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-67.61834062925814,44.52093001170872,-0.755655455205182</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E5A621E3E3F623115D0">
+		<name>MF 125</name>
+		<LookAt>
+			<longitude>-67.60977393514334</longitude>
+			<latitude>44.5281519756263</latitude>
+			<altitude>-0.0980152666886358</altitude>
+			<heading>2.386275404401299</heading>
+			<tilt>0.2237650329907347</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2956.282772892737</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-67.61267269388989,44.52675017778082,-0.2984979779688046</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D6BDCEB9B3F62313BC4">
+		<name>MF 126</name>
+		<LookAt>
+			<longitude>-67.59054359150592</longitude>
+			<latitude>44.53128250740722</latitude>
+			<altitude>2.050469348533499</altitude>
+			<heading>2.386275348309768</heading>
+			<tilt>0.2237649548724529</tilt>
+			<gx:fovy>34.99999985882842</gx:fovy>
+			<range>2954.134302142484</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0D6B08A49C3FE22E6437</styleUrl>
+		<Point>
+			<coordinates>-67.59227100721314,44.53108739963168,-0.07858885441343166</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
