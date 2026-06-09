@@ -4,3 +4,7 @@ eps_meters: 60
 min_samples: 4
 hit_radius_meters: 150
 confidence_threshold: 0.25
+
+# Evaluation uses center tile only + dedupe to avoid double-counting boats
+eval_tile_direction: center
+dedupe_radius_meters: 25

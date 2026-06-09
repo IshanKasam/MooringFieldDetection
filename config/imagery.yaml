@@ -2,7 +2,7 @@
 maptype: satellite
 size: 640
 scale: 2
-min_zoom: 17
+min_zoom: 18
 max_zoom: 20
 default_zoom: 19
 
@@ -20,5 +20,9 @@ offset_directions:
 
 # Rate limiting
 requests_per_second: 10
-max_retries: 3
+max_retries: 2
 retry_backoff_seconds: 2
+
+# Safety cap: max billable API calls per fetch run (Google free tier = 10,000/month)
+max_api_requests_per_run: 800
+google_free_tier_monthly: 10000

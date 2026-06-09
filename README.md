@@ -2,39 +2,38 @@
 
 Detect mooring fields from satellite imagery by finding dense clusters of boats (YOLO-OBB + DBSCAN).
 
-## Setup
+## Quick start
 
 ```bash
-# Install (from project root)
 pip install -e ".[dev]"
-
-# Configure API key
-copy .env.example .env
-# Edit .env and set GOOGLE_MAPS_API_KEY
 ```
 
-Enable **Maps Static API** in Google Cloud Console. Earth Pro subscription does not replace API billing.
+1. Follow [docs/GOOGLE_SETUP.md](docs/GOOGLE_SETUP.md) to create a Maps Static API key
+2. Paste your key in `.env`:
 
-## Pipeline
+```
+GOOGLE_MAPS_API_KEY=your_key_here
+```
+
+3. Run the pipeline:
 
 ```bash
-# 1. Parse KML and create train/val split
 python -m mooring_fields.cli parse-kml
-
-# 2. Download satellite tiles
-python -m mooring_fields.cli fetch
-
-# 3. Pre-label boats with YOLO-OBB
+python -m mooring_fields.cli estimate    # preview API usage (free: 10k/month)
+python -m mooring_fields.cli fetch       # ~615 tiles, capped at 800 calls/run
 python -m mooring_fields.cli prelabel
-
-# 4. Human-review labels (see docs/LABELING.md), then train
-python -m mooring_fields.cli train
-# Or with corrected labels:
+# Human-review labels → docs/LABELING.md
 python -m mooring_fields.cli train --corrected-labels
-
-# 5. Evaluate Hit@150m on validation KML sites
 python -m mooring_fields.cli evaluate
+# Writes data/evaluation_results.json and data/evaluation_clusters.kml
 ```
+
+## Cost safety
+
+- Google free tier: **10,000** Static Maps requests/month
+- This project needs **~615** requests once (123 sites × 5 directions)
+- `fetch` skips cached tiles and refuses to exceed `max_api_requests_per_run` (800) in `config/imagery.yaml`
+- Set Google Cloud **quota cap** and **$1 budget alert** — see [docs/GOOGLE_SETUP.md](docs/GOOGLE_SETUP.md)
 
 ## Tests
 
@@ -45,7 +44,7 @@ pytest
 ## Project layout
 
 - `mooring_fields.kml` — 123 labeled mooring field points
+- `.env` — your API key (not committed)
 - `config/` — imagery, clustering, training, split settings
 - `src/mooring_fields/` — pipeline modules
 - `data/` — sites manifest, imagery, labels, datasets
-- `docs/decisions/` — architecture decision records

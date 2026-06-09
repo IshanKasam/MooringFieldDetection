@@ -20,11 +20,23 @@ Pick one:
 | [Label Studio](https://labelstud.io) | Self-hosted; supports oriented boxes |
 | [CVAT](https://www.cvat.ai) | Free tier; rotation boxes |
 
+### Label format (important)
+
+Each `.txt` line must be **Ultralytics OBB format**:
+
+```text
+0 x1 y1 x2 y2 x3 y3 x4 y4
+```
+
+- Class `0` = boat
+- Eight normalized corner coordinates (0–1), not width/height format
+- Prelabels from `prelabel` already use this format
+
 ### What to fix
 
 - Add missed moored boats (small leisure craft)
 - Remove false positives: waves, docks, buoys, mooring balls
-- Correct OBB rotation angles
+- Correct corner points if the box rotation is wrong
 - Single class: `boat` (id 0)
 
 ## 3. Save corrected labels

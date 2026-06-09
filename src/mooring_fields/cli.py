@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 from mooring_fields.evaluate import evaluate_val
-from mooring_fields.fetch_imagery import fetch_all
+from mooring_fields.fetch_imagery import estimate_fetch, fetch_all
 from mooring_fields.prelabel_boats import prelabel_all
 from mooring_fields.split_sites import run_parse_and_split
 from mooring_fields.train_boats import train
@@ -25,12 +25,31 @@ def parse_kml_cmd(argv: list[str] | None = None) -> None:
     _print(run_parse_and_split(args.kml))
 
 
+def estimate_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Estimate Maps Static API usage before fetch")
+    parser.add_argument("--split", choices=["train", "val"], default=None)
+    args = parser.parse_args(argv)
+    _print(estimate_fetch(split=args.split))
+
+
 def fetch_imagery_cmd(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Fetch satellite tiles from Maps Static API")
     parser.add_argument("--split", choices=["train", "val"], default=None)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--max-requests",
+        type=int,
+        default=None,
+        help="Override max API calls this run (default from config/imagery.yaml)",
+    )
     args = parser.parse_args(argv)
-    _print(fetch_all(split=args.split, dry_run=args.dry_run))
+    _print(
+        fetch_all(
+            split=args.split,
+            dry_run=args.dry_run,
+            max_requests=args.max_requests,
+        )
+    )
 
 
 def prelabel_cmd(argv: list[str] | None = None) -> None:
@@ -57,6 +76,7 @@ def evaluate_cmd(argv: list[str] | None = None) -> None:
 def main() -> None:
     commands = {
         "parse-kml": parse_kml_cmd,
+        "estimate": estimate_cmd,
         "fetch": fetch_imagery_cmd,
         "prelabel": prelabel_cmd,
         "train": train_cmd,

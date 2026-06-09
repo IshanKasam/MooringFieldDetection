@@ -2,16 +2,21 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import asdict
 from pathlib import Path
 
 import yaml
 
-from mooring_fields.cluster_fields import MooringFieldCluster, run_on_split
+from mooring_fields.cluster_fields import MooringFieldCluster, run_for_site, run_on_split
 from mooring_fields.geo_utils import haversine_m
+from mooring_fields.kml_export import clusters_to_kml
 from mooring_fields.kml_parser import Site, load_sites_json
-from mooring_fields.paths import CONFIG_DIR
+from mooring_fields.paths import CONFIG_DIR, DATA_DIR
 from mooring_fields.split_sites import sites_for_split
+
+RESULTS_JSON = DATA_DIR / "evaluation_results.json"
+RESULTS_KML = DATA_DIR / "evaluation_clusters.kml"
 
 
 def load_cluster_config() -> dict:
@@ -33,10 +38,10 @@ def hit_at_radius(
     return False
 
 
-def evaluate_val(weights: Path | None = None) -> dict:
+def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
     cfg = load_cluster_config()
     sites = sites_for_split(load_sites_json(), "val")
-    clusters = run_on_split("val", weights=weights)
+    all_clusters = run_on_split("val", weights=weights)
 
     radius = cfg["hit_radius_meters"]
     min_boats = cfg["min_boats"]
@@ -44,10 +49,11 @@ def evaluate_val(weights: Path | None = None) -> dict:
     hits = 0
     per_site: list[dict] = []
     for site in sites:
-        hit = hit_at_radius(site, clusters, radius, min_boats)
+        site_clusters = run_for_site(site.id, "val", weights=weights)
+        hit = hit_at_radius(site, site_clusters, radius, min_boats)
         hits += int(hit)
         nearest = None
-        for c in clusters:
+        for c in site_clusters:
             d = haversine_m(site.latitude, site.longitude, c.lat, c.lon)
             if nearest is None or d < nearest["distance_m"]:
                 nearest = {
@@ -61,17 +67,28 @@ def evaluate_val(weights: Path | None = None) -> dict:
                 "site_id": site.id,
                 "site_name": site.name,
                 "hit": hit,
+                "site_clusters": len(site_clusters),
                 "nearest_cluster": nearest,
             }
         )
 
     n = len(sites) or 1
-    return {
+    report = {
         "val_sites": len(sites),
-        "qualifying_clusters": len(clusters),
+        "qualifying_clusters": len(all_clusters),
         "hits": hits,
         f"hit_at_{int(radius)}m": hits / n,
         "hit_rate_pct": round(100 * hits / n, 1),
+        "eval_tile_direction": cfg.get("eval_tile_direction", "center"),
+        "dedupe_radius_meters": cfg.get("dedupe_radius_meters", 25),
         "per_site": per_site,
-        "clusters": [asdict(c) for c in clusters],
+        "clusters": [asdict(c) for c in all_clusters],
     }
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    RESULTS_JSON.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    if export_kml and all_clusters:
+        clusters_to_kml(all_clusters, RESULTS_KML, document_name="Validation mooring fields")
+        report["kml_output"] = str(RESULTS_KML)
+    report["json_output"] = str(RESULTS_JSON)
+    return report

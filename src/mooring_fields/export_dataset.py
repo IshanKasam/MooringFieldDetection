@@ -5,18 +5,19 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
+from mooring_fields.label_utils import validate_label_dir
 from mooring_fields.paths import DATASET_DIR, LABELS_DIR, PRELABELS_DIR
 
 
 def export_yolo_dataset(
     use_corrected_labels: bool = False,
     output_dir: Path | None = None,
+    validate: bool = True,
 ) -> Path:
     """
-    Build Ultralytics dataset from prelabels or corrected labels.
+    Build Ultralytics OBB dataset from prelabels or corrected labels.
 
-    When use_corrected_labels=True, reads data/labels/{split}/ if present,
-    otherwise falls back to data/prelabels/{split}/.
+    Labels must use Ultralytics OBB format: class + 8 normalized corner coordinates.
     """
     out = output_dir or DATASET_DIR
     train_img = out / "images" / "train"
@@ -38,6 +39,12 @@ def export_yolo_dataset(
             src = PRELABELS_DIR / split
         if not src.exists():
             continue
+        if validate and list(src.glob("*.txt")):
+            errors = validate_label_dir(src)
+            if errors:
+                raise ValueError(
+                    f"Invalid OBB labels in {src}:\n" + "\n".join(errors[:5])
+                )
         for png in sorted(src.glob("*.png")):
             shutil.copy2(png, img_dest / png.name)
             lbl = src / f"{png.stem}.txt"

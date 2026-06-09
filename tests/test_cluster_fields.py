@@ -3,6 +3,7 @@
 from mooring_fields.cluster_fields import (
     BoatDetection,
     cluster_boats,
+    dedupe_boats,
     is_qualifying_field,
     MooringFieldCluster,
 )
@@ -39,3 +40,13 @@ class TestClusterFields:
         boats = self._boats_grid(41.5, -71.0, n=2)
         clusters = cluster_boats(boats, eps_m=30, min_samples=4)
         assert len(clusters) == 0
+
+    def test_dedupe_removes_nearby_duplicates(self):
+        boats = [
+            BoatDetection(41.5, -71.0, 0.9, "a"),
+            BoatDetection(41.500001, -71.000001, 0.5, "b"),
+            BoatDetection(41.51, -71.01, 0.7, "c"),
+        ]
+        deduped = dedupe_boats(boats, min_dist_m=25)
+        assert len(deduped) == 2
+        assert deduped[0].confidence == 0.9

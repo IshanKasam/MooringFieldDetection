@@ -8,7 +8,8 @@ import yaml
 from ultralytics import YOLO
 
 from mooring_fields.export_dataset import export_yolo_dataset
-from mooring_fields.paths import CONFIG_DIR, DATASET_DIR, RUNS_DIR
+from mooring_fields.label_utils import validate_label_dir
+from mooring_fields.paths import CONFIG_DIR, DATASET_DIR, LABELS_DIR, PRELABELS_DIR, RUNS_DIR
 
 
 def load_training_config() -> dict:
@@ -21,6 +22,24 @@ def train(
     resume: bool = False,
 ) -> dict:
     cfg = load_training_config()
+
+    if use_corrected_labels:
+        missing = [s for s in ("train", "val") if not (LABELS_DIR / s).exists()]
+        if missing:
+            raise FileNotFoundError(
+                f"--corrected-labels requires data/labels/{{train,val}}/. "
+                f"Missing: {missing}. Review prelabels per docs/LABELING.md first."
+            )
+        for split in ("train", "val"):
+            errors = validate_label_dir(LABELS_DIR / split)
+            if errors:
+                raise ValueError(
+                    f"Invalid corrected labels in data/labels/{split}/:\n"
+                    + "\n".join(errors[:5])
+                )
+    elif not PRELABELS_DIR.exists():
+        raise FileNotFoundError("Run prelabel before train.")
+
     export_yolo_dataset(use_corrected_labels=use_corrected_labels)
     yaml_path = data_yaml or DATASET_DIR / "data.yaml"
 
@@ -32,6 +51,7 @@ def train(
 
     results = model.train(
         data=str(yaml_path),
+        task="obb",
         epochs=cfg["epochs"],
         imgsz=cfg["imgsz"],
         batch=cfg["batch"],
@@ -48,5 +68,6 @@ def train(
     best_weights = RUNS_DIR / "mooring_boats" / "weights" / "best.pt"
     return {
         "best_weights": str(best_weights) if best_weights.exists() else None,
+        "used_corrected_labels": use_corrected_labels,
         "results": str(results) if results else None,
     }

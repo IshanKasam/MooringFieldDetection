@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Validation mooring fields</name>
+  <Placemark>
+    <name>Field 1 (16 boats)</name>
+    <description>confidence=0.81</description>
+    <Point>
+      <coordinates>-70.56909926839596,41.552871071495595,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 2 (5 boats)</name>
+    <description>confidence=0.81</description>
+    <Point>
+      <coordinates>-70.77268879324797,42.56694337484363,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 3 (8 boats)</name>
+    <description>confidence=0.65</description>
+    <Point>
+      <coordinates>-70.06538884903087,41.664821001670234,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 4 (15 boats)</name>
+    <description>confidence=0.79</description>
+    <Point>
+      <coordinates>-70.77830040835316,42.5683917913466,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 5 (11 boats)</name>
+    <description>confidence=0.77</description>
+    <Point>
+      <coordinates>-70.7504054086001,43.00081382521452,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 6 (11 boats)</name>
+    <description>confidence=0.78</description>
+    <Point>
+      <coordinates>-70.74837289033935,42.99964121475371,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 7 (7 boats)</name>
+    <description>confidence=0.73</description>
+    <Point>
+      <coordinates>-68.30412535254656,44.35602089986378,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 8 (37 boats)</name>
+    <description>confidence=0.73</description>
+    <Point>
+      <coordinates>-70.62383778251314,42.66724353487597,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 9 (34 boats)</name>
+    <description>confidence=0.71</description>
+    <Point>
+      <coordinates>-70.77611418970041,42.56639929032603,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 10 (7 boats)</name>
+    <description>confidence=0.80</description>
+    <Point>
+      <coordinates>-69.0062336051301,44.42850305499576,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 11 (6 boats)</name>
+    <description>confidence=0.71</description>
+    <Point>
+      <coordinates>-69.00868111325406,44.42860724280016,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 12 (5 boats)</name>
+    <description>confidence=0.74</description>
+    <Point>
+      <coordinates>-69.45350879705948,43.94407827897367,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 13 (6 boats)</name>
+    <description>confidence=0.55</description>
+    <Point>
+      <coordinates>-68.30546492667652,44.35562422828385,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 14 (5 boats)</name>
+    <description>confidence=0.58</description>
+    <Point>
+      <coordinates>-69.88853196296566,43.78942239105943,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 15 (5 boats)</name>
+    <description>confidence=0.62</description>
+    <Point>
+      <coordinates>-70.74715192713113,42.998343459964715,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 16 (8 boats)</name>
+    <description>confidence=0.56</description>
+    <Point>
+      <coordinates>-70.77314887275142,42.568514115145625,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Field 17 (5 boats)</name>
+    <description>confidence=0.48</description>
+    <Point>
+      <coordinates>-70.77576943668495,42.56873212537627,0</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

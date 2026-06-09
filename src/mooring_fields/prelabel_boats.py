@@ -8,23 +8,12 @@ from pathlib import Path
 import yaml
 from ultralytics import YOLO
 
+from mooring_fields.label_utils import write_obb_labels
 from mooring_fields.paths import CONFIG_DIR, IMAGERY_DIR, PRELABELS_DIR
 
 
 def load_training_config() -> dict:
     return yaml.safe_load((CONFIG_DIR / "training.yaml").read_text(encoding="utf-8"))
-
-
-def write_obb_labels(result, label_path: Path, class_id: int = 0) -> int:
-    """Write YOLO OBB labels from a single prediction result."""
-    lines: list[str] = []
-    if result.obb is not None:
-        xywhr = result.obb.xywhr.cpu().numpy()
-        for box in xywhr:
-            cx, cy, w, h, angle = box
-            lines.append(f"{class_id} {cx:.6f} {cy:.6f} {w:.6f} {h:.6f} {angle:.6f}")
-    label_path.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
-    return len(lines)
 
 
 def prelabel_split(

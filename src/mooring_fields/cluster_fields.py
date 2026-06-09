@@ -47,11 +47,19 @@ def resolve_model(weights: Path | None = None) -> YOLO:
 
 
 def obb_center_to_latlon(cx: float, cy: float, meta: dict) -> tuple[float, float]:
-    """Map normalized OBB center to lat/lon using tile metadata bounds."""
+    """Map normalized image coordinates to lat/lon using tile metadata bounds."""
     b = meta["bounds"]
     lon = b["west"] + cx * (b["east"] - b["west"])
     lat = b["north"] - cy * (b["north"] - b["south"])
     return lat, lon
+
+
+def obb_centroid_latlon(result_obb, index: int, meta: dict) -> tuple[float, float]:
+    """Centroid of normalized OBB corners mapped to geographic coordinates."""
+    corners = result_obb.xyxyxyxyn.cpu().numpy()[index]
+    cx = float(corners[:, 0].mean())
+    cy = float(corners[:, 1].mean())
+    return obb_center_to_latlon(cx, cy, meta)
 
 
 def detect_boats_in_tile(
@@ -67,13 +75,9 @@ def detect_boats_in_tile(
     for result in results:
         if result.obb is None:
             continue
-        xywhr = result.obb.xywhr.cpu().numpy()
         confs = result.obb.conf.cpu().numpy()
-        img_h, img_w = result.orig_shape
-
-        for i, box in enumerate(xywhr):
-            cx, cy = box[0] / img_w, box[1] / img_h
-            lat, lon = obb_center_to_latlon(cx, cy, meta)
+        for i in range(len(result.obb)):
+            lat, lon = obb_centroid_latlon(result.obb, i, meta)
             boats.append(
                 BoatDetection(
                     lat=lat,
@@ -85,6 +89,15 @@ def detect_boats_in_tile(
     return boats
 
 
+def dedupe_boats(boats: list[BoatDetection], min_dist_m: float) -> list[BoatDetection]:
+    """Remove duplicate detections from overlapping tiles; keep highest confidence."""
+    kept: list[BoatDetection] = []
+    for boat in sorted(boats, key=lambda b: -b.confidence):
+        if all(haversine_m(boat.lat, boat.lon, k.lat, k.lon) > min_dist_m for k in kept):
+            kept.append(boat)
+    return kept
+
+
 def cluster_boats(
     boats: list[BoatDetection],
     eps_m: float,
@@ -94,7 +107,6 @@ def cluster_boats(
         return []
 
     coords = np.array([[b.lat, b.lon] for b in boats])
-    # DBSCAN with haversine metric via radians approximation for small areas
     mean_lat = float(coords[:, 0].mean())
     x = np.radians(coords[:, 1]) * np.cos(np.radians(mean_lat)) * 6_378_137
     y = np.radians(coords[:, 0]) * 6_378_137
@@ -126,25 +138,76 @@ def is_qualifying_field(cluster: MooringFieldCluster, min_boats: int) -> bool:
     return cluster.boat_count >= min_boats
 
 
-def run_on_split(
+def iter_tiles_for_clustering(split: str, cfg: dict) -> list[Path]:
+    """Select imagery tiles for clustering (center-only by default to avoid duplicates)."""
+    img_dir = IMAGERY_DIR / split
+    direction = cfg.get("eval_tile_direction", "center")
+    if direction == "all":
+        return sorted(img_dir.glob("*.png"))
+    suffix = f"_{direction}_"
+    return sorted(p for p in img_dir.glob("*.png") if suffix in p.stem)
+
+
+def clusters_from_boats(boats: list[BoatDetection], cfg: dict) -> list[MooringFieldCluster]:
+    boats = dedupe_boats(boats, cfg.get("dedupe_radius_meters", 25))
+    clusters = cluster_boats(boats, cfg["eps_meters"], cfg["min_samples"])
+    min_boats = cfg["min_boats"]
+    return [c for c in clusters if is_qualifying_field(c, min_boats)]
+
+
+def run_for_site(
+    site_id: str,
     split: str = "val",
     weights: Path | None = None,
 ) -> list[MooringFieldCluster]:
+    """Detect and cluster boats in the center tile for one mooring field site."""
     cfg = load_cluster_config()
     model = resolve_model(weights)
     img_dir = IMAGERY_DIR / split
     if not img_dir.exists():
         return []
 
-    all_boats: list[BoatDetection] = []
+    direction = cfg.get("eval_tile_direction", "center")
     for png in sorted(img_dir.glob("*.png")):
-        meta = img_dir / f"{png.stem}.json"
-        if not meta.exists():
+        if f"_{direction}_" not in png.stem:
             continue
-        all_boats.extend(
-            detect_boats_in_tile(model, png, meta, cfg["confidence_threshold"])
-        )
+        meta_path = img_dir / f"{png.stem}.json"
+        if not meta_path.exists():
+            continue
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if meta.get("site_id") != site_id:
+            continue
+        boats = detect_boats_in_tile(model, png, meta_path, cfg["confidence_threshold"])
+        return clusters_from_boats(boats, cfg)
+    return []
 
-    clusters = cluster_boats(all_boats, cfg["eps_meters"], cfg["min_samples"])
-    min_boats = cfg["min_boats"]
-    return [c for c in clusters if is_qualifying_field(c, min_boats)]
+
+def run_on_split(
+    split: str = "val",
+    weights: Path | None = None,
+) -> list[MooringFieldCluster]:
+    """All qualifying clusters across a split (per-site, deduplicated globally)."""
+    cfg = load_cluster_config()
+    img_dir = IMAGERY_DIR / split
+    if not img_dir.exists():
+        return []
+
+    site_ids: set[str] = set()
+    for meta_path in img_dir.glob("*.json"):
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        if meta.get("direction") == cfg.get("eval_tile_direction", "center"):
+            site_ids.add(meta["site_id"])
+
+    all_clusters: list[MooringFieldCluster] = []
+    for site_id in sorted(site_ids):
+        all_clusters.extend(run_for_site(site_id, split, weights))
+
+    # Deduplicate clusters that are essentially the same field across nearby sites
+    unique: list[MooringFieldCluster] = []
+    for cluster in all_clusters:
+        if all(
+            haversine_m(cluster.lat, cluster.lon, u.lat, u.lon) > cfg["eps_meters"]
+            for u in unique
+        ):
+            unique.append(cluster)
+    return unique

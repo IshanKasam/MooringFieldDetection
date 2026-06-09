@@ -1,0 +1,407 @@
+{
+  "val_sites": 25,
+  "qualifying_clusters": 17,
+  "hits": 4,
+  "hit_at_150m": 0.16,
+  "hit_rate_pct": 16.0,
+  "eval_tile_direction": "center",
+  "dedupe_radius_meters": 25,
+  "per_site": [
+    {
+      "site_id": "05D5D532683F5CFCCCF4",
+      "site_name": "MF 1",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 42633.590308829436,
+        "boat_count": 16,
+        "cluster_lat": 41.552871071495595,
+        "cluster_lon": -70.56909926839596
+      }
+    },
+    {
+      "site_id": "032D13F86E3F5D053584",
+      "site_name": "MF 6",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 29701.562420947663,
+        "boat_count": 16,
+        "cluster_lat": 41.552871071495595,
+        "cluster_lon": -70.56909926839596
+      }
+    },
+    {
+      "site_id": "0434838E913F5D243427",
+      "site_name": "MF 15",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 250.83843889461158,
+        "boat_count": 16,
+        "cluster_lat": 41.552871071495595,
+        "cluster_lon": -70.56909926839596
+      }
+    },
+    {
+      "site_id": "000451ABB23F5D361810",
+      "site_name": "MF 22",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 16378.432153163467,
+        "boat_count": 16,
+        "cluster_lat": 41.552871071495595,
+        "cluster_lon": -70.56909926839596
+      }
+    },
+    {
+      "site_id": "026B3A525D3F5D372E10",
+      "site_name": "MF 25",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 17543.49967422486,
+        "boat_count": 8,
+        "cluster_lat": 41.664821001670234,
+        "cluster_lon": -70.06538884903087
+      }
+    },
+    {
+      "site_id": "043C273E443F5D377837",
+      "site_name": "MF 25",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 15149.036535602821,
+        "boat_count": 8,
+        "cluster_lat": 41.664821001670234,
+        "cluster_lon": -70.06538884903087
+      }
+    },
+    {
+      "site_id": "00F0986F703F5D3945DC",
+      "site_name": "MF 28",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 194.00123815016434,
+        "boat_count": 8,
+        "cluster_lat": 41.664821001670234,
+        "cluster_lon": -70.06538884903087
+      }
+    },
+    {
+      "site_id": "037417B2B13F5D3E5124",
+      "site_name": "MF 37",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 43836.161621761545,
+        "boat_count": 8,
+        "cluster_lat": 41.664821001670234,
+        "cluster_lon": -70.06538884903087
+      }
+    },
+    {
+      "site_id": "014EBFF3B23F5D3F1517",
+      "site_name": "MF 39",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 29292.460311621402,
+        "boat_count": 8,
+        "cluster_lat": 41.664821001670234,
+        "cluster_lon": -70.06538884903087
+      }
+    },
+    {
+      "site_id": "0252F50C573F5D782437",
+      "site_name": "MF 54 *",
+      "hit": true,
+      "nearest_cluster": {
+        "distance_m": 128.0974861544752,
+        "boat_count": 5,
+        "cluster_lat": 42.56873212537627,
+        "cluster_lon": -70.77576943668495
+      }
+    },
+    {
+      "site_id": "00B913B2A33F5D794180",
+      "site_name": "MF 56",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 8736.349482712816,
+        "boat_count": 5,
+        "cluster_lat": 42.56694337484363,
+        "cluster_lon": -70.77268879324797
+      }
+    },
+    {
+      "site_id": "02648263823F5D79F37E",
+      "site_name": "MF 58",
+      "hit": true,
+      "nearest_cluster": {
+        "distance_m": 135.87870781472594,
+        "boat_count": 37,
+        "cluster_lat": 42.66724353487597,
+        "cluster_lon": -70.62383778251314
+      }
+    },
+    {
+      "site_id": "0342911B223F5D7FA9E7",
+      "site_name": "MF 66",
+      "hit": true,
+      "nearest_cluster": {
+        "distance_m": 121.59682247975176,
+        "boat_count": 11,
+        "cluster_lat": 42.99964121475371,
+        "cluster_lon": -70.74837289033935
+      }
+    },
+    {
+      "site_id": "03B50713513F5D802BDC",
+      "site_name": "MF 67",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 6523.401392360498,
+        "boat_count": 11,
+        "cluster_lat": 43.00081382521452,
+        "cluster_lon": -70.7504054086001
+      }
+    },
+    {
+      "site_id": "026A85BD623F5D87D021",
+      "site_name": "MF 78",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 312.82183633286314,
+        "boat_count": 5,
+        "cluster_lat": 43.78942239105943,
+        "cluster_lon": -69.88853196296566
+      }
+    },
+    {
+      "site_id": "01901A66C93F5D8B19C8",
+      "site_name": "MF 84",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 8340.610125935787,
+        "boat_count": 5,
+        "cluster_lat": 43.94407827897367,
+        "cluster_lon": -69.45350879705948
+      }
+    },
+    {
+      "site_id": "01065339233F5D8BD43C",
+      "site_name": "MF 86",
+      "hit": true,
+      "nearest_cluster": {
+        "distance_m": 125.84244044527897,
+        "boat_count": 5,
+        "cluster_lat": 43.94407827897367,
+        "cluster_lon": -69.45350879705948
+      }
+    },
+    {
+      "site_id": "0331FCB01A3F5D8F0067",
+      "site_name": "MF 93",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 20211.896404910338,
+        "boat_count": 5,
+        "cluster_lat": 43.94407827897367,
+        "cluster_lon": -69.45350879705948
+      }
+    },
+    {
+      "site_id": "031C82288E3F5D9170DE",
+      "site_name": "MF 100",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 24957.671639800756,
+        "boat_count": 6,
+        "cluster_lat": 44.42860724280016,
+        "cluster_lon": -69.00868111325406
+      }
+    },
+    {
+      "site_id": "00E92D2A843F5D921EF4",
+      "site_name": "MF 101",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 180.7231590154615,
+        "boat_count": 7,
+        "cluster_lat": 44.42850305499576,
+        "cluster_lon": -69.0062336051301
+      }
+    },
+    {
+      "site_id": "00EAA21ADC3F5D9589F1",
+      "site_name": "MF 108",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 19031.065163409563,
+        "boat_count": 6,
+        "cluster_lat": 44.35562422828385,
+        "cluster_lon": -68.30546492667652
+      }
+    },
+    {
+      "site_id": "0373CA70EC3F5D9A52A8",
+      "site_name": "MF 117",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 281.7628172179938,
+        "boat_count": 6,
+        "cluster_lat": 44.35562422828385,
+        "cluster_lon": -68.30546492667652
+      }
+    },
+    {
+      "site_id": "04196FE4503F5D9B8453",
+      "site_name": "MF 120",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 8998.52878565748,
+        "boat_count": 7,
+        "cluster_lat": 44.35602089986378,
+        "cluster_lon": -68.30412535254656
+      }
+    },
+    {
+      "site_id": "04216846793F5D9BB5CB",
+      "site_name": "MF 121",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 8052.294216608945,
+        "boat_count": 7,
+        "cluster_lat": 44.35602089986378,
+        "cluster_lon": -68.30412535254656
+      }
+    },
+    {
+      "site_id": "00614EA6AB3F5DA08FF6",
+      "site_name": "AC3",
+      "hit": false,
+      "nearest_cluster": {
+        "distance_m": 85771.33719168448,
+        "boat_count": 7,
+        "cluster_lat": 44.35602089986378,
+        "cluster_lon": -68.30412535254656
+      }
+    }
+  ],
+  "clusters": [
+    {
+      "lat": 41.552871071495595,
+      "lon": -70.56909926839596,
+      "boat_count": 16,
+      "mean_confidence": 0.8120594620704651,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.56694337484363,
+      "lon": -70.77268879324797,
+      "boat_count": 5,
+      "mean_confidence": 0.8092200636863709,
+      "boat_ids": []
+    },
+    {
+      "lat": 41.664821001670234,
+      "lon": -70.06538884903087,
+      "boat_count": 8,
+      "mean_confidence": 0.6464364975690842,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.5683917913466,
+      "lon": -70.77830040835316,
+      "boat_count": 15,
+      "mean_confidence": 0.7855145573616028,
+      "boat_ids": []
+    },
+    {
+      "lat": 43.00081382521452,
+      "lon": -70.7504054086001,
+      "boat_count": 11,
+      "mean_confidence": 0.7702169743451205,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.99964121475371,
+      "lon": -70.74837289033935,
+      "boat_count": 11,
+      "mean_confidence": 0.7785667695782401,
+      "boat_ids": []
+    },
+    {
+      "lat": 44.35602089986378,
+      "lon": -68.30412535254656,
+      "boat_count": 7,
+      "mean_confidence": 0.7289658997740064,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.66724353487597,
+      "lon": -70.62383778251314,
+      "boat_count": 37,
+      "mean_confidence": 0.7272301984799875,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.56639929032603,
+      "lon": -70.77611418970041,
+      "boat_count": 34,
+      "mean_confidence": 0.7091168875203413,
+      "boat_ids": []
+    },
+    {
+      "lat": 44.42850305499576,
+      "lon": -69.0062336051301,
+      "boat_count": 7,
+      "mean_confidence": 0.7979895727975028,
+      "boat_ids": []
+    },
+    {
+      "lat": 44.42860724280016,
+      "lon": -69.00868111325406,
+      "boat_count": 6,
+      "mean_confidence": 0.7101025780042013,
+      "boat_ids": []
+    },
+    {
+      "lat": 43.94407827897367,
+      "lon": -69.45350879705948,
+      "boat_count": 5,
+      "mean_confidence": 0.7398388028144837,
+      "boat_ids": []
+    },
+    {
+      "lat": 44.35562422828385,
+      "lon": -68.30546492667652,
+      "boat_count": 6,
+      "mean_confidence": 0.5523816545804342,
+      "boat_ids": []
+    },
+    {
+      "lat": 43.78942239105943,
+      "lon": -69.88853196296566,
+      "boat_count": 5,
+      "mean_confidence": 0.5762661993503571,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.998343459964715,
+      "lon": -70.74715192713113,
+      "boat_count": 5,
+      "mean_confidence": 0.6190894544124603,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.568514115145625,
+      "lon": -70.77314887275142,
+      "boat_count": 8,
+      "mean_confidence": 0.5641681253910065,
+      "boat_ids": []
+    },
+    {
+      "lat": 42.56873212537627,
+      "lon": -70.77576943668495,
+      "boat_count": 5,
+      "mean_confidence": 0.47881733775138857,
+      "boat_ids": []
+    }
+  ]
+}
