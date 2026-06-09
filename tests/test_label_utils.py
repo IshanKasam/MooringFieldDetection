@@ -5,7 +5,12 @@ from unittest.mock import MagicMock
 
 import numpy as np
 
-from mooring_fields.label_utils import OBB_COLUMNS, validate_obb_label_file, write_obb_labels
+from mooring_fields.label_utils import (
+    OBB_COLUMNS,
+    sanitize_obb_line,
+    validate_obb_label_file,
+    write_obb_labels,
+)
 
 
 class TestLabelUtils:
@@ -36,3 +41,8 @@ class TestLabelUtils:
             encoding="utf-8",
         )
         assert validate_obb_label_file(good) == []
+
+    def test_sanitize_clips_coordinates(self):
+        line = sanitize_obb_line("0 -0.05 1.02 0.5 0.2 0.5 0.8 0.1 0.9")
+        coords = [float(x) for x in line.split()[1:]]
+        assert all(0.0 <= c <= 1.0 for c in coords)

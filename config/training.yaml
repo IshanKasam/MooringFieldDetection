@@ -2,7 +2,23 @@
 model: yolov8m-obb.pt
 epochs: 100
 imgsz: 640
+
+# device: auto uses GPU when available (Kaggle P100/T4)
+device: auto
 batch: 8
+batch_gpu: 16
+batch_cpu: 4
+workers: 4
+workers_gpu: 4
+workers_cpu: 2
+amp: true
+half: true
+
+# Batched inference for prelabel on GPU
+predict_batch: 16
+predict_batch_gpu: 32
+predict_batch_cpu: 4
+
 patience: 20
 degrees: 180
 mosaic: 1.0

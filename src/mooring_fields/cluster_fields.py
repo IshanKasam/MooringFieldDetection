@@ -13,6 +13,7 @@ from ultralytics import YOLO
 
 from mooring_fields.geo_utils import haversine_m
 from mooring_fields.paths import CONFIG_DIR, IMAGERY_DIR, RUNS_DIR
+from mooring_fields.runtime import inference_kwargs, load_training_config
 
 
 @dataclass
@@ -42,8 +43,7 @@ def resolve_model(weights: Path | None = None) -> YOLO:
     best = RUNS_DIR / "mooring_boats" / "weights" / "best.pt"
     if best.exists():
         return YOLO(str(best))
-    cfg = yaml.safe_load((CONFIG_DIR / "training.yaml").read_text(encoding="utf-8"))
-    return YOLO(cfg["model"])
+    return YOLO(load_training_config()["model"])
 
 
 def obb_center_to_latlon(cx: float, cy: float, meta: dict) -> tuple[float, float]:
@@ -69,7 +69,7 @@ def detect_boats_in_tile(
     conf: float,
 ) -> list[BoatDetection]:
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
-    results = model.predict(str(image_path), conf=conf, verbose=False)
+    results = model.predict(str(image_path), conf=conf, **inference_kwargs())
     boats: list[BoatDetection] = []
 
     for result in results:

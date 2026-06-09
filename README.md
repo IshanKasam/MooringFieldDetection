@@ -2,11 +2,24 @@
 
 Detect mooring fields from satellite imagery by finding dense clusters of boats (YOLO-OBB + DBSCAN).
 
-## Quick start
+## Quick start (local)
 
 ```bash
 pip install -e ".[dev]"
 ```
+
+## Kaggle GPU (recommended for train/prelabel)
+
+See [docs/KAGGLE.md](docs/KAGGLE.md). After cloning on Kaggle:
+
+```bash
+pip install -e .
+python -m mooring_fields.cli kaggle-setup
+python -m mooring_fields.cli train
+python -m mooring_fields.cli evaluate --publish
+```
+
+GPU batch sizes and device selection are in `config/training.yaml` (`device: auto`, `batch_gpu: 16`).
 
 1. Follow [docs/GOOGLE_SETUP.md](docs/GOOGLE_SETUP.md) to create a Maps Static API key
 2. Paste your key in `.env`:
@@ -26,6 +39,10 @@ python -m mooring_fields.cli prelabel
 python -m mooring_fields.cli train --corrected-labels
 python -m mooring_fields.cli evaluate
 # Writes data/evaluation_results.json and data/evaluation_clusters.kml
+
+# Kaggle helpers
+python -m mooring_fields.cli kaggle-setup
+python -m mooring_fields.cli publish-outputs
 ```
 
 ## Cost safety

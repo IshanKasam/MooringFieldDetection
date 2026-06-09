@@ -1,0 +1,9 @@
+# Kaggle notebook settings (see docs/KAGGLE.md)
+
+# Candidate paths for an attached Kaggle Dataset with data/imagery, data/prelabels, etc.
+input_datasets:
+  - /kaggle/input/mooring-field-data
+  - /kaggle/input/mooringfielddetection-data
+
+# Where publish-outputs copies artifacts (survives notebook download)
+output_dir: /kaggle/working/mooring_outputs

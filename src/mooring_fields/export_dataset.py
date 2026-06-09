@@ -5,7 +5,7 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
-from mooring_fields.label_utils import validate_label_dir
+from mooring_fields.label_utils import sanitize_label_text, validate_label_dir
 from mooring_fields.paths import DATASET_DIR, IMAGERY_DIR, LABELS_DIR, PRELABELS_DIR
 
 
@@ -51,7 +51,10 @@ def export_yolo_dataset(
             lbl = lbl_src / f"{png.stem}.txt" if lbl_src.exists() else None
             dest_lbl = lbl_dest / f"{png.stem}.txt"
             if lbl and lbl.exists():
-                shutil.copy2(lbl, dest_lbl)
+                dest_lbl.write_text(
+                    sanitize_label_text(lbl.read_text(encoding="utf-8")),
+                    encoding="utf-8",
+                )
             else:
                 dest_lbl.write_text("", encoding="utf-8")
             stats[split] += 1

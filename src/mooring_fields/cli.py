@@ -10,6 +10,7 @@ from pathlib import Path
 from mooring_fields.evaluate import evaluate_val
 from mooring_fields.fetch_imagery import estimate_fetch, fetch_all
 from mooring_fields.prelabel_boats import prelabel_all
+from mooring_fields.runtime import bootstrap_kaggle, publish_outputs
 from mooring_fields.split_sites import run_parse_and_split
 from mooring_fields.train_boats import train
 
@@ -62,15 +63,44 @@ def train_cmd(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Fine-tune YOLO-OBB boat detector")
     parser.add_argument("--corrected-labels", action="store_true")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--publish", action="store_true", help="Copy outputs to Kaggle working dir")
     args = parser.parse_args(argv)
-    _print(train(use_corrected_labels=args.corrected_labels, resume=args.resume))
+    report = train(use_corrected_labels=args.corrected_labels, resume=args.resume)
+    if args.publish:
+        report["published"] = publish_outputs()
+    _print(report)
 
 
 def evaluate_cmd(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Evaluate mooring field Hit@R on val sites")
     parser.add_argument("--weights", type=Path, default=None)
+    parser.add_argument("--publish", action="store_true", help="Copy outputs to Kaggle working dir")
     args = parser.parse_args(argv)
-    _print(evaluate_val(weights=args.weights))
+    report = evaluate_val(weights=args.weights)
+    if args.publish:
+        report["published"] = publish_outputs()
+    _print(report)
+
+
+def kaggle_setup_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Bootstrap Kaggle runtime (GPU, secrets, input dataset)"
+    )
+    parser.add_argument(
+        "--input-data",
+        type=Path,
+        default=None,
+        help="Kaggle input dataset root (contains data/ or imagery/)",
+    )
+    args = parser.parse_args(argv)
+    _print(bootstrap_kaggle(input_data=args.input_data))
+
+
+def publish_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Copy artifacts to Kaggle working output")
+    parser.add_argument("--dest", type=Path, default=None)
+    args = parser.parse_args(argv)
+    _print(publish_outputs(dest=args.dest))
 
 
 def main() -> None:
@@ -81,6 +111,8 @@ def main() -> None:
         "prelabel": prelabel_cmd,
         "train": train_cmd,
         "evaluate": evaluate_cmd,
+        "kaggle-setup": kaggle_setup_cmd,
+        "publish-outputs": publish_cmd,
     }
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
         print("Usage: python -m mooring_fields.cli <command>")

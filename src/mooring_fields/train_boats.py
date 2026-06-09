@@ -10,6 +10,7 @@ from ultralytics import YOLO
 from mooring_fields.export_dataset import export_yolo_dataset
 from mooring_fields.label_utils import validate_label_dir
 from mooring_fields.paths import CONFIG_DIR, DATASET_DIR, IMAGERY_DIR, LABELS_DIR, PRELABELS_DIR, RUNS_DIR
+from mooring_fields.runtime import cuda_available, gpu_name, training_kwargs
 
 
 def load_training_config() -> dict:
@@ -58,12 +59,12 @@ def train(
     model = YOLO(cfg["model"])
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
 
+    train_kw = training_kwargs(cfg)
     results = model.train(
         data=str(yaml_path),
         task="obb",
         epochs=cfg["epochs"],
         imgsz=cfg["imgsz"],
-        batch=cfg["batch"],
         patience=cfg["patience"],
         augment=True,
         degrees=cfg.get("degrees", 180),
@@ -72,11 +73,16 @@ def train(
         name="mooring_boats",
         exist_ok=True,
         resume=resume,
+        **train_kw,
     )
 
     best_weights = RUNS_DIR / "mooring_boats" / "weights" / "best.pt"
     return {
         "best_weights": str(best_weights) if best_weights.exists() else None,
         "used_corrected_labels": use_corrected_labels,
+        "cuda": cuda_available(),
+        "gpu": gpu_name(),
+        "device": train_kw.get("device"),
+        "batch": train_kw.get("batch"),
         "results": str(results) if results else None,
     }

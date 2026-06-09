@@ -13,9 +13,11 @@ function Log($msg) {
 
 Log "=== pipeline start ==="
 
-Log ">>> prelabel"
-& $Python -m mooring_fields.cli prelabel 2>&1 | Tee-Object -FilePath $Log -Append
-if ($LASTEXITCODE -ne 0) { Log "prelabel FAILED exit $LASTEXITCODE"; exit $LASTEXITCODE }
+if (-not $env:SKIP_PRELABEL) {
+    Log ">>> prelabel"
+    & $Python -m mooring_fields.cli prelabel 2>&1 | Tee-Object -FilePath $Log -Append
+    if ($LASTEXITCODE -ne 0) { Log "prelabel FAILED exit $LASTEXITCODE"; exit $LASTEXITCODE }
+}
 
 Log ">>> train (prelabels, no human review)"
 & $Python -m mooring_fields.cli train 2>&1 | Tee-Object -FilePath $Log -Append

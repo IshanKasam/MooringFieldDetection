@@ -15,10 +15,28 @@ def write_obb_labels(result, label_path: Path, class_id: int = 0) -> int:
         corners = result.obb.xyxyxyxyn.cpu().numpy()
         for i in range(len(corners)):
             flat = corners[i].reshape(-1)
-            parts = " ".join(f"{v:.6f}" for v in flat)
+            clipped = [max(0.0, min(1.0, float(v))) for v in flat]
+            parts = " ".join(f"{v:.6f}" for v in clipped)
             lines.append(f"{class_id} {parts}")
     label_path.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
     return len(lines)
+
+
+def sanitize_obb_line(line: str) -> str:
+    """Clip normalized OBB corners to [0, 1] for Ultralytics training."""
+    parts = line.split()
+    if len(parts) != OBB_COLUMNS:
+        return line
+    coords = [max(0.0, min(1.0, float(x))) for x in parts[1:]]
+    return f"{parts[0]} " + " ".join(f"{c:.6f}" for c in coords)
+
+
+def sanitize_label_text(text: str) -> str:
+    stripped = text.strip()
+    if not stripped:
+        return ""
+    lines = [sanitize_obb_line(line) for line in stripped.splitlines()]
+    return "\n".join(lines) + "\n"
 
 
 def validate_obb_label_file(label_path: Path) -> list[str]:
