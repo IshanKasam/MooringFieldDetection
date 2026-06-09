@@ -160,15 +160,14 @@ def fetch_tile(
     max_retries = cfg.get("max_retries", 2)
     last_error: Exception | None = None
 
-    for attempt in range(max_retries):
+    for attempt in range(max_retries + 1):
         try:
-            api_budget[0] += 1
-            if api_budget[0] > cap:
+            if api_budget[0] >= cap:
                 raise RuntimeError(f"API request cap ({cap}) exceeded.")
 
             response = client.get(url, timeout=60.0)
             if not response.is_success:
-                if _should_retry(response.status_code) and attempt < max_retries - 1:
+                if _should_retry(response.status_code) and attempt < max_retries:
                     time.sleep(cfg.get("retry_backoff_seconds", 2) * (attempt + 1))
                     continue
                 response.raise_for_status()
@@ -178,6 +177,7 @@ def fetch_tile(
                 raise RuntimeError(
                     f"Expected image, got {content_type}: {response.text[:200]}"
                 )
+            api_budget[0] += 1
             dest.write_bytes(response.content)
             return dest, True
         except httpx.TimeoutException as exc:
@@ -264,8 +264,9 @@ def fetch_all(
             lat, lon = offset_latlon(site.latitude, site.longitude, north_m, east_m)
             meta_path = image_path.with_suffix(".json")
 
-            time.sleep(min_interval)
             was_cached = image_path.exists() and image_path.stat().st_size > 0
+            if not was_cached:
+                time.sleep(min_interval)
             fetch_tile(
                 client, lat, lon, zoom, api_key, cfg, image_path, api_budget, cap
             )

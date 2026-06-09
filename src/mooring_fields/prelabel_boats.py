@@ -40,18 +40,32 @@ def prelabel_split(
     model = YOLO(model_path)
     total_detections = 0
 
-    for img in images:
+    skipped = 0
+    for i, img in enumerate(images, start=1):
         dest_img = out_root / img.name
+        label_path = out_root / f"{img.stem}.txt"
         if not dest_img.exists():
             shutil.copy2(img, dest_img)
 
-        results = model.predict(str(img), conf=confidence, verbose=False)
-        label_path = out_root / f"{img.stem}.txt"
-        total_detections += write_obb_labels(results[0], label_path)
+        if label_path.exists():
+            skipped += 1
+            total_detections += sum(
+                1 for line in label_path.read_text(encoding="utf-8").splitlines() if line.strip()
+            )
+            continue
 
+        results = model.predict(str(img), conf=confidence, verbose=False)
+        total_detections += write_obb_labels(results[0], label_path)
+        if i % 25 == 0 or i == len(images):
+            print(f"  [{split}] {i}/{len(images)} images", flush=True)
+
+    labeled = len(list(out_root.glob("*.txt")))
     return {
         "split": split,
         "images": len(images),
+        "labeled": labeled,
+        "skipped_existing": skipped,
+        "complete": labeled >= len(images),
         "detections": total_detections,
         "output_dir": str(out_root),
     }

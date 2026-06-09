@@ -9,7 +9,7 @@ from ultralytics import YOLO
 
 from mooring_fields.export_dataset import export_yolo_dataset
 from mooring_fields.label_utils import validate_label_dir
-from mooring_fields.paths import CONFIG_DIR, DATASET_DIR, LABELS_DIR, PRELABELS_DIR, RUNS_DIR
+from mooring_fields.paths import CONFIG_DIR, DATASET_DIR, IMAGERY_DIR, LABELS_DIR, PRELABELS_DIR, RUNS_DIR
 
 
 def load_training_config() -> dict:
@@ -37,8 +37,17 @@ def train(
                     f"Invalid corrected labels in data/labels/{split}/:\n"
                     + "\n".join(errors[:5])
                 )
-    elif not PRELABELS_DIR.exists():
-        raise FileNotFoundError("Run prelabel before train.")
+    else:
+        if not PRELABELS_DIR.exists():
+            raise FileNotFoundError("Run prelabel before train.")
+        for split in ("train", "val"):
+            img_count = len(list((IMAGERY_DIR / split).glob("*.png")))
+            lbl_count = len(list((PRELABELS_DIR / split).glob("*.txt"))) if (PRELABELS_DIR / split).exists() else 0
+            if lbl_count < img_count:
+                raise FileNotFoundError(
+                    f"Prelabel incomplete for {split}: {lbl_count}/{img_count} labels. "
+                    "Run: python -m mooring_fields.cli prelabel"
+                )
 
     export_yolo_dataset(use_corrected_labels=use_corrected_labels)
     yaml_path = data_yaml or DATASET_DIR / "data.yaml"

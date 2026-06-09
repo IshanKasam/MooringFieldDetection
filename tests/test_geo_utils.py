@@ -26,7 +26,7 @@ class TestGeoUtils:
 
     def test_zoom_from_range_reasonable(self):
         z = zoom_from_range(41.5, 1500, fovy_deg=30)
-        assert 17 <= z <= 20
+        assert 18 <= z <= 20
 
     def test_tile_bounds_ordering(self):
         b = tile_bounds(41.5, -71.0, 19)

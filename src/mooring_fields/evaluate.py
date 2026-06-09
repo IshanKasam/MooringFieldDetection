@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from mooring_fields.cluster_fields import MooringFieldCluster, run_for_site, run_on_split
+from mooring_fields.cluster_fields import MooringFieldCluster, run_on_split
 from mooring_fields.geo_utils import haversine_m
 from mooring_fields.kml_export import clusters_to_kml
 from mooring_fields.kml_parser import Site, load_sites_json
@@ -41,7 +41,7 @@ def hit_at_radius(
 def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
     cfg = load_cluster_config()
     sites = sites_for_split(load_sites_json(), "val")
-    all_clusters = run_on_split("val", weights=weights)
+    all_clusters, clusters_by_site = run_on_split("val", weights=weights, per_site=True)
 
     radius = cfg["hit_radius_meters"]
     min_boats = cfg["min_boats"]
@@ -49,7 +49,7 @@ def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
     hits = 0
     per_site: list[dict] = []
     for site in sites:
-        site_clusters = run_for_site(site.id, "val", weights=weights)
+        site_clusters = clusters_by_site.get(site.id, [])
         hit = hit_at_radius(site, site_clusters, radius, min_boats)
         hits += int(hit)
         nearest = None

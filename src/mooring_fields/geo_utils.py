@@ -48,7 +48,7 @@ def zoom_from_range(
     zoom = math.log2(
         math.cos(math.radians(lat)) * 2 * math.pi * EARTH_RADIUS_M / (256 * mpp)
     )
-    return int(max(17, min(20, round(zoom))))
+    return int(max(18, min(20, round(zoom))))
 
 
 def offset_latlon(lat: float, lon: float, north_m: float, east_m: float) -> tuple[float, float]:

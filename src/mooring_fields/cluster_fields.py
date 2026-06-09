@@ -182,15 +182,29 @@ def run_for_site(
     return []
 
 
+def _dedupe_clusters(
+    clusters: list[MooringFieldCluster],
+    eps_m: float,
+) -> list[MooringFieldCluster]:
+    unique: list[MooringFieldCluster] = []
+    for cluster in clusters:
+        if all(
+            haversine_m(cluster.lat, cluster.lon, u.lat, u.lon) > eps_m for u in unique
+        ):
+            unique.append(cluster)
+    return unique
+
+
 def run_on_split(
     split: str = "val",
     weights: Path | None = None,
-) -> list[MooringFieldCluster]:
+    per_site: bool = False,
+) -> list[MooringFieldCluster] | tuple[list[MooringFieldCluster], dict[str, list[MooringFieldCluster]]]:
     """All qualifying clusters across a split (per-site, deduplicated globally)."""
     cfg = load_cluster_config()
     img_dir = IMAGERY_DIR / split
     if not img_dir.exists():
-        return []
+        return ([], {}) if per_site else []
 
     site_ids: set[str] = set()
     for meta_path in img_dir.glob("*.json"):
@@ -198,16 +212,14 @@ def run_on_split(
         if meta.get("direction") == cfg.get("eval_tile_direction", "center"):
             site_ids.add(meta["site_id"])
 
+    by_site: dict[str, list[MooringFieldCluster]] = {}
     all_clusters: list[MooringFieldCluster] = []
     for site_id in sorted(site_ids):
-        all_clusters.extend(run_for_site(site_id, split, weights))
+        site_clusters = run_for_site(site_id, split, weights)
+        by_site[site_id] = site_clusters
+        all_clusters.extend(site_clusters)
 
-    # Deduplicate clusters that are essentially the same field across nearby sites
-    unique: list[MooringFieldCluster] = []
-    for cluster in all_clusters:
-        if all(
-            haversine_m(cluster.lat, cluster.lon, u.lat, u.lon) > cfg["eps_meters"]
-            for u in unique
-        ):
-            unique.append(cluster)
+    unique = _dedupe_clusters(all_clusters, cfg["eps_meters"])
+    if per_site:
+        return unique, by_site
     return unique

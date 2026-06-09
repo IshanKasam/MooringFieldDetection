@@ -6,7 +6,7 @@ import shutil
 from pathlib import Path
 
 from mooring_fields.label_utils import validate_label_dir
-from mooring_fields.paths import DATASET_DIR, LABELS_DIR, PRELABELS_DIR
+from mooring_fields.paths import DATASET_DIR, IMAGERY_DIR, LABELS_DIR, PRELABELS_DIR
 
 
 def export_yolo_dataset(
@@ -33,23 +33,24 @@ def export_yolo_dataset(
         ("train", train_img, train_lbl),
         ("val", val_img, val_lbl),
     ]:
+        img_src = IMAGERY_DIR / split
         if use_corrected_labels and (LABELS_DIR / split).exists():
-            src = LABELS_DIR / split
+            lbl_src = LABELS_DIR / split
         else:
-            src = PRELABELS_DIR / split
-        if not src.exists():
+            lbl_src = PRELABELS_DIR / split
+        if not img_src.exists():
             continue
-        if validate and list(src.glob("*.txt")):
-            errors = validate_label_dir(src)
+        if validate and lbl_src.exists() and list(lbl_src.glob("*.txt")):
+            errors = validate_label_dir(lbl_src)
             if errors:
                 raise ValueError(
-                    f"Invalid OBB labels in {src}:\n" + "\n".join(errors[:5])
+                    f"Invalid OBB labels in {lbl_src}:\n" + "\n".join(errors[:5])
                 )
-        for png in sorted(src.glob("*.png")):
+        for png in sorted(img_src.glob("*.png")):
             shutil.copy2(png, img_dest / png.name)
-            lbl = src / f"{png.stem}.txt"
+            lbl = lbl_src / f"{png.stem}.txt" if lbl_src.exists() else None
             dest_lbl = lbl_dest / f"{png.stem}.txt"
-            if lbl.exists():
+            if lbl and lbl.exists():
                 shutil.copy2(lbl, dest_lbl)
             else:
                 dest_lbl.write_text("", encoding="utf-8")
