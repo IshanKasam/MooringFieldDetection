@@ -40,12 +40,6 @@ def export_yolo_dataset(
             lbl_src = PRELABELS_DIR / split
         if not img_src.exists():
             continue
-        if validate and lbl_src.exists() and list(lbl_src.glob("*.txt")):
-            errors = validate_label_dir(lbl_src)
-            if errors:
-                raise ValueError(
-                    f"Invalid OBB labels in {lbl_src}:\n" + "\n".join(errors[:5])
-                )
         for png in sorted(img_src.glob("*.png")):
             shutil.copy2(png, img_dest / png.name)
             lbl = lbl_src / f"{png.stem}.txt" if lbl_src.exists() else None
@@ -58,6 +52,13 @@ def export_yolo_dataset(
             else:
                 dest_lbl.write_text("", encoding="utf-8")
             stats[split] += 1
+
+        if validate and use_corrected_labels:
+            errors = validate_label_dir(lbl_dest)
+            if errors:
+                raise ValueError(
+                    f"Invalid OBB labels in {lbl_dest}:\n" + "\n".join(errors[:5])
+                )
 
     data_yaml = out / "data.yaml"
     data_yaml.write_text(

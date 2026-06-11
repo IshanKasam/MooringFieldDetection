@@ -1,0 +1,5 @@
+path: C:/Users/ishan/Downloads/MooringFieldDetection/data/datasets/mooring_boats
+train: images/train
+val: images/val
+names:
+  0: boat

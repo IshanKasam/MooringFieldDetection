@@ -20,11 +20,11 @@ if (-not $env:SKIP_PRELABEL) {
 }
 
 Log ">>> train (prelabels, no human review)"
-& $Python -m mooring_fields.cli train 2>&1 | Tee-Object -FilePath $Log -Append
+& $Python -m mooring_fields.cli train 2>&1 | Tee-Object -FilePath $Log -Append -Encoding utf8
 if ($LASTEXITCODE -ne 0) { Log "train FAILED exit $LASTEXITCODE"; exit $LASTEXITCODE }
 
 Log ">>> evaluate"
-& $Python -m mooring_fields.cli evaluate 2>&1 | Tee-Object -FilePath $Log -Append
+& $Python -m mooring_fields.cli evaluate 2>&1 | Tee-Object -FilePath $Log -Append -Encoding utf8
 if ($LASTEXITCODE -ne 0) { Log "evaluate FAILED exit $LASTEXITCODE"; exit $LASTEXITCODE }
 
 Log "=== pipeline complete ==="
