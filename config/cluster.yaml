@@ -1,9 +1,9 @@
 # Mooring field clustering (DBSCAN on boat centroids in meters)
-min_boats: 5
-eps_meters: 60
-min_samples: 4
+min_boats: 4
+eps_meters: 75
+min_samples: 3
 hit_radius_meters: 150
-confidence_threshold: 0.25
+confidence_threshold: 0.20
 
 # Evaluation uses center tile only + dedupe to avoid double-counting boats
 eval_tile_direction: center

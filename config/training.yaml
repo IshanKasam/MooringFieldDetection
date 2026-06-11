@@ -1,12 +1,12 @@
 # YOLO-OBB fine-tuning
-model: yolov8m-obb.pt
-epochs: 100
+model: yolov8l-obb.pt
+epochs: 150
 imgsz: 640
 
-# device: auto uses GPU when available (Kaggle P100/T4)
+# device: auto uses GPU when available (Kaggle T4)
 device: auto
 batch: 8
-batch_gpu: 16
+batch_gpu: 8
 batch_cpu: 4
 workers: 4
 workers_gpu: 4
@@ -19,7 +19,7 @@ predict_batch: 16
 predict_batch_gpu: 32
 predict_batch_cpu: 4
 
-patience: 20
+patience: 30
 degrees: 180
 mosaic: 1.0
-conf_prelabel: 0.25
+conf_prelabel: 0.20
