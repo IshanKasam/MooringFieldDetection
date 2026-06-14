@@ -90,5 +90,8 @@ def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
     if export_kml and all_clusters:
         clusters_to_kml(all_clusters, RESULTS_KML, document_name="Validation mooring fields")
         report["kml_output"] = str(RESULTS_KML)
+    elif RESULTS_KML.exists():
+        RESULTS_KML.unlink()
+        report["kml_note"] = "No clusters found; stale KML removed."
     report["json_output"] = str(RESULTS_JSON)
     return report

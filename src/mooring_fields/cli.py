@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
+import shutil
+import tempfile
 from pathlib import Path
+import sys
 
 from mooring_fields.evaluate import evaluate_val
 from mooring_fields.fetch_imagery import estimate_fetch, fetch_all
@@ -103,6 +105,112 @@ def publish_cmd(argv: list[str] | None = None) -> None:
     _print(publish_outputs(dest=args.dest))
 
 
+def scan_cmd(argv: list[str] | None = None) -> None:
+    """Scan new KML locations for mooring fields without touching training data."""
+    parser = argparse.ArgumentParser(
+        description=(
+            "Detect mooring fields in a new KML of candidate locations using a "
+            "trained model. Does NOT overwrite data/sites.json or config/split.yaml."
+        )
+    )
+    parser.add_argument("--kml", type=Path, required=True, help="KML file with candidate locations")
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=Path("./scan_results"),
+        help="Directory to save discovered_fields.kml (default: ./scan_results)",
+    )
+    parser.add_argument(
+        "--weights",
+        type=Path,
+        default=None,
+        help="Path to trained model weights (default: auto-detect best.pt)",
+    )
+    parser.add_argument(
+        "--max-requests",
+        type=int,
+        default=None,
+        help="Max Google Maps API calls for fetching scan imagery",
+    )
+    parser.add_argument(
+        "--skip-fetch",
+        action="store_true",
+        help="Skip fetching imagery (use if tiles already downloaded into output-dir)",
+    )
+    args = parser.parse_args(argv)
+
+    import os
+    from mooring_fields.cluster_fields import run_on_split
+    from mooring_fields.fetch_imagery import fetch_all as _fetch_all
+    from mooring_fields.kml_export import clusters_to_kml
+    from mooring_fields.kml_parser import load_sites_json, parse_kml
+
+    if not args.kml.exists():
+        print(f"ERROR: KML file not found: {args.kml}", file=sys.stderr)
+        sys.exit(1)
+
+    api_key = os.environ.get("GOOGLE_MAPS_API_KEY", "").strip()
+    if not api_key and not args.skip_fetch:
+        print(
+            "ERROR: GOOGLE_MAPS_API_KEY environment variable is not set. "
+            "Set it before running scan (or use --skip-fetch if imagery already exists).",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    tmp_dir = Path(tempfile.mkdtemp(prefix="mooring_scan_"))
+    try:
+        # 1. Parse KML to a temp sites.json (does not touch data/sites.json)
+        print(f"Parsing KML: {args.kml}")
+        parse_result = run_parse_and_split(kml_path=args.kml, output_dir=tmp_dir)
+        scan_sites = load_sites_json(path=tmp_dir / "sites.json")
+        print(f"  Found {len(scan_sites)} locations")
+
+        # 2. Fetch imagery for scan sites into a temp imagery dir
+        tmp_imagery = tmp_dir / "imagery"
+        if not args.skip_fetch:
+            print("Fetching satellite imagery for scan locations...")
+            fetch_result = _fetch_all(
+                input_sites=scan_sites,
+                imagery_output_base_dir=tmp_imagery,
+                max_requests=args.max_requests,
+            )
+            print(f"  Downloaded: {fetch_result['downloaded']}, cached: {fetch_result['skipped_cached']}")
+        else:
+            fetch_result = {}
+            print("--skip-fetch: skipping imagery download")
+
+        # 3. Run detection and clustering
+        print("Running mooring field detection...")
+        clusters = run_on_split(
+            split="scan",
+            weights=args.weights,
+            input_sites=scan_sites,
+            imagery_input_base_dir=tmp_imagery,
+        )
+        print(f"  Detected {len(clusters)} qualifying mooring fields")
+
+        # 4. Export to KML in the output dir
+        kml_out = args.output_dir / "discovered_fields.kml"
+        if clusters:
+            clusters_to_kml(clusters, kml_out, document_name=f"Mooring scan: {args.kml.name}")
+            print(f"  KML saved to: {kml_out}")
+        else:
+            print("  No mooring fields detected — KML not written.")
+
+        _print({
+            "scanned_locations": len(scan_sites),
+            "discovered_clusters": len(clusters),
+            "kml_output": str(kml_out) if clusters else None,
+            "output_dir": str(args.output_dir),
+            "fetch_summary": fetch_result,
+        })
+
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
 def main() -> None:
     commands = {
         "parse-kml": parse_kml_cmd,
@@ -113,6 +221,7 @@ def main() -> None:
         "evaluate": evaluate_cmd,
         "kaggle-setup": kaggle_setup_cmd,
         "publish-outputs": publish_cmd,
+        "scan": scan_cmd,
     }
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
         print("Usage: python -m mooring_fields.cli <command>")

@@ -42,11 +42,15 @@ def train(
         if not PRELABELS_DIR.exists():
             raise FileNotFoundError("Run prelabel before train.")
         for split in ("train", "val"):
-            img_count = len(list((IMAGERY_DIR / split).glob("*.png")))
-            lbl_count = len(list((PRELABELS_DIR / split).glob("*.txt"))) if (PRELABELS_DIR / split).exists() else 0
-            if lbl_count < img_count:
+            img_dir = IMAGERY_DIR / split
+            lbl_dir = PRELABELS_DIR / split
+            imgs = sorted(img_dir.glob("*.png")) if img_dir.exists() else []
+            if not imgs:
+                continue
+            missing = [p for p in imgs if not (lbl_dir / p.with_suffix(".txt").name).exists()]
+            if missing:
                 raise FileNotFoundError(
-                    f"Prelabel incomplete for {split}: {lbl_count}/{img_count} labels. "
+                    f"Prelabel incomplete for {split}: {len(missing)} images lack labels. "
                     "Run: python -m mooring_fields.cli prelabel"
                 )
 

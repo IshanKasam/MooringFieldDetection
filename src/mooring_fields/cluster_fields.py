@@ -43,6 +43,7 @@ def resolve_model(weights: Path | None = None) -> YOLO:
     best = RUNS_DIR / "mooring_boats" / "weights" / "best.pt"
     if best.exists():
         return YOLO(str(best))
+    print("WARNING: no trained best.pt found, using pretrained model fallback.")
     return YOLO(load_training_config()["model"])
 
 
@@ -138,9 +139,9 @@ def is_qualifying_field(cluster: MooringFieldCluster, min_boats: int) -> bool:
     return cluster.boat_count >= min_boats
 
 
-def iter_tiles_for_clustering(split: str, cfg: dict) -> list[Path]:
+def iter_tiles_for_clustering(split: str, cfg: dict, imagery_input_base_dir: Path | None = None) -> list[Path]:
     """Select imagery tiles for clustering (center-only by default to avoid duplicates)."""
-    img_dir = IMAGERY_DIR / split
+    img_dir = (imagery_input_base_dir or IMAGERY_DIR) / split
     direction = cfg.get("eval_tile_direction", "center")
     if direction == "all":
         return sorted(img_dir.glob("*.png"))
@@ -159,11 +160,12 @@ def run_for_site(
     site_id: str,
     split: str = "val",
     weights: Path | None = None,
+    imagery_input_base_dir: Path | None = None,
 ) -> list[MooringFieldCluster]:
     """Detect and cluster boats in the center tile for one mooring field site."""
     cfg = load_cluster_config()
     model = resolve_model(weights)
-    img_dir = IMAGERY_DIR / split
+    img_dir = (imagery_input_base_dir or IMAGERY_DIR) / split
     if not img_dir.exists():
         return []
 
@@ -174,7 +176,10 @@ def run_for_site(
         meta_path = img_dir / f"{png.stem}.json"
         if not meta_path.exists():
             continue
-        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
         if meta.get("site_id") != site_id:
             continue
         boats = detect_boats_in_tile(model, png, meta_path, cfg["confidence_threshold"])
@@ -199,23 +204,34 @@ def run_on_split(
     split: str = "val",
     weights: Path | None = None,
     per_site: bool = False,
-) -> list[MooringFieldCluster] | tuple[list[MooringFieldCluster], dict[str, list[MooringFieldCluster]]]:
-    """All qualifying clusters across a split (per-site, deduplicated globally)."""
+    input_sites: list | None = None,
+    imagery_input_base_dir: Path | None = None,
+) -> "list[MooringFieldCluster] | tuple[list[MooringFieldCluster], dict[str, list[MooringFieldCluster]]]":
+    """All qualifying clusters across a split (per-site, deduplicated globally).
+
+    *input_sites* overrides loading from sidecar JSON (used by scan workflow).
+    *imagery_input_base_dir* overrides IMAGERY_DIR (used by scan workflow).
+    """
     cfg = load_cluster_config()
-    img_dir = IMAGERY_DIR / split
+    img_dir = (imagery_input_base_dir or IMAGERY_DIR) / split
     if not img_dir.exists():
         return ([], {}) if per_site else []
 
     site_ids: set[str] = set()
     for meta_path in img_dir.glob("*.json"):
-        meta = json.loads(meta_path.read_text(encoding="utf-8"))
-        if meta.get("direction") == cfg.get("eval_tile_direction", "center"):
-            site_ids.add(meta["site_id"])
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        site_id = meta.get("site_id")
+        if site_id and meta.get("direction") == cfg.get("eval_tile_direction", "center"):
+            if input_sites is None or any(s.id == site_id for s in input_sites):
+                site_ids.add(site_id)
 
     by_site: dict[str, list[MooringFieldCluster]] = {}
     all_clusters: list[MooringFieldCluster] = []
     for site_id in sorted(site_ids):
-        site_clusters = run_for_site(site_id, split, weights)
+        site_clusters = run_for_site(site_id, split, weights, imagery_input_base_dir)
         by_site[site_id] = site_clusters
         all_clusters.extend(site_clusters)
 

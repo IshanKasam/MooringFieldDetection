@@ -84,20 +84,37 @@ def tile_filename(site: Site, direction: str, zoom: int) -> str:
 
 def iter_planned_tiles(
     split: str | None = None,
-) -> list[tuple[str, Site, str, int, Path]]:
-    """List all tiles with output paths for a split (or train+val)."""
-    cfg = load_imagery_config()
-    sites = load_sites_json()
-    splits = [split] if split else ["train", "val"]
-    directions = cfg.get("offset_directions", list(DIRECTION_OFFSETS.keys()))
-    planned: list[tuple[str, Site, str, int, Path]] = []
+    input_sites: list | None = None,
+    imagery_output_base_dir: Path | None = None,
+) -> list[tuple[str, "Site", str, int, Path]]:
+    """List all tiles with output paths for a split (or train+val).
 
-    for sp in splits:
-        for site in sites_for_split(sites, sp):
+    *input_sites* overrides loading from ``data/sites.json``.
+    *imagery_output_base_dir* overrides the default ``IMAGERY_DIR``.
+    """
+    cfg = load_imagery_config()
+    sites = input_sites if input_sites is not None else load_sites_json()
+    base_dir = imagery_output_base_dir or IMAGERY_DIR
+
+    if input_sites is not None:
+        # Scan mode: treat all sites as a single "scan" split, no split.yaml needed.
+        splits_to_use = [split or "scan"]
+        def _get_sites(sp: str):  # noqa: ANN202
+            return sites
+    else:
+        splits_to_use = [split] if split else ["train", "val"]
+        def _get_sites(sp: str):  # noqa: ANN202
+            return sites_for_split(sites, sp)
+
+    directions = cfg.get("offset_directions", list(DIRECTION_OFFSETS.keys()))
+    planned: list[tuple[str, "Site", str, int, Path]] = []
+
+    for sp in splits_to_use:
+        for site in _get_sites(sp):
             zoom = site_zoom(site, cfg)
             for direction in directions:
                 filename = tile_filename(site, direction, zoom)
-                path = IMAGERY_DIR / sp / filename
+                path = base_dir / sp / filename
                 planned.append((sp, site, direction, zoom, path))
     return planned
 
@@ -177,8 +194,8 @@ def fetch_tile(
                 raise RuntimeError(
                     f"Expected image, got {content_type}: {response.text[:200]}"
                 )
-            api_budget[0] += 1
             dest.write_bytes(response.content)
+            api_budget[0] += 1
             return dest, True
         except httpx.TimeoutException as exc:
             last_error = exc
@@ -231,35 +248,43 @@ def fetch_all(
     split: str | None = None,
     dry_run: bool = False,
     max_requests: int | None = None,
+    input_sites: list | None = None,
+    imagery_output_base_dir: Path | None = None,
 ) -> dict:
     cfg = load_imagery_config()
     cap = max_requests if max_requests is not None else cfg.get("max_api_requests_per_run", 800)
 
     if dry_run:
         est = estimate_fetch(split)
-        planned = iter_planned_tiles(split)
-        by_split: dict[str, list[str]] = {"train": [], "val": []}
+        planned = iter_planned_tiles(split, input_sites, imagery_output_base_dir)
+        by_split: dict[str, list[str]] = {}
         for sp, site, direction, zoom, _ in planned:
+            if sp not in by_split:
+                by_split[sp] = []
             by_split[sp].append(tile_filename(site, direction, zoom))
         return {"dry_run": True, "estimate": est, "tiles": by_split}
 
     api_key = get_api_key()
     est = estimate_fetch(split)
     if est["api_calls_needed"] > cap:
-        raise RuntimeError(
-            f"Refusing to fetch: {est['api_calls_needed']} API calls needed but "
-            f"max_api_requests_per_run is {cap}. Use --max-requests to override or "
-            "raise max_api_requests_per_run in config/imagery.yaml."
+        print(
+            f"WARNING: {est['api_calls_needed']} API calls needed but cap is {cap}. "
+            "Fetch will stop once the cap is reached. Raise --max-requests or "
+            "max_api_requests_per_run in config/imagery.yaml to fetch all tiles."
         )
 
     min_interval = 1.0 / cfg.get("requests_per_second", 10)
     api_budget = [0]
     downloaded = 0
     skipped_cached = 0
-    results: dict[str, list[str]] = {"train": [], "val": []}
+    splits_seen: set[str] = set()
+    results: dict[str, list[str]] = {}
 
     with httpx.Client() as client:
-        for sp, site, direction, zoom, image_path in iter_planned_tiles(split):
+        for sp, site, direction, zoom, image_path in iter_planned_tiles(split, input_sites, imagery_output_base_dir):
+            if sp not in results:
+                results[sp] = []
+            splits_seen.add(sp)
             north_m, east_m = DIRECTION_OFFSETS.get(direction, (0, 0))
             lat, lon = offset_latlon(site.latitude, site.longitude, north_m, east_m)
             meta_path = image_path.with_suffix(".json")
@@ -279,11 +304,14 @@ def fetch_all(
                 write_metadata(meta_path, site, direction, lat, lon, zoom, cfg, image_path)
             results[sp].append(str(image_path))
 
+    output_dir = imagery_output_base_dir or IMAGERY_DIR
     return {
-        "train_tiles": len(results["train"]),
-        "val_tiles": len(results["val"]),
+        "train_tiles": len(results.get("train", [])),
+        "val_tiles": len(results.get("val", [])),
+        "tiles_by_split": {sp: len(tiles) for sp, tiles in results.items()},
         "api_calls_made": api_budget[0],
         "downloaded": downloaded,
         "skipped_cached": skipped_cached,
-        "output_dir": str(IMAGERY_DIR),
+        "output_dir": str(output_dir),
+    }
     }

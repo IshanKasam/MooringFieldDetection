@@ -25,7 +25,7 @@ def geographic_split(
     if not sites:
         return [], []
 
-    n_clusters = n_clusters or max(5, int(len(sites) ** 0.5))
+    n_clusters = n_clusters or min(max(5, int(len(sites) ** 0.5)), len(sites))
     coords = [[s.latitude, s.longitude] for s in sites]
     labels = KMeans(n_clusters=n_clusters, random_state=random_seed, n_init=10).fit_predict(coords)
 
@@ -53,24 +53,37 @@ def update_split_config(train_ids: list[str], val_ids: list[str], config_path: P
     return path
 
 
-def run_parse_and_split(kml_path: Path | None = None) -> dict:
-    sites = parse_kml(kml_path)
-    write_sites_json(sites)
+def run_parse_and_split(kml_path: Path | None = None, output_dir: Path | None = None) -> dict:
+    """Parse a KML and write sites.json + update split config.
 
-    config_path = CONFIG_DIR / "split.yaml"
-    cfg = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-    train_ids, val_ids = geographic_split(
-        sites,
-        train_ratio=cfg.get("train_ratio", 0.8),
-        random_seed=cfg.get("random_seed", 42),
-    )
-    update_split_config(train_ids, val_ids)
+    If *output_dir* is given the results are written there instead of the
+    default ``data/`` / ``config/`` locations, so the main training data is
+    never overwritten (useful for the scan workflow).
+    """
+    sites = parse_kml(kml_path)
+
+    sites_out = (output_dir / "sites.json") if output_dir else None
+    write_sites_json(sites, sites_out)
+
+    if output_dir is None:
+        config_path = CONFIG_DIR / "split.yaml"
+        cfg = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+        train_ids, val_ids = geographic_split(
+            sites,
+            train_ratio=cfg.get("train_ratio", 0.8),
+            random_seed=cfg.get("random_seed", 42),
+        )
+        update_split_config(train_ids, val_ids)
+        return {
+            "sites_count": len(sites),
+            "train_count": len(train_ids),
+            "val_count": len(val_ids),
+            "sites_json": str(SITES_JSON),
+        }
 
     return {
         "sites_count": len(sites),
-        "train_count": len(train_ids),
-        "val_count": len(val_ids),
-        "sites_json": str(SITES_JSON),
+        "sites_json": str(output_dir / "sites.json"),
     }
 
 

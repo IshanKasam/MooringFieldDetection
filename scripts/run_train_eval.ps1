@@ -1,5 +1,5 @@
 $ErrorActionPreference = "Stop"
-$Root = "c:\Users\ishan\Downloads\MooringFieldDetection"
+$Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $Python = Join-Path $Root ".venv\Scripts\python.exe"
 $Log = Join-Path $Root "data\pipeline_run.log"
 Set-Location $Root

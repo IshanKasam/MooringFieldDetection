@@ -29,7 +29,8 @@ def prelabel_split(
 
     src_dir = IMAGERY_DIR / split
     if not src_dir.exists():
-        raise FileNotFoundError(f"No imagery at {src_dir}. Run fetch first.")
+        print(f"  [{split}] No imagery at {src_dir} — skipping split.", flush=True)
+        return {"split": split, "images": 0, "labeled": 0, "skipped": True, "detections": 0}
 
     out_root = output_dir or PRELABELS_DIR / split
     out_root.mkdir(parents=True, exist_ok=True)
@@ -61,15 +62,18 @@ def prelabel_split(
 
     for start in range(0, len(pending), batch_size):
         chunk = pending[start : start + batch_size]
-        results = model.predict(
-            [str(p) for p in chunk],
-            conf=confidence,
-            batch=min(batch_size, len(chunk)),
-            **predict_kw,
-        )
-        for img, result in zip(chunk, results):
-            label_path = out_root / f"{img.stem}.txt"
-            total_detections += write_obb_labels(result, label_path)
+        try:
+            results = model.predict(
+                [str(p) for p in chunk],
+                conf=confidence,
+                batch=min(batch_size, len(chunk)),
+                **predict_kw,
+            )
+            for img, result in zip(chunk, results):
+                label_path = out_root / f"{img.stem}.txt"
+                total_detections += write_obb_labels(result, label_path)
+        except Exception as exc:
+            print(f"  [{split}] WARNING: batch starting at {start} failed ({exc}); skipping chunk.", flush=True)
 
         done = skipped + min(start + batch_size, len(pending))
         if done % 25 < batch_size or start + batch_size >= len(pending):
