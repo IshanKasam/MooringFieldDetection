@@ -314,4 +314,3 @@ def fetch_all(
         "skipped_cached": skipped_cached,
         "output_dir": str(output_dir),
     }
-    }
