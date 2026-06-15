@@ -5,6 +5,8 @@ min_samples: 3
 hit_radius_meters: 150
 confidence_threshold: 0.20
 
-# Evaluation uses center tile only + dedupe to avoid double-counting boats
-eval_tile_direction: center
+# Evaluation aggregates all directional tiles per site (center + N/S/E/W) and
+# dedupes overlapping detections. "all" greatly improves recall for off-center
+# fields; set to "center" to use only the center tile.
+eval_tile_direction: all
 dedupe_radius_meters: 25

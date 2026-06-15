@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
@@ -30,7 +30,7 @@ class MooringFieldCluster:
     lon: float
     boat_count: int
     mean_confidence: float
-    boat_ids: list[int]
+    boats: list[BoatDetection] = field(default_factory=list)
 
 
 def load_cluster_config() -> dict:
@@ -129,7 +129,7 @@ def cluster_boats(
                 lon=float(np.mean(lons)),
                 boat_count=len(cluster_boats_list),
                 mean_confidence=float(np.mean([b.confidence for b in cluster_boats_list])),
-                boat_ids=[],
+                boats=list(cluster_boats_list),
             )
         )
     return clusters
@@ -161,17 +161,25 @@ def run_for_site(
     split: str = "val",
     weights: Path | None = None,
     imagery_input_base_dir: Path | None = None,
+    model: YOLO | None = None,
 ) -> list[MooringFieldCluster]:
-    """Detect and cluster boats in the center tile for one mooring field site."""
+    """Detect and cluster boats for one mooring field site.
+
+    When ``eval_tile_direction == "all"`` boats are aggregated across every
+    directional tile for the site (center + N/S/E/W, ~800m footprint) and then
+    deduplicated, which greatly improves recall for off-center fields. For a
+    specific direction only that single tile is used.
+    """
     cfg = load_cluster_config()
-    model = resolve_model(weights)
+    model = model or resolve_model(weights)
     img_dir = (imagery_input_base_dir or IMAGERY_DIR) / split
     if not img_dir.exists():
         return []
 
     direction = cfg.get("eval_tile_direction", "center")
+    all_boats: list[BoatDetection] = []
     for png in sorted(img_dir.glob("*.png")):
-        if f"_{direction}_" not in png.stem:
+        if direction != "all" and f"_{direction}_" not in png.stem:
             continue
         meta_path = img_dir / f"{png.stem}.json"
         if not meta_path.exists():
@@ -182,9 +190,14 @@ def run_for_site(
             continue
         if meta.get("site_id") != site_id:
             continue
-        boats = detect_boats_in_tile(model, png, meta_path, cfg["confidence_threshold"])
-        return clusters_from_boats(boats, cfg)
-    return []
+        all_boats.extend(
+            detect_boats_in_tile(model, png, meta_path, cfg["confidence_threshold"])
+        )
+        if direction != "all":
+            break
+    if not all_boats:
+        return []
+    return clusters_from_boats(all_boats, cfg)
 
 
 def _dedupe_clusters(
@@ -217,6 +230,7 @@ def run_on_split(
     if not img_dir.exists():
         return ([], {}) if per_site else []
 
+    direction = cfg.get("eval_tile_direction", "center")
     site_ids: set[str] = set()
     for meta_path in img_dir.glob("*.json"):
         try:
@@ -224,14 +238,20 @@ def run_on_split(
         except Exception:
             continue
         site_id = meta.get("site_id")
-        if site_id and meta.get("direction") == cfg.get("eval_tile_direction", "center"):
-            if input_sites is None or any(s.id == site_id for s in input_sites):
-                site_ids.add(site_id)
+        if not site_id:
+            continue
+        if direction != "all" and meta.get("direction") != direction:
+            continue
+        if input_sites is None or any(s.id == site_id for s in input_sites):
+            site_ids.add(site_id)
 
+    model = resolve_model(weights)
     by_site: dict[str, list[MooringFieldCluster]] = {}
     all_clusters: list[MooringFieldCluster] = []
     for site_id in sorted(site_ids):
-        site_clusters = run_for_site(site_id, split, weights, imagery_input_base_dir)
+        site_clusters = run_for_site(
+            site_id, split, weights, imagery_input_base_dir, model=model
+        )
         by_site[site_id] = site_clusters
         all_clusters.extend(site_clusters)
 

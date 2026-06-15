@@ -31,7 +31,7 @@ class TestClusterFields:
 
     def test_is_qualifying_field(self):
         cluster = MooringFieldCluster(
-            lat=41.5, lon=-71.0, boat_count=6, mean_confidence=0.7, boat_ids=[]
+            lat=41.5, lon=-71.0, boat_count=6, mean_confidence=0.7, boats=[]
         )
         assert is_qualifying_field(cluster, min_boats=5)
         assert not is_qualifying_field(cluster, min_boats=10)

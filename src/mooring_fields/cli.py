@@ -141,7 +141,9 @@ def scan_cmd(argv: list[str] | None = None) -> None:
 
     import os
     from mooring_fields.cluster_fields import run_on_split
+    from mooring_fields.database import save_scan
     from mooring_fields.fetch_imagery import fetch_all as _fetch_all
+    from mooring_fields.geocode import Geocoder
     from mooring_fields.kml_export import clusters_to_kml
     from mooring_fields.kml_parser import load_sites_json, parse_kml
 
@@ -191,19 +193,42 @@ def scan_cmd(argv: list[str] | None = None) -> None:
         )
         print(f"  Detected {len(clusters)} qualifying mooring fields")
 
-        # 4. Export to KML in the output dir
+        # 4. Reverse-geocode location names
+        geocoder = Geocoder(cache_path=args.output_dir / "geocode_cache.json")
+        names = {id(c): geocoder(c.lat, c.lon).get("location_name") for c in clusters}
+
+        # 5. Export to KML in the output dir
         kml_out = args.output_dir / "discovered_fields.kml"
         if clusters:
-            clusters_to_kml(clusters, kml_out, document_name=f"Mooring scan: {args.kml.name}")
+            clusters_to_kml(
+                clusters,
+                kml_out,
+                document_name=f"Mooring scan: {args.kml.name}",
+                names=names,
+            )
             print(f"  KML saved to: {kml_out}")
         else:
             print("  No mooring fields detected — KML not written.")
+
+        # 6. Persist detections to a SQLite database in the output dir
+        db_summary = {}
+        if clusters:
+            db_summary = save_scan(
+                clusters,
+                source=f"scan:{args.kml.name}",
+                weights=str(args.weights) if args.weights else "auto",
+                split="scan",
+                geocoder=geocoder,
+                db_path=args.output_dir / "mooring_fields.db",
+            )
+            print(f"  Database saved to: {db_summary.get('db_path')}")
 
         _print({
             "scanned_locations": len(scan_sites),
             "discovered_clusters": len(clusters),
             "kml_output": str(kml_out) if clusters else None,
             "output_dir": str(args.output_dir),
+            "database": db_summary,
             "fetch_summary": fetch_result,
         })
 

@@ -9,7 +9,9 @@ from pathlib import Path
 import yaml
 
 from mooring_fields.cluster_fields import MooringFieldCluster, run_on_split
+from mooring_fields.database import save_scan
 from mooring_fields.geo_utils import haversine_m
+from mooring_fields.geocode import Geocoder
 from mooring_fields.kml_export import clusters_to_kml
 from mooring_fields.kml_parser import Site, load_sites_json
 from mooring_fields.paths import CONFIG_DIR, DATA_DIR
@@ -38,13 +40,22 @@ def hit_at_radius(
     return False
 
 
-def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
+def evaluate_val(
+    weights: Path | None = None,
+    export_kml: bool = True,
+    save_db: bool = True,
+) -> dict:
     cfg = load_cluster_config()
     sites = sites_for_split(load_sites_json(), "val")
     all_clusters, clusters_by_site = run_on_split("val", weights=weights, per_site=True)
 
     radius = cfg["hit_radius_meters"]
     min_boats = cfg["min_boats"]
+
+    geocoder = Geocoder()
+    cluster_names: dict[int, dict] = {}
+    for cluster in all_clusters:
+        cluster_names[id(cluster)] = geocoder(cluster.lat, cluster.lon)
 
     hits = 0
     per_site: list[dict] = []
@@ -72,6 +83,14 @@ def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
             }
         )
 
+    clusters_out = []
+    for c in all_clusters:
+        row = asdict(c)
+        info = cluster_names.get(id(c), {})
+        row["location_name"] = info.get("location_name")
+        row["country"] = info.get("country")
+        clusters_out.append(row)
+
     n = len(sites) or 1
     report = {
         "val_sites": len(sites),
@@ -82,16 +101,31 @@ def evaluate_val(weights: Path | None = None, export_kml: bool = True) -> dict:
         "eval_tile_direction": cfg.get("eval_tile_direction", "center"),
         "dedupe_radius_meters": cfg.get("dedupe_radius_meters", 25),
         "per_site": per_site,
-        "clusters": [asdict(c) for c in all_clusters],
+        "clusters": clusters_out,
     }
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     RESULTS_JSON.write_text(json.dumps(report, indent=2), encoding="utf-8")
     if export_kml and all_clusters:
-        clusters_to_kml(all_clusters, RESULTS_KML, document_name="Validation mooring fields")
+        clusters_to_kml(
+            all_clusters,
+            RESULTS_KML,
+            document_name="Validation mooring fields",
+            names={id(c): cluster_names.get(id(c), {}).get("location_name") for c in all_clusters},
+        )
         report["kml_output"] = str(RESULTS_KML)
     elif RESULTS_KML.exists():
         RESULTS_KML.unlink()
         report["kml_note"] = "No clusters found; stale KML removed."
+
+    if save_db and all_clusters:
+        report["database"] = save_scan(
+            all_clusters,
+            source="evaluate_val",
+            weights=str(weights) if weights else "auto",
+            split="val",
+            geocoder=geocoder,
+        )
+
     report["json_output"] = str(RESULTS_JSON)
     return report

@@ -222,6 +222,8 @@ def publish_outputs(dest: Path | None = None) -> dict:
         ROOT / "runs" / "mooring_boats",
         DATA_DIR / "evaluation_results.json",
         DATA_DIR / "evaluation_clusters.kml",
+        DATA_DIR / "mooring_fields.db",
+        DATA_DIR / "geocode_cache.json",
         DATA_DIR / "prelabels",
         DATA_DIR / "datasets" / "mooring_boats",
     ]
