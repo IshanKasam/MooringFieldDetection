@@ -58,6 +58,15 @@ python -m mooring_fields.cli publish-outputs
 pytest
 ```
 
+## Enrichment pipeline
+
+See [docs/ENRICHMENT.md](docs/ENRICHMENT.md) for Places + Gemini → Excel customer list.
+
+```bash
+pip install -e ".[dev,enrichment]"
+python -m mooring_fields.cli enrich-all --limit 5
+```
+
 ## Project layout
 
 - `mooring_fields.kml` — 123 labeled mooring field points

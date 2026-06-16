@@ -1,0 +1,15 @@
+{
+  "timestamp_utc": "2026-06-15T19:43:42.785335+00:00",
+  "provider": "live",
+  "gemini_note": "Generative Language API not enabled; Places-only fallback used (needs_review=true)",
+  "stats": {
+    "fields_total": 86,
+    "fields_exported": 44,
+    "fields_skipped": 42,
+    "prospects": 20,
+    "needs_review": 18,
+    "approved": 0,
+    "enrichment_runs": 15
+  },
+  "archive": "C:\\Users\\ishan\\Downloads\\MooringFieldDetection\\data\\enrichment_outputs\\2026-06-15_live"
+}

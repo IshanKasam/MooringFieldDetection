@@ -1,11 +1,19 @@
-# Google Maps Static API Setup
+# Google Maps Platform Setup
+
+## APIs used
+
+| API | Pipeline step |
+|-----|----------------|
+| Maps Static API | `fetch` — satellite tiles |
+| Geocoding API | `evaluate`, `scan` — reverse geocode fields |
+| Places API (New) | `enrich-places` — marina/harbor lookup |
 
 ## 1. Create key
 
 1. Open [Google Cloud Console](https://console.cloud.google.com/)
 2. Create or select a project
 3. Enable billing (card required; you stay at $0 within free tier)
-4. Go to **APIs & Services → Library** → enable **Maps Static API**
+4. Go to **APIs & Services → Library** → enable **Maps Static API**, **Geocoding API**, and **Places API (New)**
 5. Go to **Credentials → Create credentials → API key**
 6. **Regenerate** any key that was ever shared publicly
 
@@ -15,6 +23,7 @@ Open `.env` in the project root:
 
 ```
 GOOGLE_MAPS_API_KEY=paste_your_key_here
+GEMINI_API_KEY=paste_your_gemini_key_here
 ```
 
 Save the file. Never commit `.env` or paste the key in chat.
@@ -23,7 +32,7 @@ Save the file. Never commit `.env` or paste the key in chat.
 
 Edit the key in Credentials:
 
-- **API restrictions:** Restrict key → **Maps Static API** only
+- **API restrictions:** Maps Static API, Geocoding API, Places API (New)
 - **Application restrictions:** IP address (recommended) or None for local dev
 
 ## 4. Cap quota (prevents surprise charges)
@@ -46,3 +55,16 @@ python -m mooring_fields.cli prelabel
 python -m mooring_fields.cli train --corrected-labels
 python -m mooring_fields.cli evaluate
 ```
+
+## Enrichment (customer list)
+
+After detection, build a prospect Excel from `mooring_fields.db`:
+
+```bash
+pip install -e ".[enrichment]"
+python -m mooring_fields.cli estimate-enrichment
+python -m mooring_fields.cli enrich-all --limit 5   # mock provider by default
+python -m mooring_fields.cli export-prospects
+```
+
+See [docs/ENRICHMENT.md](docs/ENRICHMENT.md).

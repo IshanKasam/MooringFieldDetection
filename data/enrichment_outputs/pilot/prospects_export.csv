@@ -1,0 +1,5 @@
+prospect_id,canonical_business_name,phone,email,website,address,operator_type,research_summary,confidence,sources,field_ids,field_count,needs_review,approved,last_enriched
+1,Harbor Point Marina,555-0101,,https://harborpoint.example.com,,marina,Family-owned marina managing the mooring field.,0.85,"[""mock_provider"", ""places_api""]","1,4",2,0,0,2026-06-15T18:57:28.369984+00:00
+2,East Bay Yacht Club,555-0102,,https://eastybc.example.com,,marina,Mock research for East Bay Yacht Club at mooring field 2.,0.75,"[""mock_provider""]","2,3,5",3,0,0,2026-06-15T18:57:28.379583+00:00
+6,Eastern Point Yacht Club,(978) 283-3520,,http://www.epyc.net/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Eastern Point Yacht Club.,0.35,"[""google_places""]","8,9,10,11,12",5,1,0,2026-06-15T19:40:13.730509+00:00
+11,Safe Harbor Front Street,(207) 930-3740,,https://frontstreetshipyard.com/,"101 Front St, Belfast, ME 04915, USA","marina,storage,manufacturer",,,,"13,14",2,1,0,2026-06-15T19:40:09.882360+00:00

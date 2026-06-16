@@ -236,6 +236,206 @@ def scan_cmd(argv: list[str] | None = None) -> None:
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
+def query_fields_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="List detected fields from SQLite")
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--format", choices=["json", "csv"], default="json")
+    parser.add_argument("--only-new", action="store_true")
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import query_fields
+
+    result = query_fields(db_path=args.db, fmt=args.format, only_new=args.only_new)
+    if args.format == "csv":
+        print(result)
+    else:
+        _print({"fields": result, "count": len(result)})
+
+
+def estimate_enrichment_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Estimate Places + Gemini API usage")
+    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--only-new", action="store_true")
+    parser.add_argument("--db", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment_config import estimate_enrichment
+
+    _print(
+        estimate_enrichment(
+            args.limit,
+            db_path=args.db,
+            only_new=args.only_new,
+        )
+    )
+
+
+def enrich_places_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Enrich fields with Google Places data")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only-new", action="store_true")
+    parser.add_argument("--include-skipped", action="store_true")
+    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--csv", type=Path, default=None, help="Manual CSV for provider=manual")
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import enrich_places
+
+    _print(
+        enrich_places(
+            db_path=args.db,
+            dry_run=args.dry_run,
+            only_new=args.only_new,
+            include_skipped=args.include_skipped,
+            limit=args.limit,
+            csv_path=args.csv,
+        )
+    )
+
+
+def enrich_research_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Research prospects with Gemini")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only-new", action="store_true")
+    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--csv", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import enrich_research
+
+    _print(
+        enrich_research(
+            db_path=args.db,
+            dry_run=args.dry_run,
+            only_new=args.only_new,
+            limit=args.limit,
+            csv_path=args.csv,
+        )
+    )
+
+
+def enrich_supply_chain_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Research upstream suppliers for mooring service companies"
+    )
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only-new", action="store_true", default=True)
+    parser.add_argument("--all", action="store_true", help="Re-research even if supply chain exists")
+    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--db", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import enrich_supply_chain
+
+    _print(
+        enrich_supply_chain(
+            db_path=args.db,
+            dry_run=args.dry_run,
+            only_new=not args.all,
+            limit=args.limit,
+        )
+    )
+
+
+def dedupe_prospects_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Deduplicate prospect rows")
+    parser.add_argument("--db", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import run_dedupe
+
+    _print(run_dedupe(db_path=args.db))
+
+
+def export_prospects_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Export Fields + Prospects Excel/CSV")
+    parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--min-boat-count", type=int, default=0)
+    parser.add_argument("--min-confidence", type=float, default=0.0)
+    parser.add_argument("--only-approved", action="store_true")
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment_config import load_enrichment_config
+    from mooring_fields.export_excel import export_prospects
+    from mooring_fields.paths import PROSPECTS_EXPORT
+
+    cfg = load_enrichment_config()
+    out = args.output or Path(cfg.get("export_path", str(PROSPECTS_EXPORT)))
+    _print(
+        export_prospects(
+            out,
+            db_path=args.db,
+            min_boat_count=args.min_boat_count,
+            min_confidence=args.min_confidence,
+            only_approved=args.only_approved,
+        )
+    )
+
+
+def import_prospects_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Import manual prospect corrections from CSV")
+    parser.add_argument("--csv", type=Path, required=True)
+    parser.add_argument("--db", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import import_prospects_csv
+
+    _print(import_prospects_csv(args.csv, db_path=args.db))
+
+
+def approve_prospect_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Approve a prospect for export")
+    parser.add_argument("--id", type=int, required=True)
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--unapprove", action="store_true")
+    args = parser.parse_args(argv)
+    from mooring_fields.database import approve_prospect, get_connection, init_db
+
+    conn = get_connection(args.db)
+    try:
+        init_db(conn)
+        approve_prospect(conn, args.id, approved=not args.unapprove)
+    finally:
+        conn.close()
+    _print({"prospect_id": args.id, "approved": not args.unapprove})
+
+
+def enrich_all_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Run full enrichment pipeline")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only-new", action="store_true")
+    parser.add_argument("--include-skipped", action="store_true")
+    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument("--csv", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.enrichment import enrich_all
+
+    _print(
+        enrich_all(
+            db_path=args.db,
+            dry_run=args.dry_run,
+            only_new=args.only_new,
+            include_skipped=args.include_skipped,
+            limit=args.limit,
+            export_path=args.output,
+            csv_path=args.csv,
+        )
+    )
+
+
+def diff_scans_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Compare field counts between two scans")
+    parser.add_argument("scan_a", type=int)
+    parser.add_argument("scan_b", type=int)
+    parser.add_argument("--db", type=Path, default=None)
+    args = parser.parse_args(argv)
+    from mooring_fields.database import diff_scans, get_connection, init_db
+
+    conn = get_connection(args.db)
+    try:
+        init_db(conn)
+        _print(diff_scans(conn, args.scan_a, args.scan_b))
+    finally:
+        conn.close()
+
+
 def main() -> None:
     commands = {
         "parse-kml": parse_kml_cmd,
@@ -247,6 +447,17 @@ def main() -> None:
         "kaggle-setup": kaggle_setup_cmd,
         "publish-outputs": publish_cmd,
         "scan": scan_cmd,
+        "query-fields": query_fields_cmd,
+        "estimate-enrichment": estimate_enrichment_cmd,
+        "enrich-places": enrich_places_cmd,
+        "enrich-research": enrich_research_cmd,
+        "enrich-supply-chain": enrich_supply_chain_cmd,
+        "dedupe-prospects": dedupe_prospects_cmd,
+        "export-prospects": export_prospects_cmd,
+        "import-prospects": import_prospects_cmd,
+        "approve-prospect": approve_prospect_cmd,
+        "enrich-all": enrich_all_cmd,
+        "diff-scans": diff_scans_cmd,
     }
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
         print("Usage: python -m mooring_fields.cli <command>")

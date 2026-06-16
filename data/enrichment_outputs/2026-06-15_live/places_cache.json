@@ -1,0 +1,1373 @@
+{
+  "44.6325,-67.2944": {
+    "empty": true
+  },
+  "44.6324,-67.2922": {
+    "empty": true
+  },
+  "42.5807,-70.6681": {
+    "place_id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+    "name": "Eastern Point Yacht Club",
+    "address": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+    "phone": "(978) 283-3520",
+    "website": "http://www.epyc.net/",
+    "types": [
+      "marina",
+      "sports_club",
+      "point_of_interest",
+      "association_or_organization",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+      "types": [
+        "marina",
+        "sports_club",
+        "point_of_interest",
+        "association_or_organization",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 283-3520",
+      "formattedAddress": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+      "websiteUri": "http://www.epyc.net/",
+      "displayName": {
+        "text": "Eastern Point Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.5789,-70.6657": {
+    "place_id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+    "name": "Eastern Point Yacht Club",
+    "address": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+    "phone": "(978) 283-3520",
+    "website": "http://www.epyc.net/",
+    "types": [
+      "marina",
+      "sports_club",
+      "point_of_interest",
+      "association_or_organization",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+      "types": [
+        "marina",
+        "sports_club",
+        "point_of_interest",
+        "association_or_organization",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 283-3520",
+      "formattedAddress": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+      "websiteUri": "http://www.epyc.net/",
+      "displayName": {
+        "text": "Eastern Point Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.5826,-70.6655": {
+    "place_id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+    "name": "Eastern Point Yacht Club",
+    "address": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+    "phone": "(978) 283-3520",
+    "website": "http://www.epyc.net/",
+    "types": [
+      "marina",
+      "sports_club",
+      "service",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+      "types": [
+        "marina",
+        "sports_club",
+        "service",
+        "association_or_organization",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 283-3520",
+      "formattedAddress": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+      "websiteUri": "http://www.epyc.net/",
+      "displayName": {
+        "text": "Eastern Point Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.5807,-70.6632": {
+    "place_id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+    "name": "Eastern Point Yacht Club",
+    "address": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+    "phone": "(978) 283-3520",
+    "website": "http://www.epyc.net/",
+    "types": [
+      "marina",
+      "sports_club",
+      "point_of_interest",
+      "association_or_organization",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+      "types": [
+        "marina",
+        "sports_club",
+        "point_of_interest",
+        "association_or_organization",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 283-3520",
+      "formattedAddress": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+      "websiteUri": "http://www.epyc.net/",
+      "displayName": {
+        "text": "Eastern Point Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.5807,-70.6657": {
+    "place_id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+    "name": "Eastern Point Yacht Club",
+    "address": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+    "phone": "(978) 283-3520",
+    "website": "http://www.epyc.net/",
+    "types": [
+      "marina",
+      "sports_club",
+      "service",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJI85A4zEl44kRH9qQYqL-3B4",
+      "types": [
+        "marina",
+        "sports_club",
+        "service",
+        "association_or_organization",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 283-3520",
+      "formattedAddress": "125 Eastern Point Blvd, Gloucester, MA 01930, USA",
+      "websiteUri": "http://www.epyc.net/",
+      "displayName": {
+        "text": "Eastern Point Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.4292,-69.0062": {
+    "place_id": "ChIJRxtBG1xurkwR_4amDQao_Fc",
+    "name": "Safe Harbor Front Street",
+    "address": "101 Front St, Belfast, ME 04915, USA",
+    "phone": "(207) 930-3740",
+    "website": "https://frontstreetshipyard.com/",
+    "types": [
+      "marina",
+      "storage",
+      "manufacturer",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJRxtBG1xurkwR_4amDQao_Fc",
+      "types": [
+        "marina",
+        "storage",
+        "manufacturer",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 930-3740",
+      "formattedAddress": "101 Front St, Belfast, ME 04915, USA",
+      "websiteUri": "https://frontstreetshipyard.com/",
+      "displayName": {
+        "text": "Safe Harbor Front Street",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.4265,-69.0079": {
+    "place_id": "ChIJRxtBG1xurkwR_4amDQao_Fc",
+    "name": "Safe Harbor Front Street",
+    "address": "101 Front St, Belfast, ME 04915, USA",
+    "phone": "(207) 930-3740",
+    "website": "https://frontstreetshipyard.com/",
+    "types": [
+      "marina",
+      "manufacturer",
+      "storage",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJRxtBG1xurkwR_4amDQao_Fc",
+      "types": [
+        "marina",
+        "manufacturer",
+        "storage",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 930-3740",
+      "formattedAddress": "101 Front St, Belfast, ME 04915, USA",
+      "websiteUri": "https://frontstreetshipyard.com/",
+      "displayName": {
+        "text": "Safe Harbor Front Street",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.3493,-68.5422": {
+    "empty": true
+  },
+  "44.3511,-68.5422": {
+    "empty": true
+  },
+  "44.3529,-68.5422": {
+    "empty": true
+  },
+  "41.666,-70.0649": {
+    "place_id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+    "name": "Stone Horse Yacht Club",
+    "address": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+    "phone": "(508) 432-0868",
+    "website": "http://www.stonehorseyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "association_or_organization",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+      "types": [
+        "marina",
+        "sports_club",
+        "association_or_organization",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 432-0868",
+      "formattedAddress": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+      "websiteUri": "http://www.stonehorseyachtclub.org/",
+      "displayName": {
+        "text": "Stone Horse Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.6667,-70.0686": {
+    "place_id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+    "name": "Stone Horse Yacht Club",
+    "address": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+    "phone": "(508) 432-0868",
+    "website": "http://www.stonehorseyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "association_or_organization",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+      "types": [
+        "marina",
+        "sports_club",
+        "association_or_organization",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 432-0868",
+      "formattedAddress": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+      "websiteUri": "http://www.stonehorseyachtclub.org/",
+      "displayName": {
+        "text": "Stone Horse Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.6622,-70.0633": {
+    "place_id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+    "name": "Stone Horse Yacht Club",
+    "address": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+    "phone": "(508) 432-0868",
+    "website": "http://www.stonehorseyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "service",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+      "types": [
+        "marina",
+        "sports_club",
+        "service",
+        "association_or_organization",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 432-0868",
+      "formattedAddress": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+      "websiteUri": "http://www.stonehorseyachtclub.org/",
+      "displayName": {
+        "text": "Stone Horse Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.664,-70.0621": {
+    "place_id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+    "name": "Stone Horse Yacht Club",
+    "address": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+    "phone": "(508) 432-0868",
+    "website": "http://www.stonehorseyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJIbFiqj0--4kRwlvuFcrHFAY",
+      "types": [
+        "marina",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 432-0868",
+      "formattedAddress": "2 Harbor Rd, Harwich Port, MA 02646, USA",
+      "websiteUri": "http://www.stonehorseyachtclub.org/",
+      "displayName": {
+        "text": "Stone Horse Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9434,-69.4553": {
+    "place_id": "ChIJic7j6IG-rUwRH6N9Y-axZRk",
+    "name": "Padebco Full-Service Boatyard & Custom Boat Builders",
+    "address": "28 R-33, Round Pond, ME 04564, USA",
+    "phone": "(207) 529-5106",
+    "website": "http://www.padebco.com/",
+    "types": [
+      "marina",
+      "storage",
+      "store",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJic7j6IG-rUwRH6N9Y-axZRk",
+      "types": [
+        "marina",
+        "storage",
+        "store",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 529-5106",
+      "formattedAddress": "28 R-33, Round Pond, ME 04564, USA",
+      "websiteUri": "http://www.padebco.com/",
+      "displayName": {
+        "text": "Padebco Full-Service Boatyard & Custom Boat Builders",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9462,-69.4569": {
+    "place_id": "ChIJic7j6IG-rUwRH6N9Y-axZRk",
+    "name": "Padebco Full-Service Boatyard & Custom Boat Builders",
+    "address": "28 R-33, Round Pond, ME 04564, USA",
+    "phone": "(207) 529-5106",
+    "website": "http://www.padebco.com/",
+    "types": [
+      "marina",
+      "storage",
+      "store",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJic7j6IG-rUwRH6N9Y-axZRk",
+      "types": [
+        "marina",
+        "storage",
+        "store",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 529-5106",
+      "formattedAddress": "28 R-33, Round Pond, ME 04564, USA",
+      "websiteUri": "http://www.padebco.com/",
+      "displayName": {
+        "text": "Padebco Full-Service Boatyard & Custom Boat Builders",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9419,-69.4501": {
+    "empty": true
+  },
+  "43.9401,-69.4526": {
+    "empty": true
+  },
+  "41.9299,-70.0313": {
+    "place_id": "ChIJWWp_Qkdn-4kRCbMlYScUXTg",
+    "name": "Wellfleet Town Pier",
+    "address": "255 Commercial St, Wellfleet, MA 02667, USA",
+    "phone": "(508) 349-0320",
+    "website": "http://www.wellfleet-ma.gov/harbormaster-marina",
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJWWp_Qkdn-4kRCbMlYScUXTg",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 349-0320",
+      "formattedAddress": "255 Commercial St, Wellfleet, MA 02667, USA",
+      "websiteUri": "http://www.wellfleet-ma.gov/harbormaster-marina",
+      "displayName": {
+        "text": "Wellfleet Town Pier",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.9222,-70.0263": {
+    "empty": true
+  },
+  "41.924,-70.0263": {
+    "empty": true
+  },
+  "41.9259,-70.0262": {
+    "empty": true
+  },
+  "43.8816,-69.5134": {
+    "empty": true
+  },
+  "43.8833,-69.5171": {
+    "empty": true
+  },
+  "43.881,-69.5092": {
+    "empty": true
+  },
+  "43.8791,-69.5118": {
+    "empty": true
+  },
+  "42.5651,-70.7753": {
+    "place_id": "ChIJb2IbUaY944kRJXKpA9mDPPk",
+    "name": "Manchester Yacht Club",
+    "address": "15 Tucks Point Rd, Manchester-by-the-Sea, MA 01944, USA",
+    "phone": "(978) 526-4595",
+    "website": "https://www.manchesteryc.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "point_of_interest",
+      "association_or_organization",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJb2IbUaY944kRJXKpA9mDPPk",
+      "types": [
+        "marina",
+        "sports_club",
+        "point_of_interest",
+        "association_or_organization",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 526-4595",
+      "formattedAddress": "15 Tucks Point Rd, Manchester-by-the-Sea, MA 01944, USA",
+      "websiteUri": "https://www.manchesteryc.org/",
+      "displayName": {
+        "text": "Manchester Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.5669,-70.7736": {
+    "place_id": "ChIJb2IbUaY944kRJXKpA9mDPPk",
+    "name": "Manchester Yacht Club",
+    "address": "15 Tucks Point Rd, Manchester-by-the-Sea, MA 01944, USA",
+    "phone": "(978) 526-4595",
+    "website": "https://www.manchesteryc.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "service",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJb2IbUaY944kRJXKpA9mDPPk",
+      "types": [
+        "marina",
+        "sports_club",
+        "service",
+        "association_or_organization",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(978) 526-4595",
+      "formattedAddress": "15 Tucks Point Rd, Manchester-by-the-Sea, MA 01944, USA",
+      "websiteUri": "https://www.manchesteryc.org/",
+      "displayName": {
+        "text": "Manchester Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.5651,-70.7721": {
+    "empty": true
+  },
+  "42.6673,-70.6235": {
+    "place_id": "ChIJjxJxpB0m44kR9XHZSITmqwU",
+    "name": "Rockport Granite Pier",
+    "address": "16 Wharf Rd, Rockport, MA 01966, USA",
+    "phone": null,
+    "website": null,
+    "types": [
+      "marina",
+      "local_government_office",
+      "government_office",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJjxJxpB0m44kR9XHZSITmqwU",
+      "types": [
+        "marina",
+        "local_government_office",
+        "government_office",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "16 Wharf Rd, Rockport, MA 01966, USA",
+      "displayName": {
+        "text": "Rockport Granite Pier",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.664,-70.6195": {
+    "place_id": "ChIJjxJxpB0m44kR9XHZSITmqwU",
+    "name": "Rockport Granite Pier",
+    "address": "16 Wharf Rd, Rockport, MA 01966, USA",
+    "phone": null,
+    "website": null,
+    "types": [
+      "marina",
+      "local_government_office",
+      "government_office",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJjxJxpB0m44kR9XHZSITmqwU",
+      "types": [
+        "marina",
+        "local_government_office",
+        "government_office",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "formattedAddress": "16 Wharf Rd, Rockport, MA 01966, USA",
+      "displayName": {
+        "text": "Rockport Granite Pier",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.6622,-70.6203": {
+    "empty": true
+  },
+  "43.7911,-69.8907": {
+    "empty": true
+  },
+  "43.7876,-69.8885": {
+    "empty": true
+  },
+  "43.7879,-69.8914": {
+    "empty": true
+  },
+  "41.6372,-70.2716": {
+    "empty": true
+  },
+  "41.639,-70.2713": {
+    "empty": true
+  },
+  "41.6354,-70.2713": {
+    "empty": true
+  },
+  "41.6393,-70.2776": {
+    "place_id": "ChIJ6-8-P1cw-4kRO0a51akRfqw",
+    "name": "Hyannis Yacht Club",
+    "address": "490 Ocean St, Hyannis, MA 02601, USA",
+    "phone": "(508) 775-9331",
+    "website": "http://www.hyannisyachtclub.org",
+    "types": [
+      "marina",
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJ6-8-P1cw-4kRO0a51akRfqw",
+      "types": [
+        "marina",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 775-9331",
+      "formattedAddress": "490 Ocean St, Hyannis, MA 02601, USA",
+      "websiteUri": "http://www.hyannisyachtclub.org",
+      "displayName": {
+        "text": "Hyannis Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.2027,-69.0532": {
+    "empty": true
+  },
+  "44.2045,-69.0532": {
+    "empty": true
+  },
+  "44.2063,-69.0532": {
+    "empty": true
+  },
+  "41.6271,-70.9122": {
+    "empty": true
+  },
+  "41.624,-70.9104": {
+    "empty": true
+  },
+  "41.6221,-70.9097": {
+    "empty": true
+  },
+  "41.6246,-70.9171": {
+    "empty": true
+  },
+  "43.965,-69.2037": {
+    "place_id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+    "name": "Tenants Harbor Boat Yard",
+    "address": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+    "phone": "(207) 372-8063",
+    "website": "http://tenantsharborboatyard.com/",
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 372-8063",
+      "formattedAddress": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+      "websiteUri": "http://tenantsharborboatyard.com/",
+      "displayName": {
+        "text": "Tenants Harbor Boat Yard",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9629,-69.2079": {
+    "place_id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+    "name": "Tenants Harbor Boat Yard",
+    "address": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+    "phone": "(207) 372-8063",
+    "website": "http://tenantsharborboatyard.com/",
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 372-8063",
+      "formattedAddress": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+      "websiteUri": "http://tenantsharborboatyard.com/",
+      "displayName": {
+        "text": "Tenants Harbor Boat Yard",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9622,-69.2012": {
+    "place_id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+    "name": "Tenants Harbor Boat Yard",
+    "address": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+    "phone": "(207) 372-8063",
+    "website": "http://tenantsharborboatyard.com/",
+    "types": [
+      "marina",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+      "types": [
+        "marina",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 372-8063",
+      "formattedAddress": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+      "websiteUri": "http://tenantsharborboatyard.com/",
+      "displayName": {
+        "text": "Tenants Harbor Boat Yard",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9652,-69.2002": {
+    "place_id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+    "name": "Tenants Harbor Boat Yard",
+    "address": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+    "phone": "(207) 372-8063",
+    "website": "http://tenantsharborboatyard.com/",
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJk1j9IiO2rUwRfKfuEkEjStU",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 372-8063",
+      "formattedAddress": "3 Boatyard Rd Box 220, Tenants Harbor, ME 04860, USA",
+      "websiteUri": "http://tenantsharborboatyard.com/",
+      "displayName": {
+        "text": "Tenants Harbor Boat Yard",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.9602,-69.2005": {
+    "empty": true
+  },
+  "43.0005,-70.7487": {
+    "place_id": "ChIJRWWjCRLB4okRZpTPy5Kwy1I",
+    "name": "Rye Harbor-DPH",
+    "address": "1870 Ocean Blvd, Rye, NH 03870, USA",
+    "phone": "(603) 319-8246",
+    "website": null,
+    "types": [
+      "marina",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJRWWjCRLB4okRZpTPy5Kwy1I",
+      "types": [
+        "marina",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(603) 319-8246",
+      "formattedAddress": "1870 Ocean Blvd, Rye, NH 03870, USA",
+      "displayName": {
+        "text": "Rye Harbor-DPH",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.3565,-68.3058": {
+    "place_id": "ChIJPYnruYuVrkwR78YmKyybljg",
+    "name": "Abel's Marina & Boatyard",
+    "address": "20 Abels Ln, Mt Desert, ME 04660, USA",
+    "phone": "(207) 276-5057",
+    "website": "https://www.abelyachtyard.com/",
+    "types": [
+      "marina",
+      "storage",
+      "store",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJPYnruYuVrkwR78YmKyybljg",
+      "types": [
+        "marina",
+        "storage",
+        "store",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 276-5057",
+      "formattedAddress": "20 Abels Ln, Mt Desert, ME 04660, USA",
+      "websiteUri": "https://www.abelyachtyard.com/",
+      "displayName": {
+        "text": "Abel's Marina & Boatyard",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.0497,-70.1818": {
+    "place_id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+    "name": "Provincetown Marina",
+    "address": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+    "phone": "(508) 487-0571",
+    "website": "http://ptownmarina.com/",
+    "types": [
+      "marina",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+      "types": [
+        "marina",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 487-0571",
+      "formattedAddress": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+      "websiteUri": "http://ptownmarina.com/",
+      "displayName": {
+        "text": "Provincetown Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.0513,-70.1825": {
+    "place_id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+    "name": "Provincetown Marina",
+    "address": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+    "phone": "(508) 487-0571",
+    "website": "http://ptownmarina.com/",
+    "types": [
+      "marina",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+      "types": [
+        "marina",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 487-0571",
+      "formattedAddress": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+      "websiteUri": "http://ptownmarina.com/",
+      "displayName": {
+        "text": "Provincetown Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.0468,-70.1772": {
+    "empty": true
+  },
+  "42.045,-70.1772": {
+    "empty": true
+  },
+  "42.0486,-70.1772": {
+    "place_id": "ChIJe47CkNin_IkRgHHwPAMcz-k",
+    "name": "MacMillan Pier",
+    "address": "9 MacMillan Pier, Provincetown, MA 02657, USA",
+    "phone": null,
+    "website": null,
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJe47CkNin_IkRgHHwPAMcz-k",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "9 MacMillan Pier, Provincetown, MA 02657, USA",
+      "displayName": {
+        "text": "MacMillan Pier",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.0505,-70.1803": {
+    "place_id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+    "name": "Provincetown Marina",
+    "address": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+    "phone": "(508) 487-0571",
+    "website": "http://ptownmarina.com/",
+    "types": [
+      "marina",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+      "types": [
+        "marina",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 487-0571",
+      "formattedAddress": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+      "websiteUri": "http://ptownmarina.com/",
+      "displayName": {
+        "text": "Provincetown Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "42.0511,-70.1845": {
+    "place_id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+    "name": "Provincetown Marina",
+    "address": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+    "phone": "(508) 487-0571",
+    "website": "http://ptownmarina.com/",
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJTTkVQnyn_IkRc4rLLbt-vkY",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 487-0571",
+      "formattedAddress": "9 Ryder St Ext, Provincetown, MA 02657, USA",
+      "websiteUri": "http://ptownmarina.com/",
+      "displayName": {
+        "text": "Provincetown Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "43.0555,-70.7204": {
+    "empty": true
+  },
+  "43.0529,-70.7185": {
+    "empty": true
+  },
+  "44.3929,-68.2035": {
+    "place_id": "ChIJ7ebACX2_rkwRLnr9VbsF6Hc",
+    "name": "Harborside Hotel, Spa & Marina",
+    "address": "55 West St, Bar Harbor, ME 04609, USA",
+    "phone": "(207) 288-5033",
+    "website": "https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina",
+    "types": [
+      "hotel",
+      "resort_hotel",
+      "marina",
+      "event_venue",
+      "lodging",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJ7ebACX2_rkwRLnr9VbsF6Hc",
+      "types": [
+        "hotel",
+        "resort_hotel",
+        "marina",
+        "event_venue",
+        "lodging",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 288-5033",
+      "formattedAddress": "55 West St, Bar Harbor, ME 04609, USA",
+      "websiteUri": "https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina",
+      "displayName": {
+        "text": "Harborside Hotel, Spa & Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.3955,-68.2022": {
+    "place_id": "ChIJDVHWbH2_rkwRXl9IqebB7lc",
+    "name": "Bar Harbor Whale Watch Co",
+    "address": "1 West St, Bar Harbor, ME 04609, USA",
+    "phone": "(207) 288-2386",
+    "website": "https://www.barharborwhales.com/",
+    "types": [
+      "tourist_attraction",
+      "marina",
+      "tour_agency",
+      "travel_agency",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJDVHWbH2_rkwRXl9IqebB7lc",
+      "types": [
+        "tourist_attraction",
+        "marina",
+        "tour_agency",
+        "travel_agency",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 288-2386",
+      "formattedAddress": "1 West St, Bar Harbor, ME 04609, USA",
+      "websiteUri": "https://www.barharborwhales.com/",
+      "displayName": {
+        "text": "Bar Harbor Whale Watch Co",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.3927,-68.2078": {
+    "place_id": "ChIJ7ebACX2_rkwRLnr9VbsF6Hc",
+    "name": "Harborside Hotel, Spa & Marina",
+    "address": "55 West St, Bar Harbor, ME 04609, USA",
+    "phone": "(207) 288-5033",
+    "website": "https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina",
+    "types": [
+      "hotel",
+      "resort_hotel",
+      "marina",
+      "event_venue",
+      "lodging",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJ7ebACX2_rkwRLnr9VbsF6Hc",
+      "types": [
+        "hotel",
+        "resort_hotel",
+        "marina",
+        "event_venue",
+        "lodging",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(207) 288-5033",
+      "formattedAddress": "55 West St, Bar Harbor, ME 04609, USA",
+      "websiteUri": "https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina",
+      "displayName": {
+        "text": "Harborside Hotel, Spa & Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "44.4097,-68.2349": {
+    "empty": true
+  },
+  "44.408,-68.2349": {
+    "empty": true
+  },
+  "44.4061,-68.2348": {
+    "empty": true
+  },
+  "44.4124,-68.2397": {
+    "empty": true
+  },
+  "41.5524,-70.5702": {
+    "place_id": "ChIJOzNxXOLW5IkRkk5ZmZ6fcK8",
+    "name": "Green Pond Yacht Club",
+    "address": "366 Menauhant Rd, East Falmouth, MA 02536, USA",
+    "phone": "(508) 540-5497",
+    "website": "https://www.greenpondyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "association_or_organization",
+      "restaurant",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJOzNxXOLW5IkRkk5ZmZ6fcK8",
+      "types": [
+        "marina",
+        "sports_club",
+        "association_or_organization",
+        "restaurant",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 540-5497",
+      "formattedAddress": "366 Menauhant Rd, East Falmouth, MA 02536, USA",
+      "websiteUri": "https://www.greenpondyachtclub.org/",
+      "displayName": {
+        "text": "Green Pond Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.5488,-70.5681": {
+    "place_id": "ChIJDeGaYuPW5IkRBwge2LcMVqU",
+    "name": "Green Pond Marina",
+    "address": "70 Green Harbor Rd, East Falmouth, MA 02536, USA",
+    "phone": "(508) 457-9283",
+    "website": null,
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJDeGaYuPW5IkRBwge2LcMVqU",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 457-9283",
+      "formattedAddress": "70 Green Harbor Rd, East Falmouth, MA 02536, USA",
+      "displayName": {
+        "text": "Green Pond Marina",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.5548,-70.5737": {
+    "place_id": "ChIJOzNxXOLW5IkRkk5ZmZ6fcK8",
+    "name": "Green Pond Yacht Club",
+    "address": "366 Menauhant Rd, East Falmouth, MA 02536, USA",
+    "phone": "(508) 540-5497",
+    "website": "https://www.greenpondyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "association_or_organization",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJOzNxXOLW5IkRkk5ZmZ6fcK8",
+      "types": [
+        "marina",
+        "sports_club",
+        "association_or_organization",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 540-5497",
+      "formattedAddress": "366 Menauhant Rd, East Falmouth, MA 02536, USA",
+      "websiteUri": "https://www.greenpondyachtclub.org/",
+      "displayName": {
+        "text": "Green Pond Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.5511,-70.5743": {
+    "place_id": "ChIJOzNxXOLW5IkRkk5ZmZ6fcK8",
+    "name": "Green Pond Yacht Club",
+    "address": "366 Menauhant Rd, East Falmouth, MA 02536, USA",
+    "phone": "(508) 540-5497",
+    "website": "https://www.greenpondyachtclub.org/",
+    "types": [
+      "marina",
+      "sports_club",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "association_or_organization",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJOzNxXOLW5IkRkk5ZmZ6fcK8",
+      "types": [
+        "marina",
+        "sports_club",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "association_or_organization",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 540-5497",
+      "formattedAddress": "366 Menauhant Rd, East Falmouth, MA 02536, USA",
+      "websiteUri": "https://www.greenpondyachtclub.org/",
+      "displayName": {
+        "text": "Green Pond Yacht Club",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.6397,-70.2456": {
+    "empty": true
+  },
+  "41.6361,-70.2418": {
+    "empty": true
+  },
+  "41.6343,-70.2418": {
+    "empty": true
+  },
+  "41.6379,-70.2418": {
+    "empty": true
+  },
+  "41.5123,-71.0777": {
+    "place_id": "ChIJNTUNePUD5YkR1J9lthLAJKQ",
+    "name": "F L Tripp & Sons Inc",
+    "address": "211 Cherry and Webb Ln, Westport Point, MA 02791, USA",
+    "phone": "(508) 636-4058",
+    "website": "http://www.fltripp.com/",
+    "types": [
+      "marina",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJNTUNePUD5YkR1J9lthLAJKQ",
+      "types": [
+        "marina",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 636-4058",
+      "formattedAddress": "211 Cherry and Webb Ln, Westport Point, MA 02791, USA",
+      "websiteUri": "http://www.fltripp.com/",
+      "displayName": {
+        "text": "F L Tripp & Sons Inc",
+        "languageCode": "en"
+      }
+    }
+  },
+  "41.5146,-71.076": {
+    "place_id": "ChIJNTUNePUD5YkR1J9lthLAJKQ",
+    "name": "F L Tripp & Sons Inc",
+    "address": "211 Cherry and Webb Ln, Westport Point, MA 02791, USA",
+    "phone": "(508) 636-4058",
+    "website": "http://www.fltripp.com/",
+    "types": [
+      "marina",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "raw": {
+      "id": "ChIJNTUNePUD5YkR1J9lthLAJKQ",
+      "types": [
+        "marina",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "(508) 636-4058",
+      "formattedAddress": "211 Cherry and Webb Ln, Westport Point, MA 02791, USA",
+      "websiteUri": "http://www.fltripp.com/",
+      "displayName": {
+        "text": "F L Tripp & Sons Inc",
+        "languageCode": "en"
+      }
+    }
+  }
+}

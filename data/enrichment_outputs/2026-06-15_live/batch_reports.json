@@ -1,0 +1,102 @@
+[
+  {
+    "steps": [
+      {
+        "fields_processed": 9,
+        "places_calls": 20,
+        "cap_hit": false,
+        "run_id": 8
+      },
+      {
+        "fields_processed": 11,
+        "gemini_calls": 0,
+        "cap_hit": false,
+        "run_id": 9
+      }
+    ],
+    "dedupe": {
+      "merged": 5,
+      "prospects_remaining": 8
+    },
+    "export": {
+      "xlsx": "data\\prospects_export.xlsx",
+      "fields_csv": "data\\fields_export.csv",
+      "prospects_csv": "data\\prospects_export.csv"
+    }
+  },
+  {
+    "steps": [
+      {
+        "fields_processed": 5,
+        "places_calls": 20,
+        "cap_hit": false,
+        "run_id": 10
+      },
+      {
+        "fields_processed": 5,
+        "gemini_calls": 0,
+        "cap_hit": false,
+        "run_id": 11
+      }
+    ],
+    "dedupe": {
+      "merged": 2,
+      "prospects_remaining": 11
+    },
+    "export": {
+      "xlsx": "data\\prospects_export.xlsx",
+      "fields_csv": "data\\fields_export.csv",
+      "prospects_csv": "data\\prospects_export.csv"
+    }
+  },
+  {
+    "steps": [
+      {
+        "fields_processed": 12,
+        "places_calls": 20,
+        "cap_hit": false,
+        "run_id": 12
+      },
+      {
+        "fields_processed": 12,
+        "gemini_calls": 0,
+        "cap_hit": false,
+        "run_id": 13
+      }
+    ],
+    "dedupe": {
+      "merged": 6,
+      "prospects_remaining": 17
+    },
+    "export": {
+      "xlsx": "data\\prospects_export.xlsx",
+      "fields_csv": "data\\fields_export.csv",
+      "prospects_csv": "data\\prospects_export.csv"
+    }
+  },
+  {
+    "steps": [
+      {
+        "fields_processed": 6,
+        "places_calls": 11,
+        "cap_hit": false,
+        "run_id": 14
+      },
+      {
+        "fields_processed": 6,
+        "gemini_calls": 0,
+        "cap_hit": false,
+        "run_id": 15
+      }
+    ],
+    "dedupe": {
+      "merged": 3,
+      "prospects_remaining": 20
+    },
+    "export": {
+      "xlsx": "data\\prospects_export.xlsx",
+      "fields_csv": "data\\fields_export.csv",
+      "prospects_csv": "data\\prospects_export.csv"
+    }
+  }
+]

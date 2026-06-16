@@ -1,0 +1,44 @@
+# Enrichment pipeline settings (Places + Gemini)
+provider: live  # mock | live | manual
+
+places:
+  enabled: true
+  search_radius_meters: 500
+  included_types:
+    - marina
+  max_results: 5
+
+gemini:
+  enabled: true
+  model: gemini-2.0-flash-lite
+  free_tier_only: true
+  allowed_models:
+    - gemini-2.0-flash-lite
+    - gemini-2.5-flash-lite
+    - gemini-2.0-flash
+    - gemini-2.5-flash
+  use_google_search: true
+  prompt_version: v2
+  supply_chain_prompt_version: v1
+
+# Per-run safety caps (free tier - see docs/ENRICHMENT_BUDGET.md)
+max_places_calls_per_run: 40
+max_gemini_calls_per_run: 20
+max_supply_chain_calls_per_run: 5
+max_companies_per_supply_chain_call: 6
+max_fields_per_run: 20
+pilot_field_limit: 5
+
+# Rate limiting
+requests_per_second: 2
+max_retries: 2
+retry_backoff_seconds: 2
+
+# Dedupe
+dedupe_proximity_meters: 200
+
+# Export defaults
+export_path: data/prospects_export.xlsx
+min_boat_count: 0
+min_confidence: 0.0
+only_approved: false

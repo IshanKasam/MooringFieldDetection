@@ -1,0 +1,13 @@
+{
+  "1": {
+    "canonical_business_name": "Harbor Point Marina",
+    "operator_type": "marina",
+    "phone": "555-0101",
+    "email": null,
+    "website": "https://harborpoint.example.com",
+    "research_summary": "Family-owned marina managing the mooring field.",
+    "confidence": 0.85,
+    "sources": ["mock_provider", "places_api"],
+    "needs_review": false
+  }
+}

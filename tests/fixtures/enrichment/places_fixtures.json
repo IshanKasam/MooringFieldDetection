@@ -1,0 +1,18 @@
+{
+  "1": {
+    "place_id": "mock_place_1",
+    "name": "Harbor Point Marina",
+    "address": "1 Harbor Rd, Boston, MA",
+    "phone": "555-0101",
+    "website": "https://harborpoint.example.com",
+    "types": ["marina"]
+  },
+  "2": {
+    "place_id": "mock_place_2",
+    "name": "East Bay Yacht Club",
+    "address": "2 Bay St, Gloucester, MA",
+    "phone": "555-0102",
+    "website": "https://eastybc.example.com",
+    "types": ["yacht_club", "marina"]
+  }
+}
