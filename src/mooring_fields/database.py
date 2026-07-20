@@ -784,3 +784,67 @@ def diff_scans(conn: sqlite3.Connection, scan_id_a: int, scan_id_b: int) -> dict
         "fields_b": count(scan_id_b),
         "delta": count(scan_id_b) - count(scan_id_a),
     }
+
+
+def delete_scan(conn: sqlite3.Connection, scan_id: int) -> dict[str, Any]:
+    """Remove a scan and all linked fields, boats, and orphaned prospects.
+
+    Deletes in one transaction:
+    1. field_prospect_links for fields in this scan
+    2. boats for this scan
+    3. fields for this scan
+    4. prospects that no longer have any field links
+    5. the scans row itself
+    """
+    exists = conn.execute("SELECT id, source, weights FROM scans WHERE id = ?", (scan_id,)).fetchone()
+    if exists is None:
+        raise ValueError(f"scan_id {scan_id} not found")
+
+    field_ids = [
+        int(r[0])
+        for r in conn.execute("SELECT id FROM fields WHERE scan_id = ?", (scan_id,)).fetchall()
+    ]
+    prospect_ids: list[int] = []
+    if field_ids:
+        placeholders = ",".join("?" * len(field_ids))
+        prospect_ids = [
+            int(r[0])
+            for r in conn.execute(
+                f"SELECT DISTINCT prospect_id FROM field_prospect_links "
+                f"WHERE field_id IN ({placeholders})",
+                field_ids,
+            ).fetchall()
+        ]
+        conn.execute(
+            f"DELETE FROM field_prospect_links WHERE field_id IN ({placeholders})",
+            field_ids,
+        )
+
+    boats_deleted = conn.execute(
+        "DELETE FROM boats WHERE scan_id = ?", (scan_id,)
+    ).rowcount
+    fields_deleted = conn.execute(
+        "DELETE FROM fields WHERE scan_id = ?", (scan_id,)
+    ).rowcount
+
+    prospects_deleted = 0
+    for pid in prospect_ids:
+        remaining = conn.execute(
+            "SELECT COUNT(*) FROM field_prospect_links WHERE prospect_id = ?",
+            (pid,),
+        ).fetchone()[0]
+        if remaining == 0:
+            conn.execute("DELETE FROM prospects WHERE id = ?", (pid,))
+            prospects_deleted += 1
+
+    conn.execute("DELETE FROM scans WHERE id = ?", (scan_id,))
+    conn.commit()
+    return {
+        "scan_id": scan_id,
+        "source": exists["source"] if isinstance(exists, sqlite3.Row) else exists[1],
+        "weights": exists["weights"] if isinstance(exists, sqlite3.Row) else exists[2],
+        "fields_deleted": fields_deleted,
+        "boats_deleted": boats_deleted,
+        "prospects_deleted": prospects_deleted,
+        "links_cleared": len(field_ids),
+    }

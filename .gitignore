@@ -13,7 +13,9 @@ yolov8_new_images/
 staging/
 kaggle_upload/
 mooring-field-data.zip
+kaggle_scan_payload.zip
 kaggle_output/MooringFieldDetection/
+scan_results/
 *.pt
 !config/
 web-ui/node_modules/

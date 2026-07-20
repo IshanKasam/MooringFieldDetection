@@ -26,3 +26,5 @@ retry_backoff_seconds: 2
 # Safety cap: max billable API calls per fetch run (Google free tier = 10,000/month)
 max_api_requests_per_run: 800
 google_free_tier_monthly: 10000
+# With 5 tiles/site (center+N/S/E/W), ~160 sites fit in one free-tier-safe run.
+# Prefer generate-candidates --max-sites 160 and scan --max-requests 800.

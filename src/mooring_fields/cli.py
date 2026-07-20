@@ -165,16 +165,28 @@ def scan_cmd(argv: list[str] | None = None) -> None:
             "(default: data/mooring_fields.db, the database the web app reads)"
         ),
     )
+    parser.add_argument(
+        "--imagery-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Persistent directory for scan imagery cache "
+            "(default: data/imagery). Re-runs skip already-downloaded tiles."
+        ),
+    )
     args = parser.parse_args(argv)
 
     import os
+    from dotenv import load_dotenv
     from mooring_fields.cluster_fields import run_on_split
     from mooring_fields.database import save_scan
     from mooring_fields.fetch_imagery import fetch_all as _fetch_all
     from mooring_fields.geocode import Geocoder
     from mooring_fields.kml_export import clusters_to_kml
     from mooring_fields.kml_parser import load_sites_json, parse_kml
-    from mooring_fields.paths import DB_PATH
+    from mooring_fields.paths import DB_PATH, IMAGERY_DIR
+
+    load_dotenv()
 
     if not args.kml.exists():
         print(f"ERROR: KML file not found: {args.kml}", file=sys.stderr)
@@ -190,6 +202,9 @@ def scan_cmd(argv: list[str] | None = None) -> None:
         sys.exit(1)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    # Persistent imagery cache by default so free-tier re-runs are free.
+    imagery_base = args.imagery_dir if args.imagery_dir else IMAGERY_DIR
+    imagery_base.mkdir(parents=True, exist_ok=True)
     tmp_dir = Path(tempfile.mkdtemp(prefix="mooring_scan_"))
     try:
         # 1. Parse KML to a temp sites.json (does not touch data/sites.json)
@@ -197,14 +212,16 @@ def scan_cmd(argv: list[str] | None = None) -> None:
         parse_result = run_parse_and_split(kml_path=args.kml, output_dir=tmp_dir)
         scan_sites = load_sites_json(path=tmp_dir / "sites.json")
         print(f"  Found {len(scan_sites)} locations")
+        print(f"  Planned tiles (up to 5/site): {len(scan_sites) * 5}")
+        if args.max_requests:
+            print(f"  API cap this run: {args.max_requests}")
 
-        # 2. Fetch imagery for scan sites into a temp imagery dir
-        tmp_imagery = tmp_dir / "imagery"
+        # 2. Fetch imagery into persistent cache (split=scan)
         if not args.skip_fetch:
-            print("Fetching satellite imagery for scan locations...")
+            print(f"Fetching satellite imagery into {imagery_base / 'scan'} ...")
             fetch_result = _fetch_all(
                 input_sites=scan_sites,
-                imagery_output_base_dir=tmp_imagery,
+                imagery_output_base_dir=imagery_base,
                 max_requests=args.max_requests,
             )
             print(f"  Downloaded: {fetch_result['downloaded']}, cached: {fetch_result['skipped_cached']}")
@@ -218,7 +235,7 @@ def scan_cmd(argv: list[str] | None = None) -> None:
             split="scan",
             weights=args.weights,
             input_sites=scan_sites,
-            imagery_input_base_dir=tmp_imagery,
+            imagery_input_base_dir=imagery_base,
         )
         print(f"  Detected {len(clusters)} qualifying mooring fields")
 
@@ -257,6 +274,7 @@ def scan_cmd(argv: list[str] | None = None) -> None:
             "discovered_clusters": len(clusters),
             "kml_output": str(kml_out) if clusters else None,
             "output_dir": str(args.output_dir),
+            "imagery_dir": str(imagery_base),
             "database": db_summary,
             "fetch_summary": fetch_result,
         })
@@ -465,6 +483,266 @@ def diff_scans_cmd(argv: list[str] | None = None) -> None:
         conn.close()
 
 
+def delete_scan_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Delete a detection scan and all linked fields/boats/orphaned prospects"
+    )
+    parser.add_argument("--scan-id", type=int, required=True)
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument(
+        "--yes",
+        action="store_true",
+        help="Skip interactive confirmation",
+    )
+    args = parser.parse_args(argv)
+    from mooring_fields.database import delete_scan, get_connection, init_db, list_scans
+
+    conn = get_connection(args.db)
+    try:
+        init_db(conn)
+        scans = {s["id"]: s for s in list_scans(conn)}
+        if args.scan_id not in scans:
+            print(f"ERROR: scan_id {args.scan_id} not found", file=sys.stderr)
+            sys.exit(1)
+        info = scans[args.scan_id]
+        print(
+            f"Will delete scan {args.scan_id}: source={info.get('source')}, "
+            f"weights={info.get('weights')}, fields={info.get('field_count')}"
+        )
+        if not args.yes:
+            reply = input("Type 'yes' to confirm: ").strip().lower()
+            if reply != "yes":
+                print("Aborted.")
+                return
+        _print(delete_scan(conn, args.scan_id))
+    finally:
+        conn.close()
+
+
+def generate_candidates_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Generate scan-candidate KML from NOAA Anchorages + OSM marina/mooring "
+            "points (ESI MO/M equivalent via REST)."
+        )
+    )
+    parser.add_argument(
+        "--state",
+        action="append",
+        default=[],
+        help="US state code to include (repeatable), e.g. --state MA --state RI",
+    )
+    parser.add_argument(
+        "--bbox",
+        type=str,
+        default=None,
+        help="Bounding box west,south,east,north (overrides --state)",
+    )
+    parser.add_argument(
+        "--types",
+        type=str,
+        default="MO,M",
+        help="Comma-separated ESI-style types: MO (mooring/anchorage), M (marina)",
+    )
+    parser.add_argument(
+        "--dedupe-meters",
+        type=float,
+        default=150.0,
+        help="Spatial dedupe radius in meters (default: 150)",
+    )
+    parser.add_argument(
+        "--max-sites",
+        type=int,
+        default=None,
+        help="Safety cap on candidates after dedupe (recommended ~160 for free-tier)",
+    )
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=Path("candidates.kml"),
+        help="Output KML path",
+    )
+    parser.add_argument(
+        "--no-noaa",
+        action="store_true",
+        help="Skip NOAA Anchorages source",
+    )
+    parser.add_argument(
+        "--no-osm",
+        action="store_true",
+        help="Skip OpenStreetMap Overpass source",
+    )
+    args = parser.parse_args(argv)
+
+    from mooring_fields.noaa_candidates import collect_candidates, write_candidates_kml
+
+    bbox = None
+    if args.bbox:
+        parts = [float(x.strip()) for x in args.bbox.split(",")]
+        if len(parts) != 4:
+            print("ERROR: --bbox must be west,south,east,north", file=sys.stderr)
+            sys.exit(1)
+        bbox = (parts[0], parts[1], parts[2], parts[3])
+    if not args.state and bbox is None:
+        print("ERROR: provide --state and/or --bbox", file=sys.stderr)
+        sys.exit(1)
+
+    types = [t.strip() for t in args.types.split(",") if t.strip()]
+    result = collect_candidates(
+        states=args.state or None,
+        bbox=bbox,
+        types=types,
+        dedupe_meters=args.dedupe_meters,
+        max_sites=args.max_sites,
+        include_noaa=not args.no_noaa,
+        include_osm=not args.no_osm,
+    )
+    label = "_".join(args.state) if args.state else "bbox"
+    kml_path = write_candidates_kml(
+        result["candidates"],
+        args.out,
+        document_name=f"Candidates {label}",
+    )
+    summary = {k: v for k, v in result.items() if k != "candidates"}
+    summary["kml_output"] = str(kml_path)
+    summary["sites_per_run_hint"] = (
+        "With max_api_requests_per_run=800 and 5 tiles/site, budget ~160 sites/run."
+    )
+    _print(summary)
+
+
+def package_kaggle_scan_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Zip cached scan tiles + candidates KML (+ weights) for Kaggle GPU detection"
+        )
+    )
+    parser.add_argument("--kml", type=Path, required=True, help="Candidates KML")
+    parser.add_argument(
+        "--imagery-dir",
+        type=Path,
+        default=None,
+        help="Imagery root containing scan/ (default: data/imagery)",
+    )
+    parser.add_argument("--weights", type=Path, default=None)
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=Path("kaggle_scan_payload.zip"),
+        help="Output zip path",
+    )
+    parser.add_argument(
+        "--no-weights",
+        action="store_true",
+        help="Omit model weights from the zip (attach separately on Kaggle)",
+    )
+    parser.add_argument(
+        "--all-cached-tiles",
+        action="store_true",
+        help="Include every tile in imagery/scan (default: only tiles for this KML)",
+    )
+    args = parser.parse_args(argv)
+    from mooring_fields.kaggle_scan import package_kaggle_scan
+
+    _print(
+        package_kaggle_scan(
+            kml_path=args.kml,
+            imagery_dir=args.imagery_dir,
+            weights=args.weights,
+            output_zip=args.out,
+            include_weights=not args.no_weights,
+            only_kml_sites=not args.all_cached_tiles,
+        )
+    )
+
+
+def fetch_scan_cmd(argv: list[str] | None = None) -> None:
+    """Fetch satellite tiles for a candidates KML into data/imagery/scan (no detection)."""
+    parser = argparse.ArgumentParser(
+        description=(
+            "Download Google Static Maps tiles for a candidates KML into the "
+            "persistent scan imagery cache (no YOLO). Use before package-kaggle-scan."
+        )
+    )
+    parser.add_argument("--kml", type=Path, required=True)
+    parser.add_argument("--max-requests", type=int, default=None)
+    parser.add_argument(
+        "--imagery-dir",
+        type=Path,
+        default=None,
+        help="Imagery root (default: data/imagery); tiles go in <root>/scan/",
+    )
+    args = parser.parse_args(argv)
+
+    import os
+    import tempfile
+    from dotenv import load_dotenv
+    from mooring_fields.fetch_imagery import fetch_all as _fetch_all
+    from mooring_fields.kml_parser import load_sites_json
+    from mooring_fields.paths import IMAGERY_DIR
+
+    load_dotenv()
+    if not args.kml.exists():
+        print(f"ERROR: KML not found: {args.kml}", file=sys.stderr)
+        sys.exit(1)
+    if not os.environ.get("GOOGLE_MAPS_API_KEY", "").strip():
+        print("ERROR: GOOGLE_MAPS_API_KEY is not set.", file=sys.stderr)
+        sys.exit(1)
+
+    imagery_base = args.imagery_dir if args.imagery_dir else IMAGERY_DIR
+    imagery_base.mkdir(parents=True, exist_ok=True)
+    tmp_dir = Path(tempfile.mkdtemp(prefix="mooring_fetch_scan_"))
+    try:
+        print(f"Parsing KML: {args.kml}")
+        run_parse_and_split(kml_path=args.kml, output_dir=tmp_dir)
+        sites = load_sites_json(path=tmp_dir / "sites.json")
+        print(f"  Sites: {len(sites)}  (up to {len(sites) * 5} tiles)")
+        result = _fetch_all(
+            input_sites=sites,
+            imagery_output_base_dir=imagery_base,
+            max_requests=args.max_requests,
+        )
+        _print(
+            {
+                "sites": len(sites),
+                "imagery_dir": str(imagery_base / "scan"),
+                "fetch": result,
+                "next": (
+                    f"python -m mooring_fields.cli package-kaggle-scan "
+                    f"--kml {args.kml} --out kaggle_scan_payload.zip"
+                ),
+            }
+        )
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+
+
+def import_scan_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Import a scan (fields+boats) from a Kaggle/cloud SQLite DB into the web app DB"
+    )
+    parser.add_argument("--from-db", type=Path, required=True, help="Source mooring_fields.db")
+    parser.add_argument("--db", type=Path, default=None, help="Destination DB (default: data/)")
+    parser.add_argument("--scan-id", type=int, default=None, help="Source scan id (default: newest)")
+    parser.add_argument(
+        "--source-label",
+        type=str,
+        default=None,
+        help="Override scans.source label on import",
+    )
+    args = parser.parse_args(argv)
+    from mooring_fields.kaggle_scan import import_scan
+
+    _print(
+        import_scan(
+            args.from_db,
+            dest_db=args.db,
+            scan_id=args.scan_id,
+            source_label=args.source_label,
+        )
+    )
+
+
 def main() -> None:
     commands = {
         "parse-kml": parse_kml_cmd,
@@ -488,6 +766,11 @@ def main() -> None:
         "approve-prospect": approve_prospect_cmd,
         "enrich-all": enrich_all_cmd,
         "diff-scans": diff_scans_cmd,
+        "delete-scan": delete_scan_cmd,
+        "generate-candidates": generate_candidates_cmd,
+        "fetch-scan": fetch_scan_cmd,
+        "package-kaggle-scan": package_kaggle_scan_cmd,
+        "import-scan": import_scan_cmd,
     }
     if len(sys.argv) < 2 or sys.argv[1] not in commands:
         print("Usage: python -m mooring_fields.cli <command>")

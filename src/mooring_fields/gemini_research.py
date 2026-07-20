@@ -10,16 +10,21 @@ from mooring_fields.enrichment_providers import PlaceResult, ResearchResult
 from mooring_fields.gemini_client import GeminiClient, parse_gemini_json
 from mooring_fields.paths import GEMINI_CACHE
 
-SYSTEM_INSTRUCTION = """You are a maritime mooring-field sales research assistant for the North Shore of Massachusetts and similar US harbors.
+SYSTEM_INSTRUCTION = """You are a maritime mooring-field sales research assistant for US coastal harbors
+(New England, Mid-Atlantic, Southeast, Gulf, and West Coast).
 
 Your job is NOT to find the nearest marina POI. Mooring fields are often open water with no adjacent business. Instead:
 
-1. Identify the HARBOR NAME from coordinates and address (required). Include sub-areas/coves when relevant (e.g. Proctor's Cove, Whittier's Cove in Manchester Harbor).
-2. Determine who ADMINISTERS mooring permits (municipal harbormaster / harbor department) and find their public phone or website when available.
-3. Search the web (use grounding) for authorized PRIVATE mooring service companies that install, maintain, and service moorings in that harbor. Example queries:
-   - "who does mooring services for {harbor name}"
-   - "mooring service companies {harbor name} Massachusetts"
-   - For specific coves: "mooring service {cove name} {town}"
+1. Identify the HARBOR NAME from coordinates and address (required). Include sub-areas/coves when relevant
+   (e.g. a named cove inside a larger harbor). Use the reverse-geocoded address and any state/region hints
+   in the user message — do not assume Massachusetts.
+2. Determine who ADMINISTERS mooring permits (municipal harbormaster / harbor department / marina authority)
+   and find their public phone or website when available.
+3. Search the web (use grounding) for authorized PRIVATE mooring service companies that install, maintain,
+   and service moorings in that harbor. Prefer queries scoped to the local city/state, for example:
+   - "who does mooring services for {harbor name} {state}"
+   - "mooring service companies {harbor name} {state}"
+   - For specific coves: "mooring service {cove name} {town} {state}"
 4. List ALL credible mooring service companies you find (not just one), with phone numbers and websites only when found in search results.
 5. Pick the best primary sales contact among the private mooring service companies (prefer companies that explicitly service that harbor).
 
@@ -51,20 +56,27 @@ def get_api_key() -> str:
 def build_prompt(field: dict[str, Any], place: PlaceResult | None) -> str:
     lat = field.get("latitude")
     lon = field.get("longitude")
+    location_name = field.get("location_name")
+    country = field.get("country")
     place_name = place.name if place else "None found nearby"
     place_note = (
         "A nearby marina/yacht club was found via Google Places (use as context only)."
         if place
         else "No nearby marina or mooring business was found via Google Places. This is common - research the harbor and private mooring contractors via web search."
     )
+    # Extract a coarse region hint (e.g. "MA", "Florida") so searches stay local.
+    region_hint = None
+    if isinstance(location_name, str) and location_name.strip():
+        region_hint = location_name.strip()
     return (
         f"Mooring field detection (satellite):\n"
         f"- Field ID: {field.get('id')}\n"
         f"- Latitude: {lat}\n"
         f"- Longitude: {lon}\n"
         f"- Boat count (estimate): {field.get('boat_count')}\n"
-        f"- Reverse-geocoded address: {field.get('location_name')}\n"
-        f"- Country: {field.get('country')}\n\n"
+        f"- Reverse-geocoded address: {location_name}\n"
+        f"- Country: {country}\n"
+        f"- Region hint for search queries: {region_hint or 'derive from coordinates'}\n\n"
         f"Google Places nearby POI:\n"
         f"- {place_note}\n"
         f"- Name: {place_name}\n"
@@ -73,9 +85,10 @@ def build_prompt(field: dict[str, Any], place: PlaceResult | None) -> str:
         f"- Website: {place.website if place else 'N/A'}\n"
         f"- Types: {', '.join(place.types) if place and place.types else 'N/A'}\n\n"
         "Research workflow:\n"
-        f"1. What harbor is at ({lat}, {lon})? Harbor name is REQUIRED.\n"
+        f"1. What harbor is at ({lat}, {lon})? Harbor name is REQUIRED. "
+        "Use the region hint / address — do not assume Massachusetts.\n"
         "2. Who is the harbormaster / harbor department that assigns mooring permits?\n"
-        "3. Search: who does mooring services for that harbor?\n"
+        "3. Search: who does mooring services for that harbor in that state/region?\n"
         "4. If the field is in a named cove or sub-area, also search mooring services for that cove.\n"
         "5. List all private mooring service companies (with sourced phones/websites).\n\n"
         "Return ONLY valid JSON with this schema:\n"

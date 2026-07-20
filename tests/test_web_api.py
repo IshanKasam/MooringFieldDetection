@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 from mooring_fields.database import (
+    delete_scan,
     field_table_rows,
     get_connection,
     get_stats,
@@ -84,6 +85,35 @@ def test_get_stats_and_list_scans(tmp_path: Path):
     assert stats["needs_review"] == 1
     assert len(scans) == 1
     assert scans[0]["field_count"] == 2
+
+
+def test_delete_scan_removes_fields_and_orphaned_prospects(tmp_path: Path):
+    db = tmp_path / "t.db"
+    _seed(db)
+    conn = get_connection(db)
+    init_db(conn)
+    scan_id = list_scans(conn)[0]["id"]
+    # Second scan that should survive
+    keep_id = insert_scan(conn, source="keep", weights="new.pt", split="scan")
+    insert_field(
+        conn,
+        keep_id,
+        latitude=41.5,
+        longitude=-71.0,
+        boat_count=3,
+        mean_confidence=0.6,
+        location_name="Keep me",
+        country="United States",
+    )
+    result = delete_scan(conn, scan_id)
+    assert result["fields_deleted"] == 2
+    assert result["prospects_deleted"] == 1
+    remaining = list_scans(conn)
+    assert len(remaining) == 1
+    assert remaining[0]["id"] == keep_id
+    assert get_stats(conn)["fields"] == 1
+    assert get_stats(conn)["prospects"] == 0
+    conn.close()
 
 
 def test_api_health_and_table(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
