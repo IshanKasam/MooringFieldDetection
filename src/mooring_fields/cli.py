@@ -156,6 +156,15 @@ def scan_cmd(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Skip fetching imagery (use if tiles already downloaded into output-dir)",
     )
+    parser.add_argument(
+        "--db",
+        type=Path,
+        default=None,
+        help=(
+            "SQLite database to save discovered fields into "
+            "(default: data/mooring_fields.db, the database the web app reads)"
+        ),
+    )
     args = parser.parse_args(argv)
 
     import os
@@ -165,6 +174,7 @@ def scan_cmd(argv: list[str] | None = None) -> None:
     from mooring_fields.geocode import Geocoder
     from mooring_fields.kml_export import clusters_to_kml
     from mooring_fields.kml_parser import load_sites_json, parse_kml
+    from mooring_fields.paths import DB_PATH
 
     if not args.kml.exists():
         print(f"ERROR: KML file not found: {args.kml}", file=sys.stderr)
@@ -229,7 +239,7 @@ def scan_cmd(argv: list[str] | None = None) -> None:
         else:
             print("  No mooring fields detected — KML not written.")
 
-        # 6. Persist detections to a SQLite database in the output dir
+        # 6. Persist detections to SQLite (default: the web app's database)
         db_summary = {}
         if clusters:
             db_summary = save_scan(
@@ -238,7 +248,7 @@ def scan_cmd(argv: list[str] | None = None) -> None:
                 weights=str(args.weights) if args.weights else "auto",
                 split="scan",
                 geocoder=geocoder,
-                db_path=args.output_dir / "mooring_fields.db",
+                db_path=args.db if args.db else DB_PATH,
             )
             print(f"  Database saved to: {db_summary.get('db_path')}")
 

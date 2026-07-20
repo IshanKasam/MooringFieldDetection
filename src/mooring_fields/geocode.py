@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 
 import httpx
+from dotenv import load_dotenv
 
 from mooring_fields.paths import GEOCODE_CACHE
 
@@ -54,6 +55,7 @@ class Geocoder:
     """Cached reverse geocoder. Falls back to a lat/lon string when unavailable."""
 
     def __init__(self, api_key: str | None = None, cache_path: Path | None = None):
+        load_dotenv()
         self.api_key = (api_key or os.environ.get("GOOGLE_MAPS_API_KEY", "")).strip()
         self.cache_path = cache_path or GEOCODE_CACHE
         self.cache = _load_cache(self.cache_path)

@@ -1,0 +1,665 @@
+﻿prospect_id,mooring_company,harbor_name,field_ids,supplier_or_manufacturer,component_types,evidence,confidence_level,confirmation_status,notable_brands,company_overall_confidence
+1,Harbor Point Marina,,"1,4",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+2,East Bay Yacht Club,,"2,3,5",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+6,Eastern Point Yacht Club,,"8,9,10,11,12",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+11,Safe Harbor Front Street,,"13,14",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+13,Stone Horse Yacht Club,,"18,19,20,21",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+17,Padebco Full-Service Boatyard & Custom Boat Builders,,"22,23",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+19,Wellfleet Town Pier,,26,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+20,Manchester Yacht Club,,"34,35",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+22,Rockport Granite Pier,,"37,38",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+24,Hyannis Yacht Club,,46,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+25,Tenants Harbor Boat Yard,,"54,55,56,57",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+29,Rye Harbor-DPH,,59,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+30,Abel's Marina & Boatyard,,60,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+31,Provincetown Marina,,"61,62,66,67",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+33,MacMillan Pier,,65,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+36,"Harborside Hotel, Spa & Marina",,"70,72",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+37,Bar Harbor Whale Watch Co,,71,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+39,Green Pond Yacht Club,,"77,79,80",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+40,Green Pond Marina,,78,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+43,F L Tripp & Sons Inc,,"85,86",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+45,"41.62022, -70.39230",,87,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+46,"41.62074, -70.39643",,88,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+47,"41.61530, -70.39141",,89,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+48,"44.63501, -67.29793",,90,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+49,"42.58266, -70.66681",,91,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+50,"44.42928, -69.00687",,92,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+51,"44.35107, -68.54415",,93,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+52,"41.66592, -70.06541",,94,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+53,"41.66859, -70.06518",,95,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+54,"41.66224, -70.06326",,96,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+55,"43.94397, -69.45584",,97,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+56,"41.92943, -70.03126",,98,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+57,"41.93062, -70.02956",,99,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+58,"43.88078, -69.51435",,100,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+59,"43.88314, -69.51411",,101,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+60,"43.88416, -69.51129",,102,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+61,"43.88332, -69.51700",,103,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+62,"42.56757, -70.77583",,104,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+63,"42.66708, -70.62331",,105,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+64,"42.66397, -70.62000",,106,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+65,"43.79050, -69.89070",,107,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+66,"43.78778, -69.89316",,108,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+67,"43.79359, -69.89143",,109,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+68,"43.79549, -69.89128",,110,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+69,"43.78755, -69.88825",,111,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+70,"41.63920, -70.27673",,112,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+71,"41.63723, -70.27348",,113,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+72,"44.20451, -69.05565",,114,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+73,"41.62723, -70.91247",,115,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+74,"41.62403, -70.91167",,116,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+75,"41.62394, -70.90733",,117,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+76,"41.62209, -70.90964",,118,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+77,"41.62427, -70.91466",,119,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+78,"43.96465, -69.20515",,120,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+79,"43.96526, -69.20265",,"121,124",,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+80,"43.96275, -69.20775",,122,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+81,"43.96242, -69.20391",,123,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+83,"43.96657, -69.20560",,125,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+84,"43.00074, -70.74901",,126,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+85,"42.99828, -70.74451",,127,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+86,"44.35663, -68.30584",,128,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+87,"42.05041, -70.18211",,129,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+88,"42.04871, -70.18417",,130,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+89,"42.04862, -70.17725",,131,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+90,"43.05502, -70.72044",,132,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+91,"43.05740, -70.72074",,133,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+92,"43.05290, -70.71891",,134,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+93,"44.39379, -68.20369",,135,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+94,"44.39605, -68.20661",,136,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+95,"44.39032, -68.20201",,137,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+96,"44.41054, -68.23606",,138,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+97,"44.41237, -68.23848",,139,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+98,"44.40800, -68.23435",,140,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+99,"44.41243, -68.23977",,141,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+100,"44.40606, -68.23490",,142,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+101,"41.55235, -70.57022",,143,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+102,"41.55476, -70.57384",,144,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+103,"41.54898, -70.56667",,145,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+104,"41.55106, -70.57429",,146,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+105,"41.54865, -70.57014",,147,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+106,"41.63982, -70.24551",,148,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+107,"41.63620, -70.24259",,149,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low
+108,"41.51259, -71.07787",,150,,,"Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",Low,,,Low

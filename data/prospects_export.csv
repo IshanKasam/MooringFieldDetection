@@ -1,21 +1,748 @@
-prospect_id,canonical_business_name,phone,email,website,address,operator_type,research_summary,confidence,sources,field_ids,field_count,needs_review,approved,last_enriched
-1,Harbor Point Marina,555-0101,,https://harborpoint.example.com,,marina,Family-owned marina managing the mooring field.,0.85,"[""mock_provider"", ""places_api""]","1,4",2,0,0,2026-06-15T18:57:28.369984+00:00
-2,East Bay Yacht Club,555-0102,,https://eastybc.example.com,,marina,Mock research for East Bay Yacht Club at mooring field 2.,0.75,"[""mock_provider""]","2,3,5",3,0,0,2026-06-15T18:57:28.379583+00:00
-6,Eastern Point Yacht Club,(978) 283-3520,,http://www.epyc.net/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Eastern Point Yacht Club.,0.35,"[""google_places""]","8,9,10,11,12",5,1,0,2026-06-15T19:40:13.730509+00:00
-11,Safe Harbor Front Street,(207) 930-3740,,https://frontstreetshipyard.com/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Safe Harbor Front Street.,0.35,"[""google_places""]","13,14",2,1,0,2026-06-15T19:41:20.931700+00:00
-13,Stone Horse Yacht Club,(508) 432-0868,,http://www.stonehorseyachtclub.org/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 55 boats near Stone Horse Yacht Club.,0.35,"[""google_places""]","18,19,20,21",4,1,0,2026-06-15T19:41:21.599952+00:00
-17,Padebco Full-Service Boatyard & Custom Boat Builders,(207) 529-5106,,http://www.padebco.com/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 69 boats near Padebco Full-Service Boatyard & Custom Boat Builders.,0.35,"[""google_places""]","22,23",2,1,0,2026-06-15T19:41:24.360349+00:00
-19,Wellfleet Town Pier,(508) 349-0320,,http://www.wellfleet-ma.gov/harbormaster-marina,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near Wellfleet Town Pier.,0.35,"[""google_places""]",26,1,1,0,2026-06-15T19:41:25.732036+00:00
-20,Manchester Yacht Club,(978) 526-4595,,https://www.manchesteryc.org/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Manchester Yacht Club.,0.35,"[""google_places""]","34,35",2,1,0,2026-06-15T19:41:26.411610+00:00
-22,Rockport Granite Pier,,,,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near Rockport Granite Pier.,0.35,"[""google_places""]","37,38",2,1,0,2026-06-15T19:41:57.039229+00:00
-24,Hyannis Yacht Club,(508) 775-9331,,http://www.hyannisyachtclub.org,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near Hyannis Yacht Club.,0.35,"[""google_places""]",46,1,1,0,2026-06-15T19:41:58.347601+00:00
-25,Tenants Harbor Boat Yard,(207) 372-8063,,http://tenantsharborboatyard.com/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near Tenants Harbor Boat Yard.,0.35,"[""google_places""]","54,55,56,57",4,1,0,2026-06-15T19:41:59.008064+00:00
-29,Rye Harbor-DPH,(603) 319-8246,,,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 103 boats near Rye Harbor-DPH.,0.35,"[""google_places""]",59,1,1,0,2026-06-15T19:42:31.141119+00:00
-30,Abel's Marina & Boatyard,(207) 276-5057,,https://www.abelyachtyard.com/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 48 boats near Abel's Marina & Boatyard.,0.35,"[""google_places""]",60,1,1,0,2026-06-15T19:42:31.795820+00:00
-31,Provincetown Marina,(508) 487-0571,,http://ptownmarina.com/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Provincetown Marina.,0.35,"[""google_places""]","61,62,66,67",4,1,0,2026-06-15T19:42:32.450983+00:00
-33,MacMillan Pier,,,,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near MacMillan Pier.,0.35,"[""google_places""]",65,1,1,0,2026-06-15T19:42:33.777001+00:00
-36,"Harborside Hotel, Spa & Marina",(207) 288-5033,,https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina,,hotel,"Places-only enrichment (Gemini unavailable). Detected mooring field with 63 boats near Harborside Hotel, Spa & Marina.",0.35,"[""google_places""]","70,72",2,1,0,2026-06-15T19:42:35.774387+00:00
-37,Bar Harbor Whale Watch Co,(207) 288-2386,,https://www.barharborwhales.com/,,tourist_attraction,Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near Bar Harbor Whale Watch Co.,0.35,"[""google_places""]",71,1,1,0,2026-06-15T19:42:36.474518+00:00
-39,Green Pond Yacht Club,(508) 540-5497,,https://www.greenpondyachtclub.org/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 106 boats near Green Pond Yacht Club.,0.35,"[""google_places""]","77,79,80",3,1,0,2026-06-15T19:43:00.311482+00:00
-40,Green Pond Marina,(508) 457-9283,,,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 20 boats near Green Pond Marina.,0.35,"[""google_places""]",78,1,1,0,2026-06-15T19:43:00.993849+00:00
-43,F L Tripp & Sons Inc,(508) 636-4058,,http://www.fltripp.com/,,marina,Places-only enrichment (Gemini unavailable). Detected mooring field with 85 boats near F L Tripp & Sons Inc.,0.35,"[""google_places""]","85,86",2,1,0,2026-06-15T19:43:02.996170+00:00
+﻿prospect_id,canonical_business_name,phone,email,website,address,operator_type,harbor_name,research_summary,supply_chain_summary,confidence,sources,field_ids,field_count,needs_review,approved,last_enriched
+1,Harbor Point Marina,555-0101,,https://harborpoint.example.com,,marina,,Family-owned marina managing the mooring field.,"Supply chain for Harbor Point Marina — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.85,"[""mock_provider"", ""places_api""]","1,4",2,0,0,2026-07-20T16:52:26.460685+00:00
+2,East Bay Yacht Club,555-0102,,https://eastybc.example.com,,marina,,Mock research for East Bay Yacht Club at mooring field 2.,"Supply chain for East Bay Yacht Club — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.75,"[""mock_provider""]","2,3,5",3,0,0,2026-07-20T16:52:26.466704+00:00
+6,Eastern Point Yacht Club,(978) 283-3520,,http://www.epyc.net/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Eastern Point Yacht Club.,"Supply chain for Eastern Point Yacht Club — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","8,9,10,11,12",5,1,0,2026-07-20T16:52:26.473827+00:00
+11,Safe Harbor Front Street,(207) 930-3740,,https://frontstreetshipyard.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Safe Harbor Front Street.,"Supply chain for Safe Harbor Front Street — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","13,14",2,1,0,2026-07-20T16:52:26.480207+00:00
+13,Stone Horse Yacht Club,(508) 432-0868,,http://www.stonehorseyachtclub.org/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 55 boats near Stone Horse Yacht Club.,"Supply chain for Stone Horse Yacht Club — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","18,19,20,21",4,1,0,2026-07-20T16:52:26.486985+00:00
+17,Padebco Full-Service Boatyard & Custom Boat Builders,(207) 529-5106,,http://www.padebco.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 69 boats near Padebco Full-Service Boatyard & Custom Boat Builders.,"Supply chain for Padebco Full-Service Boatyard & Custom Boat Builders — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","22,23",2,1,0,2026-07-20T16:52:26.493625+00:00
+19,Wellfleet Town Pier,(508) 349-0320,,http://www.wellfleet-ma.gov/harbormaster-marina,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near Wellfleet Town Pier.,"Supply chain for Wellfleet Town Pier — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",26,1,1,0,2026-07-20T16:52:27.328869+00:00
+20,Manchester Yacht Club,(978) 526-4595,,https://www.manchesteryc.org/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Manchester Yacht Club.,"Supply chain for Manchester Yacht Club — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","34,35",2,1,0,2026-07-20T16:52:27.338755+00:00
+22,Rockport Granite Pier,,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near Rockport Granite Pier.,"Supply chain for Rockport Granite Pier — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","37,38",2,1,0,2026-07-20T16:52:27.344592+00:00
+24,Hyannis Yacht Club,(508) 775-9331,,http://www.hyannisyachtclub.org,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near Hyannis Yacht Club.,"Supply chain for Hyannis Yacht Club — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",46,1,1,0,2026-07-20T16:52:27.349264+00:00
+25,Tenants Harbor Boat Yard,(207) 372-8063,,http://tenantsharborboatyard.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near Tenants Harbor Boat Yard.,"Supply chain for Tenants Harbor Boat Yard — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","54,55,56,57",4,1,0,2026-07-20T16:52:27.354799+00:00
+29,Rye Harbor-DPH,(603) 319-8246,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 103 boats near Rye Harbor-DPH.,"Supply chain for Rye Harbor-DPH — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",59,1,1,0,2026-07-20T16:52:27.360020+00:00
+30,Abel's Marina & Boatyard,(207) 276-5057,,https://www.abelyachtyard.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 48 boats near Abel's Marina & Boatyard.,"Supply chain for Abel's Marina & Boatyard — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",60,1,1,0,2026-07-20T16:52:28.147266+00:00
+31,Provincetown Marina,(508) 487-0571,,http://ptownmarina.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Provincetown Marina.,"Supply chain for Provincetown Marina — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","61,62,66,67",4,1,0,2026-07-20T16:52:28.154329+00:00
+33,MacMillan Pier,,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near MacMillan Pier.,"Supply chain for MacMillan Pier — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",65,1,1,0,2026-07-20T16:52:28.161146+00:00
+36,"Harborside Hotel, Spa & Marina",(207) 288-5033,,https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina,,hotel,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 63 boats near Harborside Hotel, Spa & Marina.","Supply chain for Harborside Hotel, Spa & Marina — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","70,72",2,1,0,2026-07-20T16:52:28.165941+00:00
+37,Bar Harbor Whale Watch Co,(207) 288-2386,,https://www.barharborwhales.com/,,tourist_attraction,,Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near Bar Harbor Whale Watch Co.,"Supply chain for Bar Harbor Whale Watch Co — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",71,1,1,0,2026-07-20T16:52:28.170514+00:00
+39,Green Pond Yacht Club,(508) 540-5497,,https://www.greenpondyachtclub.org/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 106 boats near Green Pond Yacht Club.,"Supply chain for Green Pond Yacht Club — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","77,79,80",3,1,0,2026-07-20T16:52:28.175276+00:00
+40,Green Pond Marina,(508) 457-9283,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 20 boats near Green Pond Marina.,"Supply chain for Green Pond Marina — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]",78,1,1,0,2026-07-20T16:52:29.273845+00:00
+43,F L Tripp & Sons Inc,(508) 636-4058,,http://www.fltripp.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 85 boats near F L Tripp & Sons Inc.,"Supply chain for F L Tripp & Sons Inc — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,"[""google_places""]","85,86",2,1,0,2026-07-20T16:52:29.283057+00:00
+45,"41.62022, -70.39230",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 24 boats near 41.62022, -70.39230. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62022, -70.39230 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],87,1,1,0,2026-07-20T16:52:29.289274+00:00
+46,"41.62074, -70.39643",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 19 boats near 41.62074, -70.39643. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62074, -70.39643 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],88,1,1,0,2026-07-20T16:52:29.294676+00:00
+47,"41.61530, -70.39141",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 41.61530, -70.39141. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.61530, -70.39141 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],89,1,1,0,2026-07-20T16:52:29.300326+00:00
+48,"44.63501, -67.29793",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 10 boats near 44.63501, -67.29793. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.63501, -67.29793 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],90,1,1,0,2026-07-20T16:52:29.306179+00:00
+49,"42.58266, -70.66681",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 55 boats near 42.58266, -70.66681. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.58266, -70.66681 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],91,1,1,0,2026-07-20T16:52:30.397412+00:00
+50,"44.42928, -69.00687",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 88 boats near 44.42928, -69.00687. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.42928, -69.00687 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],92,1,1,0,2026-07-20T16:52:30.406520+00:00
+51,"44.35107, -68.54415",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 44.35107, -68.54415. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.35107, -68.54415 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],93,1,1,0,2026-07-20T16:52:30.411937+00:00
+52,"41.66592, -70.06541",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 63 boats near 41.66592, -70.06541. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.66592, -70.06541 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],94,1,1,0,2026-07-20T16:52:30.419295+00:00
+53,"41.66859, -70.06518",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 41.66859, -70.06518. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.66859, -70.06518 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],95,1,1,0,2026-07-20T16:52:30.427558+00:00
+54,"41.66224, -70.06326",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 41.66224, -70.06326. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.66224, -70.06326 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],96,1,1,0,2026-07-20T16:52:30.434349+00:00
+55,"43.94397, -69.45584",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 79 boats near 43.94397, -69.45584. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.94397, -69.45584 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],97,1,1,0,2026-07-20T16:53:54.411804+00:00
+56,"41.92943, -70.03126",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 41.92943, -70.03126. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.92943, -70.03126 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],98,1,1,0,2026-07-20T16:53:54.424080+00:00
+57,"41.93062, -70.02956",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 41.93062, -70.02956. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.93062, -70.02956 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],99,1,1,0,2026-07-20T16:53:54.429794+00:00
+58,"43.88078, -69.51435",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 15 boats near 43.88078, -69.51435. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.88078, -69.51435 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],100,1,1,0,2026-07-20T16:53:54.437016+00:00
+59,"43.88314, -69.51411",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 43.88314, -69.51411. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.88314, -69.51411 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],101,1,1,0,2026-07-20T16:53:54.442830+00:00
+60,"43.88416, -69.51129",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 43.88416, -69.51129. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.88416, -69.51129 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],102,1,1,0,2026-07-20T16:53:54.449444+00:00
+61,"43.88332, -69.51700",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 43.88332, -69.51700. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.88332, -69.51700 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],103,1,1,0,2026-07-20T16:53:55.539012+00:00
+62,"42.56757, -70.77583",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 166 boats near 42.56757, -70.77583. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.56757, -70.77583 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],104,1,1,0,2026-07-20T16:53:55.548422+00:00
+63,"42.66708, -70.62331",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 82 boats near 42.66708, -70.62331. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.66708, -70.62331 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],105,1,1,0,2026-07-20T16:53:55.554041+00:00
+64,"42.66397, -70.62000",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 42.66397, -70.62000. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.66397, -70.62000 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],106,1,1,0,2026-07-20T16:53:55.561206+00:00
+65,"43.79050, -69.89070",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 61 boats near 43.79050, -69.89070. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.79050, -69.89070 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],107,1,1,0,2026-07-20T16:53:55.566529+00:00
+66,"43.78778, -69.89316",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 43.78778, -69.89316. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.78778, -69.89316 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],108,1,1,0,2026-07-20T16:53:55.573800+00:00
+67,"43.79359, -69.89143",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 19 boats near 43.79359, -69.89143. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.79359, -69.89143 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],109,1,1,0,2026-07-20T16:53:56.591413+00:00
+68,"43.79549, -69.89128",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 43.79549, -69.89128. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.79549, -69.89128 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],110,1,1,0,2026-07-20T16:53:56.599570+00:00
+69,"43.78755, -69.88825",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 43.78755, -69.88825. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.78755, -69.88825 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],111,1,1,0,2026-07-20T16:53:56.605941+00:00
+70,"41.63920, -70.27673",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 9 boats near 41.63920, -70.27673. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.63920, -70.27673 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],112,1,1,0,2026-07-20T16:53:56.613012+00:00
+71,"41.63723, -70.27348",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 12 boats near 41.63723, -70.27348. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.63723, -70.27348 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],113,1,1,0,2026-07-20T16:53:56.619366+00:00
+72,"44.20451, -69.05565",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 44.20451, -69.05565. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.20451, -69.05565 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],114,1,1,0,2026-07-20T16:53:56.626565+00:00
+73,"41.62723, -70.91247",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 71 boats near 41.62723, -70.91247. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62723, -70.91247 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],115,1,1,0,2026-07-20T16:53:57.713987+00:00
+74,"41.62403, -70.91167",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 41.62403, -70.91167. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62403, -70.91167 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],116,1,1,0,2026-07-20T16:53:57.721620+00:00
+75,"41.62394, -70.90733",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 41.62394, -70.90733. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62394, -70.90733 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],117,1,1,0,2026-07-20T16:53:57.729155+00:00
+76,"41.62209, -70.90964",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 41.62209, -70.90964. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62209, -70.90964 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],118,1,1,0,2026-07-20T16:53:57.735571+00:00
+77,"41.62427, -70.91466",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 41.62427, -70.91466. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62427, -70.91466 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],119,1,1,0,2026-07-20T16:53:57.741604+00:00
+78,"43.96465, -69.20515",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 12 boats near 43.96465, -69.20515. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.96465, -69.20515 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],120,1,1,0,2026-07-20T16:53:57.747959+00:00
+79,"43.96526, -69.20265",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 20 boats near 43.96526, -69.20265. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.96526, -69.20265 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"121,124",2,1,0,2026-07-20T16:53:58.972602+00:00
+80,"43.96275, -69.20775",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 43.96275, -69.20775. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.96275, -69.20775 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],122,1,1,0,2026-07-20T16:53:58.981483+00:00
+81,"43.96242, -69.20391",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 43.96242, -69.20391. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.96242, -69.20391 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],123,1,1,0,2026-07-20T16:53:58.987729+00:00
+83,"43.96657, -69.20560",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 43.96657, -69.20560. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.96657, -69.20560 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],125,1,1,0,2026-07-20T16:53:58.993522+00:00
+84,"43.00074, -70.74901",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 97 boats near 43.00074, -70.74901. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.00074, -70.74901 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],126,1,1,0,2026-07-20T16:53:58.999712+00:00
+85,"42.99828, -70.74451",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 42.99828, -70.74451. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.99828, -70.74451 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],127,1,1,0,2026-07-20T16:54:55.382222+00:00
+86,"44.35663, -68.30584",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 44 boats near 44.35663, -68.30584. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.35663, -68.30584 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],128,1,1,0,2026-07-20T16:54:55.389147+00:00
+87,"42.05041, -70.18211",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 21 boats near 42.05041, -70.18211. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.05041, -70.18211 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],129,1,1,0,2026-07-20T16:54:55.397376+00:00
+88,"42.04871, -70.18417",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 9 boats near 42.04871, -70.18417. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.04871, -70.18417 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],130,1,1,0,2026-07-20T16:54:55.402575+00:00
+89,"42.04862, -70.17725",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 42.04862, -70.17725. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42.04862, -70.17725 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],131,1,1,0,2026-07-20T16:54:55.409368+00:00
+90,"43.05502, -70.72044",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 36 boats near 43.05502, -70.72044. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.05502, -70.72044 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],132,1,1,0,2026-07-20T16:54:55.416408+00:00
+91,"43.05740, -70.72074",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 43.05740, -70.72074. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.05740, -70.72074 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],133,1,1,0,2026-07-20T16:54:56.771982+00:00
+92,"43.05290, -70.71891",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 15 boats near 43.05290, -70.71891. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 43.05290, -70.71891 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],134,1,1,0,2026-07-20T16:54:56.780108+00:00
+93,"44.39379, -68.20369",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 81 boats near 44.39379, -68.20369. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.39379, -68.20369 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],135,1,1,0,2026-07-20T16:54:56.786220+00:00
+94,"44.39605, -68.20661",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 44.39605, -68.20661. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.39605, -68.20661 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],136,1,1,0,2026-07-20T16:54:56.791783+00:00
+95,"44.39032, -68.20201",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 44.39032, -68.20201. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.39032, -68.20201 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],137,1,1,0,2026-07-20T16:54:56.799891+00:00
+96,"44.41054, -68.23606",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 32 boats near 44.41054, -68.23606. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.41054, -68.23606 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],138,1,1,0,2026-07-20T16:54:56.807077+00:00
+97,"44.41237, -68.23848",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 44.41237, -68.23848. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.41237, -68.23848 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],139,1,1,0,2026-07-20T16:54:57.906243+00:00
+98,"44.40800, -68.23435",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 18 boats near 44.40800, -68.23435. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.40800, -68.23435 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],140,1,1,0,2026-07-20T16:54:57.915288+00:00
+99,"44.41243, -68.23977",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 44.41243, -68.23977. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.41243, -68.23977 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],141,1,1,0,2026-07-20T16:54:57.922500+00:00
+100,"44.40606, -68.23490",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 44.40606, -68.23490. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 44.40606, -68.23490 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],142,1,1,0,2026-07-20T16:54:57.928931+00:00
+101,"41.55235, -70.57022",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 98 boats near 41.55235, -70.57022. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.55235, -70.57022 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],143,1,1,0,2026-07-20T16:54:57.935756+00:00
+102,"41.55476, -70.57384",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 41.55476, -70.57384. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.55476, -70.57384 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],144,1,1,0,2026-07-20T16:54:57.942234+00:00
+103,"41.54898, -70.56667",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 41.54898, -70.56667. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.54898, -70.56667 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],145,1,1,0,2026-07-20T16:54:59.075802+00:00
+104,"41.55106, -70.57429",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 41.55106, -70.57429. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.55106, -70.57429 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],146,1,1,0,2026-07-20T16:54:59.082674+00:00
+105,"41.54865, -70.57014",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 41.54865, -70.57014. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.54865, -70.57014 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],147,1,1,0,2026-07-20T16:55:27.054383+00:00
+106,"41.63982, -70.24551",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 21 boats near 41.63982, -70.24551. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.63982, -70.24551 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],148,1,1,0,2026-07-20T16:55:27.062893+00:00
+107,"41.63620, -70.24259",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 41.63620, -70.24259. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.63620, -70.24259 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],149,1,1,0,2026-07-20T16:55:27.069407+00:00
+108,"41.51259, -71.07787",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 83 boats near 41.51259, -71.07787. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.51259, -71.07787 — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],150,1,1,0,2026-07-20T16:55:27.075362+00:00
