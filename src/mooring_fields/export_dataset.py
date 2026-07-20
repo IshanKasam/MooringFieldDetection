@@ -62,7 +62,7 @@ def export_yolo_dataset(
 
     data_yaml = out / "data.yaml"
     data_yaml.write_text(
-        f"path: {out.as_posix()}\n"
+        f"path: {out.resolve().as_posix()}\n"
         "train: images/train\n"
         "val: images/val\n"
         "names:\n"
