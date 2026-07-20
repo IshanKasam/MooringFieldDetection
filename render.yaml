@@ -1,0 +1,23 @@
+# Render Blueprint — backend with persistent disk for SQLite.
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: mooring-fields-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: MOORING_CORS_ORIGINS
+        sync: false
+      - key: MOORING_CORS_ALLOW_ALL
+        value: "false"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: MOORING_DATA_DIR
+        value: /data
+    disk:
+      name: mooring-data
+      mountPath: /data
+      sizeGB: 1

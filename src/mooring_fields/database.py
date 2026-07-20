@@ -465,6 +465,100 @@ def list_prospects(conn: sqlite3.Connection) -> list[sqlite3.Row]:
     return list(conn.execute("SELECT * FROM prospects ORDER BY id").fetchall())
 
 
+def field_table_rows(conn: sqlite3.Connection) -> list[dict[str, Any]]:
+    """One row per field, joined to linked prospect (controller + contact)."""
+    rows = conn.execute(
+        """
+        SELECT f.id AS field_id, f.latitude, f.longitude, f.boat_count,
+               f.mean_confidence, f.location_name, f.country, f.enrichment_status,
+               f.scan_id, s.created_at AS detection_date,
+               p.id AS prospect_id, p.canonical_business_name AS controller,
+               p.phone, p.email, p.website, p.address, p.harbor_name, p.operator_type,
+               p.confidence, p.sources, p.research_summary, p.supply_chain_summary,
+               p.needs_review, p.approved
+        FROM fields f
+        JOIN scans s ON f.scan_id = s.id
+        LEFT JOIN field_prospect_links fpl ON fpl.field_id = f.id
+        LEFT JOIN prospects p ON p.id = fpl.prospect_id
+        ORDER BY f.id, p.id
+        """
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_stats(conn: sqlite3.Connection) -> dict[str, int]:
+    """Aggregate counts for the web dashboard header."""
+    fields = int(conn.execute("SELECT COUNT(*) FROM fields").fetchone()[0])
+    boats = int(conn.execute("SELECT COUNT(*) FROM boats").fetchone()[0])
+    prospects = int(conn.execute("SELECT COUNT(*) FROM prospects").fetchone()[0])
+    needs_review = int(
+        conn.execute(
+            "SELECT COUNT(*) FROM prospects WHERE needs_review = 1"
+        ).fetchone()[0]
+    )
+    approved = int(
+        conn.execute("SELECT COUNT(*) FROM prospects WHERE approved = 1").fetchone()[0]
+    )
+    return {
+        "fields": fields,
+        "boats": boats,
+        "prospects": prospects,
+        "needs_review": needs_review,
+        "approved": approved,
+    }
+
+
+def list_scans(conn: sqlite3.Connection) -> list[dict[str, Any]]:
+    rows = conn.execute(
+        """
+        SELECT s.id, s.created_at, s.source, s.weights, s.split, s.notes,
+               COUNT(f.id) AS field_count
+        FROM scans s
+        LEFT JOIN fields f ON f.scan_id = s.id
+        GROUP BY s.id
+        ORDER BY s.id DESC
+        """
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
+def get_boats(
+    conn: sqlite3.Connection,
+    *,
+    field_id: int | None = None,
+    scan_id: int | None = None,
+    limit: int = 5000,
+) -> list[dict[str, Any]]:
+    sql = (
+        "SELECT id, scan_id, field_id, latitude, longitude, confidence, image_stem "
+        "FROM boats WHERE 1=1"
+    )
+    params: list[Any] = []
+    if field_id is not None:
+        sql += " AND field_id = ?"
+        params.append(field_id)
+    if scan_id is not None:
+        sql += " AND scan_id = ?"
+        params.append(scan_id)
+    sql += f" ORDER BY id LIMIT {int(limit)}"
+    return [dict(r) for r in conn.execute(sql, params).fetchall()]
+
+
+def get_prospect(conn: sqlite3.Connection, prospect_id: int) -> dict[str, Any] | None:
+    row = conn.execute(
+        "SELECT * FROM prospects WHERE id = ?", (prospect_id,)
+    ).fetchone()
+    return dict(row) if row else None
+
+
+def list_enrichment_runs(conn: sqlite3.Connection, *, limit: int = 20) -> list[dict[str, Any]]:
+    rows = conn.execute(
+        "SELECT * FROM enrichment_runs ORDER BY id DESC LIMIT ?",
+        (int(limit),),
+    ).fetchall()
+    return [dict(r) for r in rows]
+
+
 def get_prospect_field_ids(conn: sqlite3.Connection, prospect_id: int) -> list[int]:
     rows = conn.execute(
         "SELECT field_id FROM field_prospect_links WHERE prospect_id = ? ORDER BY field_id",

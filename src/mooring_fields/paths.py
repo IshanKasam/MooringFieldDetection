@@ -1,10 +1,14 @@
 """Project path helpers."""
 
+from __future__ import annotations
+
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG_DIR = ROOT / "config"
-DATA_DIR = ROOT / "data"
+_data_override = os.environ.get("MOORING_DATA_DIR", "").strip()
+DATA_DIR = Path(_data_override) if _data_override else ROOT / "data"
 KML_PATH = ROOT / "mooring_fields.kml"
 SITES_JSON = DATA_DIR / "sites.json"
 IMAGERY_DIR = DATA_DIR / "imagery"
