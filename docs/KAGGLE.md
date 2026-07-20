@@ -6,7 +6,7 @@ Use Kaggle for **prelabel**, **train**, and **evaluate** — these steps use the
 
 ## 1. Push code to GitHub
 
-Commit and push this repo. `data/imagery/` and `data/prelabels/` are gitignored — upload them separately (step 2).
+Commit and push this repo. `data/imagery/`, `data/prelabels/`, and `data/labels/` are gitignored — upload them separately (step 2).
 
 ## 2. Create a Kaggle Dataset (one-time)
 
@@ -15,11 +15,18 @@ Zip and upload your local artifacts:
 ```
 data/
   imagery/     # 615 PNGs + JSON sidecars
+  labels/      # human-corrected OBB .txt (after import-roboflow-labels)
   prelabels/   # optional if you will re-run prelabel on GPU
   sites.json
 ```
 
 Name the dataset e.g. `mooring-field-data`. It mounts at `/kaggle/input/mooring-field-data`.
+
+If you exported labels from Roboflow locally, run this **before** zipping:
+
+```bash
+python -m mooring_fields.cli import-roboflow-labels --source yolov8_new_images
+```
 
 ## 3. New Kaggle notebook
 
@@ -48,7 +55,9 @@ Expected output includes `"cuda": true`, `"gpu": "Tesla P100..."`, `"batch": 16`
 ```bash
 # GPU steps (skip fetch if imagery was linked)
 python -m mooring_fields.cli prelabel   # optional if prelabels uploaded
-python -m mooring_fields.cli train
+# Prefer corrected labels when data/labels/ is in the dataset:
+python -m mooring_fields.cli train --corrected-labels
+# Or: python -m mooring_fields.cli train   # uses prelabels only
 python -m mooring_fields.cli evaluate --publish
 ```
 

@@ -9,5 +9,10 @@ runs/
 data/imagery/
 data/prelabels/
 data/labels/
+yolov8_new_images/
+staging/
+kaggle_upload/
+mooring-field-data.zip
+kaggle_output/MooringFieldDetection/
 *.pt
 !config/

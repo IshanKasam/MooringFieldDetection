@@ -73,6 +73,25 @@ def train_cmd(argv: list[str] | None = None) -> None:
     _print(report)
 
 
+def import_roboflow_labels_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description="Import Roboflow YOLOv8-OBB export into data/labels/{train,val}/"
+    )
+    parser.add_argument(
+        "--source",
+        type=Path,
+        default=Path("yolov8_new_images"),
+        help="Path to Roboflow export root (train/ + valid/ labels)",
+    )
+    args = parser.parse_args(argv)
+    from mooring_fields.import_roboflow_labels import import_roboflow_obb_export
+
+    report = import_roboflow_obb_export(args.source)
+    _print(report)
+    if not report.get("ok"):
+        raise SystemExit(1)
+
+
 def evaluate_cmd(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Evaluate mooring field Hit@R on val sites")
     parser.add_argument("--weights", type=Path, default=None)
@@ -442,6 +461,7 @@ def main() -> None:
         "estimate": estimate_cmd,
         "fetch": fetch_imagery_cmd,
         "prelabel": prelabel_cmd,
+        "import-roboflow-labels": import_roboflow_labels_cmd,
         "train": train_cmd,
         "evaluate": evaluate_cmd,
         "kaggle-setup": kaggle_setup_cmd,

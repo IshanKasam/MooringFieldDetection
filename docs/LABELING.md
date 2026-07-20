@@ -41,20 +41,35 @@ Each `.txt` line must be **Ultralytics OBB format**:
 
 ## 3. Save corrected labels
 
-Copy reviewed pairs to:
+### Roboflow (recommended)
+
+1. Export the project as **YOLOv8 Oriented Object Detection** (OBB), unzip into e.g. `yolov8_new_images/`.
+2. Import into the repo (renames Roboflow filenames, maps `valid` → `val`, backfills any imagery tiles missing from the export from `data/prelabels/`):
+
+```bash
+python -m mooring_fields.cli import-roboflow-labels --source yolov8_new_images
+```
+
+This writes:
 
 ```
 data/labels/train/
 data/labels/val/
 ```
 
-Keep the same filenames as in `data/prelabels/`.
+Empty `.txt` files from Roboflow are kept as-is (genuine no-boat tiles).
+
+### Manual copy
+
+Copy reviewed pairs to `data/labels/train/` and `data/labels/val/`. Keep the same filenames as in `data/prelabels/` (e.g. `MF_6_032D13F8_south_z18.txt`).
 
 ## 4. Train on corrected labels
 
 ```bash
 python -m mooring_fields.cli train --corrected-labels
 ```
+
+On Kaggle, upload `data/labels/` with `data/imagery/` and use the same flag (see [KAGGLE.md](KAGGLE.md)).
 
 ## 5. Hard negatives (recommended)
 
