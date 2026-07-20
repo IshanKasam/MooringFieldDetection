@@ -41,14 +41,19 @@ def export_yolo_dataset(
         if not img_src.exists():
             continue
         for png in sorted(img_src.glob("*.png")):
-            shutil.copy2(png, img_dest / png.name)
+            dest_png = img_dest / png.name
+            if png.resolve() != dest_png.resolve():
+                shutil.copy2(png, dest_png)
             lbl = lbl_src / f"{png.stem}.txt" if lbl_src.exists() else None
             dest_lbl = lbl_dest / f"{png.stem}.txt"
             if lbl and lbl.exists():
-                dest_lbl.write_text(
-                    sanitize_label_text(lbl.read_text(encoding="utf-8")),
-                    encoding="utf-8",
-                )
+                sanitized = sanitize_label_text(lbl.read_text(encoding="utf-8"))
+                if (
+                    lbl.resolve() != dest_lbl.resolve()
+                    or not dest_lbl.exists()
+                    or dest_lbl.read_text(encoding="utf-8") != sanitized
+                ):
+                    dest_lbl.write_text(sanitized, encoding="utf-8")
             else:
                 dest_lbl.write_text("", encoding="utf-8")
             stats[split] += 1

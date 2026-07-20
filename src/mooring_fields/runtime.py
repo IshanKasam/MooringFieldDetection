@@ -376,7 +376,6 @@ def publish_outputs(dest: Path | None = None) -> dict:
         DATA_DIR / "mooring_fields.db",
         DATA_DIR / "geocode_cache.json",
         DATA_DIR / "prelabels",
-        DATA_DIR / "datasets" / "mooring_boats",
     ]
     for src in candidates:
         if not src.exists():
