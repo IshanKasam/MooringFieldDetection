@@ -198,7 +198,13 @@ def get_places_provider(cfg: dict, *, csv_path: Path | None = None) -> PlacesPro
 
 
 def get_research_provider(cfg: dict, *, csv_path: Path | None = None) -> ResearchProvider:
-    provider = cfg.get("provider", "mock")
+    # research_provider overrides provider so Places can stay on Google (live)
+    # while research runs on a different backend (e.g. free Groq).
+    provider = cfg.get("research_provider") or cfg.get("provider", "mock")
+    if provider == "groq":
+        from mooring_fields.groq_research import LiveGroqResearchProvider
+
+        return LiveGroqResearchProvider(cfg)
     if provider == "live":
         from mooring_fields.gemini_research import LiveGeminiResearchProvider
 

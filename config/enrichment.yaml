@@ -1,5 +1,10 @@
-# Enrichment pipeline settings (Places + Gemini)
-provider: live  # mock | live | manual
+# Enrichment pipeline settings (Places + LLM research)
+provider: live  # mock | live | manual  (Places backend; live = Google Places)
+
+# Research LLM override. Falls back to `provider` when unset.
+#   groq   -> free, no credit card (requires GROQ_API_KEY)
+#   live   -> Gemini (requires GEMINI_API_KEY)
+research_provider: groq
 
 places:
   enabled: true
@@ -20,6 +25,15 @@ gemini:
   use_google_search: true
   prompt_version: v2
   supply_chain_prompt_version: v1
+
+groq:
+  enabled: true
+  # compound models search the web internally (Gemini-grounding equivalent).
+  # Alternatives (no search): llama-3.3-70b-versatile, llama-3.1-8b-instant
+  model: groq/compound-mini
+  temperature: 0.2
+  prompt_version: v2
+  timeout_seconds: 90
 
 # Per-run safety caps (free tier - see docs/ENRICHMENT_BUDGET.md)
 max_places_calls_per_run: 40
