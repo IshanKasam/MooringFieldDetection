@@ -59,45 +59,19 @@ export function FieldMap({ geojson }: Props) {
         map.addSource("fields", {
           type: "geojson",
           data: geojson,
-          cluster: true,
-          clusterMaxZoom: 12,
-          clusterRadius: 44,
         });
         map.addLayer({
-          id: "clusters",
+          id: "fields-points",
           type: "circle",
           source: "fields",
-          filter: ["has", "point_count"],
-          paint: {
-            "circle-color": "#0ea5e9",
-            "circle-radius": ["step", ["get", "point_count"], 16, 10, 22, 50, 28],
-            "circle-opacity": 0.85,
-          },
-        });
-        map.addLayer({
-          id: "cluster-count",
-          type: "symbol",
-          source: "fields",
-          filter: ["has", "point_count"],
-          layout: {
-            "text-field": "{point_count_abbreviated}",
-            "text-size": 12,
-          },
-          paint: { "text-color": "#ffffff" },
-        });
-        map.addLayer({
-          id: "unclustered",
-          type: "circle",
-          source: "fields",
-          filter: ["!", ["has", "point_count"]],
           paint: {
             "circle-color": [
               "case",
               ["==", ["get", "approved"], 1],
-              "#22c55e",
+              "#0e77be",
               ["==", ["get", "needs_review"], 1],
-              "#f59e0b",
-              "#38bdf8",
+              "#ffc20e",
+              "#0e77be",
             ],
             "circle-radius": [
               "interpolate",
@@ -106,30 +80,14 @@ export function FieldMap({ geojson }: Props) {
               1,
               6,
               50,
-              16,
+              12,
             ],
             "circle-stroke-width": 1.5,
-            "circle-stroke-color": "#0f172a",
+            "circle-stroke-color": "#ffffff",
           },
         });
 
-        map.on("click", "clusters", (e) => {
-          const features = map.queryRenderedFeatures(e.point, {
-            layers: ["clusters"],
-          });
-          const clusterId = features[0]?.properties?.cluster_id;
-          const source = map.getSource("fields") as maplibregl.GeoJSONSource;
-          if (clusterId == null) return;
-          source.getClusterExpansionZoom(clusterId).then((zoom) => {
-            const geom = features[0].geometry as {
-              type: string;
-              coordinates: [number, number];
-            };
-            map.easeTo({ center: geom.coordinates, zoom });
-          });
-        });
-
-        map.on("click", "unclustered", (e) => {
+        map.on("click", "fields-points", (e) => {
           const f = e.features?.[0];
           if (!f) return;
           const props = f.properties ?? {};
@@ -145,15 +103,15 @@ export function FieldMap({ geojson }: Props) {
             Controller: ${props.controller || "—"}<br/>
             Phone: ${props.phone || "—"}<br/>
             ${props.website ? `<a href="${props.website}" target="_blank" rel="noreferrer">Website</a><br/>` : ""}
-            ${props.needs_review == 1 ? '<span style="color:#f59e0b">Needs review</span>' : ""}
+            ${props.needs_review == 1 ? '<span style="color:#0e77be">Needs review</span>' : ""}
           `;
           new maplibregl.Popup().setLngLat(coords).setHTML(html).addTo(map);
         });
 
-        map.on("mouseenter", "unclustered", () => {
+        map.on("mouseenter", "fields-points", () => {
           map.getCanvas().style.cursor = "pointer";
         });
-        map.on("mouseleave", "unclustered", () => {
+        map.on("mouseleave", "fields-points", () => {
           map.getCanvas().style.cursor = "";
         });
       } else {

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -23,6 +24,19 @@ from mooring_fields.database import (
 )
 from mooring_fields.paths import DB_PATH, PROSPECTS_EXPORT
 
+_STATE_CODE = re.compile(r"(?:^|,\s*)([A-Z]{2})(?=(?:\s+\d{5}(?:-\d{4})?)?(?:,|$))")
+
+
+def _state_from_location(*values: str | None) -> str | None:
+    """Best-effort US state code from the geocoded field/prospect address."""
+    for value in values:
+        if not value:
+            continue
+        match = _STATE_CODE.search(value)
+        if match:
+            return match.group(1)
+    return None
+
 
 def _conn(db_path: Path | None = None):
     conn = get_connection(db_path)
@@ -41,7 +55,13 @@ def stats(*, db_path: Path | None = None) -> dict[str, int]:
 def table_rows(*, db_path: Path | None = None) -> list[dict[str, Any]]:
     conn = _conn(db_path)
     try:
-        return field_table_rows(conn)
+        rows = field_table_rows(conn)
+        for row in rows:
+            row["state"] = _state_from_location(
+                row.get("address"),
+                row.get("location_name"),
+            )
+        return rows
     finally:
         conn.close()
 

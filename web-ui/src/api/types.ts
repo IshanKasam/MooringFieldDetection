@@ -5,6 +5,7 @@ export type FieldRow = {
   boat_count: number;
   mean_confidence: number | null;
   location_name: string | null;
+  state: string | null;
   country: string | null;
   enrichment_status: string | null;
   scan_id: number | null;

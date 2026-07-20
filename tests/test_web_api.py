@@ -112,6 +112,8 @@ def test_api_health_and_table(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     assert stats["fields"] == 2
     table = client.get("/api/table").json()
     assert len(table) >= 2
+    assert "state" in table[0]
+    assert any(row["state"] == "MA" for row in table)
     geo = client.get("/api/fields.geojson").json()
     assert geo["type"] == "FeatureCollection"
     assert len(geo["features"]) == 2

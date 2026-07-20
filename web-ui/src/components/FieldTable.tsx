@@ -30,21 +30,58 @@ export function FieldTable({ rows }: Props) {
 
   const columns = useMemo<ColumnDef<FieldRow>[]>(
     () => [
-      { accessorKey: "field_id", header: "ID", size: 60 },
+      { accessorKey: "field_id", header: "Field", size: 70 },
       {
         accessorKey: "location_name",
         header: "Location",
+        size: 310,
+        cell: ({ row }) => (
+          <div className="location-cell">
+            <strong>{row.original.location_name || "Unresolved location"}</strong>
+            <small>
+              {row.original.latitude.toFixed(5)}, {row.original.longitude.toFixed(5)}
+            </small>
+          </div>
+        ),
+      },
+      { accessorKey: "state", header: "State", size: 80, cell: (c) => c.getValue() || "—" },
+      {
+        accessorKey: "country",
+        header: "Country",
+        size: 130,
         cell: (c) => c.getValue() || "—",
       },
-      { accessorKey: "boat_count", header: "Boats", size: 70 },
+      { accessorKey: "boat_count", header: "Boats", size: 75 },
+      {
+        accessorKey: "mean_confidence",
+        header: "Detection",
+        size: 90,
+        cell: (c) => {
+          const v = c.getValue() as number | null;
+          return v == null ? "—" : `${Math.round(v * 100)}%`;
+        },
+      },
+      {
+        accessorKey: "harbor_name",
+        header: "Harbor",
+        size: 180,
+        cell: (c) => c.getValue() || "—",
+      },
       {
         accessorKey: "controller",
         header: "Controller",
+        size: 200,
         cell: (c) => c.getValue() || "—",
       },
       {
         accessorKey: "phone",
         header: "Phone",
+        cell: (c) => c.getValue() || "—",
+      },
+      {
+        accessorKey: "operator_type",
+        header: "Type",
+        size: 125,
         cell: (c) => c.getValue() || "—",
       },
       {
@@ -66,23 +103,18 @@ export function FieldTable({ rows }: Props) {
         },
       },
       {
-        accessorKey: "harbor_name",
-        header: "Harbor",
-        cell: (c) => c.getValue() || "—",
-      },
-      {
         accessorKey: "confidence",
-        header: "Conf.",
-        size: 70,
+        header: "Research",
+        size: 85,
         cell: (c) => {
           const v = c.getValue() as number | null;
-          return v == null ? "—" : v.toFixed(2);
+          return v == null ? "—" : `${Math.round(v * 100)}%`;
         },
       },
       {
         accessorKey: "enrichment_status",
         header: "Status",
-        size: 100,
+        size: 120,
       },
       {
         id: "approved",
@@ -107,12 +139,16 @@ export function FieldTable({ rows }: Props) {
     const cols = [
       "field_id",
       "location_name",
+      "state",
+      "country",
       "boat_count",
+      "mean_confidence",
+      "harbor_name",
       "controller",
       "phone",
       "email",
       "website",
-      "harbor_name",
+      "operator_type",
       "confidence",
       "enrichment_status",
       "approved",

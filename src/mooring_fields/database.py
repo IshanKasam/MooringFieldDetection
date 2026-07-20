@@ -131,7 +131,13 @@ def _migrate_prospects_columns(conn: sqlite3.Connection) -> None:
     }
     for col, typedef in migrations.items():
         if col not in cols:
-            conn.execute(f"ALTER TABLE prospects ADD COLUMN {col} {typedef}")
+            try:
+                conn.execute(f"ALTER TABLE prospects ADD COLUMN {col} {typedef}")
+            except sqlite3.OperationalError as exc:
+                # Web requests can initialize the same local DB concurrently.
+                # Another request may add the column after our PRAGMA check.
+                if "duplicate column name" not in str(exc).lower():
+                    raise
     conn.commit()
 
 

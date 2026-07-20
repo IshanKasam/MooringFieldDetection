@@ -22,6 +22,7 @@ class FieldRow(BaseModel):
     boat_count: int
     mean_confidence: float | None = None
     location_name: str | None = None
+    state: str | None = None
     country: str | None = None
     enrichment_status: str | None = None
     scan_id: int | None = None
