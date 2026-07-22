@@ -76,9 +76,37 @@ def test_import_scan_copies_fields(tmp_path: Path):
     conn.close()
 
     result = import_scan(src_db, dest_db=dst_db, source_label="import:FL")
-    assert result["fields_imported"] == 1
+    assert result["scans_imported"] == 1
+    assert result["imports"][0]["fields_imported"] == 1
     dst = get_connection(dst_db)
     init_db(dst)
     assert get_stats(dst)["fields"] == 1
     assert list_scans(dst)[0]["source"] == "import:FL"
+    dst.close()
+
+
+def test_import_scan_all_imports_every_scan(tmp_path: Path):
+    src_db = tmp_path / "cloud.db"
+    dst_db = tmp_path / "local.db"
+    conn = get_connection(src_db)
+    init_db(conn)
+    for i, lat in enumerate((26.1, 41.6)):
+        sid = insert_scan(conn, source=f"scan:r{i}", weights="best.pt", split="scan")
+        insert_field(
+            conn,
+            sid,
+            latitude=lat,
+            longitude=-80.0,
+            boat_count=3,
+            mean_confidence=0.5,
+            location_name=f"H{i}",
+            country="United States",
+        )
+    conn.close()
+    result = import_scan(src_db, dest_db=dst_db, all_scans=True)
+    assert result["scans_imported"] == 2
+    dst = get_connection(dst_db)
+    init_db(dst)
+    assert get_stats(dst)["fields"] == 2
+    assert len(list_scans(dst)) == 2
     dst.close()
