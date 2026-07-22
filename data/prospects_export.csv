@@ -1,184 +1,4 @@
 ﻿prospect_id,canonical_business_name,phone,email,website,address,operator_type,harbor_name,research_summary,supply_chain_summary,confidence,sources,field_ids,field_count,needs_review,approved,last_enriched
-1,Harbor Point Marina,555-0101,,https://harborpoint.example.com,,marina,,Family-owned marina managing the mooring field.,"Supply chain for Harbor Point Marina — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.85,"[""mock_provider"", ""places_api""]","1,4",2,0,0,2026-07-20T16:52:26.460685+00:00
-2,East Bay Yacht Club,555-0102,,https://eastybc.example.com,,marina,,Mock research for East Bay Yacht Club at mooring field 2.,"Supply chain for East Bay Yacht Club — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.75,"[""mock_provider""]","2,3,5",3,0,0,2026-07-20T16:52:26.466704+00:00
-6,Eastern Point Yacht Club,(978) 283-3520,,http://www.epyc.net/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Eastern Point Yacht Club.,"Supply chain for Eastern Point Yacht Club — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","8,9,10,11,12",5,1,0,2026-07-20T16:52:26.473827+00:00
-11,Safe Harbor Front Street,(207) 930-3740,,https://frontstreetshipyard.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Safe Harbor Front Street.,"Supply chain for Safe Harbor Front Street — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","13,14",2,1,0,2026-07-20T16:52:26.480207+00:00
-13,Stone Horse Yacht Club,(508) 432-0868,,http://www.stonehorseyachtclub.org/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 55 boats near Stone Horse Yacht Club.,"Supply chain for Stone Horse Yacht Club — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","18,19,20,21",4,1,0,2026-07-20T16:52:26.486985+00:00
-17,Padebco Full-Service Boatyard & Custom Boat Builders,(207) 529-5106,,http://www.padebco.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 69 boats near Padebco Full-Service Boatyard & Custom Boat Builders.,"Supply chain for Padebco Full-Service Boatyard & Custom Boat Builders — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","22,23",2,1,0,2026-07-20T16:52:26.493625+00:00
-19,Wellfleet Town Pier,(508) 349-0320,,http://www.wellfleet-ma.gov/harbormaster-marina,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near Wellfleet Town Pier.,"Supply chain for Wellfleet Town Pier — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",26,1,1,0,2026-07-20T16:52:27.328869+00:00
-20,Manchester Yacht Club,(978) 526-4595,,https://www.manchesteryc.org/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Manchester Yacht Club.,"Supply chain for Manchester Yacht Club — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","34,35",2,1,0,2026-07-20T16:52:27.338755+00:00
-22,Rockport Granite Pier,,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near Rockport Granite Pier.,"Supply chain for Rockport Granite Pier — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","37,38",2,1,0,2026-07-20T16:52:27.344592+00:00
-24,Hyannis Yacht Club,(508) 775-9331,,http://www.hyannisyachtclub.org,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near Hyannis Yacht Club.,"Supply chain for Hyannis Yacht Club — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",46,1,1,0,2026-07-20T16:52:27.349264+00:00
-25,Tenants Harbor Boat Yard,(207) 372-8063,,http://tenantsharborboatyard.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near Tenants Harbor Boat Yard.,"Supply chain for Tenants Harbor Boat Yard — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","54,55,56,57",4,1,0,2026-07-20T16:52:27.354799+00:00
-29,Rye Harbor-DPH,(603) 319-8246,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 103 boats near Rye Harbor-DPH.,"Supply chain for Rye Harbor-DPH — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",59,1,1,0,2026-07-20T16:52:27.360020+00:00
-30,Abel's Marina & Boatyard,(207) 276-5057,,https://www.abelyachtyard.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 48 boats near Abel's Marina & Boatyard.,"Supply chain for Abel's Marina & Boatyard — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",60,1,1,0,2026-07-20T16:52:28.147266+00:00
-31,Provincetown Marina,(508) 487-0571,,http://ptownmarina.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Provincetown Marina.,"Supply chain for Provincetown Marina — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","61,62,66,67",4,1,0,2026-07-20T16:52:28.154329+00:00
-33,MacMillan Pier,,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near MacMillan Pier.,"Supply chain for MacMillan Pier — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",65,1,1,0,2026-07-20T16:52:28.161146+00:00
-36,"Harborside Hotel, Spa & Marina",(207) 288-5033,,https://www.opalcollection.com/harborside/?utm_source=google&utm_medium=listing&utm_campaign=opal+harborside+hotel+spa+and+marina,,hotel,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 63 boats near Harborside Hotel, Spa & Marina.","Supply chain for Harborside Hotel, Spa & Marina — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","70,72",2,1,0,2026-07-20T16:52:28.165941+00:00
-37,Bar Harbor Whale Watch Co,(207) 288-2386,,https://www.barharborwhales.com/,,tourist_attraction,,Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near Bar Harbor Whale Watch Co.,"Supply chain for Bar Harbor Whale Watch Co — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",71,1,1,0,2026-07-20T16:52:28.170514+00:00
-39,Green Pond Yacht Club,(508) 540-5497,,https://www.greenpondyachtclub.org/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 106 boats near Green Pond Yacht Club.,"Supply chain for Green Pond Yacht Club — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","77,79,80",3,1,0,2026-07-20T16:52:28.175276+00:00
-40,Green Pond Marina,(508) 457-9283,,,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 20 boats near Green Pond Marina.,"Supply chain for Green Pond Marina — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]",78,1,1,0,2026-07-20T16:52:29.273845+00:00
-43,F L Tripp & Sons Inc,(508) 636-4058,,http://www.fltripp.com/,,marina,,Places-only enrichment (Gemini unavailable). Detected mooring field with 85 boats near F L Tripp & Sons Inc.,"Supply chain for F L Tripp & Sons Inc — overall confidence: Low
-Supply chain research unavailable. {
-  ""error"": {
-    ""code"": 429,
-    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
-    ""status"": ""RESOURCE_EXHAUSTED""
-  }
-}
-",0.35,"[""google_places""]","85,86",2,1,0,2026-07-20T16:52:29.283057+00:00
 45,"41.62022, -70.39230",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 24 boats near 41.62022, -70.39230. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41.62022, -70.39230 — overall confidence: Low
 Supply chain research unavailable. {
   ""error"": {
@@ -746,3 +566,2064 @@ Supply chain research unavailable. {
   }
 }
 ",0.35,[],150,1,1,0,2026-07-20T16:55:27.075362+00:00
+109,"300 Merrimac St, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 66 boats near 300 Merrimac St, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 300 Merrimac St, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],374,1,1,0,2026-07-20T19:10:15.110197+00:00
+110,"14 Sally Snyder Way, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 14 Sally Snyder Way, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 14 Sally Snyder Way, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],390,1,1,0,2026-07-20T19:10:15.117118+00:00
+111,"Cashman Park, Sally Snyder Way, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near Cashman Park, Sally Snyder Way, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Cashman Park, Sally Snyder Way, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],391,1,1,0,2026-07-20T19:10:15.122708+00:00
+112,"1 Ocean Ave, Cranston, RI 02905, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 89 boats near 1 Ocean Ave, Cranston, RI 02905, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Ocean Ave, Cranston, RI 02905, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],392,1,1,0,2026-07-20T19:10:15.129363+00:00
+113,"270 Bellevue Ave #255, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 58 boats near 270 Bellevue Ave #255, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 270 Bellevue Ave #255, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],393,1,1,0,2026-07-20T19:10:15.134156+00:00
+114,"74V3+RH Hull, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 119 boats near 74V3+RH Hull, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 74V3+RH Hull, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],394,1,1,0,2026-07-20T19:10:15.141065+00:00
+115,"51r Water St, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 28 boats near 51r Water St, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 51r Water St, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],395,1,1,0,2026-07-20T19:10:15.963900+00:00
+116,"2 Dock Ln, Beverly, MA 01915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 57 boats near 2 Dock Ln, Beverly, MA 01915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 2 Dock Ln, Beverly, MA 01915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],396,1,1,0,2026-07-20T19:10:15.970898+00:00
+117,"99 Memorial Dr, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 65 boats near 99 Memorial Dr, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 99 Memorial Dr, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],397,1,1,0,2026-07-20T19:10:15.977631+00:00
+118,"105 Sam Fonzo Drive, Beverly, MA 01915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 105 Sam Fonzo Drive, Beverly, MA 01915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 105 Sam Fonzo Drive, Beverly, MA 01915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],398,1,1,0,2026-07-20T19:10:15.982647+00:00
+119,"109 Point Rd, Portsmouth, RI 02871, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 41 boats near 109 Point Rd, Portsmouth, RI 02871, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 109 Point Rd, Portsmouth, RI 02871, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],399,1,1,0,2026-07-20T19:10:15.988028+00:00
+120,"47 Point Rd, Portsmouth, RI 02871, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 47 Point Rd, Portsmouth, RI 02871, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 47 Point Rd, Portsmouth, RI 02871, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],400,1,1,0,2026-07-20T19:10:15.993057+00:00
+121,"JQGM+6C, Tiverton, RI 02878, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near JQGM+6C, Tiverton, RI 02878, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for JQGM+6C, Tiverton, RI 02878, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],401,1,1,0,2026-07-20T19:10:16.980354+00:00
+122,"35 Steamboat Ave, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 35 Steamboat Ave, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 35 Steamboat Ave, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],402,1,1,0,2026-07-20T19:10:16.988545+00:00
+123,"275 River St, Weymouth, MA 02191, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 69 boats near 275 River St, Weymouth, MA 02191, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 275 River St, Weymouth, MA 02191, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],403,1,1,0,2026-07-20T19:10:16.994930+00:00
+124,"68 Red Brook Harbor Rd, Cataumet, MA 02534, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 29 boats near 68 Red Brook Harbor Rd, Cataumet, MA 02534, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 68 Red Brook Harbor Rd, Cataumet, MA 02534, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"404,599",2,1,0,2026-07-20T19:10:16.999638+00:00
+125,"71 Red Brook Harbor Rd, Cataumet, MA 02534, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 71 Red Brook Harbor Rd, Cataumet, MA 02534, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 71 Red Brook Harbor Rd, Cataumet, MA 02534, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],405,1,1,0,2026-07-20T19:10:17.005594+00:00
+126,"74P4+M6 Hull, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 99 boats near 74P4+M6 Hull, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 74P4+M6 Hull, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],406,1,1,0,2026-07-20T19:10:17.013594+00:00
+127,"110 Long Wharf Mall, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 69 boats near 110 Long Wharf Mall, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 110 Long Wharf Mall, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],407,1,1,0,2026-07-20T19:10:17.760131+00:00
+128,"26 Linda Rd, Wakefield, MA 01880, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 56 boats near 26 Linda Rd, Wakefield, MA 01880, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 26 Linda Rd, Wakefield, MA 01880, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],408,1,1,0,2026-07-20T19:10:17.765890+00:00
+129,"14 Union St, Plymouth, MA 02360, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 45 boats near 14 Union St, Plymouth, MA 02360, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 14 Union St, Plymouth, MA 02360, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],409,1,1,0,2026-07-20T19:10:51.694541+00:00
+130,"76 Orlando Ave, Winthrop, MA 02152, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 26 boats near 76 Orlando Ave, Winthrop, MA 02152, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 76 Orlando Ave, Winthrop, MA 02152, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],410,1,1,0,2026-07-20T19:10:51.704919+00:00
+131,"46 Orlando Ave, Winthrop, MA 02152, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 23 boats near 46 Orlando Ave, Winthrop, MA 02152, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 46 Orlando Ave, Winthrop, MA 02152, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],411,1,1,0,2026-07-20T19:10:51.711803+00:00
+132,"150 Front St, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 17 boats near 150 Front St, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 150 Front St, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"412,571",2,1,0,2026-07-20T19:10:51.716320+00:00
+133,"79 Cole Pkwy, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 79 Cole Pkwy, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 79 Cole Pkwy, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],413,1,1,0,2026-07-20T19:10:51.721335+00:00
+134,"292 High Rd, Newbury, MA 01951, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 17 boats near 292 High Rd, Newbury, MA 01951, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 292 High Rd, Newbury, MA 01951, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"414,544,545",3,1,0,2026-07-20T19:10:51.726864+00:00
+135,"1 Lanes End, Newbury, MA 01951, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 1 Lanes End, Newbury, MA 01951, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Lanes End, Newbury, MA 01951, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],415,1,1,0,2026-07-20T19:10:52.622656+00:00
+136,"Latham Park, Latham Ave, Barrington, RI 02806, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 23 boats near Latham Park, Latham Ave, Barrington, RI 02806, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Latham Park, Latham Ave, Barrington, RI 02806, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],416,1,1,0,2026-07-20T19:10:52.630244+00:00
+137,"260 Riverside Dr, Riverside, RI 02915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 260 Riverside Dr, Riverside, RI 02915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 260 Riverside Dr, Riverside, RI 02915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],417,1,1,0,2026-07-20T19:10:52.635984+00:00
+138,"6 Leslie Ave, Barrington, RI 02806, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 6 Leslie Ave, Barrington, RI 02806, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 6 Leslie Ave, Barrington, RI 02806, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],418,1,1,0,2026-07-20T19:10:52.644518+00:00
+139,"PJXW+62 East Providence, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near PJXW+62 East Providence, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for PJXW+62 East Providence, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],419,1,1,0,2026-07-20T19:10:52.650243+00:00
+140,"165 Tidal Dr, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 95 boats near 165 Tidal Dr, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 165 Tidal Dr, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],420,1,1,0,2026-07-20T19:10:52.654943+00:00
+141,"24 Bruce Boyer Rd, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 24 Bruce Boyer Rd, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 24 Bruce Boyer Rd, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"421,597",2,1,0,2026-07-20T19:10:53.667772+00:00
+142,"12 Freezer Rd, Sandwich, MA 02563, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 34 boats near 12 Freezer Rd, Sandwich, MA 02563, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 12 Freezer Rd, Sandwich, MA 02563, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],422,1,1,0,2026-07-20T19:10:53.673737+00:00
+143,"QV7C+9X Somerset, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 82 boats near QV7C+9X Somerset, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for QV7C+9X Somerset, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],423,1,1,0,2026-07-20T19:10:53.681975+00:00
+144,"57 Miller St, Warren, RI 02885, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 73 boats near 57 Miller St, Warren, RI 02885, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 57 Miller St, Warren, RI 02885, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],424,1,1,0,2026-07-20T19:10:53.685965+00:00
+145,"23 Water St, Warren, RI 02885, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 23 Water St, Warren, RI 02885, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 23 Water St, Warren, RI 02885, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],425,1,1,0,2026-07-20T19:10:53.690635+00:00
+146,"18 Quissett Harbor Rd, Falmouth, MA 02540, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 40 boats near 18 Quissett Harbor Rd, Falmouth, MA 02540, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 18 Quissett Harbor Rd, Falmouth, MA 02540, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],426,1,1,0,2026-07-20T19:10:53.695484+00:00
+147,"Weymouth-Fore River Canoe Access, Fore Riv Riverwalk, Weymouth, MA 02188, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 65 boats near Weymouth-Fore River Canoe Access, Fore Riv Riverwalk, Weymouth, MA 02188, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Weymouth-Fore River Canoe Access, Fore Riv Riverwalk, Weymouth, MA 02188, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],427,1,1,0,2026-07-20T19:10:54.556432+00:00
+148,"234 Commercial St, Weymouth, MA 02188, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 234 Commercial St, Weymouth, MA 02188, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 234 Commercial St, Weymouth, MA 02188, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],428,1,1,0,2026-07-20T19:10:54.565488+00:00
+149,"362 Pond St, Wakefield, RI 02879, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 37 boats near 362 Pond St, Wakefield, RI 02879, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 362 Pond St, Wakefield, RI 02879, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],429,1,1,0,2026-07-20T19:11:27.770964+00:00
+150,"210 Salt Pond Rd, South Kingstown, RI 02879, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 11 boats near 210 Salt Pond Rd, South Kingstown, RI 02879, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 210 Salt Pond Rd, South Kingstown, RI 02879, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],430,1,1,0,2026-07-20T19:11:27.779126+00:00
+151,"325 Point Judith Rd, Narragansett, RI 02882, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 325 Point Judith Rd, Narragansett, RI 02882, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 325 Point Judith Rd, Narragansett, RI 02882, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],431,1,1,0,2026-07-20T19:11:27.786106+00:00
+152,"42 Fiddler's Cove Rd, North Falmouth, MA 02556, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 35 boats near 42 Fiddler's Cove Rd, North Falmouth, MA 02556, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 42 Fiddler's Cove Rd, North Falmouth, MA 02556, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],432,1,1,0,2026-07-20T19:11:27.792412+00:00
+153,"1 Main St, Winthrop, MA 02152, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 77 boats near 1 Main St, Winthrop, MA 02152, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Main St, Winthrop, MA 02152, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],433,1,1,0,2026-07-20T19:11:27.797331+00:00
+154,"95 Main St, Winthrop, MA 02152, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 95 Main St, Winthrop, MA 02152, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 95 Main St, Winthrop, MA 02152, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],434,1,1,0,2026-07-20T19:11:27.802574+00:00
+155,"41 Tileston Rd, Winthrop, MA 02152, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 41 Tileston Rd, Winthrop, MA 02152, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 41 Tileston Rd, Winthrop, MA 02152, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],435,1,1,0,2026-07-20T19:11:28.815549+00:00
+156,"470 Pleasant St, Winthrop, MA 02152, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 470 Pleasant St, Winthrop, MA 02152, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 470 Pleasant St, Winthrop, MA 02152, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],436,1,1,0,2026-07-20T19:11:28.820935+00:00
+157,"715 MA-28, Harwich Port, MA 02646, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 46 boats near 715 MA-28, Harwich Port, MA 02646, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 715 MA-28, Harwich Port, MA 02646, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],437,1,1,0,2026-07-20T19:11:28.826618+00:00
+158,"60 Fort Adams Dr, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 20 boats near 60 Fort Adams Dr, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 60 Fort Adams Dr, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],438,1,1,0,2026-07-20T19:11:28.832791+00:00
+159,"45 Congress St Unit 170, Salem, MA 01970, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 58 boats near 45 Congress St Unit 170, Salem, MA 01970, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 45 Congress St Unit 170, Salem, MA 01970, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],439,1,1,0,2026-07-20T19:11:28.837560+00:00
+160,"211 Lafayette St, Salem, MA 01970, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 211 Lafayette St, Salem, MA 01970, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 211 Lafayette St, Salem, MA 01970, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],440,1,1,0,2026-07-20T19:11:28.843074+00:00
+161,"10 Harbor Pl, Bourne, MA 02532, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 32 boats near 10 Harbor Pl, Bourne, MA 02532, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 10 Harbor Pl, Bourne, MA 02532, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],441,1,1,0,2026-07-20T19:11:29.855147+00:00
+162,"103 Poppasquash Rd, Bristol, RI 02809, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near 103 Poppasquash Rd, Bristol, RI 02809, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 103 Poppasquash Rd, Bristol, RI 02809, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],442,1,1,0,2026-07-20T19:11:29.861499+00:00
+163,"31 Bowens Wharf, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 62 boats near 31 Bowens Wharf, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 31 Bowens Wharf, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],443,1,1,0,2026-07-20T19:11:29.867143+00:00
+164,"1 Perry Mill Wharf, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 22 boats near 1 Perry Mill Wharf, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Perry Mill Wharf, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],444,1,1,0,2026-07-20T19:11:29.879815+00:00
+165,"284 River St, Fall River, MA 02720, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 62 boats near 284 River St, Fall River, MA 02720, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 284 River St, Fall River, MA 02720, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],445,1,1,0,2026-07-20T19:11:29.885908+00:00
+166,"1397 Perry Rd, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 38 boats near 1397 Perry Rd, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1397 Perry Rd, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],446,1,1,0,2026-07-20T19:11:29.893129+00:00
+167,"GM3G+G4 Newport, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near GM3G+G4 Newport, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for GM3G+G4 Newport, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],447,1,1,0,2026-07-20T19:11:30.729026+00:00
+168,"32 Barton Ave, Barrington, RI 02806, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 95 boats near 32 Barton Ave, Barrington, RI 02806, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 32 Barton Ave, Barrington, RI 02806, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],448,1,1,0,2026-07-20T19:11:30.733642+00:00
+169,"38 Mathewson Rd, Barrington, RI 02806, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 38 Mathewson Rd, Barrington, RI 02806, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 38 Mathewson Rd, Barrington, RI 02806, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],449,1,1,0,2026-07-20T19:12:04.014553+00:00
+170,"12 Chief Justice Cushing Hwy, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 10 boats near 12 Chief Justice Cushing Hwy, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 12 Chief Justice Cushing Hwy, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],450,1,1,0,2026-07-20T19:12:04.023536+00:00
+171,"36 Littles Ln, Marshfield, MA 02050, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 36 Littles Ln, Marshfield, MA 02050, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 36 Littles Ln, Marshfield, MA 02050, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],451,1,1,0,2026-07-20T19:12:04.029677+00:00
+172,"74 Carolyn Cir, Marshfield, MA 02050, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 74 Carolyn Cir, Marshfield, MA 02050, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 74 Carolyn Cir, Marshfield, MA 02050, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],452,1,1,0,2026-07-20T19:12:04.035663+00:00
+173,"211 Downer Ave, Hingham, MA 02043, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 77 boats near 211 Downer Ave, Hingham, MA 02043, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 211 Downer Ave, Hingham, MA 02043, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],453,1,1,0,2026-07-20T19:12:04.042198+00:00
+174,"7454+PX Hingham, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 7454+PX Hingham, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 7454+PX Hingham, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],454,1,1,0,2026-07-20T19:12:04.048348+00:00
+175,"107 Elliott St, Danvers, MA 01923, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 79 boats near 107 Elliott St, Danvers, MA 01923, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 107 Elliott St, Danvers, MA 01923, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],455,1,1,0,2026-07-20T19:12:04.836400+00:00
+176,"130 Border St, Cohasset, MA 02025, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 130 Border St, Cohasset, MA 02025, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 130 Border St, Cohasset, MA 02025, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],456,1,1,0,2026-07-20T19:12:04.843875+00:00
+177,"170 Wellington Ave, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 170 Wellington Ave, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 170 Wellington Ave, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"457,458",2,1,0,2026-07-20T19:12:04.849315+00:00
+179,"169 Wellington Ave, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 169 Wellington Ave, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 169 Wellington Ave, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],459,1,1,0,2026-07-20T19:12:04.854050+00:00
+180,"FMHC+HW Newport, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near FMHC+HW Newport, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for FMHC+HW Newport, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],460,1,1,0,2026-07-20T19:12:04.859425+00:00
+181,"FMGF+75 Newport, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near FMGF+75 Newport, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for FMGF+75 Newport, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],461,1,1,0,2026-07-20T19:12:04.864859+00:00
+182,"21 Jericho Rd, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 21 Jericho Rd, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 21 Jericho Rd, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],462,1,1,0,2026-07-20T19:12:05.630012+00:00
+183,"66 Jericho Rd, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 34 boats near 66 Jericho Rd, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 66 Jericho Rd, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],463,1,1,0,2026-07-20T19:12:05.635504+00:00
+184,"57XG+RW Scituate, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 57XG+RW Scituate, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 57XG+RW Scituate, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],464,1,1,0,2026-07-20T19:12:05.640118+00:00
+185,"28 Constitution Rd, Boston, MA 02129, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 56 boats near 28 Constitution Rd, Boston, MA 02129, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 28 Constitution Rd, Boston, MA 02129, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],465,1,1,0,2026-07-20T19:12:05.645042+00:00
+186,"529 P Commercial St, Boston, MA 02109, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 529 P Commercial St, Boston, MA 02109, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 529 P Commercial St, Boston, MA 02109, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],466,1,1,0,2026-07-20T19:12:05.649296+00:00
+187,"Charlestown Naval Shipyard Park, 36 1st Ave, Boston, MA 02129, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 98 boats near Charlestown Naval Shipyard Park, 36 1st Ave, Boston, MA 02129, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Charlestown Naval Shipyard Park, 36 1st Ave, Boston, MA 02129, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],467,1,1,0,2026-07-20T19:12:05.653804+00:00
+188,"21 Pier Rd, East Providence, RI 02914, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 32 boats near 21 Pier Rd, East Providence, RI 02914, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 21 Pier Rd, East Providence, RI 02914, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],468,1,1,0,2026-07-20T19:12:06.429849+00:00
+189,"83 Seagull Rd, Chatham, MA 02633, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 83 Seagull Rd, Chatham, MA 02633, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 83 Seagull Rd, Chatham, MA 02633, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],469,1,1,0,2026-07-20T19:12:40.399779+00:00
+190,"11 Nonantum Rd, Newton, MA 02458, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 16 boats near 11 Nonantum Rd, Newton, MA 02458, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 11 Nonantum Rd, Newton, MA 02458, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],470,1,1,0,2026-07-20T19:12:40.410438+00:00
+191,"45 Memorial Dr, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 61 boats near 45 Memorial Dr, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 45 Memorial Dr, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],471,1,1,0,2026-07-20T19:12:40.415087+00:00
+192,"390 Third St, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 390 Third St, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 390 Third St, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],472,1,1,0,2026-07-20T19:12:40.419609+00:00
+193,"E33, 34 Carleton St, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near E33, 34 Carleton St, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for E33, 34 Carleton St, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],473,1,1,0,2026-07-20T19:12:40.428438+00:00
+194,"Pierce Boathouse, Memorial Dr, Cambridge, MA 02139, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 30 boats near Pierce Boathouse, Memorial Dr, Cambridge, MA 02139, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Pierce Boathouse, Memorial Dr, Cambridge, MA 02139, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"474,475",2,1,0,2026-07-20T19:12:40.432998+00:00
+196,"58 Bar Neck Rd, Falmouth, MA 02543, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 18 boats near 58 Bar Neck Rd, Falmouth, MA 02543, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 58 Bar Neck Rd, Falmouth, MA 02543, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],476,1,1,0,2026-07-20T19:12:41.225176+00:00
+197,"117 Water St, Beverly, MA 01915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 82 boats near 117 Water St, Beverly, MA 01915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 117 Water St, Beverly, MA 01915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],477,1,1,0,2026-07-20T19:12:41.232192+00:00
+198,"2 Merrimac St, Amesbury, MA 01913, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 25 boats near 2 Merrimac St, Amesbury, MA 01913, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 2 Merrimac St, Amesbury, MA 01913, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],478,1,1,0,2026-07-20T19:12:41.237037+00:00
+199,"64 Washington Ct, Quincy, MA 02169, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 73 boats near 64 Washington Ct, Quincy, MA 02169, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 64 Washington Ct, Quincy, MA 02169, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],479,1,1,0,2026-07-20T19:12:41.242413+00:00
+200,"40-112 Follett St, Quincy, MA 02169, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 40-112 Follett St, Quincy, MA 02169, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 40-112 Follett St, Quincy, MA 02169, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],480,1,1,0,2026-07-20T19:12:41.247359+00:00
+201,"97 Baxter Ave, Quincy, MA 02169, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 97 Baxter Ave, Quincy, MA 02169, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 97 Baxter Ave, Quincy, MA 02169, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],481,1,1,0,2026-07-20T19:12:41.251676+00:00
+202,"21 Arlington St, West Yarmouth, MA 02673, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 52 boats near 21 Arlington St, West Yarmouth, MA 02673, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 21 Arlington St, West Yarmouth, MA 02673, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],482,1,1,0,2026-07-20T19:12:42.043063+00:00
+203,"90 Fort Adams Dr, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 17 boats near 90 Fort Adams Dr, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 90 Fort Adams Dr, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],483,1,1,0,2026-07-20T19:12:42.050085+00:00
+204,"48 Jackson Rd, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 48 Jackson Rd, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 48 Jackson Rd, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],484,1,1,0,2026-07-20T19:12:42.054809+00:00
+205,"135 Daniels Island Rd, Mashpee, MA 02649, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 25 boats near 135 Daniels Island Rd, Mashpee, MA 02649, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 135 Daniels Island Rd, Mashpee, MA 02649, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],485,1,1,0,2026-07-20T19:12:42.060865+00:00
+206,"14 Pleasant Valley Rd, Amesbury, MA 01913, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 25 boats near 14 Pleasant Valley Rd, Amesbury, MA 01913, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 14 Pleasant Valley Rd, Amesbury, MA 01913, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],486,1,1,0,2026-07-20T19:12:42.066372+00:00
+207,"CGF4+P4 Narragansett, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near CGF4+P4 Narragansett, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for CGF4+P4 Narragansett, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],487,1,1,0,2026-07-20T19:12:42.071232+00:00
+208,"10 Blaney St, Salem, MA 01970, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 69 boats near 10 Blaney St, Salem, MA 01970, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 10 Blaney St, Salem, MA 01970, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],488,1,1,0,2026-07-20T19:12:43.061473+00:00
+209,"153 Ridge Rd, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 153 Ridge Rd, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 153 Ridge Rd, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],489,1,1,0,2026-07-20T19:13:16.018831+00:00
+210,"119 Edward Foster Rd, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 37 boats near 119 Edward Foster Rd, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 119 Edward Foster Rd, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],490,1,1,0,2026-07-20T19:13:16.026240+00:00
+211,"124 Edward Foster Rd, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 124 Edward Foster Rd, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 124 Edward Foster Rd, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],491,1,1,0,2026-07-20T19:13:16.031559+00:00
+212,"256 Marginal St, East Boston, MA 02128, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 57 boats near 256 Marginal St, East Boston, MA 02128, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 256 Marginal St, East Boston, MA 02128, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],492,1,1,0,2026-07-20T19:13:16.036240+00:00
+213,"299 Marginal St, Boston, MA 02128, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 299 Marginal St, Boston, MA 02128, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 299 Marginal St, Boston, MA 02128, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],493,1,1,0,2026-07-20T19:13:16.041559+00:00
+214,"386 Mashpee Neck Rd, Mashpee, MA 02649, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 386 Mashpee Neck Rd, Mashpee, MA 02649, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 386 Mashpee Neck Rd, Mashpee, MA 02649, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],494,1,1,0,2026-07-20T19:13:16.046750+00:00
+215,"72 Captains Row, Mashpee, MA 02649, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 72 Captains Row, Mashpee, MA 02649, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 72 Captains Row, Mashpee, MA 02649, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],495,1,1,0,2026-07-20T19:13:16.794047+00:00
+216,"239 Dyke Rd, Marshfield, MA 02050, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near 239 Dyke Rd, Marshfield, MA 02050, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 239 Dyke Rd, Marshfield, MA 02050, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],496,1,1,0,2026-07-20T19:13:16.799162+00:00
+217,"1825 Columbia Rd, South Boston, MA 02127, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 45 boats near 1825 Columbia Rd, South Boston, MA 02127, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1825 Columbia Rd, South Boston, MA 02127, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],497,1,1,0,2026-07-20T19:13:16.804160+00:00
+218,"8XHC+P6 Boston, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 8XHC+P6 Boston, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 8XHC+P6 Boston, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],498,1,1,0,2026-07-20T19:13:16.809336+00:00
+219,"39 Vinedale Rd, Braintree, MA 02184, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 27 boats near 39 Vinedale Rd, Braintree, MA 02184, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 39 Vinedale Rd, Braintree, MA 02184, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],499,1,1,0,2026-07-20T19:13:16.814066+00:00
+220,"60R Merrimac St, Amesbury, MA 01913, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 23 boats near 60R Merrimac St, Amesbury, MA 01913, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 60R Merrimac St, Amesbury, MA 01913, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],500,1,1,0,2026-07-20T19:13:16.818262+00:00
+221,"160 Pleasant St, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 160 Pleasant St, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 160 Pleasant St, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"501,502",2,1,0,2026-07-20T19:13:17.539169+00:00
+223,"165 Pleasant St #5047, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 165 Pleasant St #5047, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 165 Pleasant St #5047, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],503,1,1,0,2026-07-20T19:13:17.547162+00:00
+224,"HHG4+Q8 North Kingstown, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near HHG4+Q8 North Kingstown, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for HHG4+Q8 North Kingstown, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],504,1,1,0,2026-07-20T19:13:17.554553+00:00
+225,"FMVG+FF Newport, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 36 boats near FMVG+FF Newport, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for FMVG+FF Newport, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],505,1,1,0,2026-07-20T19:13:17.559155+00:00
+226,"9 Ryder St E, Provincetown, MA 02657, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 9 Ryder St E, Provincetown, MA 02657, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 9 Ryder St E, Provincetown, MA 02657, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],506,1,1,0,2026-07-20T19:13:17.564977+00:00
+227,"One Constitution Wharf, Boston, MA 02129, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 73 boats near One Constitution Wharf, Boston, MA 02129, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for One Constitution Wharf, Boston, MA 02129, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],507,1,1,0,2026-07-20T19:13:17.569790+00:00
+228,"292 3rd St, Boston, MA 02129, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 292 3rd St, Boston, MA 02129, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 292 3rd St, Boston, MA 02129, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],508,1,1,0,2026-07-20T19:13:18.395625+00:00
+229,"68 Long Wharf, Boston, MA 02110, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 56 boats near 68 Long Wharf, Boston, MA 02110, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 68 Long Wharf, Boston, MA 02110, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],509,1,1,0,2026-07-20T19:13:51.754348+00:00
+230,"54 Lewis Wharf, Boston, MA 02110, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 54 Lewis Wharf, Boston, MA 02110, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 54 Lewis Wharf, Boston, MA 02110, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],"510,519",2,1,0,2026-07-20T19:13:51.764852+00:00
+231,"Harbor Towers, 85 E India Row, Boston, MA 02110, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near Harbor Towers, 85 E India Row, Boston, MA 02110, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Harbor Towers, 85 E India Row, Boston, MA 02110, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],511,1,1,0,2026-07-20T19:13:51.769890+00:00
+232,"9X64+H2 Boston, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 9X64+H2 Boston, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 9X64+H2 Boston, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],512,1,1,0,2026-07-20T19:13:51.775158+00:00
+233,"91 Water St A, Woods Hole, MA 02543, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 35 boats near 91 Water St A, Woods Hole, MA 02543, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 91 Water St A, Woods Hole, MA 02543, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],513,1,1,0,2026-07-20T19:13:51.779971+00:00
+234,"47A Water St, Beverly, MA 01915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 76 boats near 47A Water St, Beverly, MA 01915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 47A Water St, Beverly, MA 01915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],514,1,1,0,2026-07-20T19:13:51.786998+00:00
+235,"G4P9+R4 Salem, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near G4P9+R4 Salem, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for G4P9+R4 Salem, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],515,1,1,0,2026-07-20T19:13:52.518486+00:00
+236,"161 Calef Ave, Swansea, MA 02777, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 161 Calef Ave, Swansea, MA 02777, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 161 Calef Ave, Swansea, MA 02777, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],516,1,1,0,2026-07-20T19:13:52.526617+00:00
+237,"Custom House Block, 70 Long Wharf, Boston, MA 02110, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 15 boats near Custom House Block, 70 Long Wharf, Boston, MA 02110, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Custom House Block, 70 Long Wharf, Boston, MA 02110, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],517,1,1,0,2026-07-20T19:13:52.531520+00:00
+238,"7 Union Wharf, Boston, MA 02109, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 7 Union Wharf, Boston, MA 02109, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 7 Union Wharf, Boston, MA 02109, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],518,1,1,0,2026-07-20T19:13:52.536802+00:00
+240,"9 Norwood Ct, Gloucester, MA 01930, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 17 boats near 9 Norwood Ct, Gloucester, MA 01930, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 9 Norwood Ct, Gloucester, MA 01930, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],520,1,1,0,2026-07-20T19:13:52.542430+00:00
+241,"47R Parker St, Gloucester, MA 01930, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 47R Parker St, Gloucester, MA 01930, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 47R Parker St, Gloucester, MA 01930, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],521,1,1,0,2026-07-20T19:13:52.547945+00:00
+242,"R Marginal St, East Boston, MA 02128, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 47 boats near R Marginal St, East Boston, MA 02128, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for R Marginal St, East Boston, MA 02128, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],522,1,1,0,2026-07-20T19:13:53.271304+00:00
+243,"HHH2+X6 North Kingstown, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near HHH2+X6 North Kingstown, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for HHH2+X6 North Kingstown, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],523,1,1,0,2026-07-20T19:13:53.281798+00:00
+244,"17 Neptune Ln South, South Yarmouth, MA 02664, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 22 boats near 17 Neptune Ln South, South Yarmouth, MA 02664, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 17 Neptune Ln South, South Yarmouth, MA 02664, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],524,1,1,0,2026-07-20T19:13:53.287043+00:00
+245,"17 Ashland Ave, Manchester-by-the-Sea, MA 01944, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 37 boats near 17 Ashland Ave, Manchester-by-the-Sea, MA 01944, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 17 Ashland Ave, Manchester-by-the-Sea, MA 01944, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],525,1,1,0,2026-07-20T19:13:53.293047+00:00
+246,"240 Riverside Dr, Riverside, RI 02915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 70 boats near 240 Riverside Dr, Riverside, RI 02915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 240 Riverside Dr, Riverside, RI 02915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],526,1,1,0,2026-07-20T19:13:53.298117+00:00
+247,"1 Constitution St, Bristol, RI 02809, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 92 boats near 1 Constitution St, Bristol, RI 02809, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Constitution St, Bristol, RI 02809, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],527,1,1,0,2026-07-20T19:13:53.302584+00:00
+248,"259 Thames St Ste 10, Bristol, RI 02809, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 259 Thames St Ste 10, Bristol, RI 02809, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 259 Thames St Ste 10, Bristol, RI 02809, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],528,1,1,0,2026-07-20T19:13:54.134989+00:00
+249,"1-49 Eastern Ave, Boston, MA 02110, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 64 boats near 1-49 Eastern Ave, Boston, MA 02110, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1-49 Eastern Ave, Boston, MA 02110, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],529,1,1,0,2026-07-20T19:14:25.976388+00:00
+250,"100 Atlantic Ave, Boston, MA 02110, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 100 Atlantic Ave, Boston, MA 02110, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 100 Atlantic Ave, Boston, MA 02110, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],530,1,1,0,2026-07-20T19:14:25.983485+00:00
+251,"33 Allen Ave, Barrington, RI 02806, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 82 boats near 33 Allen Ave, Barrington, RI 02806, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 33 Allen Ave, Barrington, RI 02806, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],531,1,1,0,2026-07-20T19:14:25.988887+00:00
+252,"93 Essex Ave, Gloucester, MA 01930, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 48 boats near 93 Essex Ave, Gloucester, MA 01930, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 93 Essex Ave, Gloucester, MA 01930, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],532,1,1,0,2026-07-20T19:14:25.993105+00:00
+253,"81 Wescott Rd, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 42 boats near 81 Wescott Rd, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 81 Wescott Rd, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],533,1,1,0,2026-07-20T19:14:25.997283+00:00
+254,"120 Tidal Dr, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 120 Tidal Dr, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 120 Tidal Dr, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],534,1,1,0,2026-07-20T19:14:26.001735+00:00
+255,"100 Federal St, Hingham, MA 02043, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 99 boats near 100 Federal St, Hingham, MA 02043, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 100 Federal St, Hingham, MA 02043, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],535,1,1,0,2026-07-20T19:14:26.744169+00:00
+256,"50 Border St, Cohasset, MA 02025, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 50 Border St, Cohasset, MA 02025, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 50 Border St, Cohasset, MA 02025, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],536,1,1,0,2026-07-20T19:14:26.751980+00:00
+257,"4 Battery Wharf, Boston, MA 02109, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near 4 Battery Wharf, Boston, MA 02109, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 4 Battery Wharf, Boston, MA 02109, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],537,1,1,0,2026-07-20T19:14:26.758685+00:00
+258,"476498 Hanover St Exd, Boston, MA 02109, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 476498 Hanover St Exd, Boston, MA 02109, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 476498 Hanover St Exd, Boston, MA 02109, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],538,1,1,0,2026-07-20T19:14:26.763702+00:00
+259,"61 Bayswater St, Boston, MA 02128, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 48 boats near 61 Bayswater St, Boston, MA 02128, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 61 Bayswater St, Boston, MA 02128, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],539,1,1,0,2026-07-20T19:14:26.768863+00:00
+260,"24 St Andrew Rd, Boston, MA 02128, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 24 St Andrew Rd, Boston, MA 02128, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 24 St Andrew Rd, Boston, MA 02128, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],540,1,1,0,2026-07-20T19:14:26.774103+00:00
+261,"100 Coffin Ave, Haverhill, MA 01830, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 19 boats near 100 Coffin Ave, Haverhill, MA 01830, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 100 Coffin Ave, Haverhill, MA 01830, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],541,1,1,0,2026-07-20T19:14:27.714169+00:00
+262,"451 Fellsway, Medford, MA 02155, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 49 boats near 451 Fellsway, Medford, MA 02155, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 451 Fellsway, Medford, MA 02155, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],542,1,1,0,2026-07-20T19:14:27.721550+00:00
+263,"70 Station Landing, Medford, MA 02155, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 70 Station Landing, Medford, MA 02155, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 70 Station Landing, Medford, MA 02155, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],543,1,1,0,2026-07-20T19:14:27.727578+00:00
+266,"16 1st St, Salisbury, MA 01952, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 16 1st St, Salisbury, MA 01952, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 16 1st St, Salisbury, MA 01952, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],546,1,1,0,2026-07-20T19:14:27.732788+00:00
+267,"1 13th St, Charlestown, MA 02129, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 90 boats near 1 13th St, Charlestown, MA 02129, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 13th St, Charlestown, MA 02129, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],547,1,1,0,2026-07-20T19:14:27.736868+00:00
+268,"9XC2+JP Boston, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 9XC2+JP Boston, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 9XC2+JP Boston, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],548,1,1,0,2026-07-20T19:14:27.741494+00:00
+269,"5 Dock Square, Rockport, MA 01966, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 9 boats near 5 Dock Square, Rockport, MA 01966, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 5 Dock Square, Rockport, MA 01966, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],549,1,1,0,2026-07-20T19:15:01.448961+00:00
+270,"28 Brown and Howard Wharf, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 26 boats near 28 Brown and Howard Wharf, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 28 Brown and Howard Wharf, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],550,1,1,0,2026-07-20T19:15:01.455460+00:00
+271,"321 Victory Rd, Quincy, MA 02171, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 88 boats near 321 Victory Rd, Quincy, MA 02171, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 321 Victory Rd, Quincy, MA 02171, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],551,1,1,0,2026-07-20T19:15:01.459745+00:00
+272,"JPJ2+CC Barnstable, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near JPJ2+CC Barnstable, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for JPJ2+CC Barnstable, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],552,1,1,0,2026-07-20T19:15:01.464092+00:00
+273,"3828 Riverside Ave, Somerset, MA 02726, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 92 boats near 3828 Riverside Ave, Somerset, MA 02726, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 3828 Riverside Ave, Somerset, MA 02726, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],553,1,1,0,2026-07-20T19:15:01.471019+00:00
+274,"25 Bridge St, Providence, RI 02903, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 39 boats near 25 Bridge St, Providence, RI 02903, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 25 Bridge St, Providence, RI 02903, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],554,1,1,0,2026-07-20T19:15:01.475604+00:00
+275,"7 Point St, Providence, RI 02903, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 7 Point St, Providence, RI 02903, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 7 Point St, Providence, RI 02903, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],555,1,1,0,2026-07-20T19:15:02.391511+00:00
+276,"32 India St, Providence, RI 02903, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 32 India St, Providence, RI 02903, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 32 India St, Providence, RI 02903, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],556,1,1,0,2026-07-20T19:15:02.397892+00:00
+277,"7237+HJ Quincy, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 25 boats near 7237+HJ Quincy, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 7237+HJ Quincy, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],557,1,1,0,2026-07-20T19:15:02.403138+00:00
+278,"678 Southern Artery, Quincy, MA 02169, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 678 Southern Artery, Quincy, MA 02169, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 678 Southern Artery, Quincy, MA 02169, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],558,1,1,0,2026-07-20T19:15:02.408077+00:00
+279,"50 Liberty Drive, Boston, MA 02210, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 21 boats near 50 Liberty Drive, Boston, MA 02210, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 50 Liberty Drive, Boston, MA 02210, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],559,1,1,0,2026-07-20T19:15:02.412829+00:00
+280,"72 Fort Adams Dr, Newport, RI 02840, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 9 boats near 72 Fort Adams Dr, Newport, RI 02840, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 72 Fort Adams Dr, Newport, RI 02840, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],560,1,1,0,2026-07-20T19:15:02.417037+00:00
+281,"20 Cambridge Pkwy, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 63 boats near 20 Cambridge Pkwy, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 20 Cambridge Pkwy, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],561,1,1,0,2026-07-20T19:15:03.152528+00:00
+282,"40 Edwin H Land Blvd, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 40 Edwin H Land Blvd, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 40 Edwin H Land Blvd, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],562,1,1,0,2026-07-20T19:15:03.158975+00:00
+283,"88 Wharf St, Milton, MA 02186, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 88 Wharf St, Milton, MA 02186, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 88 Wharf St, Milton, MA 02186, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],563,1,1,0,2026-07-20T19:15:03.164536+00:00
+284,"134 Adams St, Milton, MA 02186, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 8 boats near 134 Adams St, Milton, MA 02186, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 134 Adams St, Milton, MA 02186, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],564,1,1,0,2026-07-20T19:15:03.168767+00:00
+285,"21 Frog Pond Close, Mashpee, MA 02649, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 25 boats near 21 Frog Pond Close, Mashpee, MA 02649, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 21 Frog Pond Close, Mashpee, MA 02649, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],565,1,1,0,2026-07-20T19:15:03.173594+00:00
+286,"48 George Washington Blvd, Hull, MA 02045, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 68 boats near 48 George Washington Blvd, Hull, MA 02045, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 48 George Washington Blvd, Hull, MA 02045, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],566,1,1,0,2026-07-20T19:15:03.178305+00:00
+287,"63 Rogers St, Gloucester, MA 01930, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 16 boats near 63 Rogers St, Gloucester, MA 01930, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 63 Rogers St, Gloucester, MA 01930, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],567,1,1,0,2026-07-20T19:15:03.889389+00:00
+288,"17 Harbor Loop, Gloucester, MA 01930, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 17 Harbor Loop, Gloucester, MA 01930, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 17 Harbor Loop, Gloucester, MA 01930, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],568,1,1,0,2026-07-20T19:15:03.895478+00:00
+289,"179 Bridge Rd, Salisbury, MA 01952, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 10 boats near 179 Bridge Rd, Salisbury, MA 01952, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 179 Bridge Rd, Salisbury, MA 01952, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],569,1,1,0,2026-07-20T19:15:37.217554+00:00
+290,"54 Merrimac St, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 32 boats near 54 Merrimac St, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 54 Merrimac St, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],570,1,1,0,2026-07-20T19:15:37.223953+00:00
+292,"50 Old Dock St, Scituate, MA 02066, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 20 boats near 50 Old Dock St, Scituate, MA 02066, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 50 Old Dock St, Scituate, MA 02066, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],572,1,1,0,2026-07-20T19:15:37.232078+00:00
+293,"1 David G Mugar Way, Boston, MA 02114, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 55 boats near 1 David G Mugar Way, Boston, MA 02114, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 David G Mugar Way, Boston, MA 02114, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],573,1,1,0,2026-07-20T19:15:37.236331+00:00
+294,"40 Bay St, North Kingstown, RI 02852, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 10 boats near 40 Bay St, North Kingstown, RI 02852, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 40 Bay St, North Kingstown, RI 02852, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],574,1,1,0,2026-07-20T19:15:37.242230+00:00
+295,"80 Bridge St, Chatham, MA 02633, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 9 boats near 80 Bridge St, Chatham, MA 02633, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 80 Bridge St, Chatham, MA 02633, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],575,1,1,0,2026-07-20T19:15:37.246906+00:00
+296,"3 Fitzpatrick Way, Hull, MA 02045, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 38 boats near 3 Fitzpatrick Way, Hull, MA 02045, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 3 Fitzpatrick Way, Hull, MA 02045, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],576,1,1,0,2026-07-20T19:15:38.111337+00:00
+297,"921 Nantasket Ave, Hull, MA 02045, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 921 Nantasket Ave, Hull, MA 02045, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 921 Nantasket Ave, Hull, MA 02045, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],577,1,1,0,2026-07-20T19:15:38.120721+00:00
+298,"1033 Nantasket Ave, Hull, MA 02045, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 1033 Nantasket Ave, Hull, MA 02045, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1033 Nantasket Ave, Hull, MA 02045, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],578,1,1,0,2026-07-20T19:15:38.127404+00:00
+299,"955 Nantasket Ave, Hull, MA 02045, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 955 Nantasket Ave, Hull, MA 02045, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 955 Nantasket Ave, Hull, MA 02045, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],579,1,1,0,2026-07-20T19:15:38.131609+00:00
+300,"100 Ryder's Cove Rd, North Chatham, MA 02650, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 24 boats near 100 Ryder's Cove Rd, North Chatham, MA 02650, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 100 Ryder's Cove Rd, North Chatham, MA 02650, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],580,1,1,0,2026-07-20T19:15:38.136439+00:00
+301,"32 First St, Cambridge, MA 02141, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 18 boats near 32 First St, Cambridge, MA 02141, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 32 First St, Cambridge, MA 02141, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],581,1,1,0,2026-07-20T19:15:38.141993+00:00
+302,"63 Hurley St, Cambridge, MA 02141, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 63 Hurley St, Cambridge, MA 02141, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 63 Hurley St, Cambridge, MA 02141, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],582,1,1,0,2026-07-20T19:15:39.071573+00:00
+303,"8434+6Q Hull, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 122 boats near 8434+6Q Hull, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 8434+6Q Hull, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],583,1,1,0,2026-07-20T19:15:39.077585+00:00
+304,"28 Water St, East Greenwich, RI 02818, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 107 boats near 28 Water St, East Greenwich, RI 02818, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 28 Water St, East Greenwich, RI 02818, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],584,1,1,0,2026-07-20T19:15:39.083125+00:00
+305,"350 Third St, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 350 Third St, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 350 Third St, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],585,1,1,0,2026-07-20T19:15:39.088077+00:00
+306,"1 Memorial Dr, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 1 Memorial Dr, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Memorial Dr, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],586,1,1,0,2026-07-20T19:15:39.093162+00:00
+307,"450 Kendall St, Cambridge, MA 02142, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 450 Kendall St, Cambridge, MA 02142, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 450 Kendall St, Cambridge, MA 02142, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],587,1,1,0,2026-07-20T19:15:39.098216+00:00
+308,"86 Main St, Dighton, MA 02715, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 49 boats near 86 Main St, Dighton, MA 02715, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 86 Main St, Dighton, MA 02715, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],588,1,1,0,2026-07-20T19:15:40.166906+00:00
+309,"2125 Water St, Dighton, MA 02715, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 12 boats near 2125 Water St, Dighton, MA 02715, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 2125 Water St, Dighton, MA 02715, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],589,1,1,0,2026-07-20T19:16:14.447250+00:00
+310,"67 Ober St, Beverly, MA 01915, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 18 boats near 67 Ober St, Beverly, MA 01915, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 67 Ober St, Beverly, MA 01915, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],590,1,1,0,2026-07-20T19:16:14.454228+00:00
+311,"G4VR+QF Beverly, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 31 boats near G4VR+QF Beverly, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for G4VR+QF Beverly, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],591,1,1,0,2026-07-20T19:16:14.460621+00:00
+312,"1 Lagoon Rd, Portsmouth, RI 02871, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 77 boats near 1 Lagoon Rd, Portsmouth, RI 02871, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Lagoon Rd, Portsmouth, RI 02871, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],592,1,1,0,2026-07-20T19:16:14.467515+00:00
+313,"200 Cove Way, Quincy, MA 02169, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 83 boats near 200 Cove Way, Quincy, MA 02169, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 200 Cove Way, Quincy, MA 02169, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],593,1,1,0,2026-07-20T19:16:14.473211+00:00
+314,"99 Mechanics Ct, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 29 boats near 99 Mechanics Ct, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 99 Mechanics Ct, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],594,1,1,0,2026-07-20T19:16:14.478449+00:00
+315,"R49G+C9 Salisbury, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near R49G+C9 Salisbury, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for R49G+C9 Salisbury, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],595,1,1,0,2026-07-20T19:16:15.561055+00:00
+316,"228 Bridge Rd, Salisbury, MA 01952, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 228 Bridge Rd, Salisbury, MA 01952, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 228 Bridge Rd, Salisbury, MA 01952, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],596,1,1,0,2026-07-20T19:16:15.567207+00:00
+318,"1 Shipyard Ln, Pocasset, MA 02559, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 53 boats near 1 Shipyard Ln, Pocasset, MA 02559, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 1 Shipyard Ln, Pocasset, MA 02559, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],598,1,1,0,2026-07-20T19:16:15.571355+00:00
+320,"252 Narragansett Ave, Jamestown, RI 02835, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near 252 Narragansett Ave, Jamestown, RI 02835, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 252 Narragansett Ave, Jamestown, RI 02835, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],600,1,1,0,2026-07-20T19:16:15.576393+00:00
+321,"23 Avenue B, Jamestown, RI 02835, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 23 Avenue B, Jamestown, RI 02835, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 23 Avenue B, Jamestown, RI 02835, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],601,1,1,0,2026-07-20T19:16:15.580763+00:00
+322,"90 Main St, Buzzards Bay, MA 02532, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 11 boats near 90 Main St, Buzzards Bay, MA 02532, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 90 Main St, Buzzards Bay, MA 02532, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],602,1,1,0,2026-07-20T19:16:15.585604+00:00
+323,"400 Morrissey Blvd, Dorchester, MA 02125, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 50 boats near 400 Morrissey Blvd, Dorchester, MA 02125, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 400 Morrissey Blvd, Dorchester, MA 02125, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],603,1,1,0,2026-07-20T19:16:16.562119+00:00
+324,"395 Morrissey Blvd, Boston, MA 02125, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 11 boats near 395 Morrissey Blvd, Boston, MA 02125, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 395 Morrissey Blvd, Boston, MA 02125, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],604,1,1,0,2026-07-20T19:16:16.568944+00:00
+325,"Dorchester Vietnam Veterans Memorial, 172 Morrissey Blvd, Boston, MA 02125, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near Dorchester Vietnam Veterans Memorial, 172 Morrissey Blvd, Boston, MA 02125, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for Dorchester Vietnam Veterans Memorial, 172 Morrissey Blvd, Boston, MA 02125, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],605,1,1,0,2026-07-20T19:16:16.574449+00:00
+326,"22 Riverway, North Falmouth, MA 02556, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 15 boats near 22 Riverway, North Falmouth, MA 02556, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 22 Riverway, North Falmouth, MA 02556, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],606,1,1,0,2026-07-20T19:16:16.579295+00:00
+327,"181 Wessagussett Rd, Weymouth, MA 02191, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 33 boats near 181 Wessagussett Rd, Weymouth, MA 02191, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 181 Wessagussett Rd, Weymouth, MA 02191, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],607,1,1,0,2026-07-20T19:16:16.585116+00:00
+328,"7332+3F Weymouth, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 7332+3F Weymouth, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 7332+3F Weymouth, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],608,1,1,0,2026-07-20T19:16:16.589581+00:00
+329,"7323+V4 Weymouth, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near 7323+V4 Weymouth, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 7323+V4 Weymouth, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],609,1,1,0,2026-07-20T19:16:53.539071+00:00
+330,"2 Island Wharf Rd, Marion, MA 02738, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 34 boats near 2 Island Wharf Rd, Marion, MA 02738, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 2 Island Wharf Rd, Marion, MA 02738, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],610,1,1,0,2026-07-20T19:16:53.544755+00:00
+331,"222 Narragansett Blvd, Portsmouth, RI 02871, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 37 boats near 222 Narragansett Blvd, Portsmouth, RI 02871, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 222 Narragansett Blvd, Portsmouth, RI 02871, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],611,1,1,0,2026-07-20T19:16:53.549334+00:00
+332,"JQVM+VW Portsmouth, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 4 boats near JQVM+VW Portsmouth, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for JQVM+VW Portsmouth, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],612,1,1,0,2026-07-20T19:16:53.556332+00:00
+333,"145 Sakonnet Dr, Portsmouth, RI 02871, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 145 Sakonnet Dr, Portsmouth, RI 02871, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 145 Sakonnet Dr, Portsmouth, RI 02871, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],613,1,1,0,2026-07-20T19:16:53.561002+00:00
+334,"157 Rhode Island Blvd, Portsmouth, RI 02871, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 52 boats near 157 Rhode Island Blvd, Portsmouth, RI 02871, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 157 Rhode Island Blvd, Portsmouth, RI 02871, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],614,1,1,0,2026-07-20T19:16:53.565386+00:00
+335,"490 Ocean St, Hyannis, MA 02601, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near 490 Ocean St, Hyannis, MA 02601, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 490 Ocean St, Hyannis, MA 02601, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],615,1,1,0,2026-07-20T19:16:54.353309+00:00
+336,"G4QJ+J6 Salem, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 93 boats near G4QJ+J6 Salem, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for G4QJ+J6 Salem, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],616,1,1,0,2026-07-20T19:16:54.360041+00:00
+337,"G4PG+X6 Rams Horn Channel, Salem, MA 01970, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 7 boats near G4PG+X6 Rams Horn Channel, Salem, MA 01970, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for G4PG+X6 Rams Horn Channel, Salem, MA 01970, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],617,1,1,0,2026-07-20T19:16:54.365581+00:00
+338,"19 Bayview Dr, Cuttyhunk, MA 02713, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 37 boats near 19 Bayview Dr, Cuttyhunk, MA 02713, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 19 Bayview Dr, Cuttyhunk, MA 02713, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],618,1,1,0,2026-07-20T19:16:54.370769+00:00
+339,"JP8F+RX Portsmouth, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 47 boats near JP8F+RX Portsmouth, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for JP8F+RX Portsmouth, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],619,1,1,0,2026-07-20T19:16:54.376003+00:00
+340,"425 Charles River Rd, Watertown, MA 02472, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 42 boats near 425 Charles River Rd, Watertown, MA 02472, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 425 Charles River Rd, Watertown, MA 02472, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],620,1,1,0,2026-07-20T19:16:54.381817+00:00
+341,"330 Arsenal St, Watertown, MA 02472, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 12 boats near 330 Arsenal St, Watertown, MA 02472, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 330 Arsenal St, Watertown, MA 02472, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],621,1,1,0,2026-07-20T19:16:55.145444+00:00
+342,"QJJ6+M4 Cranston, RI, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 63 boats near QJJ6+M4 Cranston, RI, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for QJJ6+M4 Cranston, RI, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],622,1,1,0,2026-07-20T19:16:55.150516+00:00
+343,"100 J Harborside Blvd, Providence, RI 02905, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 6 boats near 100 J Harborside Blvd, Providence, RI 02905, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 100 J Harborside Blvd, Providence, RI 02905, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],623,1,1,0,2026-07-20T19:16:55.156861+00:00
+344,"115 B Water St, Newburyport, MA 01950, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 13 boats near 115 B Water St, Newburyport, MA 01950, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 115 B Water St, Newburyport, MA 01950, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],624,1,1,0,2026-07-20T19:16:55.161525+00:00
+345,"R46R+M5 Newburyport, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 5 boats near R46R+M5 Newburyport, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for R46R+M5 Newburyport, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],625,1,1,0,2026-07-20T19:16:55.167156+00:00
+346,"63X9+M4 Hingham, MA, USA",,,,,unknown,,"Places-only enrichment (Gemini unavailable). Detected mooring field with 48 boats near 63X9+M4 Hingham, MA, USA. Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup.","Supply chain for 63X9+M4 Hingham, MA, USA — overall confidence: Low
+Supply chain research unavailable. {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. "",
+    ""status"": ""RESOURCE_EXHAUSTED""
+  }
+}
+",0.35,[],626,1,1,0,2026-07-20T19:16:55.171561+00:00
