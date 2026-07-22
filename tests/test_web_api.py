@@ -50,6 +50,7 @@ def _seed(db: Path) -> tuple[int, int]:
             "canonical_business_name": "Test Mooring Co",
             "phone": "555-0100",
             "harbor_name": "Marblehead Harbor",
+            "research_summary": "Harbor research notes",
             "needs_review": True,
         },
     )
@@ -181,8 +182,14 @@ def test_api_approve_and_patch(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
         json={"phone": "555-9999", "canonical_business_name": "Updated Co"},
     )
     assert r.status_code == 200
-    assert r.json()["phone"] == "555-9999"
-    assert r.json()["canonical_business_name"] == "Updated Co"
+    body = r.json()
+    assert body["phone"] == "555-9999"
+    assert body["canonical_business_name"] == "Updated Co"
+    # Partial PATCH must not wipe approve/research/review flags
+    assert body["approved"] == 1
+    assert body["needs_review"] == 0
+    assert body["research_summary"] == "Harbor research notes"
+    assert body["harbor_name"] == "Marblehead Harbor"
 
 
 def test_fields_geojson_dedupes_field(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):

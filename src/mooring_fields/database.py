@@ -355,41 +355,90 @@ def set_field_enrichment_status(
     conn.commit()
 
 
+_PROSPECT_COLUMNS = (
+    "canonical_business_name",
+    "phone",
+    "email",
+    "website",
+    "address",
+    "operator_type",
+    "place_id",
+    "research_summary",
+    "confidence",
+    "sources",
+    "needs_review",
+    "approved",
+    "raw_places_response",
+    "raw_gemini_response",
+    "harbor_name",
+    "supply_chain_json",
+    "supply_chain_summary",
+    "last_enriched",
+)
+
+
+def _normalize_prospect_fields(data: dict[str, Any], *, for_insert: bool) -> dict[str, Any]:
+    """Normalize prospect payload. Partial updates only include keys present in data."""
+    now = _now()
+    out: dict[str, Any] = {}
+
+    def _maybe(key: str, transform=None):
+        if key not in data and not for_insert:
+            return
+        val = data.get(key)
+        if transform is not None:
+            val = transform(val)
+        out[key] = val
+
+    _maybe("canonical_business_name")
+    _maybe("phone")
+    _maybe("email")
+    _maybe("website")
+    _maybe("address")
+    _maybe("operator_type")
+    _maybe("place_id")
+    _maybe("research_summary")
+    _maybe("confidence")
+
+    if "sources" in data or for_insert:
+        sources = data.get("sources")
+        if isinstance(sources, list):
+            sources = json.dumps(sources)
+        out["sources"] = sources
+
+    if "needs_review" in data or for_insert:
+        out["needs_review"] = 1 if data.get("needs_review", True) else 0
+    if "approved" in data or for_insert:
+        out["approved"] = 1 if data.get("approved", False) else 0
+
+    _maybe("raw_places_response")
+    _maybe("raw_gemini_response")
+    _maybe("harbor_name")
+
+    if "supply_chain_json" in data or for_insert:
+        sc = data.get("supply_chain_json")
+        out["supply_chain_json"] = (
+            json.dumps(sc) if isinstance(sc, (dict, list)) else sc
+        )
+    _maybe("supply_chain_summary")
+
+    if "last_enriched" in data or for_insert:
+        out["last_enriched"] = data.get("last_enriched") or now
+    return out
+
+
 def upsert_prospect(
     conn: sqlite3.Connection,
     data: dict[str, Any],
     prospect_id: int | None = None,
 ) -> int:
-    """Insert or update a prospect row. Returns prospect id."""
+    """Insert or update a prospect row. Returns prospect id.
+
+    On update, only keys present in ``data`` are written (partial PATCH-safe).
+    """
     now = _now()
-    sources = data.get("sources")
-    if isinstance(sources, list):
-        sources = json.dumps(sources)
-    fields = {
-        "canonical_business_name": data.get("canonical_business_name"),
-        "phone": data.get("phone"),
-        "email": data.get("email"),
-        "website": data.get("website"),
-        "address": data.get("address"),
-        "operator_type": data.get("operator_type"),
-        "place_id": data.get("place_id"),
-        "research_summary": data.get("research_summary"),
-        "confidence": data.get("confidence"),
-        "sources": sources,
-        "needs_review": 1 if data.get("needs_review", True) else 0,
-        "approved": 1 if data.get("approved", False) else 0,
-        "raw_places_response": data.get("raw_places_response"),
-        "raw_gemini_response": data.get("raw_gemini_response"),
-        "harbor_name": data.get("harbor_name"),
-        "supply_chain_json": (
-            json.dumps(data["supply_chain_json"])
-            if isinstance(data.get("supply_chain_json"), (dict, list))
-            else data.get("supply_chain_json")
-        ),
-        "supply_chain_summary": data.get("supply_chain_summary"),
-        "last_enriched": data.get("last_enriched") or now,
-    }
     if prospect_id is None:
+        fields = _normalize_prospect_fields(data, for_insert=True)
         cur = conn.execute(
             "INSERT INTO prospects "
             "(canonical_business_name, phone, email, website, address, operator_type, place_id, "
@@ -398,61 +447,38 @@ def upsert_prospect(
             "supply_chain_summary, created_at, updated_at, last_enriched) "
             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
-                fields["canonical_business_name"],
-                fields["phone"],
-                fields["email"],
-                fields["website"],
-                fields["address"],
-                fields["operator_type"],
-                fields["place_id"],
-                fields["research_summary"],
-                fields["confidence"],
-                fields["sources"],
-                fields["needs_review"],
-                fields["approved"],
-                fields["raw_places_response"],
-                fields["raw_gemini_response"],
-                fields["harbor_name"],
-                fields["supply_chain_json"],
-                fields["supply_chain_summary"],
+                fields.get("canonical_business_name"),
+                fields.get("phone"),
+                fields.get("email"),
+                fields.get("website"),
+                fields.get("address"),
+                fields.get("operator_type"),
+                fields.get("place_id"),
+                fields.get("research_summary"),
+                fields.get("confidence"),
+                fields.get("sources"),
+                fields.get("needs_review", 1),
+                fields.get("approved", 0),
+                fields.get("raw_places_response"),
+                fields.get("raw_gemini_response"),
+                fields.get("harbor_name"),
+                fields.get("supply_chain_json"),
+                fields.get("supply_chain_summary"),
                 now,
                 now,
-                fields["last_enriched"],
+                fields.get("last_enriched") or now,
             ),
         )
         conn.commit()
         return int(cur.lastrowid)
 
-    conn.execute(
-        "UPDATE prospects SET "
-        "canonical_business_name=?, phone=?, email=?, website=?, address=?, operator_type=?, "
-        "place_id=?, research_summary=?, confidence=?, sources=?, needs_review=?, approved=?, "
-        "raw_places_response=?, raw_gemini_response=?, harbor_name=?, supply_chain_json=?, "
-        "supply_chain_summary=?, updated_at=?, last_enriched=? "
-        "WHERE id=?",
-        (
-            fields["canonical_business_name"],
-            fields["phone"],
-            fields["email"],
-            fields["website"],
-            fields["address"],
-            fields["operator_type"],
-            fields["place_id"],
-            fields["research_summary"],
-            fields["confidence"],
-            fields["sources"],
-            fields["needs_review"],
-            fields["approved"],
-            fields["raw_places_response"],
-            fields["raw_gemini_response"],
-            fields["harbor_name"],
-            fields["supply_chain_json"],
-            fields["supply_chain_summary"],
-            now,
-            fields["last_enriched"],
-            prospect_id,
-        ),
-    )
+    fields = _normalize_prospect_fields(data, for_insert=False)
+    if not fields:
+        return prospect_id
+    cols = [c for c in _PROSPECT_COLUMNS if c in fields]
+    sets = ", ".join(f"{c}=?" for c in cols) + ", updated_at=?"
+    values = [fields[c] for c in cols] + [now, prospect_id]
+    conn.execute(f"UPDATE prospects SET {sets} WHERE id=?", values)
     conn.commit()
     return prospect_id
 
