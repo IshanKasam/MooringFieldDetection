@@ -84,19 +84,29 @@ Commands below use it automatically when `--weights` is omitted.
 - Scan one region per day if staying inside the monthly credit; cached
   tiles make partial re-runs free
 
-### Faster detection on Kaggle GPU (recommended for Cape Cod / more states)
+### Faster detection on Kaggle GPU (Cape Cod + Florida)
 
-Local CPUs are slow for hundreds of YOLO inferences. Example — full Cape Cod:
+Local CPUs are slow for hundreds of YOLO inferences. Enrichment uses **Groq**
+(`research_provider: groq`) for harbor + supply chain; Places stays on Google.
+
+**Cape Cod** (named region / peninsula bbox):
 
 ```bash
-python -m mooring_fields.cli generate-candidates \
-  "--bbox=-70.75,41.50,-69.90,42.10" --types MO,M \
-  --max-sites 160 --out data/candidates_CapeCod.kml
+python -m mooring_fields.cli generate-candidates --region CapeCod --types MO,M --max-sites 160 --out data/candidates_CapeCod.kml
 python -m mooring_fields.cli fetch-scan --kml data/candidates_CapeCod.kml --max-requests 800
-python -m mooring_fields.cli package-kaggle-scan --kml data/candidates_CapeCod.kml
-# git push; upload kaggle_scan_payload.zip → Kaggle Dataset; run notebooks/kaggle_scan.ipynb (GPU T4)
+python -m mooring_fields.cli package-kaggle-scan --kml data/candidates_CapeCod.kml --out kaggle_scan_CapeCod.zip
+# git push; upload zip → Kaggle Dataset; run notebooks/kaggle_scan.ipynb (GPU T4)
 python -m mooring_fields.cli import-scan --from-db path/to/downloaded/mooring_fields.db
 python -m mooring_fields.cli enrich-all --only-new
+```
+
+**Florida** — do **not** use `--state FL --max-sites 160` alone (it drops the rest of the coast). Page named regions:
+
+```bash
+python -m mooring_fields.cli generate-candidates-batch --max-sites 160 --out-dir data
+# Then per KML page (≤800 Maps calls/day):
+python -m mooring_fields.cli fetch-scan --kml data/candidates_FL_tampa_sw_p0.kml --max-requests 800
+python -m mooring_fields.cli package-kaggle-scan --kml data/candidates_FL_tampa_sw_p0.kml --out kaggle_scan_FL_tampa_sw_p0.zip
 ```
 
 See [docs/KAGGLE.md](KAGGLE.md) § "GPU coastal scan".

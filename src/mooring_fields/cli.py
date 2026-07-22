@@ -536,7 +536,16 @@ def generate_candidates_cmd(argv: list[str] | None = None) -> None:
         "--bbox",
         type=str,
         default=None,
-        help="Bounding box west,south,east,north (overrides --state)",
+        help="Bounding box west,south,east,north (overrides --state/--region)",
+    )
+    parser.add_argument(
+        "--region",
+        type=str,
+        default=None,
+        help=(
+            "Named region bbox (e.g. CapeCod, FL_tampa_sw, FL_keys). "
+            "See FL_REGIONS / NAMED_REGIONS in noaa_candidates."
+        ),
     )
     parser.add_argument(
         "--types",
@@ -555,6 +564,12 @@ def generate_candidates_cmd(argv: list[str] | None = None) -> None:
         type=int,
         default=None,
         help="Safety cap on candidates after dedupe (recommended ~160 for free-tier)",
+    )
+    parser.add_argument(
+        "--offset",
+        type=int,
+        default=0,
+        help="Skip this many deduped candidates before applying --max-sites (paging)",
     )
     parser.add_argument(
         "--out",
@@ -583,21 +598,28 @@ def generate_candidates_cmd(argv: list[str] | None = None) -> None:
             print("ERROR: --bbox must be west,south,east,north", file=sys.stderr)
             sys.exit(1)
         bbox = (parts[0], parts[1], parts[2], parts[3])
-    if not args.state and bbox is None:
-        print("ERROR: provide --state and/or --bbox", file=sys.stderr)
+    if not args.state and bbox is None and not args.region:
+        print("ERROR: provide --state, --bbox, and/or --region", file=sys.stderr)
         sys.exit(1)
 
     types = [t.strip() for t in args.types.split(",") if t.strip()]
     result = collect_candidates(
         states=args.state or None,
         bbox=bbox,
+        region=args.region,
         types=types,
         dedupe_meters=args.dedupe_meters,
         max_sites=args.max_sites,
+        offset=args.offset,
         include_noaa=not args.no_noaa,
         include_osm=not args.no_osm,
     )
-    label = "_".join(args.state) if args.state else "bbox"
+    if args.region:
+        label = args.region
+    elif args.state:
+        label = "_".join(args.state)
+    else:
+        label = "bbox"
     kml_path = write_candidates_kml(
         result["candidates"],
         args.out,
@@ -609,6 +631,68 @@ def generate_candidates_cmd(argv: list[str] | None = None) -> None:
         "With max_api_requests_per_run=800 and 5 tiles/site, budget ~160 sites/run."
     )
     _print(summary)
+
+
+def generate_candidates_batch_cmd(argv: list[str] | None = None) -> None:
+    """Write one ≤max-sites KML page per named region (Florida coasts, Cape Cod, …)."""
+    parser = argparse.ArgumentParser(
+        description=(
+            "Generate free-tier-safe candidate KML pages for named coastal regions "
+            "(e.g. all FL_REGIONS)."
+        )
+    )
+    parser.add_argument(
+        "--regions",
+        type=str,
+        default="FL_panhandle,FL_big_bend,FL_tampa_sw,FL_keys,FL_se_atlantic,FL_ne_atlantic",
+        help="Comma-separated NAMED_REGIONS keys",
+    )
+    parser.add_argument("--types", type=str, default="MO,M")
+    parser.add_argument("--max-sites", type=int, default=160)
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=Path("data"),
+        help="Directory for candidates_<region>_pN.kml files",
+    )
+    parser.add_argument("--no-noaa", action="store_true")
+    parser.add_argument("--no-osm", action="store_true")
+    args = parser.parse_args(argv)
+
+    from mooring_fields.noaa_candidates import write_region_pages
+
+    regions = [r.strip() for r in args.regions.split(",") if r.strip()]
+    types = [t.strip() for t in args.types.split(",") if t.strip()]
+    all_pages: list[dict] = []
+    for region in regions:
+        print(f"Collecting {region}…", flush=True)
+        pages = write_region_pages(
+            region=region,
+            out_dir=args.out_dir,
+            types=types,
+            max_sites=args.max_sites,
+            include_noaa=not args.no_noaa,
+            include_osm=not args.no_osm,
+        )
+        all_pages.extend(pages)
+        for p in pages:
+            print(
+                f"  page {p.get('page')}: sites={p.get('sites')} → {p.get('kml_output')}",
+                flush=True,
+            )
+    _print(
+        {
+            "regions": regions,
+            "max_sites": args.max_sites,
+            "pages": all_pages,
+            "page_count": len(all_pages),
+            "total_sites": sum(int(p.get("sites") or 0) for p in all_pages),
+            "next": (
+                "For each KML: fetch-scan --max-requests 800 → "
+                "package-kaggle-scan → Kaggle GPU notebook → import-scan"
+            ),
+        }
+    )
 
 
 def package_kaggle_scan_cmd(argv: list[str] | None = None) -> None:
@@ -768,6 +852,7 @@ def main() -> None:
         "diff-scans": diff_scans_cmd,
         "delete-scan": delete_scan_cmd,
         "generate-candidates": generate_candidates_cmd,
+        "generate-candidates-batch": generate_candidates_batch_cmd,
         "fetch-scan": fetch_scan_cmd,
         "package-kaggle-scan": package_kaggle_scan_cmd,
         "import-scan": import_scan_cmd,

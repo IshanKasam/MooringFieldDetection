@@ -14,6 +14,7 @@ staging/
 kaggle_upload/
 mooring-field-data.zip
 kaggle_scan_payload.zip
+kaggle_scan_*.zip
 kaggle_output/MooringFieldDetection/
 scan_results/
 *.pt

@@ -106,47 +106,84 @@ Local CPUs are slow for hundreds of YOLO inferences. Use a **separate** notebook
 already-fetched tiles with a free T4. Code clones from **GitHub**; tiles + weights
 come from a Kaggle Dataset you upload.
 
-Stay under ~**160 sites × 5 tiles = 800** Google Static Maps calls per free-tier day.
+Stay under ~**160 sites × 5 tiles = 800** Google Static Maps calls per free-tier day
+(~12 such runs/month under the 10 000 monthly cap).
 
-### Local prep — Cape Cod (example)
+Enrichment after import uses **Groq** for harbor research and supply chain
+(`research_provider: groq` in `config/enrichment.yaml`). Places stays on Google.
+Loop `enrich-all --only-new` / `enrich-supply-chain` until the queue is empty.
+
+### Local prep — Cape Cod
 
 ```bash
-# 1. Candidates for the full peninsula (NOAA Anchorages + OSM marina/mooring)
+# Named region (same bbox as --bbox=-70.75,41.50,-69.90,42.10)
 python -m mooring_fields.cli generate-candidates \
-  --bbox -70.75,41.50,-69.90,42.10 --types MO,M \
-  --max-sites 160 --out data/candidates_CapeCod.kml
+  --region CapeCod --types MO,M --max-sites 160 --out data/candidates_CapeCod.kml
 
-# 2. Fetch tiles only (no YOLO) into data/imagery/scan/
 python -m mooring_fields.cli fetch-scan \
   --kml data/candidates_CapeCod.kml --max-requests 800
 
-# 3. Zip only this KML's tiles + model weights (excludes other cached regions)
 python -m mooring_fields.cli package-kaggle-scan \
-  --kml data/candidates_CapeCod.kml --out kaggle_scan_payload.zip
+  --kml data/candidates_CapeCod.kml --out kaggle_scan_CapeCod.zip
 
-# 4. Commit + push so Kaggle Cell 1 can clone the latest CLI/scan code
-git push
+git push   # so Kaggle Cell 1 clones latest code
 ```
 
-Same pattern for other regions (`--state FL`, etc.). Use `fetch-scan` instead of
-`scan` when detection will run on Kaggle.
+Upload `kaggle_scan_CapeCod.zip` as a Kaggle Dataset (e.g. `mooring-scan-capecod`).
+Existing cache: **53 sites / 265 tiles** for Cape Cod.
 
-Upload `kaggle_scan_payload.zip` as a Kaggle Dataset (e.g. `mooring-scan-capecod`).
+### Local prep — Florida (regional pages, do not use one statewide cap)
+
+A single `--state FL --max-sites 160` **silently drops** the rest of the coast.
+Use named `FL_*` regions and auto-paging:
+
+| Region | Intent |
+|--------|--------|
+| `FL_panhandle` | Pensacola–Apalachicola |
+| `FL_big_bend` | Steinhatchee–Cedar Key |
+| `FL_tampa_sw` | Tampa Bay–Naples |
+| `FL_keys` | Keys |
+| `FL_se_atlantic` | Miami–West Palm |
+| `FL_ne_atlantic` | Space Coast–Jacksonville |
+
+```bash
+# Write candidates_<region>_pN.kml for every FL coast (≤160 sites each)
+python -m mooring_fields.cli generate-candidates-batch \
+  --regions FL_panhandle,FL_big_bend,FL_tampa_sw,FL_keys,FL_se_atlantic,FL_ne_atlantic \
+  --max-sites 160 --out-dir data
+
+# One free-tier Maps day per page (example: Tampa page 0)
+python -m mooring_fields.cli fetch-scan \
+  --kml data/candidates_FL_tampa_sw_p0.kml --max-requests 800
+python -m mooring_fields.cli package-kaggle-scan \
+  --kml data/candidates_FL_tampa_sw_p0.kml --out kaggle_scan_FL_tampa_sw_p0.zip
+```
+
+Or page manually: `--region FL_tampa_sw --max-sites 160 --offset 160`.
+
+### Free-tier calendar (Maps Static)
+
+- **Day 1:** Cape Cod (often already cached) → Kaggle detect → import → enrich
+- **Days 2+:** one FL `*_pN.kml` fetch (≤800 new calls) → package → Kaggle → import → enrich
+- Cached tiles are free on re-fetch; prefer one 800-run per day if staying inside monthly credit
 
 ### On Kaggle
 
 - Settings → **GPU T4**, Internet **On**
-- **Add data** → your `mooring-scan-capecod` (or similar) dataset
+- **Add data** → that batch’s dataset (Cape Cod or one FL page)
 - Import / copy [`notebooks/kaggle_scan.ipynb`](../notebooks/kaggle_scan.ipynb), run cells in order
 - Save Version → download `scan_out/mooring_fields.db`
 
 Detection uses `scan --skip-fetch` so **no Google Static Maps calls** happen on Kaggle.
+Do **not** run enrich on Kaggle.
 
 ### Merge back locally
 
 ```bash
 python -m mooring_fields.cli import-scan --from-db path/to/downloaded/mooring_fields.db
-python -m mooring_fields.cli enrich-all --only-new   # Places + Groq (repeat until done)
+python -m mooring_fields.cli enrich-all --only-new   # Places + Groq; repeat until done
+# If supply chain was blocked earlier:
+python -m mooring_fields.cli enrich-supply-chain
 ```
 
 Then hard-refresh the web app.

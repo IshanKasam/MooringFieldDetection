@@ -1,8 +1,9 @@
 # Enrichment pipeline settings (Places + LLM research)
 provider: live  # mock | live | manual  (Places backend; live = Google Places)
 
-# Research LLM override. Falls back to `provider` when unset.
-#   groq   -> free, no credit card (requires GROQ_API_KEY)
+# Research + supply-chain LLM. Falls back to `provider` when unset.
+# Places still follow `provider` (Google when live).
+#   groq   -> free, no credit card (requires GROQ_API_KEY) — harbor research AND supply chain
 #   live   -> Gemini (requires GEMINI_API_KEY)
 research_provider: groq
 

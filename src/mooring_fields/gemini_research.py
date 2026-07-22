@@ -280,7 +280,7 @@ def validate_research(
 
 
 def places_only_research(field: dict[str, Any], place: PlaceResult | None) -> ResearchResult:
-    """Fallback when Gemini API is unavailable — Places data only."""
+    """Fallback when the LLM research provider is unavailable — Places data only."""
     name = place.name if place else field.get("location_name")
     return ResearchResult(
         canonical_business_name=name,
@@ -289,9 +289,10 @@ def places_only_research(field: dict[str, Any], place: PlaceResult | None) -> Re
         email=None,
         website=place.website if place else None,
         research_summary=(
-            f"Places-only enrichment (Gemini unavailable). "
+            f"Places-only enrichment (LLM research unavailable). "
             f"Detected mooring field with {field.get('boat_count')} boats near {name}. "
-            "Re-run enrich-research after setting GEMINI_API_KEY for harbor and mooring contractor lookup."
+            "Re-run enrich-research after setting GROQ_API_KEY (research_provider: groq) "
+            "or GEMINI_API_KEY (research_provider: live) for harbor and mooring contractor lookup."
         ),
         confidence=0.35,
         sources=["google_places"] if place else [],

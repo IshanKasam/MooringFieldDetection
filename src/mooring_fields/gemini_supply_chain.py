@@ -346,6 +346,16 @@ class LiveSupplyChainProvider:
 
 
 def get_supply_chain_provider(cfg: dict):
+    """Select supply-chain backend.
+
+    Follows ``research_provider`` (same as harbor research) so Groq can replace
+    Gemini while Places stays on Google via ``provider: live``.
+    """
+    llm = cfg.get("research_provider") or cfg.get("provider", "mock")
+    if llm == "groq":
+        from mooring_fields.groq_supply_chain import LiveGroqSupplyChainProvider
+
+        return LiveGroqSupplyChainProvider(cfg)
     if cfg.get("provider", "mock") == "live":
         return LiveSupplyChainProvider(cfg)
     return MockSupplyChainProvider(cfg)

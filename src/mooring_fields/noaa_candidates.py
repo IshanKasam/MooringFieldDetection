@@ -25,6 +25,11 @@ import httpx
 from mooring_fields.geo_utils import haversine_m
 
 OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+OVERPASS_MIRRORS = (
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.openstreetmap.ru/api/interpreter",
+)
 NOAA_ANCHORAGES_URL = (
     "https://coast.noaa.gov/arcgis/rest/services/Hosted/Anchorages/"
     "FeatureServer/0/query"
@@ -44,6 +49,23 @@ STATE_BBOXES: dict[str, tuple[float, float, float, float]] = {
     "CA": (-124.5, 32.5, -116.8, 42.1),
     "WA": (-124.9, 46.2, -122.0, 49.0),
     "OR": (-124.7, 41.9, -123.8, 46.3),
+}
+
+# Florida coastal sub-regions for free-tier-safe ≤160-site batches.
+# Do not use a single --state FL --max-sites 160 for "all of Florida".
+FL_REGIONS: dict[str, tuple[float, float, float, float]] = {
+    "FL_panhandle": (-87.60, 29.40, -85.00, 31.10),  # Pensacola–Apalachicola
+    "FL_big_bend": (-85.00, 28.40, -82.70, 30.50),  # Steinhatchee–Cedar Key
+    "FL_tampa_sw": (-83.00, 25.80, -81.50, 28.40),  # Tampa Bay–Naples
+    "FL_keys": (-82.00, 24.40, -80.00, 25.60),  # Keys
+    "FL_se_atlantic": (-80.60, 25.50, -79.85, 27.50),  # Miami–West Palm
+    "FL_ne_atlantic": (-81.70, 27.50, -80.00, 30.80),  # Space Coast–Jacksonville
+}
+
+# Named regions usable via --region (Cape Cod + FL coasts).
+NAMED_REGIONS: dict[str, tuple[float, float, float, float]] = {
+    "CapeCod": (-70.75, 41.50, -69.90, 42.10),
+    **FL_REGIONS,
 }
 
 DEFAULT_TYPES = ("MO", "M")
@@ -192,10 +214,32 @@ def fetch_osm_candidates(
     own = client is None
     client = client or _http_client(timeout=120.0)
     try:
+        import time
+
         query = _overpass_query(bbox, types)
-        resp = client.get(OVERPASS_URL, params={"data": query})
-        resp.raise_for_status()
-        elements = resp.json().get("elements") or []
+        last_err: Exception | None = None
+        elements: list = []
+        for attempt in range(4):
+            url = OVERPASS_MIRRORS[attempt % len(OVERPASS_MIRRORS)]
+            try:
+                resp = client.get(url, params={"data": query})
+                if resp.status_code in (429, 502, 503, 504):
+                    last_err = httpx.HTTPStatusError(
+                        f"Overpass {resp.status_code}",
+                        request=resp.request,
+                        response=resp,
+                    )
+                    time.sleep(2.0 * (attempt + 1))
+                    continue
+                resp.raise_for_status()
+                elements = resp.json().get("elements") or []
+                last_err = None
+                break
+            except httpx.HTTPError as exc:
+                last_err = exc
+                time.sleep(2.0 * (attempt + 1))
+        if last_err is not None and not elements:
+            raise last_err
         out: list[Candidate] = []
         for el in elements:
             tags = el.get("tags") or {}
@@ -259,11 +303,25 @@ def resolve_bbox(
     *,
     states: Sequence[str] | None = None,
     bbox: tuple[float, float, float, float] | None = None,
+    region: str | None = None,
 ) -> tuple[float, float, float, float]:
     if bbox is not None:
         return bbox
+    if region:
+        key = region.strip()
+        # allow fl_tampa_sw or FL_tampa_sw
+        matched = None
+        for name, box in NAMED_REGIONS.items():
+            if name.lower() == key.lower():
+                matched = box
+                break
+        if matched is None:
+            raise ValueError(
+                f"Unknown region '{region}'. Known: {', '.join(sorted(NAMED_REGIONS))}"
+            )
+        return matched
     if not states:
-        raise ValueError("Provide --state and/or --bbox")
+        raise ValueError("Provide --state, --bbox, and/or --region")
     boxes = []
     for st in states:
         key = st.strip().upper()
@@ -283,18 +341,24 @@ def collect_candidates(
     *,
     states: Sequence[str] | None = None,
     bbox: tuple[float, float, float, float] | None = None,
+    region: str | None = None,
     types: Sequence[str] = DEFAULT_TYPES,
     dedupe_meters: float = 150.0,
     max_sites: int | None = None,
+    offset: int = 0,
     include_noaa: bool = True,
     include_osm: bool = True,
 ) -> dict:
-    """Fetch, filter, dedupe candidates for a region."""
+    """Fetch, filter, dedupe candidates for a region.
+
+    When *max_sites* is set, returns ``deduped[offset : offset + max_sites]``
+    so large coasts can be paged into free-tier-safe ≤160-site batches.
+    """
     types = tuple(t.strip().upper() for t in types)
     for t in types:
         if t not in ("MO", "M"):
             raise ValueError(f"Unsupported type '{t}' (use MO and/or M)")
-    region_bbox = resolve_bbox(states=states, bbox=bbox)
+    region_bbox = resolve_bbox(states=states, bbox=bbox, region=region)
     raw: list[Candidate] = []
     with _http_client(timeout=120.0) as client:
         if include_noaa and "MO" in types:
@@ -302,9 +366,15 @@ def collect_candidates(
         if include_osm:
             raw.extend(fetch_osm_candidates(region_bbox, types=types, client=client))
 
-    deduped = dedupe_candidates(raw, radius_m=dedupe_meters)
+    deduped_all = dedupe_candidates(raw, radius_m=dedupe_meters)
+    total_deduped = len(deduped_all)
+    start = max(0, int(offset))
     if max_sites is not None:
-        deduped = deduped[: max(0, int(max_sites))]
+        deduped = deduped_all[start : start + max(0, int(max_sites))]
+    elif start:
+        deduped = deduped_all[start:]
+    else:
+        deduped = deduped_all
 
     by_type = {"M": 0, "MO": 0}
     by_source: dict[str, int] = {}
@@ -315,15 +385,83 @@ def collect_candidates(
     return {
         "bbox": region_bbox,
         "states": list(states or []),
+        "region": region,
         "types": list(types),
         "raw_count": len(raw),
+        "deduped_total": total_deduped,
         "deduped_count": len(deduped),
+        "offset": start,
+        "max_sites": max_sites,
         "by_type": by_type,
         "by_source": by_source,
         "dedupe_meters": dedupe_meters,
         "candidates": deduped,
         "estimated_tiles": len(deduped) * 5,  # center + N/S/E/W
+        "has_more": (start + len(deduped)) < total_deduped,
     }
+
+
+def write_region_pages(
+    *,
+    region: str,
+    out_dir: Path,
+    types: Sequence[str] = DEFAULT_TYPES,
+    dedupe_meters: float = 150.0,
+    max_sites: int = 160,
+    include_noaa: bool = True,
+    include_osm: bool = True,
+) -> list[dict]:
+    """Write one KML per ≤max_sites page for a named region. Returns page summaries."""
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    full = collect_candidates(
+        region=region,
+        types=types,
+        dedupe_meters=dedupe_meters,
+        max_sites=None,
+        offset=0,
+        include_noaa=include_noaa,
+        include_osm=include_osm,
+    )
+    all_cands: list[Candidate] = list(full["candidates"])
+    total = len(all_cands)
+    if total == 0:
+        return [
+            {
+                "region": region,
+                "page": 0,
+                "sites": 0,
+                "deduped_total": 0,
+                "kml_output": None,
+                "note": "no candidates in region",
+            }
+        ]
+
+    pages: list[dict] = []
+    page = 0
+    for start in range(0, total, max_sites):
+        chunk = all_cands[start : start + max_sites]
+        out = out_dir / f"candidates_{region}_p{page}.kml"
+        write_candidates_kml(
+            chunk,
+            out,
+            document_name=f"Candidates {region} p{page}",
+        )
+        pages.append(
+            {
+                "region": region,
+                "page": page,
+                "offset": start,
+                "sites": len(chunk),
+                "deduped_total": total,
+                "estimated_tiles": len(chunk) * 5,
+                "has_more": (start + len(chunk)) < total,
+                "kml_output": str(out),
+                "bbox": full["bbox"],
+            }
+        )
+        page += 1
+    return pages
 
 
 def write_candidates_kml(

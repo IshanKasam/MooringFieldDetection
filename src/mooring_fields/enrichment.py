@@ -305,6 +305,11 @@ def enrich_supply_chain(
                 if not result.prospect_id:
                     continue
                 summary = format_supply_chain_summary(result)
+                # Do not mark hard LLM failures as done — only_new would skip retries.
+                if (result.company_summary or "").startswith(
+                    "Supply chain research unavailable"
+                ):
+                    continue
                 update_prospect_supply_chain(
                     conn,
                     int(result.prospect_id),
