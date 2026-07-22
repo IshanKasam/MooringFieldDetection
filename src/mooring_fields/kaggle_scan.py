@@ -153,8 +153,9 @@ def import_scan(
     dest_db: Path | None = None,
     scan_id: int | None = None,
     source_label: str | None = None,
+    all_scans: bool = False,
 ) -> dict[str, Any]:
-    """Copy one scan (fields + boats) from a cloud/source DB into the web app DB.
+    """Copy one scan (or all scans) from a cloud/source DB into the web app DB.
 
     Does not copy prospects/enrichment — run enrich-all --only-new after import.
     """
@@ -162,6 +163,9 @@ def import_scan(
     dest = Path(dest_db) if dest_db else DB_PATH
     if not source_db.is_file():
         raise FileNotFoundError(f"Source DB not found: {source_db}")
+
+    if all_scans and scan_id is not None:
+        raise ValueError("Pass either scan_id or all_scans=True, not both")
 
     src = get_connection(source_db)
     dst = get_connection(dest)
@@ -171,65 +175,79 @@ def import_scan(
         scans = list_scans(src)
         if not scans:
             raise ValueError(f"No scans in {source_db}")
-        if scan_id is None:
-            chosen = scans[0]  # list_scans orders newest first
+
+        if all_scans:
+            # list_scans is newest-first; import oldest→newest for stable ids
+            to_import = list(reversed(scans))
+        elif scan_id is None:
+            to_import = [scans[0]]
         else:
             chosen = next((s for s in scans if int(s["id"]) == int(scan_id)), None)
             if chosen is None:
                 raise ValueError(f"scan_id {scan_id} not in {source_db}")
+            to_import = [chosen]
 
-        sid = int(chosen["id"])
-        new_source = source_label or f"import:{chosen.get('source') or sid}"
-        new_scan_id = insert_scan(
-            dst,
-            source=new_source,
-            weights=chosen.get("weights"),
-            split=chosen.get("split") or "scan",
-            notes=f"imported from {source_db.name} scan_id={sid}",
-        )
-
-        fields = list_fields(src, scan_id=sid)
-        boats_saved = 0
-        for row in fields:
-            field_id = insert_field(
+        imported: list[dict[str, Any]] = []
+        for chosen in to_import:
+            sid = int(chosen["id"])
+            new_source = source_label or f"import:{chosen.get('source') or sid}"
+            new_scan_id = insert_scan(
                 dst,
-                scan_id=new_scan_id,
-                latitude=float(row["latitude"]),
-                longitude=float(row["longitude"]),
-                boat_count=int(row["boat_count"] or 0),
-                mean_confidence=float(row["mean_confidence"] or 0.0),
-                location_name=row["location_name"],
-                country=row["country"],
+                source=new_source,
+                weights=chosen.get("weights"),
+                split=chosen.get("split") or "scan",
+                notes=f"imported from {source_db.name} scan_id={sid}",
             )
-            # Preserve pending so enrich-all --only-new picks them up
-            dst.execute(
-                "UPDATE fields SET enrichment_status = ? WHERE id = ?",
-                ("pending", field_id),
+
+            fields = list_fields(src, scan_id=sid)
+            boats_saved = 0
+            for row in fields:
+                field_id = insert_field(
+                    dst,
+                    scan_id=new_scan_id,
+                    latitude=float(row["latitude"]),
+                    longitude=float(row["longitude"]),
+                    boat_count=int(row["boat_count"] or 0),
+                    mean_confidence=float(row["mean_confidence"] or 0.0),
+                    location_name=row["location_name"],
+                    country=row["country"],
+                )
+                dst.execute(
+                    "UPDATE fields SET enrichment_status = ? WHERE id = ?",
+                    ("pending", field_id),
+                )
+                old_field_id = int(row["id"])
+                boat_rows = get_boats(src, field_id=old_field_id, limit=100000)
+
+                class _B:
+                    __slots__ = ("lat", "lon", "confidence", "image_stem")
+
+                    def __init__(self, r: dict[str, Any]):
+                        self.lat = float(r["latitude"])
+                        self.lon = float(r["longitude"])
+                        self.confidence = float(r.get("confidence") or 0.0)
+                        self.image_stem = r.get("image_stem") or ""
+
+                insert_boats(dst, new_scan_id, field_id, [_B(b) for b in boat_rows])
+                boats_saved += len(boat_rows)
+
+            imported.append(
+                {
+                    "source_scan_id": sid,
+                    "dest_scan_id": new_scan_id,
+                    "fields_imported": len(fields),
+                    "boats_imported": boats_saved,
+                    "source_label": new_source,
+                }
             )
-            old_field_id = int(row["id"])
-            boat_rows = get_boats(src, field_id=old_field_id, limit=100000)
-
-            class _B:
-                __slots__ = ("lat", "lon", "confidence", "image_stem")
-
-                def __init__(self, r: dict[str, Any]):
-                    self.lat = float(r["latitude"])
-                    self.lon = float(r["longitude"])
-                    self.confidence = float(r.get("confidence") or 0.0)
-                    self.image_stem = r.get("image_stem") or ""
-
-            insert_boats(dst, new_scan_id, field_id, [_B(b) for b in boat_rows])
-            boats_saved += len(boat_rows)
         dst.commit()
 
         return {
             "source_db": str(source_db),
             "dest_db": str(dest),
-            "source_scan_id": sid,
-            "dest_scan_id": new_scan_id,
-            "fields_imported": len(fields),
-            "boats_imported": boats_saved,
-            "next": "python -m mooring_fields.cli enrich-all --only-new",
+            "scans_imported": len(imported),
+            "imports": imported,
+            "next": "python -m mooring_fields.cli enrich-all --only-new  # optional",
         }
     finally:
         src.close()

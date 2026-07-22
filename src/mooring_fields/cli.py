@@ -809,6 +809,11 @@ def import_scan_cmd(argv: list[str] | None = None) -> None:
     parser.add_argument("--db", type=Path, default=None, help="Destination DB (default: data/)")
     parser.add_argument("--scan-id", type=int, default=None, help="Source scan id (default: newest)")
     parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Import every scan in the source DB (use after multi-region Kaggle run)",
+    )
+    parser.add_argument(
         "--source-label",
         type=str,
         default=None,
@@ -823,6 +828,7 @@ def import_scan_cmd(argv: list[str] | None = None) -> None:
             dest_db=args.db,
             scan_id=args.scan_id,
             source_label=args.source_label,
+            all_scans=args.all,
         )
     )
 
