@@ -188,15 +188,33 @@ def import_scan(
             to_import = [chosen]
 
         imported: list[dict[str, Any]] = []
+        skipped: list[dict[str, Any]] = []
         for chosen in to_import:
             sid = int(chosen["id"])
             new_source = source_label or f"import:{chosen.get('source') or sid}"
+            fingerprint = f"imported from {source_db.name} scan_id={sid}"
+            existing = dst.execute(
+                "SELECT id FROM scans WHERE notes = ? LIMIT 1",
+                (fingerprint,),
+            ).fetchone()
+            if existing is not None:
+                skipped.append(
+                    {
+                        "source_scan_id": sid,
+                        "dest_scan_id": int(existing[0]),
+                        "skipped": True,
+                        "reason": "already_imported",
+                        "source_label": new_source,
+                    }
+                )
+                continue
+
             new_scan_id = insert_scan(
                 dst,
                 source=new_source,
                 weights=chosen.get("weights"),
                 split=chosen.get("split") or "scan",
-                notes=f"imported from {source_db.name} scan_id={sid}",
+                notes=fingerprint,
             )
 
             fields = list_fields(src, scan_id=sid)
@@ -246,7 +264,9 @@ def import_scan(
             "source_db": str(source_db),
             "dest_db": str(dest),
             "scans_imported": len(imported),
+            "scans_skipped": len(skipped),
             "imports": imported,
+            "skipped": skipped,
             "next": "python -m mooring_fields.cli enrich-all --only-new  # optional",
         }
     finally:

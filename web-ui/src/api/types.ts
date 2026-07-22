@@ -105,3 +105,29 @@ export type GeoJsonFeatureCollection = {
     properties: Record<string, unknown>;
   }>;
 };
+
+export type ScanRegion = {
+  id: string;
+  kind: string;
+  bbox: number[];
+};
+
+export type MapsQuota = {
+  day: string;
+  maps_used: number;
+  cap: number;
+  remaining: number;
+};
+
+export type JobRow = {
+  id: number;
+  kind: string;
+  status: string;
+  params: unknown;
+  progress: unknown;
+  result: unknown;
+  cancel_requested: boolean;
+  created_at: string | null;
+  started_at: string | null;
+  finished_at: string | null;
+};

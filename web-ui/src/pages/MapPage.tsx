@@ -6,7 +6,10 @@ import { useSelection } from "../store/selection";
 export function MapPage() {
   const { data, isLoading, error } = useGeojson();
   const selectedProspectId = useSelection((s) => s.selectedProspectId);
+  const selectedFieldId = useSelection((s) => s.selectedFieldId);
   const clear = useSelection((s) => s.clear);
+
+  const showDrawer = selectedFieldId != null || selectedProspectId != null;
 
   return (
     <div className="page map-page">
@@ -17,9 +20,10 @@ export function MapPage() {
         )}
         <FieldMap geojson={data} />
       </div>
-      {selectedProspectId != null && (
+      {showDrawer && (
         <FieldDetailDrawer
           prospectId={selectedProspectId}
+          fieldId={selectedFieldId}
           onClose={() => clear()}
         />
       )}

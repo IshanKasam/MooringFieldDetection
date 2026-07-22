@@ -176,111 +176,22 @@ def scan_cmd(argv: list[str] | None = None) -> None:
     )
     args = parser.parse_args(argv)
 
-    import os
-    from dotenv import load_dotenv
-    from mooring_fields.cluster_fields import run_on_split
-    from mooring_fields.database import save_scan
-    from mooring_fields.fetch_imagery import fetch_all as _fetch_all
-    from mooring_fields.geocode import Geocoder
-    from mooring_fields.kml_export import clusters_to_kml
-    from mooring_fields.kml_parser import load_sites_json, parse_kml
-    from mooring_fields.paths import DB_PATH, IMAGERY_DIR
+    from mooring_fields.scan_pipeline import run_scan_pipeline
 
-    load_dotenv()
-
-    if not args.kml.exists():
-        print(f"ERROR: KML file not found: {args.kml}", file=sys.stderr)
-        sys.exit(1)
-
-    api_key = os.environ.get("GOOGLE_MAPS_API_KEY", "").strip()
-    if not api_key and not args.skip_fetch:
-        print(
-            "ERROR: GOOGLE_MAPS_API_KEY environment variable is not set. "
-            "Set it before running scan (or use --skip-fetch if imagery already exists).",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    # Persistent imagery cache by default so free-tier re-runs are free.
-    imagery_base = args.imagery_dir if args.imagery_dir else IMAGERY_DIR
-    imagery_base.mkdir(parents=True, exist_ok=True)
-    tmp_dir = Path(tempfile.mkdtemp(prefix="mooring_scan_"))
     try:
-        # 1. Parse KML to a temp sites.json (does not touch data/sites.json)
-        print(f"Parsing KML: {args.kml}")
-        parse_result = run_parse_and_split(kml_path=args.kml, output_dir=tmp_dir)
-        scan_sites = load_sites_json(path=tmp_dir / "sites.json")
-        print(f"  Found {len(scan_sites)} locations")
-        print(f"  Planned tiles (up to 5/site): {len(scan_sites) * 5}")
-        if args.max_requests:
-            print(f"  API cap this run: {args.max_requests}")
-
-        # 2. Fetch imagery into persistent cache (split=scan)
-        if not args.skip_fetch:
-            print(f"Fetching satellite imagery into {imagery_base / 'scan'} ...")
-            fetch_result = _fetch_all(
-                input_sites=scan_sites,
-                imagery_output_base_dir=imagery_base,
-                max_requests=args.max_requests,
-            )
-            print(f"  Downloaded: {fetch_result['downloaded']}, cached: {fetch_result['skipped_cached']}")
-        else:
-            fetch_result = {}
-            print("--skip-fetch: skipping imagery download")
-
-        # 3. Run detection and clustering
-        print("Running mooring field detection...")
-        clusters = run_on_split(
-            split="scan",
+        result = run_scan_pipeline(
+            kml_path=args.kml,
+            output_dir=args.output_dir,
             weights=args.weights,
-            input_sites=scan_sites,
-            imagery_input_base_dir=imagery_base,
+            max_requests=args.max_requests,
+            skip_fetch=args.skip_fetch,
+            db_path=args.db,
+            imagery_dir=args.imagery_dir,
         )
-        print(f"  Detected {len(clusters)} qualifying mooring fields")
-
-        # 4. Reverse-geocode location names
-        geocoder = Geocoder(cache_path=args.output_dir / "geocode_cache.json")
-        names = {id(c): geocoder(c.lat, c.lon).get("location_name") for c in clusters}
-
-        # 5. Export to KML in the output dir
-        kml_out = args.output_dir / "discovered_fields.kml"
-        if clusters:
-            clusters_to_kml(
-                clusters,
-                kml_out,
-                document_name=f"Mooring scan: {args.kml.name}",
-                names=names,
-            )
-            print(f"  KML saved to: {kml_out}")
-        else:
-            print("  No mooring fields detected — KML not written.")
-
-        # 6. Persist detections to SQLite (default: the web app's database)
-        db_summary = {}
-        if clusters:
-            db_summary = save_scan(
-                clusters,
-                source=f"scan:{args.kml.name}",
-                weights=str(args.weights) if args.weights else "auto",
-                split="scan",
-                geocoder=geocoder,
-                db_path=args.db if args.db else DB_PATH,
-            )
-            print(f"  Database saved to: {db_summary.get('db_path')}")
-
-        _print({
-            "scanned_locations": len(scan_sites),
-            "discovered_clusters": len(clusters),
-            "kml_output": str(kml_out) if clusters else None,
-            "output_dir": str(args.output_dir),
-            "imagery_dir": str(imagery_base),
-            "database": db_summary,
-            "fetch_summary": fetch_result,
-        })
-
-    finally:
-        shutil.rmtree(tmp_dir, ignore_errors=True)
+    except (FileNotFoundError, EnvironmentError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
+    _print(result)
 
 
 def query_fields_cmd(argv: list[str] | None = None) -> None:

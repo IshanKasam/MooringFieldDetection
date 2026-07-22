@@ -31,6 +31,7 @@ const ESRI_SATELLITE = {
 export function FieldMap({ geojson }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const fittedRef = useRef(false);
   const selectedFieldId = useSelection((s) => s.selectedFieldId);
   const setField = useSelection((s) => s.setField);
 
@@ -47,6 +48,7 @@ export function FieldMap({ geojson }: Props) {
     return () => {
       map.remove();
       mapRef.current = null;
+      fittedRef.current = false;
     };
   }, []);
 
@@ -68,7 +70,7 @@ export function FieldMap({ geojson }: Props) {
             "circle-color": [
               "case",
               ["==", ["get", "approved"], 1],
-              "#0e77be",
+              "#2a9d8f",
               ["==", ["get", "needs_review"], 1],
               "#ffc20e",
               "#0e77be",
@@ -93,8 +95,10 @@ export function FieldMap({ geojson }: Props) {
           const props = f.properties ?? {};
           const fieldId = Number(props.field_id);
           const prospectId =
-            props.prospect_id != null ? Number(props.prospect_id) : null;
-          setField(fieldId, prospectId);
+            props.prospect_id != null && props.prospect_id !== ""
+              ? Number(props.prospect_id)
+              : null;
+          setField(fieldId, Number.isFinite(prospectId as number) ? prospectId : null);
           const geom = f.geometry as { type: string; coordinates: [number, number] };
           const coords = geom.coordinates.slice() as [number, number];
           const html = `
@@ -118,13 +122,14 @@ export function FieldMap({ geojson }: Props) {
         (map.getSource("fields") as maplibregl.GeoJSONSource).setData(geojson);
       }
 
-      if (geojson.features.length > 0) {
+      if (!fittedRef.current && geojson.features.length > 0) {
         const bounds = new maplibregl.LngLatBounds();
         geojson.features.forEach((f) => {
           bounds.extend(f.geometry.coordinates as [number, number]);
         });
         if (!bounds.isEmpty()) {
           map.fitBounds(bounds, { padding: 48, maxZoom: 12 });
+          fittedRef.current = true;
         }
       }
     };

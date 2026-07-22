@@ -33,7 +33,21 @@ Set `VITE_API_BASE_URL` only when the UI is hosted separately from the API
 
 No login is required for this build.
 
-## Finding new mooring fields (end-to-end loop)
+## In-app scan (primary path)
+
+With `mooring-web` running on a machine that has CUDA (or accept slow CPU):
+
+1. Open the map toolbar **Scan coast** panel
+2. Pick a named region (`CapeCod`, `FL_*`, …) and max sites (≤160)
+3. Check the **Maps today** quota chip (free-tier ~800 calls/run)
+4. **Start scan** — backend runs candidates → Static Maps fetch → YOLO+DBSCAN → writes `data/mooring_fields.db`
+5. Map/table refresh when the job finishes; then use Enrich + approve in the drawer
+
+APIs: `POST /api/jobs/scan`, `GET /api/jobs/{id}`, `POST /api/jobs/{id}/cancel`, `GET /api/quota/maps`, `GET /api/regions`.
+
+CLI remains available for ops; Kaggle is an optional GPU escape hatch (below).
+
+## Finding new mooring fields (CLI loop)
 
 The trained model lives at `runs/mooring_boats/weights/best.pt`
 (a copy of `final_mooring_field_detection.pt`; both are gitignored).

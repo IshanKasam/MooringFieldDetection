@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
-import { useProspect, useUpdateProspect } from "../hooks/useFields";
+import { ApproveToggle } from "./ApproveToggle";
+import {
+  useEnrich,
+  useField,
+  useProspect,
+  useUpdateProspect,
+} from "../hooks/useFields";
 
 type Props = {
   prospectId: number | null;
+  fieldId: number | null;
   onClose: () => void;
 };
 
-export function FieldDetailDrawer({ prospectId, onClose }: Props) {
+export function FieldDetailDrawer({ prospectId, fieldId, onClose }: Props) {
   const { data, isLoading, error } = useProspect(prospectId);
+  const { data: fieldRow } = useField(prospectId == null ? fieldId : null);
   const update = useUpdateProspect();
+  const enrich = useEnrich();
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -22,7 +31,7 @@ export function FieldDetailDrawer({ prospectId, onClose }: Props) {
     setName(data.canonical_business_name ?? "");
   }, [data]);
 
-  if (prospectId == null) return null;
+  if (prospectId == null && fieldId == null) return null;
 
   const sources = Array.isArray(data?.sources)
     ? data!.sources
@@ -38,16 +47,48 @@ export function FieldDetailDrawer({ prospectId, onClose }: Props) {
       : [];
 
   return (
-    <aside className="drawer" aria-label="Prospect detail">
+    <aside className="drawer" aria-label="Field / prospect detail">
       <header className="drawer-header">
-        <h2>Prospect detail</h2>
+        <h2>{prospectId != null ? "Prospect detail" : "Field detail"}</h2>
         <button type="button" className="ghost" onClick={onClose}>
           Close
         </button>
       </header>
-      {isLoading && <p className="muted">Loading…</p>}
-      {error && <p className="error">{(error as Error).message}</p>}
-      {data && (
+
+      {prospectId == null && fieldRow && (
+        <div className="drawer-body">
+          <section>
+            <h3>Location</h3>
+            <p>
+              {fieldRow.harbor_name || fieldRow.location_name || `Field ${fieldId}`}
+            </p>
+            <p className="muted">
+              {fieldRow.boat_count} boats · status{" "}
+              {fieldRow.enrichment_status || "pending"}
+            </p>
+          </section>
+          <p className="muted">
+            No prospect linked yet. Run Places enrichment to attach contacts.
+          </p>
+          <button
+            type="button"
+            className="primary"
+            disabled={enrich.isPending}
+            onClick={() => enrich.mutate({ step: "places", limit: 5 })}
+          >
+            {enrich.isPending ? "Queuing…" : "Enrich places"}
+          </button>
+          {enrich.isSuccess && (
+            <p className="ok">Enrichment queued — map will refresh when done.</p>
+          )}
+        </div>
+      )}
+
+      {prospectId != null && isLoading && <p className="muted">Loading…</p>}
+      {prospectId != null && error && (
+        <p className="error">{(error as Error).message}</p>
+      )}
+      {prospectId != null && data && (
         <div className="drawer-body">
           <label>
             Business name
@@ -68,6 +109,10 @@ export function FieldDetailDrawer({ prospectId, onClose }: Props) {
               onChange={(e) => setWebsite(e.target.value)}
             />
           </label>
+          <div className="drawer-approve">
+            <span>Approved</span>
+            <ApproveToggle prospectId={prospectId} approved={!!data.approved} />
+          </div>
           <button
             type="button"
             className="primary"
@@ -87,6 +132,11 @@ export function FieldDetailDrawer({ prospectId, onClose }: Props) {
             {update.isPending ? "Saving…" : "Save contacts"}
           </button>
           {update.isSuccess && <p className="ok">Saved.</p>}
+          {update.isError && (
+            <p className="error">
+              {(update.error as Error).message || "Save failed"}
+            </p>
+          )}
 
           <section>
             <h3>Harbor</h3>

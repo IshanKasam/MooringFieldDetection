@@ -1,3 +1,14 @@
+*.db
+!fixtures/**/*.db
+data/datasets/
+data/enrichment_outputs/
+data/*.csv
+data/*.xlsx
+data/*.log
+data/candidates_*.kml
+kaggle_output/
+.cursor/skills/
+florida_cape_mooring_fields.db
 .env
 .venv/
 __pycache__/
@@ -24,4 +35,3 @@ web-ui/dist/
 web-ui/.env
 web-ui/.env.local
 web-ui/tsconfig.tsbuildinfo
-

@@ -11,18 +11,22 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
 from mooring_fields.web import service
-from mooring_fields.web.jobs import run_enrichment_job
+from mooring_fields.web.jobs import run_enrichment_job, run_scan_job
 from mooring_fields.web.schemas import (
     ApproveRequest,
     BoatPoint,
     EnrichRequest,
     EnrichRun,
     FieldRow,
+    JobRow,
+    MapsQuota,
     OkResponse,
     ProspectDetail,
     ProspectSummary,
     ProspectUpdate,
     ScanDiff,
+    ScanJobRequest,
+    ScanRegion,
     ScanRow,
     Stats,
 )
@@ -156,6 +160,55 @@ def api_enrich(body: EnrichRequest, background: BackgroundTasks) -> OkResponse:
 @app.get("/api/enrich/runs", response_model=list[EnrichRun])
 def api_enrich_runs(limit: int = Query(20, ge=1, le=100)) -> list[EnrichRun]:
     return [EnrichRun(**row) for row in service.enrichment_runs(limit=limit)]
+
+
+@app.get("/api/regions", response_model=list[ScanRegion])
+def api_regions() -> list[ScanRegion]:
+    return [ScanRegion(**r) for r in service.scan_regions()]
+
+
+@app.get("/api/quota/maps", response_model=MapsQuota)
+def api_maps_quota() -> MapsQuota:
+    return MapsQuota(**service.maps_quota())
+
+
+@app.get("/api/jobs", response_model=list[JobRow])
+def api_jobs(
+    kind: str | None = None,
+    limit: int = Query(20, ge=1, le=100),
+) -> list[JobRow]:
+    return [JobRow(**row) for row in service.list_jobs(kind=kind, limit=limit)]
+
+
+@app.get("/api/jobs/{job_id}", response_model=JobRow)
+def api_job(job_id: int) -> JobRow:
+    row = service.get_job(job_id)
+    if row is None:
+        raise HTTPException(status_code=404, detail="job not found")
+    return JobRow(**row)
+
+
+@app.post("/api/jobs/{job_id}/cancel", response_model=OkResponse)
+def api_job_cancel(job_id: int) -> OkResponse:
+    ok = service.cancel_job(job_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail="job not found or not cancellable")
+    return OkResponse(ok=True, detail={"job_id": job_id, "cancel_requested": True})
+
+
+@app.post("/api/jobs/scan", response_model=OkResponse)
+def api_jobs_scan(body: ScanJobRequest, background: BackgroundTasks) -> OkResponse:
+    if not body.region and not body.state and not body.bbox and not body.kml_path:
+        raise HTTPException(
+            status_code=400,
+            detail="Provide region, state, bbox, or kml_path",
+        )
+    try:
+        job_id = service.enqueue_scan_job(body.model_dump(exclude_none=True))
+    except RuntimeError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    background.add_task(run_scan_job, job_id)
+    return OkResponse(ok=True, detail={"queued": True, "job_id": job_id})
 
 
 def create_app() -> FastAPI:

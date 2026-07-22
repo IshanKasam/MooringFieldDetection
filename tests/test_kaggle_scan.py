@@ -110,3 +110,31 @@ def test_import_scan_all_imports_every_scan(tmp_path: Path):
     assert get_stats(dst)["fields"] == 2
     assert len(list_scans(dst)) == 2
     dst.close()
+
+def test_import_scan_is_idempotent(tmp_path: Path):
+    src_db = tmp_path / "cloud.db"
+    dst_db = tmp_path / "local.db"
+    conn = get_connection(src_db)
+    init_db(conn)
+    sid = insert_scan(conn, source="scan:x", weights="best.pt", split="scan")
+    insert_field(
+        conn,
+        sid,
+        latitude=26.1,
+        longitude=-80.1,
+        boat_count=4,
+        mean_confidence=0.6,
+        location_name="H",
+        country="United States",
+    )
+    conn.close()
+    first = import_scan(src_db, dest_db=dst_db, all_scans=True)
+    second = import_scan(src_db, dest_db=dst_db, all_scans=True)
+    assert first["scans_imported"] == 1
+    assert second["scans_imported"] == 0
+    assert second["scans_skipped"] == 1
+    dst = get_connection(dst_db)
+    init_db(dst)
+    assert get_stats(dst)["fields"] == 1
+    assert len(list_scans(dst)) == 1
+    dst.close()

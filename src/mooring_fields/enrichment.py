@@ -150,7 +150,9 @@ def enrich_research(
             }
 
         provider = get_research_provider(cfg, csv_path=csv_path)
-        run_id = start_enrichment_run(conn, cfg.get("provider", "mock"))
+        run_id = start_enrichment_run(
+            conn, str(cfg.get("research_provider") or cfg.get("provider", "mock"))
+        )
         processed = 0
         cap_hit = False
 
@@ -267,7 +269,9 @@ def enrich_supply_chain(
         )
 
         provider = get_supply_chain_provider(cfg)
-        run_id = start_enrichment_run(conn, cfg.get("provider", "mock"))
+        run_id = start_enrichment_run(
+            conn, str(cfg.get("research_provider") or cfg.get("provider", "mock"))
+        )
         processed = 0
         batches_run = 0
         cap_hit = False

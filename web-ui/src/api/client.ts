@@ -53,4 +53,25 @@ export const api = {
     }),
   enrichRuns: () => request<EnrichRun[]>("/api/enrich/runs"),
   exportUrl: () => `${BASE}/api/export.xlsx`,
+  regions: () => request<import("./types").ScanRegion[]>("/api/regions"),
+  mapsQuota: () => request<import("./types").MapsQuota>("/api/quota/maps"),
+  jobs: (kind?: string) =>
+    request<import("./types").JobRow[]>(
+      kind ? `/api/jobs?kind=${encodeURIComponent(kind)}` : "/api/jobs",
+    ),
+  job: (id: number) => request<import("./types").JobRow>(`/api/jobs/${id}`),
+  cancelJob: (id: number) =>
+    request<{ ok: boolean }>(`/api/jobs/${id}/cancel`, { method: "POST" }),
+  startScan: (body: {
+    region?: string;
+    state?: string;
+    bbox?: string;
+    max_sites?: number;
+    max_requests?: number;
+    skip_fetch?: boolean;
+  }) =>
+    request<{ ok: boolean; detail: { job_id: number } }>("/api/jobs/scan", {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
 };

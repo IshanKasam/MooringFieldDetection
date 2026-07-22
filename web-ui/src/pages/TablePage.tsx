@@ -14,12 +14,15 @@ export function TablePage() {
   const { data, isLoading, error } = useTable();
   const [filters, setFilters] = useState<TableFilters>(defaultFilters());
   const selectedProspectId = useSelection((s) => s.selectedProspectId);
+  const selectedFieldId = useSelection((s) => s.selectedFieldId);
   const clear = useSelection((s) => s.clear);
 
   const filtered = useMemo(
     () => applyFilters(data ?? [], filters),
     [data, filters],
   );
+
+  const showDrawer = selectedFieldId != null || selectedProspectId != null;
 
   return (
     <div className="page table-page">
@@ -33,9 +36,10 @@ export function TablePage() {
           </>
         )}
       </div>
-      {selectedProspectId != null && (
+      {showDrawer && (
         <FieldDetailDrawer
           prospectId={selectedProspectId}
+          fieldId={selectedFieldId}
           onClose={() => clear()}
         />
       )}

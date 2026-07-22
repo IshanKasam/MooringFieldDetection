@@ -65,7 +65,9 @@ def test_mock_enrich_all_pipeline(tmp_path: Path, monkeypatch):
 
     monkeypatch.setenv("MOORING_ENRICHMENT_CONFIG", str(tmp_path / "enrichment.yaml"))
     cfg_src = Path(__file__).resolve().parents[1] / "config" / "enrichment.yaml"
-    (tmp_path / "enrichment.yaml").write_text(cfg_src.read_text(encoding="utf-8"))
+    (tmp_path / "enrichment.yaml").write_text(
+        cfg_src.read_text(encoding="utf-8"), encoding="utf-8"
+    )
 
     # Patch config loader path via monkeypatch on load_enrichment_config
     import mooring_fields.enrichment_config as ec

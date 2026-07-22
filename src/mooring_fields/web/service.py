@@ -53,15 +53,23 @@ def stats(*, db_path: Path | None = None) -> dict[str, int]:
 
 
 def table_rows(*, db_path: Path | None = None) -> list[dict[str, Any]]:
+    """One row per field; first linked prospect wins (matches geojson)."""
     conn = _conn(db_path)
     try:
         rows = field_table_rows(conn)
+        seen: set[int] = set()
+        out: list[dict[str, Any]] = []
         for row in rows:
+            fid = int(row["field_id"])
+            if fid in seen:
+                continue
+            seen.add(fid)
             row["state"] = _state_from_location(
                 row.get("address"),
                 row.get("location_name"),
             )
-        return rows
+            out.append(row)
+        return out
     finally:
         conn.close()
 
@@ -214,6 +222,86 @@ def enrichment_runs(*, limit: int = 20, db_path: Path | None = None) -> list[dic
         conn.close()
 
 
+def scan_regions() -> list[dict[str, Any]]:
+    from mooring_fields.scan_pipeline import list_scan_regions
+
+    return list_scan_regions()
+
+
+def maps_quota(*, db_path: Path | None = None) -> dict[str, Any]:
+    from mooring_fields.jobs_store import get_maps_quota
+
+    conn = _conn(db_path)
+    try:
+        return get_maps_quota(conn)
+    finally:
+        conn.close()
+
+
+def list_jobs(
+    *,
+    kind: str | None = None,
+    limit: int = 20,
+    db_path: Path | None = None,
+) -> list[dict[str, Any]]:
+    from mooring_fields.jobs_store import list_jobs as _list
+
+    conn = _conn(db_path)
+    try:
+        return _list(conn, kind=kind, limit=limit)
+    finally:
+        conn.close()
+
+
+def get_job(job_id: int, *, db_path: Path | None = None) -> dict[str, Any] | None:
+    from mooring_fields.jobs_store import get_job as _get
+
+    conn = _conn(db_path)
+    try:
+        return _get(conn, job_id)
+    finally:
+        conn.close()
+
+
+def cancel_job(job_id: int, *, db_path: Path | None = None) -> bool:
+    from mooring_fields.jobs_store import request_job_cancel
+
+    conn = _conn(db_path)
+    try:
+        return request_job_cancel(conn, job_id)
+    finally:
+        conn.close()
+
+
+def enqueue_scan_job(
+    params: dict[str, Any],
+    *,
+    db_path: Path | None = None,
+) -> int:
+    from mooring_fields.jobs_store import active_long_job, create_job, get_maps_quota
+
+    conn = _conn(db_path)
+    try:
+        active = active_long_job(conn)
+        if active is not None:
+            raise RuntimeError(
+                f"Another job is already {active['status']} (id={active['id']}, kind={active['kind']})"
+            )
+        quota = get_maps_quota(conn)
+        max_requests = params.get("max_requests")
+        if max_requests is None:
+            params = {**params, "max_requests": min(800, int(quota["remaining"]) or 800)}
+        elif int(max_requests) > int(quota["remaining"]):
+            raise RuntimeError(
+                f"Maps quota remaining today is {quota['remaining']} (requested {max_requests})"
+            )
+        if int(quota["remaining"]) <= 0 and not params.get("skip_fetch"):
+            raise RuntimeError("Maps Static daily quota exhausted; try skip_fetch or wait until UTC midnight")
+        return create_job(conn, "scan", params)
+    finally:
+        conn.close()
+
+
 def build_export(
     *,
     db_path: Path | None = None,
@@ -222,7 +310,7 @@ def build_export(
     from mooring_fields.export_excel import export_prospects
 
     out = output or PROSPECTS_EXPORT
-    export_prospects(out, db_path=db_path)
+    export_prospects(out, db_path=db_path, also_csv=False)
     return Path(out)
 
 

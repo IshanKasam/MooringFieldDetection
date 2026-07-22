@@ -152,3 +152,40 @@ class EnrichRun(BaseModel):
 class OkResponse(BaseModel):
     ok: bool = True
     detail: Any = None
+
+
+class ScanJobRequest(BaseModel):
+    region: str | None = None
+    state: str | None = None
+    bbox: str | None = None
+    max_sites: int = Field(default=160, ge=1, le=160)
+    max_requests: int | None = Field(default=None, ge=1, le=800)
+    offset: int = Field(default=0, ge=0)
+    skip_fetch: bool = False
+    kml_path: str | None = None
+
+
+class JobRow(BaseModel):
+    id: int
+    kind: str
+    status: str
+    params: Any = None
+    progress: Any = None
+    result: Any = None
+    cancel_requested: bool = False
+    created_at: str | None = None
+    started_at: str | None = None
+    finished_at: str | None = None
+
+
+class MapsQuota(BaseModel):
+    day: str
+    maps_used: int
+    cap: int
+    remaining: int
+
+
+class ScanRegion(BaseModel):
+    id: str
+    kind: str
+    bbox: list[float]

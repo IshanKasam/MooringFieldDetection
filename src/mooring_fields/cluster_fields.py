@@ -13,7 +13,7 @@ from ultralytics import YOLO
 
 from mooring_fields.geo_utils import haversine_m
 from mooring_fields.paths import CONFIG_DIR, IMAGERY_DIR, RUNS_DIR
-from mooring_fields.runtime import inference_kwargs, load_training_config
+from mooring_fields.runtime import load_training_config
 
 
 @dataclass
@@ -69,24 +69,43 @@ def detect_boats_in_tile(
     meta_path: Path,
     conf: float,
 ) -> list[BoatDetection]:
-    meta = json.loads(meta_path.read_text(encoding="utf-8"))
-    results = model.predict(str(image_path), conf=conf, **inference_kwargs())
-    boats: list[BoatDetection] = []
+    return detect_boats_in_tiles_batch(
+        model, [(image_path, meta_path)], conf
+    )
 
-    for result in results:
-        if result.obb is None:
-            continue
-        confs = result.obb.conf.cpu().numpy()
-        for i in range(len(result.obb)):
-            lat, lon = obb_centroid_latlon(result.obb, i, meta)
-            boats.append(
-                BoatDetection(
-                    lat=lat,
-                    lon=lon,
-                    confidence=float(confs[i]),
-                    image_stem=image_path.stem,
+
+def detect_boats_in_tiles_batch(
+    model: YOLO,
+    tiles: list[tuple[Path, Path]],
+    conf: float,
+) -> list[BoatDetection]:
+    """Run YOLO on one or more tiles; batch size follows runtime.predict_batch_*."""
+    if not tiles:
+        return []
+    from mooring_fields.runtime import inference_kwargs, resolve_predict_batch
+
+    boats: list[BoatDetection] = []
+    batch_size = max(1, resolve_predict_batch())
+    kwargs = inference_kwargs()
+    for i in range(0, len(tiles), batch_size):
+        chunk = tiles[i : i + batch_size]
+        paths = [str(p) for p, _ in chunk]
+        results = model.predict(paths, conf=conf, **kwargs)
+        for (image_path, meta_path), result in zip(chunk, results):
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            if result.obb is None:
+                continue
+            confs = result.obb.conf.cpu().numpy()
+            for j in range(len(result.obb)):
+                lat, lon = obb_centroid_latlon(result.obb, j, meta)
+                boats.append(
+                    BoatDetection(
+                        lat=lat,
+                        lon=lon,
+                        confidence=float(confs[j]),
+                        image_stem=image_path.stem,
+                    )
                 )
-            )
     return boats
 
 
@@ -177,7 +196,7 @@ def run_for_site(
         return []
 
     direction = cfg.get("eval_tile_direction", "center")
-    all_boats: list[BoatDetection] = []
+    tile_pairs: list[tuple[Path, Path]] = []
     for png in sorted(img_dir.glob("*.png")):
         if direction != "all" and f"_{direction}_" not in png.stem:
             continue
@@ -190,11 +209,14 @@ def run_for_site(
             continue
         if meta.get("site_id") != site_id:
             continue
-        all_boats.extend(
-            detect_boats_in_tile(model, png, meta_path, cfg["confidence_threshold"])
-        )
+        tile_pairs.append((png, meta_path))
         if direction != "all":
             break
+    if not tile_pairs:
+        return []
+    all_boats = detect_boats_in_tiles_batch(
+        model, tile_pairs, cfg["confidence_threshold"]
+    )
     if not all_boats:
         return []
     return clusters_from_boats(all_boats, cfg)
