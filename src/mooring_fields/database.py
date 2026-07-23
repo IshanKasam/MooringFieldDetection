@@ -403,6 +403,7 @@ def _normalize_prospect_fields(data: dict[str, Any], *, for_insert: bool) -> dic
     now = _now()
     out: dict[str, Any] = {}
 
+<<<<<<< HEAD
     def _maybe(key: str) -> None:
         if key not in data and not for_insert:
             return
@@ -424,6 +425,25 @@ def _normalize_prospect_fields(data: dict[str, Any], *, for_insert: bool) -> dic
         "supply_chain_summary",
     ):
         _maybe(key)
+=======
+    def _maybe(key: str, transform=None):
+        if key not in data and not for_insert:
+            return
+        val = data.get(key)
+        if transform is not None:
+            val = transform(val)
+        out[key] = val
+
+    _maybe("canonical_business_name")
+    _maybe("phone")
+    _maybe("email")
+    _maybe("website")
+    _maybe("address")
+    _maybe("operator_type")
+    _maybe("place_id")
+    _maybe("research_summary")
+    _maybe("confidence")
+>>>>>>> origin/main
 
     if "sources" in data or for_insert:
         sources = data.get("sources")
@@ -436,11 +456,22 @@ def _normalize_prospect_fields(data: dict[str, Any], *, for_insert: bool) -> dic
     if "approved" in data or for_insert:
         out["approved"] = 1 if data.get("approved", False) else 0
 
+<<<<<<< HEAD
+=======
+    _maybe("raw_places_response")
+    _maybe("raw_gemini_response")
+    _maybe("harbor_name")
+
+>>>>>>> origin/main
     if "supply_chain_json" in data or for_insert:
         sc = data.get("supply_chain_json")
         out["supply_chain_json"] = (
             json.dumps(sc) if isinstance(sc, (dict, list)) else sc
         )
+<<<<<<< HEAD
+=======
+    _maybe("supply_chain_summary")
+>>>>>>> origin/main
 
     if "last_enriched" in data or for_insert:
         out["last_enriched"] = data.get("last_enriched") or now
