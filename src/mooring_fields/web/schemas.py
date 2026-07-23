@@ -13,6 +13,7 @@ class Stats(BaseModel):
     prospects: int
     needs_review: int
     approved: int
+    skipped: int = 0
 
 
 class FieldRow(BaseModel):
@@ -152,6 +153,12 @@ class EnrichRun(BaseModel):
 class OkResponse(BaseModel):
     ok: bool = True
     detail: Any = None
+
+
+class RefilterRequest(BaseModel):
+    scan_id: int | None = None
+    dry_run: bool = False
+    limit: int | None = None
 
 
 class ScanJobRequest(BaseModel):

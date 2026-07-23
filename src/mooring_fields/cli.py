@@ -394,6 +394,148 @@ def diff_scans_cmd(argv: list[str] | None = None) -> None:
         conn.close()
 
 
+def refilter_docks_cmd(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Mark pending fields near OSM docks/piers as enrichment_status=skipped "
+            "(no full re-scan). Uses config/cluster.yaml dock filter knobs."
+        )
+    )
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument("--scan-id", type=int, default=None, help="Limit to one scan")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Only consider first N pending fields (by id) — for short smoke tests",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Report what would be skipped without writing",
+    )
+    args = parser.parse_args(argv)
+    from mooring_fields.cluster_fields import load_cluster_config
+    from mooring_fields.database import get_connection, init_db
+    from mooring_fields.dock_filter import refilter_db_fields
+
+    conn = get_connection(args.db)
+    try:
+        init_db(conn)
+        cfg = load_cluster_config()
+        print("refilter-docks: fetching OSM pier/marina tiles…", flush=True)
+        result = refilter_db_fields(
+            conn,
+            cfg,
+            scan_id=args.scan_id,
+            dry_run=args.dry_run,
+            limit=args.limit,
+        )
+        _print(result)
+        if not result.get("ok", True):
+            print(
+                "FAILED: Overpass returned no dock points "
+                f"(error={result.get('overpass_error')})",
+                file=sys.stderr,
+                flush=True,
+            )
+            sys.exit(2)
+    finally:
+        conn.close()
+
+
+def refilter_all_cmd(argv: list[str] | None = None) -> None:
+    """Apply the enhanced dock filter across ALL scans in the database."""
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run enhanced dock/marina filter (v2 heuristics) across every scan "
+            "in the database. Marks false-positive dock clusters as "
+            "enrichment_status=skipped."
+        )
+    )
+    parser.add_argument("--db", type=Path, default=None)
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Report what would be skipped without writing",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Only consider first N pending fields per scan",
+    )
+    args = parser.parse_args(argv)
+    from mooring_fields.cluster_fields import load_cluster_config
+    from mooring_fields.database import get_connection, init_db, list_scans
+    from mooring_fields.dock_filter import refilter_db_fields
+
+    conn = get_connection(args.db)
+    try:
+        init_db(conn)
+        cfg = load_cluster_config()
+        scans = list_scans(conn)
+        if not scans:
+            print("No scans in database.", flush=True)
+            return
+
+        print(
+            f"refilter-all: processing {len(scans)} scan(s) "
+            f"(dry_run={args.dry_run})",
+            flush=True,
+        )
+        grand_total = {
+            "scans_processed": 0,
+            "total_considered": 0,
+            "total_marked_skipped": 0,
+            "per_scan": [],
+        }
+        for scan in scans:
+            sid = int(scan["id"])
+            source = scan.get("source", "")
+            print(f"\n--- Scan {sid}: {source} ---", flush=True)
+            result = refilter_db_fields(
+                conn,
+                cfg,
+                scan_id=sid,
+                dry_run=args.dry_run,
+                limit=args.limit,
+            )
+            grand_total["scans_processed"] += 1
+            grand_total["total_considered"] += int(result.get("considered") or 0)
+            grand_total["total_marked_skipped"] += int(
+                result.get("marked_skipped") or 0
+            )
+            grand_total["per_scan"].append(
+                {
+                    "scan_id": sid,
+                    "source": source,
+                    **result,
+                }
+            )
+            print(
+                f"  considered={result.get('considered', 0)}, "
+                f"marked_skipped={result.get('marked_skipped', 0)}, "
+                f"near_dock={result.get('rejected_near_dock', 0)}, "
+                f"linear={result.get('rejected_linear', 0)}, "
+                f"shoreline={result.get('rejected_shoreline', 0)}, "
+                f"spacing={result.get('rejected_spacing', 0)}, "
+                f"density={result.get('rejected_density', 0)}, "
+                f"pier_aligned={result.get('rejected_pier_aligned', 0)}",
+                flush=True,
+            )
+        print(f"\n=== TOTAL ===", flush=True)
+        print(
+            f"  scans={grand_total['scans_processed']}, "
+            f"considered={grand_total['total_considered']}, "
+            f"marked_skipped={grand_total['total_marked_skipped']}, "
+            f"dry_run={args.dry_run}",
+            flush=True,
+        )
+        _print(grand_total)
+    finally:
+        conn.close()
+
 def delete_scan_cmd(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
         description="Delete a detection scan and all linked fields/boats/orphaned prospects"
@@ -767,6 +909,8 @@ def main() -> None:
         "approve-prospect": approve_prospect_cmd,
         "enrich-all": enrich_all_cmd,
         "diff-scans": diff_scans_cmd,
+        "refilter-docks": refilter_docks_cmd,
+        "refilter-all": refilter_all_cmd,
         "delete-scan": delete_scan_cmd,
         "generate-candidates": generate_candidates_cmd,
         "generate-candidates-batch": generate_candidates_batch_cmd,

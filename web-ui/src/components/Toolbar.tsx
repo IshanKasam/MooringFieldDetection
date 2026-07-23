@@ -3,6 +3,7 @@ import { api } from "../api/client";
 import {
   useEnrich,
   useEnrichRuns,
+  useRefilterDocks,
   useScans,
   useStats,
 } from "../hooks/useFields";
@@ -13,6 +14,7 @@ export function Toolbar() {
   const { data: scans } = useScans();
   const { data: runs } = useEnrichRuns();
   const enrich = useEnrich();
+  const refilter = useRefilterDocks();
   const [scanA, setScanA] = useState<number | "">("");
   const [scanB, setScanB] = useState<number | "">("");
   const [diffText, setDiffText] = useState<string>("");
@@ -51,12 +53,25 @@ export function Toolbar() {
         <span className="ok">
           <strong>{stats?.approved ?? "—"}</strong> approved
         </span>
+        {(stats?.skipped ?? 0) > 0 && (
+          <span className="dock-stat">
+            <strong>{stats!.skipped}</strong> dock-rejected
+          </span>
+        )}
       </div>
       <ScanPanel />
       <div className="actions">
         <a className="button" href={api.exportUrl()}>
           Export Excel
         </a>
+        <button
+          type="button"
+          disabled={refilter.isPending}
+          onClick={() => refilter.mutate({})}
+          title="Re-run dock/marina filter on all pending fields"
+        >
+          {refilter.isPending ? "Refiltering…" : "Refilter Docks"}
+        </button>
         <label className="muted">
           Limit{" "}
           <input

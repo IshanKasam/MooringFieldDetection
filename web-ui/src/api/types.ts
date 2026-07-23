@@ -32,6 +32,7 @@ export type Stats = {
   prospects: number;
   needs_review: number;
   approved: number;
+  skipped: number;
 };
 
 export type ProspectDetail = {
@@ -130,4 +131,10 @@ export type JobRow = {
   created_at: string | null;
   started_at: string | null;
   finished_at: string | null;
+};
+
+export type RefilterRequest = {
+  scan_id?: number | null;
+  dry_run?: boolean;
+  limit?: number | null;
 };

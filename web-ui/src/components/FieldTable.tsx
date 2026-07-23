@@ -115,6 +115,10 @@ export function FieldTable({ rows }: Props) {
         accessorKey: "enrichment_status",
         header: "Status",
         size: 120,
+        cell: (c) => {
+          const v = (c.getValue() as string | null) || "pending";
+          return <span className={`status-badge status-${v}`}>{v}</span>;
+        },
       },
       {
         id: "approved",

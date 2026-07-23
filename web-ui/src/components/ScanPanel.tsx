@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { api } from "../api/client";
 import type { JobRow, MapsQuota, ScanRegion } from "../api/types";
 import { invalidateFieldQueries } from "../hooks/useFields";
-import { useQueryClient } from "@tanstack/react-query";
 
 export function ScanPanel() {
   const qc = useQueryClient();
@@ -14,14 +14,33 @@ export function ScanPanel() {
   const [error, setError] = useState<string | null>(null);
   const [activeJob, setActiveJob] = useState<JobRow | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
-  const namedRegions = useMemo(
-    () => regions.filter((r) => r.kind === "region"),
-    [regions],
-  );
+  const options = useMemo(() => {
+    const named = regions
+      .filter((r) => r.kind === "region")
+      .map((r) => ({ ...r, label: r.id }));
+    const states = regions
+      .filter((r) => r.kind === "state")
+      .map((r) => ({ ...r, label: `State · ${r.id}` }));
+    return [...named, ...states];
+  }, [regions]);
 
   useEffect(() => {
-    void api.regions().then(setRegions).catch(() => setRegions([]));
+    void api
+      .regions()
+      .then((rows) => {
+        setRegions(rows);
+        setLoadError(null);
+      })
+      .catch((e) => {
+        setRegions([]);
+        setLoadError(
+          e instanceof Error
+            ? e.message
+            : "Could not load regions (is the API on this branch running?)",
+        );
+      });
     void api.mapsQuota().then(setQuota).catch(() => setQuota(null));
   }, []);
 
@@ -60,7 +79,7 @@ export function ScanPanel() {
     setError(null);
     setMessage(null);
     if (!regionId) {
-      setError("Pick a coastline region");
+      setError("Pick a coastline region or state");
       return;
     }
     setBusy(true);
@@ -92,7 +111,10 @@ export function ScanPanel() {
     }
   }
 
-  const progress = activeJob?.progress as { step?: string; sites?: number } | null;
+  const progress = activeJob?.progress as {
+    step?: string;
+    sites?: number;
+  } | null;
 
   return (
     <div className="scan-panel">
@@ -101,23 +123,17 @@ export function ScanPanel() {
         <select
           value={regionId}
           onChange={(e) => setRegionId(e.target.value)}
-          disabled={busy}
+          disabled={busy || options.length === 0}
+          aria-label="Select coastline region or state"
         >
-          <option value="">Select region…</option>
-          {namedRegions.map((r) => (
-            <option key={r.id} value={r.id}>
-              {r.id}
+          <option value="">
+            {options.length === 0 ? "No regions loaded…" : "Select region…"}
+          </option>
+          {options.map((r) => (
+            <option key={`${r.kind}-${r.id}`} value={r.id}>
+              {r.label}
             </option>
           ))}
-          <optgroup label="States">
-            {regions
-              .filter((r) => r.kind === "state")
-              .map((r) => (
-                <option key={r.id} value={r.id}>
-                  {r.id}
-                </option>
-              ))}
-          </optgroup>
         </select>
         <label className="muted">
           Max sites{" "}
@@ -143,6 +159,7 @@ export function ScanPanel() {
           </button>
         )}
       </div>
+      {loadError && <p className="warn">Regions: {loadError}</p>}
       {progress?.step && (
         <p className="muted">
           Progress: {progress.step}

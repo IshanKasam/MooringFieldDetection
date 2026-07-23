@@ -8,6 +8,7 @@ export type TableFilters = {
   minConfidence: number;
   needsReviewOnly: boolean;
   country: string;
+  hideDockRejected: boolean;
 };
 
 type Props = {
@@ -24,12 +25,14 @@ export function defaultFilters(): TableFilters {
     minConfidence: 0,
     needsReviewOnly: false,
     country: "",
+    hideDockRejected: true,
   };
 }
 
 export function applyFilters(rows: FieldRow[], f: TableFilters): FieldRow[] {
   const q = f.query.trim().toLowerCase();
   return rows.filter((r) => {
+    if (f.hideDockRejected && r.enrichment_status === "skipped") return false;
     if (f.minBoats && r.boat_count < f.minBoats) return false;
     if (f.minConfidence && (r.confidence ?? 0) < f.minConfidence) return false;
     if (f.needsReviewOnly && !r.needs_review) return false;
@@ -135,6 +138,14 @@ export function Filters({ rows, filters, onChange }: Props) {
           onChange={(e) => patch({ needsReviewOnly: e.target.checked })}
         />
         Needs review
+      </label>
+      <label className="check">
+        <input
+          type="checkbox"
+          checked={local.hideDockRejected}
+          onChange={(e) => patch({ hideDockRejected: e.target.checked })}
+        />
+        Hide dock-rejected
       </label>
     </div>
   );

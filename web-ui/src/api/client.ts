@@ -74,4 +74,9 @@ export const api = {
       method: "POST",
       body: JSON.stringify(body),
     }),
+  refilterDocks: (body?: import("./types").RefilterRequest) =>
+    request<{ ok: boolean; detail: unknown }>("/api/refilter-docks", {
+      method: "POST",
+      body: JSON.stringify(body ?? {}),
+    }),
 };

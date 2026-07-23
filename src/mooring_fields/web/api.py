@@ -24,6 +24,7 @@ from mooring_fields.web.schemas import (
     ProspectDetail,
     ProspectSummary,
     ProspectUpdate,
+    RefilterRequest,
     ScanDiff,
     ScanJobRequest,
     ScanRegion,
@@ -209,6 +210,29 @@ def api_jobs_scan(body: ScanJobRequest, background: BackgroundTasks) -> OkRespon
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     background.add_task(run_scan_job, job_id)
     return OkResponse(ok=True, detail={"queued": True, "job_id": job_id})
+
+
+@app.post("/api/refilter-docks", response_model=OkResponse)
+def api_refilter_docks(
+    body: RefilterRequest, background: BackgroundTasks
+) -> OkResponse:
+    """Run the dock/marina filter on pending DB fields (background)."""
+    from mooring_fields.web.jobs import run_refilter_job
+
+    background.add_task(
+        run_refilter_job,
+        scan_id=body.scan_id,
+        dry_run=body.dry_run,
+        limit=body.limit,
+    )
+    return OkResponse(
+        ok=True,
+        detail={
+            "queued": True,
+            "scan_id": body.scan_id,
+            "dry_run": body.dry_run,
+        },
+    )
 
 
 def create_app() -> FastAPI:

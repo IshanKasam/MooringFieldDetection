@@ -551,12 +551,18 @@ def get_stats(conn: sqlite3.Connection) -> dict[str, int]:
     approved = int(
         conn.execute("SELECT COUNT(*) FROM prospects WHERE approved = 1").fetchone()[0]
     )
+    skipped = int(
+        conn.execute(
+            "SELECT COUNT(*) FROM fields WHERE enrichment_status = 'skipped'"
+        ).fetchone()[0]
+    )
     return {
         "fields": fields,
         "boats": boats,
         "prospects": prospects,
         "needs_review": needs_review,
         "approved": approved,
+        "skipped": skipped,
     }
 
 

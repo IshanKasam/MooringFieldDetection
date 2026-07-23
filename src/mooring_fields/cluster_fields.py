@@ -172,7 +172,28 @@ def clusters_from_boats(boats: list[BoatDetection], cfg: dict) -> list[MooringFi
     boats = dedupe_boats(boats, cfg.get("dedupe_radius_meters", 25))
     clusters = cluster_boats(boats, cfg["eps_meters"], cfg["min_samples"])
     min_boats = cfg["min_boats"]
-    return [c for c in clusters if is_qualifying_field(c, min_boats)]
+    clusters = [c for c in clusters if is_qualifying_field(c, min_boats)]
+    if cfg.get("dock_filter_enabled", True):
+        from mooring_fields.dock_filter import filter_mooring_clusters
+
+        before = len(clusters)
+        clusters, stats = filter_mooring_clusters(clusters, cfg)
+        rejected = int(stats.get("rejected") or 0)
+        if rejected or stats.get("overpass_error"):
+            parts = [
+                f"dock filter: kept {stats.get('kept', len(clusters))}/{before}",
+                f"rejected={rejected}",
+                f"near_dock={stats.get('rejected_near_dock', 0)}",
+                f"linear={stats.get('rejected_linear', 0)}",
+                f"shoreline={stats.get('rejected_shoreline', 0)}",
+                f"spacing={stats.get('rejected_spacing', 0)}",
+                f"density={stats.get('rejected_density', 0)}",
+                f"pier_aligned={stats.get('rejected_pier_aligned', 0)}",
+            ]
+            if stats.get("overpass_error"):
+                parts.append(f"overpass_error={stats['overpass_error']}")
+            print(" (".join(parts[:1]) + " (" + ", ".join(parts[1:]) + ")")
+    return clusters
 
 
 def run_for_site(

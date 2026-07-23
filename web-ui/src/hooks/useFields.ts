@@ -104,4 +104,13 @@ export function useEnrich() {
   });
 }
 
+export function useRefilterDocks() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (body?: import("../api/types").RefilterRequest) =>
+      api.refilterDocks(body),
+    onSuccess: () => invalidateFieldQueries(qc),
+  });
+}
+
 export { invalidateFieldQueries };

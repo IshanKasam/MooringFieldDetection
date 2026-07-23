@@ -152,3 +152,19 @@ def run_scan_job(job_id: int) -> dict[str, Any]:
         return {"error": str(exc)}
     finally:
         conn.close()
+
+
+def run_refilter_job(
+    *,
+    scan_id: int | None = None,
+    dry_run: bool = False,
+    limit: int | None = None,
+) -> dict[str, Any]:
+    """Run dock/marina refilter. Intended for BackgroundTasks."""
+    try:
+        from mooring_fields.web.service import refilter_docks
+
+        return refilter_docks(scan_id=scan_id, dry_run=dry_run, limit=limit)
+    except Exception as exc:  # noqa: BLE001
+        log.exception("refilter job failed")
+        return {"error": str(exc)}

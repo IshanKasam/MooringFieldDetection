@@ -125,6 +125,30 @@ python -m mooring_fields.cli package-kaggle-scan --kml data/candidates_FL_tampa_
 
 See [docs/KAGGLE.md](KAGGLE.md) § "GPU coastal scan".
 
+### Dock / marina false-positive filter
+
+After DBSCAN, clusters near OSM pier/marina/quay geometry (or very elongated
+pier-line boat clouds) are dropped. Knobs in `config/cluster.yaml`:
+
+- `dock_filter_enabled` — set `false` if a true mooring sits beside a pier
+- `reject_near_dock_meters` (default 80)
+- `reject_linear_aspect_ratio` (default 4.0)
+- `dock_filter_soft_fail` — if Overpass is unreachable, keep clusters and warn
+  (needed for offline / `--skip-fetch` runs without network)
+
+Live OSM fetch needs Internet On; responses cache under `data/cache/osm_docks/`
+for 7 days. Large multi-state DBs are queried in ~0.5° tiles around field
+centroids (a single FL→MA bbox is rejected by Overpass).
+
+To mark **existing** pending fields as skipped without a full re-scan:
+
+```bash
+python -m mooring_fields.cli refilter-docks --dry-run --limit 30   # short smoke
+python -m mooring_fields.cli refilter-docks --dry-run
+python -m mooring_fields.cli refilter-docks
+# optional: --scan-id N --db path/to.db
+```
+
 ### Maintenance
 
 - Delete an old detection scan (and orphaned prospects):

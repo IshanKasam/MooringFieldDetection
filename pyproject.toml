@@ -43,6 +43,10 @@ mooring-fetch = "mooring_fields.cli:fetch_imagery_cmd"
 mooring-prelabel = "mooring_fields.cli:prelabel_cmd"
 mooring-train = "mooring_fields.cli:train_cmd"
 mooring-evaluate = "mooring_fields.cli:evaluate_cmd"
+mooring-scan = "mooring_fields.cli:scan_cmd"
+mooring-refilter-docks = "mooring_fields.cli:refilter_docks_cmd"
+mooring-refilter-all = "mooring_fields.cli:refilter_all_cmd"
+mooring-generate-candidates = "mooring_fields.cli:generate_candidates_cmd"
 mooring-web = "mooring_fields.web.api:run"
 
 [build-system]

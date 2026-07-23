@@ -314,5 +314,41 @@ def build_export(
     return Path(out)
 
 
+def refilter_docks(
+    *,
+    scan_id: int | None = None,
+    dry_run: bool = False,
+    limit: int | None = None,
+    db_path: Path | None = None,
+) -> dict[str, Any]:
+    """Run the dock/marina filter on pending DB fields."""
+    from mooring_fields.cluster_fields import load_cluster_config
+    from mooring_fields.dock_filter import refilter_db_fields
+
+    conn = _conn(db_path)
+    try:
+        cfg = load_cluster_config()
+        if scan_id is not None:
+            return refilter_db_fields(
+                conn, cfg, scan_id=scan_id, dry_run=dry_run, limit=limit
+            )
+        # Run across all scans
+        from mooring_fields.database import list_scans as _list_scans
+
+        scans = _list_scans(conn)
+        total = {"considered": 0, "marked_skipped": 0, "scans_processed": 0, "dry_run": dry_run}
+        for scan in scans:
+            sid = int(scan["id"])
+            result = refilter_db_fields(
+                conn, cfg, scan_id=sid, dry_run=dry_run, limit=limit
+            )
+            total["considered"] += int(result.get("considered") or 0)
+            total["marked_skipped"] += int(result.get("marked_skipped") or 0)
+            total["scans_processed"] += 1
+        return total
+    finally:
+        conn.close()
+
+
 def db_path_default() -> Path:
     return DB_PATH

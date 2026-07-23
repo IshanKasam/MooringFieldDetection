@@ -18,6 +18,7 @@ __pycache__/
 htmlcov/
 runs/
 data/imagery/
+data/cache/
 data/prelabels/
 data/labels/
 yolov8_new_images/

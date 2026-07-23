@@ -10,3 +10,20 @@ confidence_threshold: 0.20
 # fields; set to "center" to use only the center tile.
 eval_tile_direction: all
 dedupe_radius_meters: 25
+
+# Post-DBSCAN dock/marina filter (OSM pier/quay/marina proximity + shape)
+dock_filter_enabled: true
+reject_near_dock_meters: 80
+reject_linear_aspect_ratio: 4.0
+# Soft-fail (keep clusters) if Overpass is unreachable
+dock_filter_soft_fail: true
+
+# Enhanced dock rejection heuristics (v2)
+# Reject clusters whose centroid is within N meters of an OSM coastline/shoreline
+reject_shoreline_meters: 30
+# Reject clusters where nearest-neighbour distance CV is below threshold (too regular = slips)
+reject_spacing_cv_below: 0.25
+# Reject clusters denser than N boats per m² (convex hull area)
+reject_density_above: 0.005
+# Reject clusters whose major PCA axis is within N° of the nearest pier/dock bearing
+reject_pier_alignment_deg: 20

@@ -199,11 +199,35 @@ def test_fields_geojson_dedupes_field(tmp_path: Path, monkeypatch: pytest.Monkey
 
     real_get = dbmod.get_connection
 
-    def _get(path=None):
-        return real_get(db)
+    monkeypatch.setattr(dbmod, "get_connection", lambda path=None: real_get(db))
+    monkeypatch.setattr(svc, "get_connection", lambda path=None: real_get(db))
 
-    monkeypatch.setattr(dbmod, "get_connection", _get)
-    monkeypatch.setattr(svc, "get_connection", _get)
+    fc = svc.fields_geojson()
+    assert len(fc["features"]) == 2
 
-    geo = svc.fields_geojson()
-    assert len(geo["features"]) == 2
+
+def test_api_refilter_docks(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    pytest.importorskip("fastapi")
+    from fastapi.testclient import TestClient
+
+    db = tmp_path / "t.db"
+    _seed(db)
+
+    from mooring_fields import database as dbmod
+    import mooring_fields.web.service as svc
+
+    real_get = dbmod.get_connection
+    monkeypatch.setattr(dbmod, "get_connection", lambda path=None: real_get(db))
+    monkeypatch.setattr(svc, "get_connection", lambda path=None: real_get(db))
+
+    from mooring_fields.web.api import app
+
+    client = TestClient(app)
+    stats = client.get("/api/stats").json()
+    assert "skipped" in stats
+    assert stats["skipped"] == 0
+
+    resp = client.post("/api/refilter-docks", json={"dry_run": True})
+    assert resp.status_code == 200
+    assert resp.json()["ok"] is True
+    assert resp.json()["detail"]["queued"] is True

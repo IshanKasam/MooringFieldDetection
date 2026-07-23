@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ApproveToggle } from "./ApproveToggle";
 import {
   useEnrich,
   useField,
@@ -63,9 +62,16 @@ export function FieldDetailDrawer({ prospectId, fieldId, onClose }: Props) {
               {fieldRow.harbor_name || fieldRow.location_name || `Field ${fieldId}`}
             </p>
             <p className="muted">
-              {fieldRow.boat_count} boats · status{" "}
-              {fieldRow.enrichment_status || "pending"}
+              {fieldRow.boat_count} boats ·{" "}
+              <span className={`status-badge status-${fieldRow.enrichment_status || "pending"}`}>
+                {fieldRow.enrichment_status || "pending"}
+              </span>
             </p>
+            {fieldRow.enrichment_status === "skipped" && (
+              <p className="dock-rejected-note">
+                ⚠ Filtered out — likely a dock, marina, or pier (not a mooring field).
+              </p>
+            )}
           </section>
           <p className="muted">
             No prospect linked yet. Run Places enrichment to attach contacts.
@@ -111,7 +117,19 @@ export function FieldDetailDrawer({ prospectId, fieldId, onClose }: Props) {
           </label>
           <div className="drawer-approve">
             <span>Approved</span>
-            <ApproveToggle prospectId={prospectId} approved={!!data.approved} />
+            <label className="approve-toggle">
+              <input
+                type="checkbox"
+                checked={!!data.approved}
+                onChange={(e) =>
+                  update.mutate({
+                    id: prospectId,
+                    body: { approved: e.target.checked },
+                  })
+                }
+              />
+              <span>{data.approved ? "Yes" : "No"}</span>
+            </label>
           </div>
           <button
             type="button"
