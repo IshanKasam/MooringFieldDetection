@@ -84,6 +84,8 @@ def fields_geojson(*, db_path: Path | None = None) -> dict[str, Any]:
         if fid in seen:
             continue
         seen.add(fid)
+        if row.get("enrichment_status") == "skipped":
+            continue
         props = {k: v for k, v in row.items() if k not in ("latitude", "longitude")}
         features.append(
             {

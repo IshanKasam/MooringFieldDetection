@@ -39,7 +39,10 @@ export function Toolbar() {
     <div className="toolbar">
       <div className="stats">
         <span>
-          <strong>{stats?.fields ?? "—"}</strong> fields
+          <strong>
+            {stats != null ? stats.fields - stats.skipped : "—"}
+          </strong>{" "}
+          active fields ({stats?.fields ?? "—"} total)
         </span>
         <span>
           <strong>{stats?.boats ?? "—"}</strong> boats
