@@ -32,10 +32,33 @@ from mooring_fields.web.schemas import (
     Stats,
 )
 
+from contextlib import asynccontextmanager
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Clear orphaned running/queued jobs from previous killed processes."""
+    import json
+    from mooring_fields.database import get_connection, init_db
+
+    conn = get_connection()
+    try:
+        init_db(conn)
+        conn.execute(
+            "UPDATE jobs SET status=?, result_json=? WHERE status IN ('running', 'queued', 'cancelling')",
+            ("failed", json.dumps({"error": "Interrupted by server restart"})),
+        )
+        conn.commit()
+    finally:
+        conn.close()
+    yield
+
+
 app = FastAPI(
     title="Mooring Field Detection",
     description="Map + spreadsheet UI over detection and enrichment data.",
     version="0.1.0",
+    lifespan=lifespan,
 )
 
 _cors_origins = [

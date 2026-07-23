@@ -41,7 +41,7 @@ TILE_DEG = 0.5
 TILE_PAD_DEG = 0.05
 RETRYABLE_STATUS = frozenset({406, 429, 502, 503, 504})
 TILE_SLEEP_S = 0.25
-OVERPASS_TIMEOUT_S = 60
+OVERPASS_TIMEOUT_S = 90
 
 
 @dataclass
@@ -671,6 +671,11 @@ def fetch_shoreline_segments(
                 all_segs.extend(segs)
             except Exception as exc:  # noqa: BLE001
                 log.warning("shoreline tile %d failed: %s", i, exc)
+            if (i + 1) % 5 == 0 or i + 1 == len(tiles):
+                print(
+                    f"dock filter: OSM shoreline tiles {i + 1}/{len(tiles)} ({len(all_segs)} segments)",
+                    flush=True,
+                )
         print(
             f"dock filter: {len(all_segs)} shoreline segments loaded",
             flush=True,
