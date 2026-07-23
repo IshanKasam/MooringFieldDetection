@@ -12,10 +12,8 @@ from mooring_fields.cluster_fields import MooringFieldCluster, run_on_split
 from mooring_fields.database import save_scan
 from mooring_fields.geo_utils import haversine_m
 from mooring_fields.geocode import Geocoder
-from mooring_fields.kml_export import clusters_to_kml
-from mooring_fields.kml_parser import Site, load_sites_json
+from mooring_fields.kml import Site, clusters_to_kml, load_sites_json, sites_for_split
 from mooring_fields.paths import CONFIG_DIR, DATA_DIR
-from mooring_fields.split_sites import sites_for_split
 
 RESULTS_JSON = DATA_DIR / "evaluation_results.json"
 RESULTS_KML = DATA_DIR / "evaluation_clusters.kml"

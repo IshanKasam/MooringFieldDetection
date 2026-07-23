@@ -13,7 +13,7 @@ from mooring_fields.evaluate import evaluate_val
 from mooring_fields.fetch_imagery import estimate_fetch, fetch_all
 from mooring_fields.prelabel_boats import prelabel_all
 from mooring_fields.runtime import bootstrap_kaggle, publish_outputs
-from mooring_fields.split_sites import run_parse_and_split
+from mooring_fields.kml import run_parse_and_split
 from mooring_fields.train_boats import train
 
 
@@ -815,7 +815,7 @@ def fetch_scan_cmd(argv: list[str] | None = None) -> None:
     import tempfile
     from dotenv import load_dotenv
     from mooring_fields.fetch_imagery import fetch_all as _fetch_all
-    from mooring_fields.kml_parser import load_sites_json
+    from mooring_fields.kml import load_sites_json
     from mooring_fields.paths import IMAGERY_DIR
 
     load_dotenv()

@@ -13,9 +13,8 @@ import yaml
 from dotenv import load_dotenv
 
 from mooring_fields.geo_utils import offset_latlon, tile_bounds, zoom_from_range
-from mooring_fields.kml_parser import Site, load_sites_json
+from mooring_fields.kml import Site, load_sites_json, sites_for_split
 from mooring_fields.paths import CONFIG_DIR, IMAGERY_DIR
-from mooring_fields.split_sites import sites_for_split
 
 STATIC_MAPS_URL = "https://maps.googleapis.com/maps/api/staticmap"
 PLACEHOLDER_KEYS = {"", "your_api_key_here", "paste_your_key_here"}

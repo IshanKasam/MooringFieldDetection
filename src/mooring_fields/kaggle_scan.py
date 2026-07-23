@@ -57,7 +57,7 @@ def package_kaggle_scan(
     matches a placemark in the KML are included — so a Cape Cod package does not
     drag in a prior Massachusetts statewide cache.
     """
-    from mooring_fields.kml_parser import parse_kml
+    from mooring_fields.kml import parse_kml
 
     kml_path = Path(kml_path)
     if not kml_path.is_file():
